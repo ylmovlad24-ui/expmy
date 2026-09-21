@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рецензент.рус — рецензия на судебную экспертизу</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/media.css">
+</head>
+<body>
+  <div class="scroll-progress"></div>
+
+  <!-- Header -->
+  <div id="header-root"></div>
+
+  <main>
+
+    <!-- Hero-блок -->
+    <section class="hero">
+      <div class="hero__bg-pattern">
+        <span class="hero__shape hero__shape--circle"></span>
+        <span class="hero__shape hero__shape--square"></span>
+        <span class="hero__shape hero__shape--triangle"></span>
+        <span class="hero__shape hero__shape--hex"></span>
+        <span class="hero__shape hero__shape--diamond"></span>
+      </div>
+
+      <!-- Плавающие бейджи -->
+      <div class="hero__float-badge hero__float-badge--left">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span>Экспертная</span>
+      </div>
+      <div class="hero__float-badge hero__float-badge--right">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+        <span>Для суда</span>
+      </div>
+
+      <div class="hero__container">
+        <h1 class="hero__title">Оспорьте <span class="hero__title-accent">несправедливую</span> судебную экспертизу</h1>
+        <p class="hero__subtitle">Профессиональный разбор заключений экспертами с опытом более 15 лет</p>
+
+        <!-- Бейдж 24ч -->
+        <div class="hero__badge-hero">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <span>Разбор за 24 часа</span>
+        </div>
+
+        <!-- Статистика -->
+        <div class="hero__stats">
+          <div class="hero__stat">
+            <span class="hero__stat-number">15+</span>
+            <span class="hero__stat-label">лет опыта</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-number">500+</span>
+            <span class="hero__stat-label">рецензий</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-number">95%</span>
+            <span class="hero__stat-label">успешных дел</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-number">24ч</span>
+            <span class="hero__stat-label">экспресс-разбор</span>
+          </div>
+        </div>
+        <div class="hero__buttons">
+          <a href="#form" class="hero__cta hero__cta--primary">Бесплатная консультация</a>
+          <a href="services/index.html" class="hero__cta hero__cta--secondary">Заказать рецензию</a>
+        </div>
+      </div>
+
+      <!-- Волнистый разделитель -->
+      <div class="hero__wave">
+        <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+          <path class="shape-fill" d="M0,30 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,60 L0,60 Z"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 6 плиток направлений -->
+    <section class="services-cards">
+      <div class="services-cards__container">
+        <h2 class="section-title">Какие экспертизы рецензируем</h2>
+        <div class="services-cards__grid">
+          <a href="services/autotech/index.html" class="rc-card">
+            <div class="rc-card__icon">📹</div>
+            <h3 class="rc-card__title">Исследование видеоизображений для определения временных и пространственных характеристик</h3>
+            <p class="rc-card__desc">Видеоаналитика и криминалистическая фиксация</p>
+            <span class="rc-card__link">Подробнее →</span>
+          </a>
+          <a href="services/dtp-conditions/index.html" class="rc-card">
+            <div class="rc-card__icon">🚗</div>
+            <h3 class="rc-card__title">Исследование обстоятельств дорожно-транспортного происшествия</h3>
+            <p class="rc-card__desc">ДТП, механизмы столкновений, скорости</p>
+            <span class="rc-card__link">Подробнее →</span>
+          </a>
+          <a href="services/technical-condition/index.html" class="rc-card">
+            <div class="rc-card__icon">⚙️</div>
+            <h3 class="rc-card__title">Исследование технического состояния транспортных средств</h3>
+            <p class="rc-card__desc">Диагностика, неисправности, износ</p>
+            <span class="rc-card__link">Подробнее →</span>
+          </a>
+          <a href="services/trace-diagnostics/index.html" class="rc-card">
+            <div class="rc-card__icon">🔍</div>
+            <h3 class="rc-card__title">Исследование следов на транспортных средствах и месте дорожно-транспортного происшествия (транспортно-трасологическая диагностика)</h3>
+            <p class="rc-card__desc">Следы, механизмы воздействий, траектории</p>
+            <span class="rc-card__link">Подробнее →</span>
+          </a>
+          <a href="services/autotrade/index.html" class="rc-card">
+            <div class="rc-card__icon">🛠️</div>
+            <h3 class="rc-card__title">Исследование транспортных средств в целях определения стоимости восстановительного ремонта и оценки</h3>
+            <p class="rc-card__desc">Оценка ТС, стоимость ремонта, утрата стоимости</p>
+            <span class="rc-card__link">Подробнее →</span>
+          </a>
+          <a href="services/commodity/index.html" class="rc-card">
+            <div class="rc-card__icon">📦</div>
+            <h3 class="rc-card__title">Исследование промышленных (непродовольственных) товаров, в том числе с целью определения их стоимости</h3>
+            <p class="rc-card__desc">Товароведческие экспертизы, дефекты, стоимость</p>
+            <span class="rc-card__link">Подробнее →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Чек-лист «Как мы проверяем» -->
+    <section class="checklist">
+      <div class="checklist__container">
+        <h2 class="section-title">Как мы проверяем экспертизу</h2>
+        <ul class="checklist__list">
+          <li class="checklist__item">
+            <span class="checklist__icon">✓</span>
+            <span class="checklist__text">Проверяем соответствие методик и нормативов</span>
+          </li>
+          <li class="checklist__item">
+            <span class="checklist__icon">✓</span>
+            <span class="checklist__text">Анализируем полноту исследования</span>
+          </li>
+          <li class="checklist__item">
+            <span class="checklist__icon">✓</span>
+            <span class="checklist__text">Выявляем методические ошибки</span>
+          </li>
+          <li class="checklist__item">
+            <span class="checklist__icon">✓</span>
+            <span class="checklist__text">Проверяем логику выводов эксперта</span>
+          </li>
+          <li class="checklist__item">
+            <span class="checklist__icon">✓</span>
+            <span class="checklist__text">Формируем заключение для суда</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Калькулятор-квиз -->
+    <section class="quiz-calc">
+      <div class="quiz-calc__container">
+        <h2 class="section-title">Узнайте стоимость рецензии за 4 шага</h2>
+        <p class="quiz-calc__subtitle">Ответьте на несколько вопросов и получите предварительную оценку</p>
+
+        <!-- Прогресс-бар -->
+        <div class="quiz-calc__progress">
+          <div class="quiz-calc__progress-bar">
+            <div class="quiz-calc__progress-fill" id="quiz-progress-fill"></div>
+          </div>
+          <div class="quiz-calc__progress-steps">
+            <span class="quiz-calc__step-dot active" data-step="1">1</span>
+            <span class="quiz-calc__step-dot" data-step="2">2</span>
+            <span class="quiz-calc__step-dot" data-step="3">3</span>
+            <span class="quiz-calc__step-dot" data-step="4">4</span>
+          </div>
+        </div>
+
+        <!-- Шаг 1: Тип экспертизы -->
+        <div class="quiz-calc__step quiz-calc__step--active" id="quiz-step-1">
+          <h3 class="quiz-calc__step-title">Какой тип экспертизы нужен?</h3>
+          <div class="quiz-calc__options">
+            <label class="quiz-calc__option" data-value="autotech" data-multiplier="1.0">
+              <input type="radio" name="expertise" value="autotech" checked>
+              <span class="quiz-calc__option-icon">📹</span>
+              <span class="quiz-calc__option-label">Видеоаналитика</span>
+              <span class="quiz-calc__option-desc">Временные и пространственные характеристики</span>
+            </label>
+            <label class="quiz-calc__option" data-value="dtp" data-multiplier="1.1">
+              <input type="radio" name="expertise" value="dtp">
+              <span class="quiz-calc__option-icon">🚗</span>
+              <span class="quiz-calc__option-label">Обстоятельства ДТП</span>
+              <span class="quiz-calc__option-desc">Механизмы столкновений, скорости</span>
+            </label>
+            <label class="quiz-calc__option" data-value="technical" data-multiplier="1.15">
+              <input type="radio" name="expertise" value="technical">
+              <span class="quiz-calc__option-icon">⚙️</span>
+              <span class="quiz-calc__option-label">Техническое состояние</span>
+              <span class="quiz-calc__option-desc">Диагностика, неисправности, износ</span>
+            </label>
+            <label class="quiz-calc__option" data-value="trace" data-multiplier="1.2">
+              <input type="radio" name="expertise" value="trace">
+              <span class="quiz-calc__option-icon">🔍</span>
+              <span class="quiz-calc__option-label">Трасологическая</span>
+              <span class="quiz-calc__option-desc">Следы, механизмы воздействий</span>
+            </label>
+            <label class="quiz-calc__option" data-value="autotrade" data-multiplier="1.0">
+              <input type="radio" name="expertise" value="autotrade">
+              <span class="quiz-calc__option-icon">🛠️</span>
+              <span class="quiz-calc__option-label">Оценка стоимости</span>
+              <span class="quiz-calc__option-desc">Стоимость ремонта, утрата стоимости</span>
+            </label>
+            <label class="quiz-calc__option" data-value="commodity" data-multiplier="1.3">
+              <input type="radio" name="expertise" value="commodity">
+              <span class="quiz-calc__option-icon">📦</span>
+              <span class="quiz-calc__option-label">Товароведческая</span>
+              <span class="quiz-calc__option-desc">Дефекты, оценка качества товаров</span>
+            </label>
+          </div>
+          <button class="quiz-calc__next btn btn--large" data-next="2">Далее →</button>
+        </div>
+
+        <!-- Шаг 2: Количество объектов осмотра -->
+        <div class="quiz-calc__step" id="quiz-step-2">
+          <h3 class="quiz-calc__step-title">Сколько объектов осмотра?</h3>
+          <div class="quiz-calc__slider-wrap">
+            <span class="quiz-calc__slider-value" id="quiz-slider-value">1</span>
+            <div class="quiz-calc__slider-track">
+              <input type="range" id="quiz-damage-count" class="quiz-calc__range" min="1" max="15" value="1" step="1"
+                     aria-label="Количество объектов осмотра"
+                     aria-valuemin="1"
+                     aria-valuemax="15"
+                     aria-valuenow="1">
+              <div class="quiz-calc__slider-fill" id="quiz-slider-fill"></div>
+            </div>
+            <div class="quiz-calc__slider-labels">
+              <span>1</span><span>5</span><span>10</span><span>15</span>
+            </div>
+          </div>
+          <div class="quiz-calc__buttons">
+            <button class="quiz-calc__back btn btn--outline-accent" data-back="1">← Назад</button>
+            <button class="quiz-calc__next btn btn--large" data-next="3">Далее →</button>
+          </div>
+        </div>
+
+        <!-- Шаг 3: Сроки -->
+        <div class="quiz-calc__step" id="quiz-step-3">
+          <h3 class="quiz-calc__step-title">Когда нужна рецензия?</h3>
+          <div class="quiz-calc__options quiz-calc__options--two">
+            <label class="quiz-calc__option" data-value="standard" data-multiplier="1.0">
+              <input type="radio" name="timing" value="standard" checked>
+              <span class="quiz-calc__option-icon">📅</span>
+              <span class="quiz-calc__option-label">Стандартные сроки</span>
+              <span class="quiz-calc__option-desc">1–3 рабочих дня</span>
+            </label>
+            <label class="quiz-calc__option" data-value="express" data-multiplier="1.5">
+              <input type="radio" name="timing" value="express">
+              <span class="quiz-calc__option-icon">⚡</span>
+              <span class="quiz-calc__option-label">Экспресс</span>
+              <span class="quiz-calc__option-desc">В течение 24 часов</span>
+            </label>
+          </div>
+          <div class="quiz-calc__price-preview" id="quiz-price-preview" style="display:none; text-align:center; margin: 16px 0 20px; font-size: 1.15rem; font-weight: 600; color: var(--color-accent);"></div>
+          <div class="quiz-calc__buttons">
+            <button class="quiz-calc__back btn btn--outline-accent" data-back="2">← Назад</button>
+            <button class="quiz-calc__next btn btn--large" data-next="4">Рассчитать</button>
+          </div>
+        </div>
+
+        <!-- Шаг 4: Телефон -->
+        <div class="quiz-calc__step" id="quiz-step-4">
+          <h3 class="quiz-calc__step-title">Получите детальную оценку</h3>
+          <p class="quiz-calc__step-desc">Оставьте номер телефона — мы подготовим точный расчёт и перезвоним</p>
+          <div class="quiz-calc__phone-card">
+            <div class="quiz-calc__result-price" id="quiz-result-price-final" style="margin-bottom: 16px;">5 000 ₽</div>
+            <form class="quiz-calc__form" id="quiz-phone-form">
+              <input type="tel" class="quiz-calc__form-input" id="quiz-phone-input" name="phone" placeholder="+7 (___) ___-__-__" required>
+              <button type="submit" class="quiz-calc__form-submit btn btn--large">Получить оценку</button>
+            </form>
+            <p class="quiz-calc__lead-note">Мы перезвоним в течение 15 минут</p>
+          </div>
+          <div class="quiz-calc__buttons">
+            <button class="quiz-calc__back btn btn--outline-accent" data-back="3">← Назад</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Кейс-пример -->
+    <section class="case-example">
+      <div class="case-example__container">
+        <h2 class="section-title">Пример работы</h2>
+        <div class="rc-card case-card">
+          <h3 class="case-card__title">Оспорена экспертиза по ДТП</h3>
+          <p class="case-card__desc">В ходе рецензирования обнаружено 7 существенных методических нарушений, что привело к отмене заключения эксперта в суде.</p>
+          <a href="cases/index.html" class="case-card__link">Смотреть все кейсы →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Блок «Сотрудничество с юрфирмами» -->
+    <section class="partnership">
+      <div class="partnership__container">
+        <h2 class="section-title">Сотрудничество с юридическими фирмами</h2>
+        <div class="partnership__grid">
+          <div class="partnership__item">
+            <h3>Специальные условия</h3>
+            <p>Скидки и приоритетная обработка заявок</p>
+          </div>
+          <div class="partnership__item">
+            <h3>Совместная работа</h3>
+            <p>Интеграция с вашими процессами</p>
+          </div>
+          <div class="partnership__item">
+            <h3>Расширение услуг</h3>
+            <p>Белая этикетка — под вашим брендом</p>
+          </div>
+        </div>
+        <a href="partners/index.html" class="partnership__cta">Подробнее о сотрудничестве</a>
+      </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="reviews">
+      <div class="reviews__container">
+        <h2 class="section-title">Отзывы клиентов</h2>
+        <p class="reviews__subtitle">Оценки на независимых площадках</p>
+        <div class="reviews__grid">
+          <!-- 2GIS -->
+          <div class="review-card">
+            <div class="review-card__header">
+              <div class="review-card__stars">
+                <svg class="star" viewBox="0 0 24 24" fill="#F5A623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="star" viewBox="0 0 24 24" fill="#F5A623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="star" viewBox="0 0 24 24" fill="#F5A623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="star" viewBox="0 0 24 24" fill="#F5A623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="star" viewBox="0 0 24 24" fill="#F5A623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <span class="review-card__rating">5.0</span>
+            </div>
+            <p class="review-card__text">Профессиональный подход к рецензированию судебных экспертиз. Быстро выявили ошибки в заключении эксперта, что помогло выиграть дело.</p>
+            <div class="review-card__source">
+              <a href="https://2gis.ru/barnaul/firm/70000001101039455" target="_blank" rel="noopener" class="review-card__source-link">2GIS</a>
+            </div>
+          </div>
+          <!-- Яндекс.Карты -->
+          <div class="review-card">
+            <div class="review-card__header">
+              <div class="review-card__stars">
+                <svg class="star" viewBox="0 0 24 24" fill="#F5A623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="star" viewBox="0 0 24 24" fill="#F5A623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="star" viewBox="0 0 24 24" fill="#F5A623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="star" viewBox="0 0 24 24" fill="#F5A623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="star" viewBox="0 0 24 24" fill="#F5A623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <span class="review-card__rating">5.0</span>
+            </div>
+            <p class="review-card__text">Обратился за рецензией на экспертизу по ДТП. Эксперты нашли несколько нарушений, экспертизу отменили. Рекомендую.</p>
+            <div class="review-card__source">
+              <a href="https://yandex.ru/maps/org/kabinet_tekhnicheskikh_ekspertiz/120130607500/" target="_blank" rel="noopener" class="review-card__source-link">Яндекс.Карты</a>
+            </div>
+          </div>
+          <!-- Яндекс.Услуги -->
+          <div class="review-card">
+            <div class="review-card__header">
+              <div class="review-card__stars">
+                <svg class="star" viewBox="0 0 24 24" fill="#F5A623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="star" viewBox="0 0 24 24" fill="#F5A623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="star" viewBox="0 0 24 24" fill="#F5A623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="star" viewBox="0 0 24 24" fill="#F5A623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="star" viewBox="0 0 24 24" fill="#F5A623"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <span class="review-card__rating">5.0</span>
+            </div>
+            <p class="review-card__text">Качественная рецензия на товароведческую экспертизу. Всё чётко, по делу, с ссылками на нормативы. Спасибо!</p>
+            <div class="review-card__source">
+              <a href="https://uslugi.yandex.ru/profile/KabinetTekhnicheskikhEhkspertiz-3229611" target="_blank" rel="noopener" class="review-card__source-link">Яндекс.Услуги</a>
+            </div>
+          </div>
+        </div>
+        <div class="reviews__badges">
+          <a href="https://2gis.ru/barnaul/firm/70000001101039455" target="_blank" rel="noopener" class="reviews__badge reviews__badge--2gis">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#00CC00"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-1.5 17.25a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm3-3a7.5 7.5 0 01-6 0 6 6 0 000-3 7.5 7.5 0 016 0 6 6 0 000 3z"/></svg>
+            <span>2GIS</span>
+          </a>
+          <a href="https://yandex.ru/maps/org/kabinet_tekhnicheskikh_ekspertiz/120130607500/" target="_blank" rel="noopener" class="reviews__badge reviews__badge--ya">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFCC00"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0z"/></svg>
+            <span>Яндекс.Карты</span>
+          </a>
+          <a href="https://uslugi.yandex.ru/profile/KabinetTekhnicheskikhEhkspertiz-3229611" target="_blank" rel="noopener" class="reviews__badge reviews__badge--yu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#FC3F1D"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0z"/></svg>
+            <span>Яндекс.Услуги</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <div class="faq__container">
+        <h2 class="section-title">Частые вопросы</h2>
+        <div class="faq__list">
+          <details class="faq__item">
+            <summary class="faq__question">Что такое рецензия на судебную экспертизу?</summary>
+            <div class="faq__answer"><p>Рецензия — это документ, в котором независимый эксперт оценивает качество, полноту и методическую обоснованность заключения судебной экспертизы.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Сколько стоит рецензия?</summary>
+            <div class="faq__answer"><p>Стоимость зависит от типа экспертизы и объёма. Точную цену обсудим после ознакомления с материалами.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Какие сроки подготовки?</summary>
+            <div class="faq__answer"><p>Стандартный срок — 1-3 рабочих дня. Экспресс-разбор — в течение 24 часов.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Принимается ли рецензия в суде?</summary>
+            <div class="faq__answer"><p>Да, рецензия является допустимым доказательством и может быть приобщена к делу.</p></div>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__question">Какие документы нужны для рецензирования?</summary>
+            <div class="faq__answer"><p>Копия заключения эксперта, материалы дела, ходатайство о назначении экспертизы.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Форма заявки -->
+    <section class="request-form" id="form">
+      <div class="request-form__container">
+        <h2 class="section-title">Оставить заявку</h2>
+{"text": "        <form class=\"form\" action=\"#\" method=\"POST\">\n          <input type=\"text\" class=\"form__input\" name=\"name\" placeholder=\"Ваше имя\" required>\n          <input type=\"tel\" class=\"form__input\" name=\"phone\" placeholder=\"Телефон\" required>\n          <label class=\"form__label\">\n            <input type=\"checkbox\" name=\"agree\" required>\n            <span>Я согласен на обработку персональных данных</span>\n          </label>\n          <button type=\"submit\" class=\"form__submit\">Отправить заявку</button>\n        </form>"}
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-root"></div>
+
+  <script src="js/components-loader.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+# IDE
+*.iml
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.gigacode/
+.gitverse/
+
+# Backups
+*.bak
+*~
+
+# Build
+node_modules/

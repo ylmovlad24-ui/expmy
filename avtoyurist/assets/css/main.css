@@ -1,0 +1,41 @@
+/* ===== MAIN — Modular CSS Entry Point (Объединённый avtoyurist + dianomi) ===== */
+/* Import order matters: variables → reset → layout → base → components → pages → utilities */
+
+/* Base */
+@import url('base/variables.css');
+@import url('base/reset.css');
+@import url('base/layout.css');
+@import url('base/responsive.css');
+
+/* Components — avtoyurist */
+@import url('components/header.css');
+@import url('components/hero.css');
+@import url('components/sections.css');
+@import url('components/buttons.css');
+@import url('components/cards.css');
+@import url('components/forms.css');
+@import url('components/tables.css');
+@import url('components/steps.css');
+@import url('components/calculator.css');
+@import url('components/calculator-compact.css');
+@import url('components/sticky-cta.css');
+@import url('components/footer.css');
+@import url('components/reviews.css');
+@import url('components/guarantees.css');
+@import url('components/faq.css');
+@import url('components/contacts.css');
+@import url('components/tabs.css');
+@import url('components/cta-about.css');
+@import url('components/pricing.css');
+
+/* Components — dianomi */
+@import url('components/animations.css');
+@import url('components/services-cards.css');
+@import url('components/case-card.css');
+@import url('components/hero-extended.css');
+@import url('review.css');
+
+/* Pages */
+@import url('utilities/utilities.css');
+@import url('pages/about.css');
+@import url('pages/index.css');

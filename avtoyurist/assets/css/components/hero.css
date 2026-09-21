@@ -1,0 +1,95 @@
+/* ===== HERO ===== */
+
+.hero {
+  padding: 140px 0 80px;
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-bg-alt) 100%);
+  color: var(--white);
+}
+
+.hero__inner {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero__content {
+  max-width: 720px;
+  width: 100%;
+}
+
+.hero__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+
+.hero__subtitle {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--white-85);
+  margin-bottom: 28px;
+}
+
+.hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.hero__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hero__phone-note {
+  color: var(--white-75);
+  font-size: 0.875rem;
+  margin-top: 16px;
+}
+
+/* ===== SERVICE HERO ===== */
+
+.service-hero {
+  padding: 140px 0 80px;
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-bg-alt) 100%);
+  color: var(--white);
+}
+
+.service-hero__title {
+  color: var(--white);
+}
+
+.service-hero__title--privacy {
+  font-size: 1.75rem;
+}
+
+.service-hero__subtitle {
+  text-align: center;
+  font-size: 1.125rem;
+  color: var(--white-75);
+  margin-bottom: 40px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-hero__subtitle--about {
+  font-size: 1.25rem;
+  margin-bottom: 24px;
+}
+
+/* ===== BADGES ===== */
+
+.badge {
+  background: var(--accent);
+  color: var(--white);
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}

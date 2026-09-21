@@ -1,0 +1,705 @@
+/* ===== REVIEW PAGE — Рецензия на судебную экспертизу ===== */
+
+/* ─── Hero ─── */
+
+.review-hero {
+  background: linear-gradient(135deg, var(--review-primary, #2A5B9A) 0%, #1a3a5c 100%);
+  color: #fff;
+  padding: 80px 0 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.review-hero__container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.review-hero__badge-text {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius, 8px);
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.review-hero__title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.review-hero__title-accent {
+  color: var(--accent, #f5a623);
+}
+
+.review-hero__subtitle {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 32px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.review-hero__stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.review-hero__stat {
+  text-align: center;
+}
+
+.review-hero__stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.review-hero__stat-label {
+  font-size: 0.8125rem;
+  opacity: 0.8;
+}
+
+.review-hero__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.review-hero__wave {
+  margin-top: -1px;
+  line-height: 0;
+}
+
+.review-hero__wave svg {
+  width: 100%;
+  height: 60px;
+}
+
+.shape-fill {
+  fill: var(--bg-light, #f8f9fa);
+}
+
+/* ─── Review cards ─── */
+
+.review-cards {
+  padding: 64px 0;
+}
+
+.review-cards__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.review-card__icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.review-card__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.review-card__desc {
+  font-size: 0.9375rem;
+  color: var(--text, #333);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.review-card__link {
+  color: var(--accent, #f5a623);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+
+.review-card__link:hover {
+  text-decoration: underline;
+}
+
+/* ─── Checklist ─── */
+
+.review-checklist {
+  padding: 64px 0;
+  background: var(--bg-light, #f8f9fa);
+}
+
+.review-checklist__list {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.review-checklist__item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: var(--radius, 8px);
+  padding: 20px 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.review-checklist__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  background: var(--success, #28a745);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* ─── Quiz Calculator ─── */
+
+.review-quiz {
+  padding: 64px 0;
+}
+
+.review-quiz__container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.review-quiz__subtitle {
+  text-align: center;
+  color: var(--text-light, #666);
+  margin-top: -16px;
+  margin-bottom: 32px;
+}
+
+.review-quiz__progress {
+  margin-bottom: 40px;
+}
+
+.review-quiz__progress-bar {
+  height: 6px;
+  background: var(--border, #e0e0e0);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.review-quiz__progress-fill {
+  height: 100%;
+  background: var(--accent, #f5a623);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+  width: 0%;
+}
+
+.review-quiz__progress-steps {
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-quiz__step-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--border, #e0e0e0);
+  color: #999;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.review-quiz__step-dot.active {
+  background: var(--accent, #f5a623);
+  color: #fff;
+}
+
+.review-quiz__step-dot.completed {
+  background: var(--success, #28a745);
+  color: #fff;
+}
+
+.review-quiz__step {
+  display: none;
+}
+
+.review-quiz__step--active {
+  display: block;
+}
+
+.review-quiz__step-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.review-quiz__step-desc {
+  text-align: center;
+  color: var(--text-light, #666);
+  margin-bottom: 24px;
+}
+
+.review-quiz__options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.review-quiz__options--two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.review-quiz__option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 16px;
+  border: 2px solid var(--border, #e0e0e0);
+  border-radius: var(--radius, 8px);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  background: #fff;
+}
+
+.review-quiz__option:hover {
+  border-color: var(--accent, #f5a623);
+  box-shadow: 0 4px 12px rgba(245, 166, 35, 0.15);
+}
+
+.review-quiz__option input[type="radio"] {
+  display: none;
+}
+
+.review-quiz__option input[type="radio"]:checked + .review-quiz__option-icon,
+.review-quiz__option:has(input:checked) {
+  border-color: var(--accent, #f5a623);
+  background: rgba(245, 166, 35, 0.05);
+}
+
+.review-quiz__option:has(input:checked) {
+  border-color: var(--accent, #f5a623);
+  background: rgba(245, 166, 35, 0.08);
+  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.2);
+}
+
+.review-quiz__option-icon {
+  font-size: 1.5rem;
+}
+
+.review-quiz__option-label {
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.review-quiz__option-desc {
+  font-size: 0.8125rem;
+  color: var(--text-light, #666);
+}
+
+.review-quiz__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.review-quiz__slider-wrap {
+  max-width: 500px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.review-quiz__slider-value {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--review-primary, #2A5B9A);
+  margin-bottom: 16px;
+  transition: transform 0.15s;
+}
+
+.review-quiz__slider-value.bump {
+  transform: scale(1.2);
+}
+
+.review-quiz__slider-track {
+  position: relative;
+  height: 8px;
+  background: var(--border, #e0e0e0);
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.review-quiz__slider-fill {
+  height: 100%;
+  background: var(--accent, #f5a623);
+  border-radius: 4px;
+  transition: width 0.15s;
+}
+
+.review-quiz__range {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.review-quiz__slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+  color: var(--text-light, #666);
+}
+
+.review-quiz__price-preview {
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--review-primary, #2A5B9A);
+  margin: 16px 0;
+  display: none;
+}
+
+.review-quiz__result-card {
+  background: linear-gradient(135deg, var(--review-primary, #2A5B9A), #1a3a5c);
+  color: #fff;
+  border-radius: var(--radius, 8px);
+  padding: 32px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.review-quiz__result-icon {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.review-quiz__result-title {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.review-quiz__result-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.review-quiz__result-price.pop {
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.review-quiz__result-summary {
+  font-size: 0.9375rem;
+  opacity: 0.8;
+}
+
+.review-quiz__phone-card {
+  background: #fff;
+  border: 1px solid var(--border, #e0e0e0);
+  border-radius: var(--radius, 8px);
+  padding: 32px;
+  text-align: center;
+}
+
+.review-quiz__phone-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.review-quiz__phone-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.review-quiz__phone-desc {
+  font-size: 0.9375rem;
+  color: var(--text-light, #666);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.review-quiz__phone-input-wrap {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.review-quiz__phone-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid var(--border, #e0e0e0);
+  border-radius: var(--radius, 8px);
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.review-quiz__phone-input:focus {
+  outline: none;
+  border-color: var(--accent, #f5a623);
+  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.15);
+}
+
+.review-quiz__phone-secure {
+  font-size: 0.8125rem;
+  color: var(--text-light, #666);
+}
+
+/* ─── Partnership ─── */
+
+.review-partnership {
+  padding: 64px 0;
+  background: var(--bg-light, #f8f9fa);
+}
+
+.review-partnership__container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.review-partnership__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.review-partnership__item h3 {
+  font-size: 1.0625rem;
+  margin-bottom: 8px;
+}
+
+.review-partnership__item p {
+  font-size: 0.9375rem;
+  color: var(--text-light, #666);
+  line-height: 1.5;
+}
+
+.review-partnership__cta {
+  display: inline-block;
+  background: var(--accent, #f5a623);
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: var(--radius, 8px);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.review-partnership__cta:hover {
+  background: #e09520;
+}
+
+/* ─── Reviews section ─── */
+
+.review-reviews {
+  padding: 64px 0;
+}
+
+.review-reviews__container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.review-reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.review-reviews__card {
+  background: #fff;
+  border: 1px solid var(--border, #e0e0e0);
+  border-radius: var(--radius, 8px);
+  padding: 24px;
+  box-shadow: var(--shadow, 0 2px 8px rgba(0, 0, 0, 0.06));
+}
+
+.review-reviews__stars {
+  margin-bottom: 12px;
+}
+
+.review-reviews__star {
+  color: var(--accent, #f5a623);
+  font-size: 1.125rem;
+}
+
+.review-reviews__text {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text, #333);
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.review-reviews__source {
+  font-size: 0.8125rem;
+  color: var(--text-light, #666);
+}
+
+.review-reviews__source a {
+  color: var(--review-primary, #2A5B9A);
+}
+
+/* ─── CTA ─── */
+
+.review-cta {
+  padding: 64px 0;
+  background: linear-gradient(135deg, var(--review-primary, #2A5B9A), #1a3a5c);
+  color: #fff;
+  text-align: center;
+}
+
+.review-cta__container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.review-cta__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.review-cta__text {
+  font-size: 1.0625rem;
+  opacity: 0.9;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.review-cta__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.review-cta__btn-primary {
+  display: inline-block;
+  background: var(--accent, #f5a623);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: var(--radius, 8px);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.review-cta__btn-primary:hover {
+  background: #e09520;
+}
+
+.review-cta__btn-outline {
+  display: inline-block;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: var(--radius, 8px);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.review-cta__btn-outline:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 768px) {
+  .review-hero__title {
+    font-size: 1.5rem;
+  }
+
+  .review-hero__stats {
+    gap: 24px;
+  }
+
+  .review-hero__stat-number {
+    font-size: 1.5rem;
+  }
+
+  .review-cards__grid,
+  .review-quiz__options,
+  .review-quiz__options--two,
+  .review-partnership__grid,
+  .review-reviews__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .review-quiz__phone-input-wrap {
+    flex-direction: column;
+  }
+
+  .review-cta__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .review-hero__title {
+    font-size: 1.25rem;
+  }
+
+  .review-hero__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .review-quiz__buttons {
+    flex-direction: column;
+  }
+}

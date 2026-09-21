@@ -1,0 +1,56 @@
+/* ===== CONTACTS ===== */
+
+.contacts {
+  text-align: center;
+}
+
+.contacts__phone {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 16px;
+  transition: color 0.2s;
+}
+
+.contacts__phone:hover {
+  color: var(--accent-hover);
+}
+
+.contacts__messengers {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+/* Contacts grid (inner page) */
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.contacts-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-item__label {
+  font-size: 0.875rem;
+  color: var(--text-light);
+}
+
+.contact-item__value {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.contacts-map {
+  padding: 48px;
+  background: var(--bg-light);
+  border-radius: var(--radius);
+  text-align: center;
+  color: var(--text-light);
+}

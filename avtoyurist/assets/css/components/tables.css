@@ -1,0 +1,59 @@
+/* ===== TABLES ===== */
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.table thead th {
+  background: var(--primary);
+  color: var(--white);
+  padding: 14px 18px;
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.table tbody td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.table tbody tr:hover {
+  background: var(--accent-bg);
+}
+
+.table tbody tr:nth-child(even) {
+  background: var(--bg-light);
+}
+
+.table tbody tr:nth-child(even):hover {
+  background: var(--accent-bg-hover);
+}
+
+.table--prices thead th {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.table--prices tbody td:first-child {
+  font-weight: 600;
+}
+
+/* ===== COMPARISON TABLE ===== */
+
+.comparison-table__neg {
+  color: var(--primary);
+  opacity: 0.7;
+}
+
+.comparison-table__pos {
+  color: var(--accent);
+  font-weight: 500;
+}

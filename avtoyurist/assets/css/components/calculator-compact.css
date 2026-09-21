@@ -1,0 +1,108 @@
+/* ===== COMPACT CALCULATOR (landing) ===== */
+
+.calculator--compact {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.calculator-compact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.calculator-compact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.calculator-compact__label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--white-60);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.calculator-compact__select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+  transition: border-color 0.2s, background 0.2s;
+  appearance: auto;
+}
+
+.calculator-compact__select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.25);
+}
+
+.calculator-compact__select option {
+  color: #333;
+  background: #fff;
+}
+
+.calculator-compact__field--result {
+  justify-content: flex-end;
+}
+
+.calculator-compact__price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+  padding-bottom: 4px;
+}
+
+.calculator-compact__actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.calculator-compact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 360px;
+  margin: 0;
+  flex: 1;
+}
+
+.calculator-compact__form .form__input {
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #333;
+}
+
+.calculator-compact__form .form__input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.calculator-compact__call {
+  font-size: 0.9375rem;
+  padding: 12px 20px;
+  flex-shrink: 0;
+}
+
+.calculator-compact__note {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--white-40);
+  font-style: italic;
+}
+
+.calculator-compact__note--white75 {
+  color: var(--white-75);
+}

@@ -1,0 +1,60 @@
+/* ===== CSS CUSTOM PROPERTIES (Объединённые avtoyurist + dianomi) ===== */
+
+:root {
+  /* === Palette === */
+  --primary: #2A5B9A;
+  --primary-dark: #1a4070;
+  --accent: #E67E22;
+  --accent-hover: #cf6d15;
+  --text: #333333;
+  --text-light: #666666;
+  --text-secondary: #666666;
+  --bg: #ffffff;
+  --bg-light: #F8F9FA;
+  --border: #E0E4E8;
+  --border-default: #e0e0e0;
+
+  /* === UI tokens === */
+  --radius: 12px;
+  --card-radius: 8px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-button: 0 2px 8px rgba(230, 126, 34, 0.3);
+  --shadow-button-active: 0 1px 3px rgba(230, 126, 34, 0.2);
+  --max-width: 1120px;
+  --header-height: 64px;
+  --section-gap: 72px;
+  --inner-gap: 24px;
+
+  /* === Dark backgrounds (hero / CTA) === */
+  --dark-bg: #2A5B9A;
+  --dark-bg-alt: #1a4070;
+
+  /* === White variants === */
+  --white: #ffffff;
+  --white-75: rgba(255, 255, 255, 0.75);
+  --white-85: rgba(255, 255, 255, 0.85);
+  --white-50: rgba(255, 255, 255, 0.5);
+  --white-60: rgba(255, 255, 255, 0.6);
+  --white-40: rgba(255, 255, 255, 0.4);
+
+  /* === Accent glow === */
+  --accent-glow: rgba(230, 126, 34, 0.15);
+  --accent-bg: rgba(230, 126, 34, 0.05);
+  --accent-bg-hover: rgba(230, 126, 34, 0.08);
+  --accent-bg-soft: rgba(230, 126, 34, 0.1);
+
+  /* === Additional tokens === */
+  --success: #38a169;
+  --danger: #e53e3e;
+  --review-primary: #2A5B9A;
+
+  /* === Transitions & Easing (из dianomi) === */
+  --ease-quick: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-fast: 0.15s;
+  --transition-normal: 0.3s;
+  --transition-slow: 0.5s;
+}

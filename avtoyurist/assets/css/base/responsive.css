@@ -1,0 +1,248 @@
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+@media (min-width: 1025px) {
+  .steps {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 64px 0;
+  }
+
+  .section__title {
+    font-size: 1.75rem;
+    margin-bottom: 36px;
+  }
+
+  .hero,
+  .service-hero {
+    padding: 120px 0 64px;
+  }
+
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stats-grid,
+  .pricing-levels {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .experts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contacts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 56px 0;
+  }
+
+  .section__title {
+    font-size: 1.5rem;
+    margin-bottom: 32px;
+  }
+
+  .hero,
+  .service-hero {
+    padding: 110px 0 56px;
+  }
+
+  .hero__title {
+    font-size: 1.75rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .hero__badges {
+    gap: 8px;
+  }
+
+  .badge {
+    font-size: 0.8125rem;
+    padding: 6px 14px;
+  }
+
+  .hero__buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .steps--compact {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid,
+  .experts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid,
+  .pricing-levels {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tabs__list {
+    flex-wrap: wrap;
+  }
+
+  .header__nav {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    flex-direction: column;
+    padding: 20px 24px;
+    gap: 16px;
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+
+  .header__nav.open {
+    display: flex;
+  }
+
+  .header__burger {
+    display: flex;
+  }
+
+  .header__burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .header__burger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header__burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* Гарантии — одна колонка */
+  .guarantees-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Компактный калькулятор — одна колонка */
+  .calculator-compact__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calculator-compact__field--result {
+    justify-content: flex-start;
+  }
+
+  .calculator-compact__price {
+    font-size: 1.25rem;
+  }
+
+  /* Форма и кнопка звонка — вертикально */
+  .calculator-compact__actions {
+    flex-direction: column;
+  }
+
+  .calculator-compact__form {
+    max-width: 100%;
+  }
+
+  .calculator-compact__call {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Таблица — отступы по бокам */
+  .table-wrapper {
+    margin: 0 -24px;
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .steps--compact {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__title {
+    font-size: 1.5rem;
+  }
+
+  .section__title {
+    font-size: 1.375rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tabs__button {
+    padding: 10px 16px;
+    font-size: 0.875rem;
+  }
+
+  /* Гарантии — уменьшенные отступы */
+  .guarantee-card {
+    padding: 20px;
+  }
+
+  .reviews-links {
+    flex-direction: column;
+  }
+
+  .reviews-links .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,72 @@
+/* Case Card (из dianomi) */
+
+.case-example {
+  padding: 72px 0;
+  background: var(--bg, #fff);
+}
+
+.case-example__container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.case-card {
+  padding: 32px;
+}
+
+.case-card__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary, #2A5B9A);
+  margin-bottom: 12px;
+}
+
+.case-card__desc {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.case-card__link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent, #E67E22);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.case-card__link:hover {
+  color: var(--primary, #2A5B9A);
+}
+
+/* Case grid (для каталога кейсов) */
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 992px) {
+  .case-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .case-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Case tag */
+.case-card__tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--accent-bg-soft, rgba(230, 126, 34, 0.1));
+  color: var(--accent, #E67E22);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}

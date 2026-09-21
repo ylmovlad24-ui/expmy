@@ -1,0 +1,172 @@
+/* ===== CARDS ===== */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Service card */
+.service-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.service-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+.service-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--accent-bg-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.service-card__question {
+  font-size: 0.9375rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.service-card__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.service-card__desc {
+  font-size: 0.9375rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.service-card__link {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: auto;
+  transition: color 0.2s;
+}
+
+.service-card__link:hover {
+  color: var(--accent-hover);
+}
+
+/* Services grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+/* Stat cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 24px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.stat-card__number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.stat-card__label {
+  font-size: 0.875rem;
+  color: var(--text-light);
+}
+
+.stat-card__number--danger {
+  color: var(--danger, #e53e3e);
+}
+
+.stat-card__number--success {
+  color: var(--success, #38a169);
+}
+
+/* Stat items (about page) */
+.stat-item__number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.stat-item__label {
+  font-size: 0.875rem;
+  color: var(--text-light);
+}
+
+/* Experts */
+.experts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.expert-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.expert-card__photo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--bg-light);
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.expert-card__name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.expert-card__role {
+  font-size: 0.875rem;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.expert-card__bio,
+.expert-card__details {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}

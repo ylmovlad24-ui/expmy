@@ -1,0 +1,66 @@
+/* Стили для главной страницы (объединённый проект) */
+
+.section__subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: 16px auto 48px;
+  color: #666;
+  font-size: 1.05rem;
+}
+
+.section__subtitle--mb32 {
+  margin-bottom: 32px;
+}
+
+.section__subtitle--cta {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.stat-card {
+  background: #fff;
+  border: 1px solid var(--border, #E0E4E8);
+  border-radius: var(--card-radius, 8px);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-normal) var(--ease-quick), box-shadow var(--transition-normal);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.stat-card__number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary, #2A5B9A);
+  margin-bottom: 8px;
+}
+
+.stat-card__number--success {
+  color: var(--success, #38a169);
+}
+
+.stat-card__label {
+  font-size: 0.9rem;
+  color: var(--text-secondary, #666);
+  line-height: 1.5;
+}
+
+@media (max-width: 992px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
