@@ -2,40 +2,40 @@
 /* Import order matters: variables → reset → layout → base → components → pages → utilities */
 
 /* Base */
-@import url('base/variables.css');
-@import url('base/reset.css');
-@import url('base/layout.css');
-@import url('base/responsive.css');
+@import url('/assets/css/base/variables.css');
+@import url('/assets/css/base/reset.css');
+@import url('/assets/css/base/layout.css');
+@import url('/assets/css/base/responsive.css');
 
 /* Components — avtoyurist */
-@import url('components/header.css');
-@import url('components/hero.css');
-@import url('components/sections.css');
-@import url('components/buttons.css');
-@import url('components/cards.css');
-@import url('components/forms.css');
-@import url('components/tables.css');
-@import url('components/steps.css');
-@import url('components/calculator.css');
-@import url('components/calculator-compact.css');
-@import url('components/sticky-cta.css');
-@import url('components/footer.css');
-@import url('components/reviews.css');
-@import url('components/guarantees.css');
-@import url('components/faq.css');
-@import url('components/contacts.css');
-@import url('components/tabs.css');
-@import url('components/cta-about.css');
-@import url('components/pricing.css');
+@import url('/assets/css/components/header.css');
+@import url('/assets/css/components/hero.css');
+@import url('/assets/css/components/sections.css');
+@import url('/assets/css/components/buttons.css');
+@import url('/assets/css/components/cards.css');
+@import url('/assets/css/components/forms.css');
+@import url('/assets/css/components/tables.css');
+@import url('/assets/css/components/steps.css');
+@import url('/assets/css/components/calculator.css');
+@import url('/assets/css/components/calculator-compact.css');
+@import url('/assets/css/components/sticky-cta.css');
+@import url('/assets/css/components/footer.css');
+@import url('/assets/css/components/reviews.css');
+@import url('/assets/css/components/guarantees.css');
+@import url('/assets/css/components/faq.css');
+@import url('/assets/css/components/contacts.css');
+@import url('/assets/css/components/tabs.css');
+@import url('/assets/css/components/cta-about.css');
+@import url('/assets/css/components/pricing.css');
 
 /* Components — dianomi */
-@import url('components/animations.css');
-@import url('components/services-cards.css');
-@import url('components/case-card.css');
-@import url('components/hero-extended.css');
-@import url('review.css');
+@import url('/assets/css/components/animations.css');
+@import url('/assets/css/components/services-cards.css');
+@import url('/assets/css/components/case-card.css');
+@import url('/assets/css/components/hero-extended.css');
+@import url('/assets/css/review.css');
 
 /* Pages */
-@import url('utilities/utilities.css');
-@import url('pages/about.css');
-@import url('pages/index.css');
+@import url('/assets/css/utilities/utilities.css');
+@import url('/assets/css/pages/about.css');
+@import url('/assets/css/pages/index.css');
