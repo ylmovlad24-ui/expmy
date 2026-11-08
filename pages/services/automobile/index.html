@@ -11,7 +11,7 @@
 </head>
 <body>
   <a href="#main-content" class="skip-link">Перейти к содержимому</a>
-  @@include('../../components/header.html', {"active": "automobile"})
+  <div id="header-container"></div>
   <main id="main-content">
     <!-- Breadcrumbs -->
     <section class="section section--light" style="padding:16px 0;">
@@ -188,10 +188,11 @@
       </div>
     </section>
   </main>
-  @@include('../../components/footer.html')
+  <div id="footer-container"></div>
   <script src="../../assets/js/lib/utils.js" defer></script>
   <script src="../../assets/js/modules/calculator.js" defer></script>
   <script src="../../assets/js/modules/forms.js" defer></script>
   <script src="../../assets/js/main.js" defer></script>
-</body>
+
+  <script src="../assets/js/modules/components.js" defer></script></body>
 </html>
