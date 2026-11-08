@@ -1,1 +1,0 @@
-put "C:\Users\Анна\IdeaProjects\expmy\assets\js\main.js" "/www/expert.h1n.ru/assets/js/main.js"
