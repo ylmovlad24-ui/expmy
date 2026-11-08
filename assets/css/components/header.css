@@ -294,6 +294,12 @@
   transition: transform 0.3s;
 }
 
+.header__menu-dropdown-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 8px 0;
+}
+
 .header__menu-dropdown.open .header__menu-dropdown-toggle::after {
   transform: rotate(90deg);
 }

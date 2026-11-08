@@ -7,81 +7,101 @@
 
   // Определяем базовый путь в зависимости от глубины страницы
   function getBasePath() {
-    const path = window.location.pathname;
-    if (path.includes('/pages/services/')) return '../../../';
-    if (path.includes('/pages/')) return '../';
+    var path = window.location.pathname;
+    if (path.indexOf('/pages/services/') !== -1) return '../../../';
+    if (path.indexOf('/pages/') !== -1) return '../';
     return '';
   }
 
   // Загрузка HTML-компонента
-  async function loadComponent(filePath, containerId) {
-    try {
-      const basePath = getBasePath();
-      const url = basePath + 'components/' + filePath;
-      const response = await fetch(url);
-      if (!response.ok) throw new Error('Failed to load ' + filePath);
-      const html = await response.text();
-      const container = document.getElementById(containerId);
-      if (container) {
-        container.innerHTML = html;
-        // Инициализируем обработчики после вставки
-        if (filePath === 'header.html') {
-          initHeader();
+  function loadComponent(filePath, containerId) {
+    var basePath = getBasePath();
+    var url = basePath + 'components/' + filePath;
+    
+    fetch(url)
+      .then(function(response) {
+        if (!response.ok) throw new Error('Failed to load ' + filePath);
+        return response.text();
+      })
+      .then(function(html) {
+        var container = document.getElementById(containerId);
+        if (container) {
+          container.innerHTML = html;
+          // Инициализируем обработчики после вставки
+          if (filePath === 'header.html') {
+            initHeader();
+          }
         }
-      }
-    } catch (error) {
-      console.warn('Component load error:', error);
-    }
+      })
+      .catch(function(error) {
+        console.warn('Component load error:', error);
+      });
   }
 
   // Инициализация шапки (бургер-меню, дропдауны)
   function initHeader() {
-    const header = document.querySelector('.header');
+    var header = document.querySelector('.header');
     if (!header) return;
 
-    const burger = header.querySelector('.header__burger');
-    const overlay = header.querySelector('.header__overlay');
-    const panel = header.querySelector('.header__mobile-panel');
+    var burger = header.querySelector('.header__burger');
+    var overlay = header.querySelector('.header__menu-overlay');
+    var panel = header.querySelector('.header__menu-panel');
 
     // Бургер-меню
     if (burger && overlay && panel) {
       burger.addEventListener('click', function() {
-        const isOpen = burger.getAttribute('aria-expanded') === 'true';
+        var isOpen = burger.getAttribute('aria-expanded') === 'true';
         burger.setAttribute('aria-expanded', !isOpen);
-        header.classList.toggle('header--menu-open', !isOpen);
+        
+        if (!isOpen) {
+          // Открываем меню
+          burger.classList.add('active');
+          overlay.style.display = 'block';
+          panel.style.display = 'block';
+          
+          // Анимация
+          setTimeout(function() {
+            overlay.classList.add('active');
+            panel.classList.add('active');
+          }, 10);
+        } else {
+          // Закрываем меню
+          burger.classList.remove('active');
+          overlay.classList.remove('active');
+          panel.classList.remove('active');
+          
+          setTimeout(function() {
+            overlay.style.display = 'none';
+            panel.style.display = 'none';
+          }, 300);
+        }
       });
 
+      // Закрытие по клику на overlay
       overlay.addEventListener('click', function() {
         burger.setAttribute('aria-expanded', 'false');
-        header.classList.remove('header--menu-open');
+        burger.classList.remove('active');
+        overlay.classList.remove('active');
+        panel.classList.remove('active');
+        
+        setTimeout(function() {
+          overlay.style.display = 'none';
+          panel.style.display = 'none';
+        }, 300);
       });
     }
 
     // Мобильные дропдауны
-    const mobileToggles = header.querySelectorAll('.header__mobile-toggle');
+    var mobileToggles = header.querySelectorAll('.header__menu-dropdown-toggle');
     mobileToggles.forEach(function(toggle) {
       toggle.addEventListener('click', function(e) {
         e.preventDefault();
-        const menu = this.nextElementSibling;
-        if (menu) {
-          menu.classList.toggle('header__dropdown-menu--open');
+        e.stopPropagation();
+        var dropdown = this.parentElement;
+        if (dropdown) {
+          dropdown.classList.toggle('open');
         }
       });
-    });
-
-    // Десктопные дропдауны по ховеру
-    const dropdowns = header.querySelectorAll('.header__dropdown');
-    dropdowns.forEach(function(dropdown) {
-      const toggle = dropdown.querySelector('.header__dropdown-toggle');
-      const menu = dropdown.querySelector('.header__dropdown-menu');
-      if (toggle && menu && !dropdown.classList.contains('header__dropdown--mobile')) {
-        dropdown.addEventListener('mouseenter', function() {
-          menu.style.display = 'block';
-        });
-        dropdown.addEventListener('mouseleave', function() {
-          menu.style.display = 'none';
-        });
-      }
     });
   }
 
