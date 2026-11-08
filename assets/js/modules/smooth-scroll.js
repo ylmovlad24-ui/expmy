@@ -31,9 +31,9 @@ var SmoothScroll = (function() {
     if (header) {
       window.addEventListener('scroll', function() {
         if (window.scrollY > 10) {
-          header.style.boxShadow = '0 2px 12px rgba(0,0,0,0.08)';
+          header.classList.add('header--scrolled');
         } else {
-          header.style.boxShadow = 'none';
+          header.classList.remove('header--scrolled');
         }
       }, { passive: true });
     }

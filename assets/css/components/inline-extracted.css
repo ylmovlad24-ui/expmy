@@ -1,0 +1,602 @@
+/* ============================================
+   Utility classes extracted from inline styles
+   Usage: Add these classes to elements and remove inline style attributes
+   ============================================ */
+
+/* --- CTA Button Groups --- */
+.cta-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* --- Hero Subtitle --- */
+.hero-subtitle-lg {
+  font-size: 1.25rem;
+  margin-bottom: 24px;
+}
+
+/* --- Stat Cards Grid --- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stats-grid--wide {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.stats-grid--narrow {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.stats-grid--pricing {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.stats-grid--services {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* --- Stat Card --- */
+.stat-card {
+  text-align: center;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+}
+
+.stat-card--pricing {
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+}
+
+.stat-card--pricing--highlight {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
+  transform: scale(1.02);
+  border-top: 4px solid var(--primary);
+}
+
+/* --- Stat Number --- */
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.stat-number--large {
+  font-size: 2.5rem;
+}
+
+/* --- Stat Label --- */
+.stat-label {
+  color: var(--text-secondary);
+  font-size: .95rem;
+}
+
+.stat-label--small {
+  font-size: .9rem;
+}
+
+/* --- Section Headings --- */
+.section-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.section-heading--sm {
+  font-size: 1.25rem;
+}
+
+.section-heading--cta {
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* --- Contact Value --- */
+.contact-value-link {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* --- Contact Note --- */
+.contact-note {
+  color: var(--text-secondary);
+  font-size: .85rem;
+  margin-top: 4px;
+}
+
+/* --- Messengers --- */
+.messengers {
+  margin-top: 8px;
+}
+
+.messenger--whatsapp {
+  background: #25D366;
+  color: #fff;
+}
+
+.messenger--telegram {
+  background: #0088cc;
+  color: #fff;
+}
+
+/* --- Trust Block --- */
+.trust-block {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 24px;
+}
+
+.trust-block__title {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.trust-block__list {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-left: 20px;
+  font-size: .95rem;
+}
+
+/* --- Form Card --- */
+.form-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
+}
+
+/* --- Form Heading --- */
+.form-heading {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* --- Form Description --- */
+.form-description {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+/* --- Form Submit Button --- */
+.btn--form-submit {
+  font-size: 1.1rem;
+  padding: 16px;
+}
+
+/* --- WhatsApp Link --- */
+.link--whatsapp {
+  color: var(--primary);
+}
+
+/* --- Map Description --- */
+.map-description {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* --- Map Container --- */
+.map-container {
+  min-height: 350px;
+  background: #e2e8f0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+}
+
+/* --- CTA Container --- */
+.cta-container {
+  text-align: center;
+}
+
+/* --- CTA Text --- */
+.cta-text {
+  color: rgba(255, 255, 255, .85);
+  font-size: 1.125rem;
+  margin-bottom: 24px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- CTA Buttons --- */
+.btn--cta-white {
+  background: #fff;
+  color: var(--primary);
+  font-size: 1.125rem;
+  padding: 16px 32px;
+  font-weight: 600;
+}
+
+.btn--cta-whatsapp {
+  background: #25D366;
+  color: #fff;
+  font-size: 1.125rem;
+  padding: 16px 32px;
+  font-weight: 600;
+}
+
+.btn--cta-outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  font-size: 1.125rem;
+  padding: 16px 32px;
+  font-weight: 600;
+}
+
+/* --- Header Link Review --- */
+.header-link--review {
+  color: var(--review-primary, #2A5B9A);
+  font-weight: 600;
+}
+
+/* --- ROI Section --- */
+.roi-card {
+  background: linear-gradient(135deg, #1a56db, #3b82f6);
+  border-radius: 16px;
+  padding: 40px;
+  color: #fff;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* .faq-group moved to faq.css */
+
+/* --- FAQ Answer Text --- */
+.faq-answer-text {
+  margin-bottom: 12px;
+}
+
+.faq-answer-secondary {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.faq-answer-secondary--mt {
+  margin-top: 8px;
+}
+
+/* --- FAQ Highlight --- */
+.faq-highlight {
+  background: #fef3c7;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: .95rem;
+}
+
+/* --- FAQ Table --- */
+.faq-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: .95rem;
+}
+
+.faq-table th,
+.faq-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-table tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+/* --- Details/Summary (FAQ) --- */
+.faq-details {
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
+}
+
+.faq-details__summary {
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.faq-details__content {
+  margin-top: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* --- Calculator Checkbox --- */
+.calc-checkbox-label {
+  margin: 12px 0;
+}
+
+/* --- Pricing Card Header Row --- */
+.pricing-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.pricing-card-header--compact {
+  margin-bottom: 8px;
+}
+
+/* --- Pricing Card --- */
+.pricing-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+  border-top: 4px solid var(--text-secondary);
+}
+
+.pricing-card--highlight {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
+  border-top: 4px solid var(--primary);
+  transform: scale(1.02);
+}
+
+.pricing-card--success {
+  border-top: 4px solid var(--success);
+}
+
+/* --- Recommended Badge --- */
+.recommended-badge {
+  background: var(--primary);
+  color: #fff;
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: .75rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* --- Pricing List --- */
+.pricing-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricing-list__item {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* --- Service Card --- */
+.service-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- Service Card Price --- */
+.service-card__price {
+  font-weight: 700;
+  color: var(--primary);
+  white-space: nowrap;
+  margin-left: 16px;
+}
+
+.service-card__price--success {
+  color: var(--success);
+}
+
+/* --- Full-width Button --- */
+.btn--full-width {
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+}
+
+/* --- Button Outline Primary --- */
+.btn--outline-primary {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+/* --- Button Outline Success --- */
+.btn--outline-success {
+  color: var(--success);
+  border-color: var(--success);
+}
+
+/* --- Table Container --- */
+.table-container {
+  overflow-x: auto;
+  margin-top: 32px;
+}
+
+/* --- Pricing Table --- */
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.pricing-table th {
+  background: var(--primary);
+  color: #fff;
+  text-align: left;
+  padding: 14px 16px;
+}
+
+.pricing-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.pricing-table td--bold {
+  font-weight: 600;
+}
+
+/* --- Table Note --- */
+.table-note {
+  margin-top: 16px;
+  color: var(--text-secondary);
+  font-size: .9rem;
+}
+
+/* --- Extra List Items --- */
+.extra-list__item--disabled {
+  color: var(--text-light);
+}
+
+/* --- Section Title (shared) --- */
+.section-title-lg {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+/* --- Section Subtitle (shared) --- */
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: .95rem;
+  margin-top: 8px;
+}
+
+/* --- Flex List (service cards) --- */
+.flex-list--small {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 8px;
+  font-size: 0.875rem;
+  color: var(--text-light);
+}
+
+/* --- Section Heading White Large --- */
+.section-heading--white-lg {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+/* --- Stat Label Muted --- */
+.stat-label--muted {
+  font-size: .95rem;
+  opacity: .85;
+}
+
+/* --- FAQ Lists --- */
+.faq-list {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-left: 20px;
+  margin-bottom: 16px;
+}
+
+.faq-list--compact {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-left: 20px;
+  margin-bottom: 12px;
+}
+
+.faq-list--mt {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+/* --- Table Column Spans --- */
+.col-span-30 {
+  width: 30%;
+}
+
+.col-span-35 {
+  width: 35%;
+}
+
+/* --- H3 Heading --- */
+.h3-heading {
+  font-size: 1.25rem;
+}
+
+/* --- Pricing Divider --- */
+.pricing-divider {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+
+/* --- Price Success Label --- */
+.price-success-label {
+  color: var(--success);
+  margin-bottom: 4px;
+}
+
+/* --- Text Success --- */
+.text-success {
+  color: var(--success);
+}
+
+/* --- Text Semibold Small --- */
+.text-semibold-sm {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* --- Margin Bottom 0 --- */
+.mb-0 {
+  margin-bottom: 0;
+}
+
+/* --- Link Primary Bold --- */
+.link--primary-bold {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* --- Form List --- */
+.form-list {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-left: 20px;
+  margin-bottom: 24px;
+}
+
+/* --- Margin Top 48 --- */
+.mt-48 {
+  margin-top: 48px;
+}
+
+/* --- Stat Label Margin Bottom 16 --- */
+.stat-label--mb-16 {
+  margin-bottom: 16px;
+}
+
+/* --- Stat Number Success --- */
+.stat-number--success {
+  color: var(--success);
+  margin-bottom: 4px;
+}
+
+/* --- Text Accent --- */
+.text-accent {
+  color: var(--accent);
+}

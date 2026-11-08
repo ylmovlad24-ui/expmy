@@ -1,53 +1,114 @@
 /**
- * Burger menu module
- * Uses event delegation on header for efficiency
+ * Burger Menu Module - Полностью переписанная версия
+ * Работает на планшетах и мобильных устройствах (≤1024px)
  */
-var BurgerMenu = (function() {
+(function() {
   'use strict';
 
-  var header = null;
   var burger = null;
-  var nav = null;
+  var menuPanel = null;
+  var menuOverlay = null;
+  var isOpen = false;
 
   function init() {
-    header = document.querySelector('.header');
-    if (!header) return;
+    burger = document.querySelector('.header__burger');
+    menuPanel = document.querySelector('.header__menu-panel');
+    menuOverlay = document.querySelector('.header__menu-overlay');
 
-    burger = header.querySelector('.header__burger');
-    nav = header.querySelector('.header__nav');
+    if (!burger || !menuPanel || !menuOverlay) {
+      console.warn('Burger menu elements not found');
+      return;
+    }
 
-    if (!burger || !nav) return;
+    // Click on burger to toggle
+    burger.addEventListener('click', function(e) {
+      e.preventDefault();
+      toggleMenu();
+    });
 
-    // Single delegated handler on nav
-    nav.addEventListener('click', function(e) {
-      var link = e.target.closest('.header__link');
-      if (link) {
+    // Click on overlay to close
+    menuOverlay.addEventListener('click', function() {
+      closeMenu();
+    });
+
+    // Click on dropdown toggle to expand/collapse
+    var dropdownToggles = menuPanel.querySelectorAll('.header__menu-dropdown-toggle');
+    dropdownToggles.forEach(function(toggle) {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var dropdown = toggle.closest('.header__menu-dropdown');
+        if (dropdown) {
+          dropdown.classList.toggle('open');
+        }
+      });
+    });
+
+    // Close on link click
+    var menuLinks = menuPanel.querySelectorAll('.header__menu-dropdown-item a, .header__menu-nav > .header__link');
+    menuLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        closeMenu();
+      });
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && isOpen) {
         closeMenu();
       }
     });
 
-    burger.addEventListener('click', function() {
-      toggleMenu();
+    // Close on window resize to desktop
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 1024 && isOpen) {
+        closeMenu();
+      }
+    });
+  }
+
+  function openMenu() {
+    isOpen = true;
+    burger.classList.add('active');
+    burger.setAttribute('aria-label', 'Закрыть меню');
+    menuPanel.classList.add('active');
+    menuOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    isOpen = false;
+    burger.classList.remove('active');
+    burger.setAttribute('aria-label', 'Открыть меню');
+    menuPanel.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+    
+    // Close all dropdowns
+    var openDropdowns = menuPanel.querySelectorAll('.header__menu-dropdown.open');
+    openDropdowns.forEach(function(dropdown) {
+      dropdown.classList.remove('open');
     });
   }
 
   function toggleMenu() {
-    burger.classList.toggle('active');
-    nav.classList.toggle('open');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   }
 
-  function closeMenu() {
-    burger.classList.remove('active');
-    nav.classList.remove('open');
+  // Export to global
+  if (typeof window.BurgerMenu !== 'undefined') {
+    console.warn('BurgerMenu module already loaded');
+  } else {
+    window.BurgerMenu = {
+      init: init,
+      openMenu: openMenu,
+      closeMenu: closeMenu,
+      toggleMenu: toggleMenu,
+      isOpen: function() { return isOpen; }
+    };
   }
-
-  function isOpen() {
-    return nav && nav.classList.contains('open');
-  }
-
-  return {
-    init: init,
-    closeMenu: closeMenu,
-    isOpen: isOpen
-  };
 })();

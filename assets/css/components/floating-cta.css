@@ -1,0 +1,131 @@
+/* ===== STICKY FLOATING CALL BUTTON ===== */
+
+.floating-cta {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #E67E22 0%, #d35400 100%);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  box-shadow: 0 4px 20px rgba(230, 126, 34, 0.4);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: floating-cta-pulse 2s ease-in-out infinite;
+}
+
+.floating-cta:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(230, 126, 34, 0.5);
+  color: #fff;
+  animation: none;
+}
+
+.floating-cta:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.floating-cta__icon {
+  font-size: 1.5rem;
+  animation: phone-ring 2s ease-in-out infinite;
+}
+
+.floating-cta__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.floating-cta__label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.floating-cta__number {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Pulse animation */
+@keyframes floating-cta-pulse {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(230, 126, 34, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 30px rgba(230, 126, 34, 0.6), 0 0 0 8px rgba(230, 126, 34, 0.1);
+  }
+}
+
+@keyframes phone-ring {
+  0%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(-15deg); }
+  20%, 40% { transform: rotate(15deg); }
+  50% { transform: rotate(0deg); }
+}
+
+/* Show on mobile only */
+@media (min-width: 1025px) {
+  .floating-cta {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-cta {
+    bottom: 16px;
+    right: 16px;
+    padding: 14px 20px;
+  }
+  
+  .floating-cta__text {
+    display: none;
+  }
+  
+  .floating-cta {
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border-radius: 50%;
+    justify-content: center;
+  }
+  
+  .floating-cta__icon {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .floating-cta {
+    bottom: 12px;
+    right: 12px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .floating-cta__icon {
+    font-size: 1.5rem;
+  }
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .floating-cta {
+    animation: none;
+  }
+  
+  .floating-cta__icon {
+    animation: none;
+  }
+  
+  @keyframes floating-cta-pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(230, 126, 34, 0.4); }
+    50% { box-shadow: 0 4px 30px rgba(230, 126, 34, 0.6); }
+  }
+}

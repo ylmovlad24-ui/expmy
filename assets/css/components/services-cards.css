@@ -15,13 +15,33 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  margin-bottom: 48px;
 }
 
-.services-cards__grid a.rc-card {
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+
+
+.rc-card__icon {
+  font-size: 2rem;
+}
+
+.rc-card__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary, #2A5B9A);
+  margin: 0;
+}
+
+.rc-card__desc {
+  font-size: 0.95rem;
+  color: var(--text-light, #666666);
+  flex-grow: 1;
+  margin: 0;
+}
+
+.rc-card__link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent, #E67E22);
 }
 
 /* Responsive */

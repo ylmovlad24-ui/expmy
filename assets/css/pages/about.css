@@ -160,46 +160,7 @@
   font-weight: 600;
 }
 
-/* CTA section overrides */
-.section__title--cta {
-  color: #fff;
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-
-.section__subtitle--cta {
-  color: rgba(255, 255, 255, .85);
-  font-size: 1.125rem;
-  margin-bottom: 24px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cta-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-}
-
-.btn--white {
-  background: #fff;
-  color: var(--primary);
-  font-size: 1.125rem;
-  padding: 16px 32px;
-  font-weight: 600;
-}
-
-.btn--white-outline {
-  background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-  font-size: 1.125rem;
-  padding: 16px 32px;
-  font-weight: 600;
-}
+/* CTA classes moved to sections.css and buttons.css to avoid duplicates */
 
 /* ===== PRIVACY PAGE: HERO TITLE VARIANT ===== */
 .service-hero__title--privacy {

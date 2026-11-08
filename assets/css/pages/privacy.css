@@ -1,0 +1,56 @@
+/* Privacy Page Styles */
+
+.privacy-content {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.privacy-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+.privacy-content h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.privacy-content p,
+.privacy-content ul,
+.privacy-content ol {
+  margin-bottom: 16px;
+}
+
+.privacy-content ul,
+.privacy-content ol {
+  padding-left: 24px;
+}
+
+.privacy-content a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.privacy-content a:hover {
+  color: var(--primary-dark);
+}
+
+.privacy-back {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.privacy-back:hover {
+  text-decoration: underline;
+}

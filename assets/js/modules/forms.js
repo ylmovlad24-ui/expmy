@@ -13,7 +13,6 @@ var FormHandler = (function() {
     var toast = document.createElement('div');
     toast.className = 'toast-notification toast-' + (type || 'success');
     toast.textContent = message;
-    toast.style.cssText = 'position:fixed;bottom:24px;right:24px;padding:16px 24px;border-radius:8px;color:#fff;font-weight:600;z-index:99999;animation:fadeIn 0.3s;';
     toast.style.background = type === 'error' ? 'var(--danger, #dc3545)' : 'var(--success, #28a745)';
     document.body.appendChild(toast);
 

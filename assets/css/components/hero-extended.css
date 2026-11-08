@@ -105,12 +105,7 @@
   opacity: 0.9;
 }
 
-.hero__buttons {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  margin-top: 32px;
-}
+/* .hero__buttons moved to hero.css to avoid duplicate */
 
 .hero__cta {
   display: inline-flex;

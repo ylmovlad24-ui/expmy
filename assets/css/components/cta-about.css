@@ -48,15 +48,12 @@
   font-size: 1rem;
   line-height: 1.7;
   color: var(--text);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .about-content p {
   margin-bottom: 16px;
-}
-
-.about-content {
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 .about-content__title {

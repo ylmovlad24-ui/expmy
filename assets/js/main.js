@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       var scrollPercent = (scrollTop / docHeight) * 100;
-      scrollProgress.style.width = scrollPercent + '%';
+      scrollProgress.style.setProperty('--scroll-width', scrollPercent + '%');
     });
   }
 

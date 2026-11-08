@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://autoexpert.ru/img/og-faq.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@autoexpert">
-  <meta name="twitter:image" content="https://autoexpert.ru/assets/og-image-1200x630.jpg">" content="https://autoexpert.ru/img/og-faq.jpg">
+  <meta name="twitter:image" content="https://autoexpert.ru/img/og-faq.jpg">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -42,7 +42,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/components/inline-extracted.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -68,13 +69,14 @@
   </header>
 
   <!-- Hero -->
-  <section class="service-hero" id="main-content">
+  <main id="main-content">
+  <section class="service-hero">
     <div class="container">
       <h1 class="hero__title service-hero__title">Ответы на вопросы, которые мешают вам действовать</h1>
-      <p class="service-hero__subtitle" style="font-size:1.25rem;margin-bottom:24px;">Вы читаете это, потому что страховая занизил payout, дилер отказал в гарантии, или суд не принял чужую экспертизу. Ниже — честные ответы. Без воды.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;">
-        <a href="tel:+79619962067" class="btn btn--primary" style="font-size:1.125rem;padding:16px 32px;">📞 Задать свой вопрос</a>
-        <a href="../pages/cases/" class="btn btn--outline" style="font-size:1.125rem;padding:16px 32px;color:var(--white);border-color:var(--white);">Смотреть кейсы</a>
+      <p class="service-hero__subtitle hero-subtitle-lg">Вы читаете это, потому что страховая занизил payout, дилер отказал в гарантии, или суд не принял чужую экспертизу. Ниже — честные ответы. Без воды.</p>
+      <div class="cta-btn-group">
+        <a href="tel:+79619962067" class="btn btn--primary btn--cta-white">📞 Задать свой вопрос</a>
+        <a href="../pages/cases/" class="btn btn--outline btn--cta-outline">Смотреть кейсы</a>
       </div>
     </div>
   </section>
@@ -82,20 +84,20 @@
   <!-- ROI Section -->
   <section class="section section--light">
     <div class="container">
-      <div style="background:linear-gradient(135deg,#1a56db,#3b82f6);border-radius:16px;padding:40px;color:#fff;text-align:center;max-width:800px;margin:0 auto;">
-        <h2 style="font-size:1.75rem;font-weight:700;margin-bottom:24px;">💰 Каждый день без экспертизы — это потерянные деньги</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;margin-top:24px;">
+      <div class="roi-card">
+        <h2 class="section-heading--white-lg">💰 Каждый день без экспертизы — это потерянные деньги</h2>
+        <div class="stats-grid stats-grid--narrow">
           <div>
-            <div style="font-size:2.5rem;font-weight:800;">+340 000 ₽</div>
-            <p style="opacity:.85;font-size:.95rem;">Средний возврат клиенту</p>
+            <div class="stat-number stat-number--large">+340 000 ₽</div>
+            <p class="stat-label--muted">Средний возврат клиенту</p>
           </div>
           <div>
-            <div style="font-size:2.5rem;font-weight:800;">10×</div>
-            <p style="opacity:.85;font-size:.95rem;">ROI на стоимость экспертизы</p>
+            <div class="stat-number stat-number--large">10×</div>
+            <p class="stat-label--muted">ROI на стоимость экспертизы</p>
           </div>
           <div>
-            <div style="font-size:2.5rem;font-weight:800;">93%</div>
-            <p style="opacity:.85;font-size:.95rem;">Дел выиграны</p>
+            <div class="stat-number stat-number--large">93%</div>
+            <p class="stat-label--muted">Дел выиграны</p>
           </div>
         </div>
       </div>
@@ -108,8 +110,8 @@
       <div class="faq-section">
 
         <!-- Блок 1: Деньги и выгода -->
-        <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:24px;">💰 Деньги и выгода</h2>
-        <div class="faq-group" style="margin-bottom:48px;">
+        <h2 class="section-heading">💰 Деньги и выгода</h2>
+        <div class="faq-group">
 
           <div class="faq-item">
             <button class="faq-item__question" aria-expanded="false">
@@ -117,14 +119,14 @@
               <span class="faq-item__icon"></span>
             </button>
             <div class="faq-item__answer">
-              <p style="margin-bottom:12px;"><strong>Средний возврат — +340 000 ₽.</strong> Но давайте честно: всё зависит от вашего случая.</p>
-              <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:12px;">Реальные примеры наших клиентов за последний год:</p>
-              <ul style="color:var(--text-secondary);line-height:1.8;margin-left:20px;margin-bottom:16px;">
+              <p class="faq-answer-text"><strong>Средний возврат — +340 000 ₽.</strong> Но давайте честно: всё зависит от вашего случая.</p>
+              <p class="faq-answer-secondary">Реальные примеры наших клиентов за последний год:</p>
+              <ul class="faq-list">
                 <li>Клиент 1: Страховая выплатила 180 000 ₽. Экспертиза показала — 460 000 ₽. <strong>Возврат: +280 000 ₽</strong></li>
                 <li>Клиент 2: Дилер отказал в гарантии. Экспертиза доказала брак. <strong>Возмещение: +195 000 ₽</strong></li>
                 <li>Клиент 3: УТС после ДТП на новом авто. <strong>Выплата: +120 000 ₽</strong></li>
               </ul>
-              <p style="background:#fef3c7;padding:12px 16px;border-radius:8px;font-size:.95rem;"><strong>👉 Мы оценим ваш случай БЕСПЛАТНО за 15 минут.</strong> Скажем точную цифру — сколько вы можете вернуть. Без обязательств.</p>
+              <p class="faq-highlight"><strong>👉 Мы оценим ваш случай БЕСПЛАТНО за 15 минут.</strong> Скажем точную цифру — сколько вы можете вернуть. Без обязательств.</p>
             </div>
           </div>
 
@@ -135,7 +137,7 @@
             </button>
             <div class="faq-item__answer">
               <p>Перед началом работы мы честно оцениваем шансы. Если наши эксперты видят, что экспертиза не покажет виновную сторону — <strong>мы сразу говорим об этом и предлагаем альтернативу</strong>.</p>
-              <p style="color:var(--text-secondary);line-height:1.7;margin-top:8px;">Кроме того, мы даём <strong>гарантию возврата 100% оплаты</strong>, если экспертиза не выявит расхождений со страховым заключением. Вы не рискуете ни копейки.</p>
+              <p class="faq-answer-secondary faq-answer-secondary--mt">Кроме того, мы даём <strong>гарантию возврата 100% оплаты</strong>, если экспертиза не выявит расхождений со страховым заключением. Вы не рискуете ни копейки.</p>
             </div>
           </div>
 
@@ -146,15 +148,15 @@
             </button>
             <div class="faq-item__answer">
               <p><strong>Средний ROI — 10×.</strong> Вы тратите 20 000–40 000 ₽ на экспертизу и получаете возврат в 200 000–500 000 ₽. Это не маркетинг — это статистика за 10 лет.</p>
-              <p style="color:var(--text-secondary);line-height:1.7;margin-top:8px;">Если страховая выплатила вам меньше на 150 000 ₽ — экспертиза окупится уже на первом случае, даже если вы потратите на неё все 40 000 ₽.</p>
+              <p class="faq-answer-secondary faq-answer-secondary--mt">Если страховая выплатила вам меньше на 150 000 ₽ — экспертиза окупится уже на первом случае, даже если вы потратите на неё все 40 000 ₽.</p>
             </div>
           </div>
 
         </div>
 
         <!-- Блок 2: Суды и документы -->
-        <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:24px;">⚖️ Суды и документы</h2>
-        <div class="faq-group" style="margin-bottom:48px;">
+        <h2 class="section-heading">⚖️ Суды и документы</h2>
+        <div class="faq-group">
 
           <div class="faq-item">
             <button class="faq-item__question" aria-expanded="false">
@@ -163,13 +165,13 @@
             </button>
             <div class="faq-item__answer">
               <p><strong>95% наших заключений принимаются судами с первого раза.</strong> Почему так высоко?</p>
-              <ul style="color:var(--text-secondary);line-height:1.8;margin-left:20px;margin-bottom:12px;">
+              <ul class="faq-list--compact">
                 <li>Все эксперты в <strong>реестре Минюста РФ</strong></li>
                 <li>Работаем строго по <strong>ФЗ-73</strong></li>
                 <li>Каждое заключение проходит <strong>внутреннюю проверку</strong> перед выдачей</li>
                 <li>Наши эксперты <strong>лично выступают в суде</strong>, если оппонент оспаривает</li>
               </ul>
-              <p style="color:var(--text-secondary);line-height:1.7;">За 10 лет — всего 5 случаев, когда суд не принял заключение. Во всех 5 мы добились пересмотра на апелляции.</p>
+              <p class="faq-answer-secondary">За 10 лет — всего 5 случаев, когда суд не принял заключение. Во всех 5 мы добились пересмотра на апелляции.</p>
             </div>
           </div>
 
@@ -180,7 +182,7 @@
             </button>
             <div class="faq-item__answer">
               <p><strong>Да, и это наша специализация.</strong> Страховая экспертиза — почти всегда занижена на 30–60%. Судебная экспертиза оппонента — часто содержит методические ошибки.</p>
-              <p style="color:var(--text-secondary);line-height:1.7;margin-top:8px;">Наша рецензия на чужую экспертизу — это отдельная услуга (входит в Продвинутый пакет). Мы находим ошибки, которые позволяют полностью или частично отклонить чужое заключение. <strong>Средний прирост выплаты после рецензии: +180 000 ₽.</strong></p>
+              <p class="faq-answer-secondary faq-answer-secondary--mt">Наша рецензия на чужую экспертизу — это отдельная услуга (входит в Продвинутый пакет). Мы находим ошибки, которые позволяют полностью или частично отклонить чужое заключение. <strong>Средний прирост выплаты после рецензии: +180 000 ₽.</strong></p>
             </div>
           </div>
 
@@ -191,7 +193,7 @@
             </button>
             <div class="faq-item__answer">
               <p>Это стандартная ситуация. Именно для этого нужна независимая экспертиза. С нашим заключением мы:</p>
-              <ul style="color:var(--text-secondary);line-height:1.8;margin-left:20px;margin-bottom:12px;">
+              <ul class="faq-list--compact">
                 <li>Пишем юридически грамотную претензию</li>
                 <li>Подаём иск в суд</li>
                 <li>Представляем ваши интересы в зале</li>
@@ -204,8 +206,8 @@
         </div>
 
         <!-- Блок 3: Сроки и процесс -->
-        <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:24px;">📅 Сроки и процесс</h2>
-        <div class="faq-group" style="margin-bottom:48px;">
+        <h2 class="section-heading">📅 Сроки и процесс</h2>
+        <div class="faq-group">
 
           <div class="faq-item">
             <button class="faq-item__question" aria-expanded="false">
@@ -214,15 +216,15 @@
             </button>
             <div class="faq-item__answer">
               <p>Типичный сценарий:</p>
-              <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:.95rem;">
-                <tr style="background:#f8fafc;"><td style="padding:10px 14px;border-bottom:1px solid var(--border);"><strong>Этап</strong></td><td style="padding:10px 14px;border-bottom:1px solid var(--border);"><strong>Срок</strong></td></tr>
-                <tr><td style="padding:10px 14px;border-bottom:1px solid var(--border);">Консультация + оценка шансов</td><td style="padding:10px 14px;border-bottom:1px solid var(--border);"><strong>15 минут</strong> (бесплатно)</td></tr>
-                <tr style="background:#f8fafc;"><td style="padding:10px 14px;border-bottom:1px solid var(--border);">Проведение экспертизы</td><td style="padding:10px 14px;border-bottom:1px solid var(--border);">5–15 рабочих дней</td></tr>
-                <tr><td style="padding:10px 14px;border-bottom:1px solid var(--border);">Выдача заключения</td><td style="padding:10px 14px;border-bottom:1px solid var(--border);">В день готовности</td></tr>
-                <tr style="background:#f8fafc;"><td style="padding:10px 14px;border-bottom:1px solid var(--border);">Претензия страховой</td><td style="padding:10px 14px;border-bottom:1px solid var(--border);">3–5 дней</td></tr>
-                <tr><td style="padding:10px 14px;border-bottom:1px solid var(--border);">Суд (если нужно)</td><td style="padding:10px 14px;border-bottom:1px solid var(--border);">1–3 месяца</td></tr>
+              <table class="faq-table">
+                <tr><td><strong>Этап</strong></td><td><strong>Срок</strong></td></tr>
+                <tr><td>Консультация + оценка шансов</td><td><strong>15 минут</strong> (бесплатно)</td></tr>
+                <tr><td>Проведение экспертизы</td><td>5–15 рабочих дней</td></tr>
+                <tr><td>Выдача заключения</td><td>В день готовности</td></tr>
+                <tr><td>Претензия страховой</td><td>3–5 дней</td></tr>
+                <tr><td>Суд (если нужно)</td><td>1–3 месяца</td></tr>
               </table>
-              <p style="color:var(--text-secondary);line-height:1.7;">От консультации до денег — в среднем <strong>2–4 месяца</strong>. Но каждый день вы получаете поддержку нашего юриста.</p>
+              <p class="faq-answer-secondary">От консультации до денег — в среднем <strong>2–4 месяца</strong>. Но каждый день вы получаете поддержку нашего юриста.</p>
             </div>
           </div>
 
@@ -233,7 +235,7 @@
             </button>
             <div class="faq-item__answer">
               <p><strong>Да, в 80% случаев — можно.</strong> Мы проводим экспертизу по:</p>
-              <ul style="color:var(--text-secondary);line-height:1.8;margin-left:20px;margin-bottom:12px;">
+              <ul class="faq-list--compact">
                 <li>Фото- и видеоматериалам (с регистратора, со смартфона)</li>
                 <li>Схеме ДТП и акт осмотра</li>
                 <li>Страховому заключению</li>
@@ -251,15 +253,15 @@
             </button>
             <div class="faq-item__answer">
               <p><strong>Консультация — онлайн за 15 минут.</strong> Вы звоните или пишете в WhatsApp/Telegram, описываете ситуацию — и через 15 минут знаете, сколько можете получить и стоит ли начинать.</p>
-              <p style="color:var(--text-secondary);line-height:1.7;margin-top:8px;">Для самой экспертизы — да, нужен доступ к авто. Но мы выезжаем к вам (дом, работа, СТО) или вы приезжаете к нам. <strong>Бесплатно.</strong></p>
+              <p class="faq-answer-secondary faq-answer-secondary--mt">Для самой экспертизы — да, нужен доступ к авто. Но мы выезжаем к вам (дом, работа, СТО) или вы приезжаете к нам. <strong>Бесплатно.</strong></p>
             </div>
           </div>
 
         </div>
 
         <!-- Блок 4: Доверие -->
-        <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:24px;">🤝 Доверие и гарантии</h2>
-        <div class="faq-group" style="margin-bottom:48px;">
+        <h2 class="section-heading">🤝 Доверие и гарантии</h2>
+        <div class="faq-group">
 
           <div class="faq-item">
             <button class="faq-item__question" aria-expanded="false">
@@ -268,12 +270,12 @@
             </button>
             <div class="faq-item__answer">
               <p>Полное понимание. Рынок переполнен посредниками. Вот факты:</p>
-              <ul style="color:var(--text-secondary);line-height:1.8;margin-left:20px;margin-bottom:12px;">
+              <ul class="faq-list--compact">
                 <li>📜 Все эксперты в <strong>реестре Минюста РФ</strong> — проверка на сайте minjust.ru</li>
                 <li>📋 Договор с фиксированной ценой — <strong>никаких доплат</strong></li>
                 <li>🏢 Работаем с 2016 года, 1 200+ экспертиз, рейтинг 4.9</li>
                 <li>💳 Оплата после оценки шансов — вы знаете результат до оплаты</li>
-                <li>📞 Прямой номер эксперта: <a href="tel:+79619962067" style="color:var(--primary);font-weight:600;">+7 (961) 996-20-67</a></li>
+                <li>📞 Прямой номер эксперта: <a href="tel:+79619962067" class="link--whatsapp link--primary-bold">+7 (961) 996-20-67</a></li>
               </ul>
             </div>
           </div>
@@ -285,11 +287,11 @@
             </button>
             <div class="faq-item__answer">
               <p><strong>Да, рассрочка на 2–3 месяца без процентов.</strong> Мы понимаем, что не все готовы платить 40 000 ₽ сразу. Поэтому разбиваем оплату на этапы:</p>
-              <ul style="color:var(--text-secondary);line-height:1.8;margin-left:20px;margin-bottom:12px;">
+              <ul class="faq-list--compact">
                 <li>50% — при заключении договора</li>
                 <li>50% — после выдачи заключения</li>
               </ul>
-              <p style="color:var(--text-secondary);line-height:1.7;">А если вы выиграете дело — <strong>суд взыщет наши расходы с оппонента</strong>. То есть экспертиза может оказаться вам бесплатно.</p>
+              <p class="faq-answer-secondary">А если вы выиграете дело — <strong>суд взыщет наши расходы с оппонента</strong>. То есть экспертиза может оказаться вам бесплатно.</p>
             </div>
           </div>
 
@@ -300,15 +302,15 @@
             </button>
             <div class="faq-item__answer">
               <p>Заключение <strong>не имеет срока годности</strong>. Оно фиксирует факты на момент экспертизы и может быть использовано в деле в любой момент.</p>
-              <p style="color:var(--text-secondary);line-height:1.7;margin-top:8px;">Кроме того, мы <strong>бесплатно консультируем</strong> по вашему делу в течение 6 месяцев после выдачи заключения — если оппонент попытается оспорить.</p>
+              <p class="faq-answer-secondary faq-answer-secondary--mt">Кроме того, мы <strong>бесплатно консультируем</strong> по вашему делу в течение 6 месяцев после выдачи заключения — если оппонент попытается оспорить.</p>
             </div>
           </div>
 
         </div>
 
         <!-- Блок 5: Рецензирование -->
-        <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:24px;">📋 Рецензирование экспертиз</h2>
-        <div class="faq-group" style="margin-bottom:48px;">
+        <h2 class="section-heading">📋 Рецензирование экспертиз</h2>
+        <div class="faq-group">
 
           <div class="faq-item">
             <button class="faq-item__question" aria-expanded="false">
@@ -317,7 +319,7 @@
             </button>
             <div class="faq-item__answer">
               <p><strong>Рецензия</strong> — это документ, в котором независимый эксперт оценивает качество, полноту и методическую обоснованность заключения судебной экспертизы.</p>
-              <p style="color:var(--text-secondary);line-height:1.7;margin-top:8px;">Если вам нужно оспорить чужую экспертизу (страховую, судебную, дилерскую) — рецензия является допустимым доказательством в суде.</p>
+              <p class="faq-answer-secondary faq-answer-secondary--mt">Если вам нужно оспорить чужую экспертизу (страховую, судебную, дилерскую) — рецензия является допустимым доказательством в суде.</p>
             </div>
           </div>
 
@@ -354,7 +356,7 @@
         </div>
 
         <!-- Блок 6: Быстрые вопросы -->
-        <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:24px;">⚡ Быстрые вопросы</h2>
+        <h2 class="section-heading">⚡ Быстрые вопросы</h2>
         <div class="faq-group">
 
           <div class="faq-item">
@@ -364,7 +366,7 @@
             </button>
             <div class="faq-item__answer">
               <p>Звоните или пишите. <strong>15-минутная консультация бесплатно.</strong> Мы посмотрим ваши документы и скажем:</p>
-              <ul style="color:var(--text-secondary);line-height:1.8;margin-left:20px;margin-top:8px;">
+              <ul class="faq-list--mt">
                 <li>Сколько вы можете вернуть</li>
                 <li>Какая экспертиза нужна</li>
                 <li>Какие шансы в суде</li>
@@ -391,63 +393,66 @@
 
   <!-- CTA -->
   <section class="section section--cta">
-    <div class="container" style="text-align:center;">
-      <h2 style="color:#fff;font-size:1.75rem;font-weight:700;margin-bottom:16px;">Остались вопросы? Или ещё не уверены?</h2>
-      <p style="color:rgba(255,255,255,.85);font-size:1.125rem;margin-bottom:24px;max-width:600px;margin-left:auto;margin-right:auto;">Позвоните — ответим за 15 минут. Скажем честно: стоит ли начинать и сколько вы получите. Без обязательств.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;">
-        <a href="tel:+79619962067" class="btn" style="background:#fff;color:var(--primary);font-size:1.125rem;padding:16px 32px;font-weight:600;">📞 +7 (961) 996-20-67</a>
-        <a href="../pages/contacts/" class="btn" style="background:transparent;color:#fff;border:2px solid #fff;font-size:1.125rem;padding:16px 32px;font-weight:600;">Оставить заявку</a>
+    <div class="container cta-container">
+      <h2 class="section-heading--cta">Остались вопросы? Или ещё не уверены?</h2>
+      <p class="cta-text">Позвоните — ответим за 15 минут. Скажем честно: стоит ли начинать и сколько вы получите. Без обязательств.</p>
+      <div class="cta-btn-group">
+        <a href="tel:+79619962067" class="btn btn--cta-white">📞 +7 (961) 996-20-67</a>
+        <a href="../pages/contacts/" class="btn btn--cta-outline">Оставить заявку</a>
       </div>
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;margin-bottom:32px;">
+      <div class="footer-grid">
         <div>
-          <h4 style="font-weight:700;margin-bottom:12px;">АВТОЭКСПЕРТ</h4>
-          <p style="color:var(--text-secondary);font-size:.9rem;max-width:250px;">Центр независимых автомобильных экспертиз. Работаем с 2016 года. 1 200+ экспертиз, 93% выигранных дел.</p>
+          <h4 class="footer-heading">АВТОЭКСПЕРТ</h4>
+          <p class="footer-text">Центр независимых автомобильных экспертиз. Работаем с 2016 года. 1 200+ экспертиз, 93% выигранных дел.</p>
         </div>
         <div>
-          <h4 style="font-weight:700;margin-bottom:12px;">Услуги</h4>
-          <ul style="list-style:none;padding:0;margin:0;">
-            <li style="margin-bottom:8px;"><a href="../pages/services/avtotexnicheskaya-ekspertiza/" style="color:var(--text-secondary);text-decoration:none;">Автотехническая экспертиза</a></li>
-            <li style="margin-bottom:8px;"><a href="../pages/services/avto-tovarisvedcheskaya-ekspertiza/" style="color:var(--text-secondary);text-decoration:none;">Автотовароведческая экспертиза</a></li>
-            <li style="margin-bottom:8px;"><a href="../pages/services/ekspertiza-uzlov-i-agregatov/" style="color:var(--text-secondary);text-decoration:none;">Экспертиза запчастей</a></li>
+          <h4 class="footer-heading">Услуги</h4>
+          <ul class="footer-list">
+            <li class="footer-list__item"><a href="../pages/services/avtotexnicheskaya-ekspertiza/" class="footer-list__link">Автотехническая экспертиза</a></li>
+            <li class="footer-list__item"><a href="../pages/services/avto-tovarisvedcheskaya-ekspertiza/" class="footer-list__link">Автотовароведческая экспертиза</a></li>
+            <li class="footer-list__item"><a href="../pages/services/ekspertiza-uzlov-i-agregatov/" class="footer-list__link">Экспертиза запчастей</a></li>
           </ul>
         </div>
         <div>
-          <h4 style="font-weight:700;margin-bottom:12px;">Контакты</h4>
-          <ul style="list-style:none;padding:0;margin:0;color:var(--text-secondary);font-size:.9rem;">
-            <li style="margin-bottom:8px;">📞 <a href="tel:+79619962067" style="color:var(--text-secondary);text-decoration:none;">+7 (961) 996-20-67</a></li>
-            <li style="margin-bottom:8px;">✉️ info@autoexpert.ru</li>
-            <li style="margin-bottom:8px;">📍 Москва, ул. Примерная, д. 1</li>
+          <h4 class="footer-heading">Контакты</h4>
+          <ul class="footer-list footer-contact">
+            <li class="footer-list__item">📞 <a href="tel:+79619962067" class="footer-list__link">+7 (961) 996-20-67</a></li>
+            <li class="footer-list__item">✉️ info@autoexpert.ru</li>
+            <li class="footer-list__item">📍 Москва, ул. Примерная, д. 1</li>
             <li>🕐 Пн–Пт 9:00–18:00, Сб 10:00–15:00</li>
           </ul>
         </div>
         <div>
-          <h4 style="font-weight:700;margin-bottom:12px;">Документы</h4>
-          <ul style="list-style:none;padding:0;margin:0;">
-            <li style="margin-bottom:8px;"><a href="../privacy.html" style="color:var(--text-secondary);text-decoration:none;">Политика конфиденциальности</a></li>
-            <li style="margin-bottom:8px;"><a href="../pages/prices/" style="color:var(--text-secondary);text-decoration:none;">Прайс-лист</a></li>
+          <h4 class="footer-heading">Документы</h4>
+          <ul class="footer-list">
+            <li class="footer-list__item"><a href="../privacy.html" class="footer-list__link">Политика конфиденциальности</a></li>
+            <li class="footer-list__item"><a href="../pages/prices/" class="footer-list__link">Прайс-лист</a></li>
           </ul>
         </div>
       </div>
-      <div style="border-top:1px solid var(--border);padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;">
-        <p style="color:var(--text-secondary);font-size:.85rem;margin:0;">© 2016–2026 АвтоЭксперт. Все права защищены.</p>
-        <p style="color:var(--text-secondary);font-size:.85rem;margin:0;">ИНН 7700000000 · ОГРН 1177700000000</p>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2016–2026 АвтоЭксперт. Все права защищены.</p>
+        <p class="footer-copyright">ИНН 7700000000 · ОГРН 1177700000000</p>
       </div>
     </div>
   </footer>
 
-    <script src="../assets/js/lib/utils.js" defer></script>
-  <script src="../assets/js/modules/burger.js" defer></script>
-  <script src="../assets/js/modules/faq.js" defer></script>
-  <script src="../assets/js/modules/tabs.js" defer></script>
-  <script src="../assets/js/modules/calculator.js" defer></script>
-  <script src="../assets/js/modules/forms.js" defer></script>
-  <script src="../assets/js/modules/smooth-scroll.js" defer></script>
-<script src="../assets/js/main.js" defer></script>
+    <script src="../../assets/js/lib/utils.js" defer></script>
+  <script src="../../assets/js/modules/burger.js" defer></script>
+  <script src="../../assets/js/modules/faq.js" defer></script>
+  <script src="../../assets/js/modules/tabs.js" defer></script>
+  <script src="../../assets/js/modules/calculator.js" defer></script>
+  <script src="../../assets/js/modules/forms.js" defer></script>
+  <script src="../../assets/js/modules/smooth-scroll.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+  <script src="../../assets/js/modules/scroll-animations.js" defer></script>
 </body>
 </html>

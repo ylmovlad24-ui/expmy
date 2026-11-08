@@ -8,13 +8,8 @@
   font-size: 1.05rem;
 }
 
-.section__subtitle--mb32 {
-  margin-bottom: 32px;
-}
-
-.section__subtitle--cta {
-  color: rgba(255, 255, 255, 0.85);
-}
+/* .section__subtitle--mb32 moved to sections.css
+   .section__subtitle--cta moved to sections.css */
 
 .stats-grid {
   display: grid;

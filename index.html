@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <link rel="canonical" href="https://autoexpert.ru/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Независимая автомобильная экспертиза в Москве — автотехническая, автотовароведческая, экспертиза узлов и агрегатов | АвтоЭксперт</title>
-  <meta name="description" content="Независимая автомобильная экспертиза в Москве. Автотехническая, автотовароведческая, экспертиза узлов и агрегатов. Заключения по ФЗ-73, которые принимают суды. Работаем с 2016 года.">
+  <title>Независимая автомобильная экспертиза в Москве — автотехническая, автотовароведческая | АвтоЭксперт</title>
+  <meta name="description" content="Независимая автомобильная экспертиза в Москве. Автотехническая, автотовароведческая, экспертиза узлов и агрегатов. 95% заключений принимают суды. Работаем с 2016 года.">
   <meta property="og:title" content="АвтоЭксперт — независимая автомобильная экспертиза в Москве">
   <meta property="og:description" content="Центр независимых автомобильных экспертиз. С 2016 года. 1 200+ экспертиз, 95% заключений приняты судами.">
   <meta property="og:type" content="website">
@@ -56,35 +56,102 @@
   <header class="header">
     <div class="container header__inner">
       <a href="index.html" class="header__logo">АВТОЭКСПЕРТ</a>
+      
+      <!-- Desktop Navigation -->
       <nav class="header__nav">
-        <a href="pages/services/" class="header__link">Экспертиза</a>
-        <a href="pages/review/" class="header__link">Рецензии</a>
-        <a href="pages/about/" class="header__link">О компании</a>
-        <a href="pages/about/experts.html" class="header__link">Эксперты</a>
-        <a href="pages/cases/" class="header__link">Кейсы</a>
+        <div class="header__dropdown">
+          <a href="pages/services/" class="header__link header__dropdown-toggle">Экспертиза</a>
+          <ul class="header__dropdown-menu">
+            <li class="header__dropdown-section">Наши услуги</li>
+            <li class="header__dropdown-item"><a href="pages/services/avtotexnicheskaya-ekspertiza/">🚗 Автотехническая экспертиза</a></li>
+            <li class="header__dropdown-item"><a href="pages/services/avto-tovarisvedcheskaya-ekspertiza/">💰 Автотовароведческая экспертиза</a></li>
+            <li class="header__dropdown-item"><a href="pages/services/ekspertiza-uzlov-i-agregatov/">🔧 Экспертиза узлов и агрегатов</a></li>
+            <li class="header__dropdown-divider"></li>
+            <li class="header__dropdown-section">Рецензирование</li>
+            <li class="header__dropdown-item"><a href="pages/review/">📋 Все услуги рецензирования</a></li>
+            <li class="header__dropdown-item"><a href="pages/review/dtp/">⚖️ Оспаривание ДТП</a></li>
+            <li class="header__dropdown-item"><a href="pages/review/autotrade/">📊 Оценка ущерба</a></li>
+          </ul>
+        </div>
+        <div class="header__dropdown">
+          <a href="pages/about/" class="header__link header__dropdown-toggle">О компании</a>
+          <ul class="header__dropdown-menu">
+            <li class="header__dropdown-item"><a href="pages/about/">О нас</a></li>
+            <li class="header__dropdown-item"><a href="pages/about/experts.html">👨‍⚖️ Наши эксперты</a></li>
+            <li class="header__dropdown-item"><a href="pages/cases/">📁 Кейсы</a></li>
+            <li class="header__dropdown-item"><a href="pages/faq/">❓ FAQ</a></li>
+          </ul>
+        </div>
         <a href="pages/prices/" class="header__link">Цены</a>
-        <a href="pages/faq/" class="header__link">FAQ</a>
         <a href="pages/contacts/" class="header__link header__link--cta">Контакты</a>
+        <a href="tel:+79619962067" class="header__cta-phone">
+          <span class="header__cta-phone__icon">📞</span>
+          <span>+7 (961) 996-20-67</span>
+        </a>
       </nav>
-      <button class="header__burger" aria-label="Меню">
-        <span></span><span></span><span></span>
+      
+      <!-- Burger Button -->
+      <button class="header__burger" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
+    
+    <!-- Mobile/Tablet Menu Overlay -->
+    <div class="header__menu-overlay"></div>
+    
+    <!-- Mobile/Tablet Menu Panel -->
+    <div class="header__menu-panel">
+      <nav class="header__menu-nav">
+        <div class="header__menu-dropdown">
+          <button class="header__menu-dropdown-toggle">Экспертиза</button>
+          <div class="header__menu-dropdown-menu">
+            <div class="header__menu-dropdown-section">Наши услуги</div>
+            <div class="header__menu-dropdown-item"><a href="pages/services/avtotexnicheskaya-ekspertiza/">🚗 Автотехническая экспертиза</a></div>
+            <div class="header__menu-dropdown-item"><a href="pages/services/avto-tovarisvedcheskaya-ekspertiza/">💰 Автотовароведческая экспертиза</a></div>
+            <div class="header__menu-dropdown-item"><a href="pages/services/ekspertiza-uzlov-i-agregatov/">🔧 Экспертиза узлов и агрегатов</a></div>
+            <div class="header__menu-dropdown-divider" style="height: 1px; background: #e2e8f0; margin: 8px 24px;"></div>
+            <div class="header__menu-dropdown-section">Рецензирование</div>
+            <div class="header__menu-dropdown-item"><a href="pages/review/">📋 Все услуги рецензирования</a></div>
+            <div class="header__menu-dropdown-item"><a href="pages/review/dtp/">⚖️ Оспаривание ДТП</a></div>
+            <div class="header__menu-dropdown-item"><a href="pages/review/autotrade/">📊 Оценка ущерба</a></div>
+          </div>
+        </div>
+        <div class="header__menu-dropdown">
+          <button class="header__menu-dropdown-toggle">О компании</button>
+          <div class="header__menu-dropdown-menu">
+            <div class="header__menu-dropdown-item"><a href="pages/about/">О нас</a></div>
+            <div class="header__menu-dropdown-item"><a href="pages/about/experts.html">👨‍⚖️ Наши эксперты</a></div>
+            <div class="header__menu-dropdown-item"><a href="pages/cases/">📁 Кейсы</a></div>
+            <div class="header__menu-dropdown-item"><a href="pages/faq/">❓ FAQ</a></div>
+          </div>
+        </div>
+        <a href="pages/prices/" class="header__link" style="padding: 16px 24px; display: block;">Цены</a>
+        <a href="pages/contacts/" class="header__link header__link--cta" style="padding: 16px 24px; display: block;">Контакты</a>
+        <a href="tel:+79619962067" class="header__menu-cta">
+          <span class="header__menu-cta__icon">📞</span>
+          <span>+7 (961) 996-20-67</span>
+        </a>
+      </nav>
+    </div>
   </header>
+
+  <main id="main-content">
 
   <!-- Hero -->
   <section class="hero" id="main-content">
     <div class="container hero__inner">
       <div class="hero__content">
-        <h1 class="hero__title">Независимая автомобильная экспертиза в Москве — автотехническая, автотовароведческая, экспертиза узлов и агрегатов</h1>
-        <p class="hero__subtitle">Проводим автотехническую, автотовароведческую экспертизу и экспертизу запчастей. 95% наших заключений суды принимают без замечаний. Работаем по ФЗ-73. Консультация бесплатна.</p>
+        <h1 class="hero__title">Центр независимых автомобильных экспертиз — защищаем ваши права в суде и со страховой</h1>
+        <p class="hero__subtitle">Автотехническая, автотовароведческая экспертиза и экспертиза узлов и агрегатов. 1 200+ экспертиз. 95% заключений принимают суды. Работаем с 2016 года.</p>
         <div class="hero__badges">
-          <span class="badge">500+ проведённых экспертиз</span>
-          <span class="badge">4.9 на Яндекс Картах</span>
-          <span class="badge">Примет суд — или вернём деньги</span>
+          <span class="badge">1 200+ экспертиз</span>
+          <span class="badge">95% дел в суде</span>
+          <span class="badge">С 2016 года</span>
         </div>
         <div class="hero__buttons">
-          <a href="#calculator" class="btn btn--primary">Рассчитать стоимость и получить консультацию</a>
+          <a href="pages/services/" class="btn btn--primary">Наши услуги</a>
           <a href="tel:+79619962067" class="btn btn--outline">📞 +7 (961) 996-20-67</a>
         </div>
       </div>
@@ -97,18 +164,20 @@
       <h2 class="section__title">Основные показатели деятельности</h2>
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-card__label">Средняя недополученная выплата без независимой экспертизы</div>
+          <div class="stat-card__number">1 200+</div>
+          <div class="stat-card__label">Проведённых экспертиз</div>
         </div>
         <div class="stat-card">
-          <div class="stat-card__label">Средний прирост выплаты после проведения экспертизы</div>
+          <div class="stat-card__number stat-card__number--success">95%</div>
+          <div class="stat-card__label">Заключений приняты судами</div>
         </div>
         <div class="stat-card">
-          <div class="stat-card__number stat-card__number--success">580 000 ₽</div>
-          <div class="stat-card__label">Максимальная взысканная сумма по одному делу</div>
+          <div class="stat-card__number">8</div>
+          <div class="stat-card__label">Аттестованных экспертов</div>
         </div>
         <div class="stat-card">
-          <div class="stat-card__number stat-card__number--success">100%</div>
-          <div class="stat-card__label">Возврат стоимости экспертизы, если суд не примет заключение</div>
+          <div class="stat-card__number">10</div>
+          <div class="stat-card__label">Лет на рынке</div>
         </div>
       </div>
     </div>
@@ -117,16 +186,17 @@
   <!-- 3 карточки услуг -->
   <section class="section">
     <div class="container">
-      <h2 class="section__title">Направления экспертизы</h2>
+      <h2 class="section__title">Три направления экспертизы</h2>
+      <p class="section__subtitle" style="text-align:center; max-width:800px; margin:0 auto 32px;">Каждое направление — это решение конкретной проблемы. Выберите свою ситуацию и узнайте, как мы можем помочь.</p>
       <div class="services-grid">
         <!-- Карточка 1 -->
         <div class="service-card">
           <div class="service-card__icon">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
           </div>
-          <div class="service-card__question">Определение обстоятельств ДТП и технической исправности транспортного средства</div>
+          <div class="service-card__question">Вас обвиняют в ДТП, а вы не согласны?</div>
           <h3 class="service-card__title">Автотехническая экспертиза</h3>
-          <p class="service-card__desc">Реконструкция ДТП, расчёт скорости, анализ видео с регистратора. Устанавливаем обстоятельства происшествия, соблюдении ПДД и техническое состояние ТС. Заключения принимаются судами в качестве доказательства.</p>
+          <p class="service-card__desc">Определим скорость, тормозной путь, момент торможения — и докажем, что вы не виноваты. Или взыщем полную компенсацию со страховой.</p>
           <a href="pages/services/avtotexnicheskaya-ekspertiza/" class="service-card__link">Узнать подробнее →</a>
         </div>
         <!-- Карточка 2 -->
@@ -134,9 +204,9 @@
           <div class="service-card__icon">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
           </div>
-          <div class="service-card__question">Оценка ущерба при несогласии со страховой выплатой по КАСКО/ОСАГО</div>
+          <div class="service-card__question">Страховая занизилa выплату?</div>
           <h3 class="service-card__title">Автотовароведческая экспертиза</h3>
-          <p class="service-card__desc">Оценка реального ущерба, рыночной стоимости, утраты товарной стоимости (УТС). Определяем стоимость восстановительного ремонта, износ, годные остатки. Заключение используется для обоснования требований к страховой компании.</p>
+          <p class="service-card__desc">Посчитаем реальную стоимость ремонта и заставим страховую доплатить. Средний возврат — 420 000 ₽.</p>
           <a href="pages/services/avto-tovarisvedcheskaya-ekspertiza/" class="service-card__link">Узнать подробнее →</a>
         </div>
         <!-- Карточка 3 -->
@@ -144,16 +214,213 @@
           <div class="service-card__icon">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
           </div>
-          <div class="service-card__question">Установление причины дефекта новой детали — брак или неправильная эксплуатация</div>
+          <div class="service-card__question">Новая запчасть сломалась, а дилер отказывает?</div>
           <h3 class="service-card__title">Экспертиза узлов и агрегатов</h3>
-          <p class="service-card__desc">Диагностика качества запчастей: ДВС, АКПП, подвеска, кузов, ЭБУ. Определяем характер дефекта — производственный или эксплуатационный. Проверка сертификатов и условий хранения. Заключение используется для предъявления претензий производителю или продавцу.</p>
+          <p class="service-card__desc">Докажем производственный брак и вернём деньги. 60% дел решаем без суда.</p>
           <a href="pages/services/ekspertiza-uzlov-i-agregatov/" class="service-card__link">Узнать подробнее →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Отзывы из 2ГИС и Яндекс Карт -->
+  <!-- Путь клиента: от проблемы к решению -->
+  <section class="section section--light">
+    <div class="container">
+      <h2 class="section__title">Как мы решаем ваши проблемы</h2>
+      <p class="section__subtitle section__subtitle--centered" style="margin-bottom:48px;">Каждый клиент приходит к нам с конкретной проблемой. Вот как выглядит путь от вашей ситуации к решению.</p>
+
+      <div class="customer-journey-grid">
+        <!-- Путь 1: ДТП -->
+        <div class="journey-path journey-path--dtp">
+          <div class="journey-path__header">
+            <span class="journey-path__icon">🚗</span>
+            <h3 class="journey-path__title">Ситуация: спор о виновности в ДТП</h3>
+          </div>
+          <div class="journey-path__steps">
+            <div class="journey-step">
+              <div class="journey-step__number">1</div>
+              <div class="journey-step__content">
+                <strong>Ваша проблема:</strong> Второй участник утверждает, что вы выехали на сплошную. Инспектор оформил вас как виновного. Вам грозит лишение или штраф.
+              </div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__arrow">↓</div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__number">2</div>
+              <div class="journey-step__content">
+                <strong>Звонок нам:</strong> <a href="tel:+79619962067">+7 (961) 996-20-67</a>. За 15 минут оцениваем перспективы. Смотрим ваши фото и протокол.
+              </div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__arrow">↓</div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__number">3</div>
+              <div class="journey-step__content">
+                <strong>Выезд эксперта:</strong> Приезжаем на место ДТП. Делаем замеры, фото, схему. Изучаем данные видеорегистратора.
+              </div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__arrow">↓</div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__number">4</div>
+              <div class="journey-step__content">
+                <strong>Экспертиза:</strong> Определяем скорость, тормозной путь, техническую возможность избежать столкновения. Готовим заключение по ФЗ-73.
+              </div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__arrow">↓</div>
+            </div>
+            <div class="journey-step journey-step--result">
+              <div class="journey-step__number">5</div>
+              <div class="journey-step__content">
+                <strong>Результат:</strong> Суд принимает наше заключение. Виновник — второй участник. Выплата от страховой — от 300 000 ₽.
+              </div>
+            </div>
+          </div>
+          <div class="journey-path__cta">
+            <a href="pages/services/avtotexnicheskaya-ekspertiza/" class="btn btn--primary">Автотехническая экспертиза →</a>
+          </div>
+        </div>
+
+        <!-- Путь 2: Страховая -->
+        <div class="journey-path journey-path--insurance">
+          <div class="journey-path__header">
+            <span class="journey-path__icon">💰</span>
+            <h3 class="journey-path__title">Ситуация: страховая занизилa выплату</h3>
+          </div>
+          <div class="journey-path__steps">
+            <div class="journey-step">
+              <div class="journey-step__number">1</div>
+              <div class="journey-step__content">
+                <strong>Ваша проблема:</strong> Страховая выплатила 120 000 ₽ по ОСАГО/КАСКО. А ремонт стоит 500 000 ₽. Энергопакет считают по своим прайсам.
+              </div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__arrow">↓</div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__number">2</div>
+              <div class="journey-step__content">
+                <strong>Звонок нам:</strong> <a href="tel:+79619962067">+7 (961) 996-20-67</strong>. Смотрим акт осмотра страховой. Считаем разницу.
+              </div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__arrow">↓</div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__number">3</div>
+              <div class="journey-step__content">
+                <strong>Независимая оценка:</strong> Проводим свою экспертизу. Считаем реальную стоимость деталей, работ, УТС. Всё по рыночным ценам.
+              </div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__arrow">↓</div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__number">4</div>
+              <div class="journey-step__content">
+                <strong>Заключение:</strong> Готовим документ по ФЗ-73. Отправляем страховой. Если не доплатят — подаём в суд.
+              </div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__arrow">↓</div>
+            </div>
+            <div class="journey-step journey-step--result">
+              <div class="journey-step__number">5</div>
+              <div class="journey-step__content">
+                <strong>Результат:</strong> Суд взыскивает доплату. Средний клиент получает +420 000 ₽. Окупаемость экспертизы — в 35 раз.
+              </div>
+            </div>
+          </div>
+          <div class="journey-path__cta">
+            <a href="pages/services/avto-tovarisvedcheskaya-ekspertiza/" class="btn btn--primary">Автотовароведческая экспертиза →</a>
+          </div>
+        </div>
+
+        <!-- Путь 3: Запчасти -->
+        <div class="journey-path journey-path--parts">
+          <div class="journey-path__header">
+            <span class="journey-path__icon">🔧</span>
+            <h3 class="journey-path__title">Ситуация: запчасть сломалась, дилер отказывает</h3>
+          </div>
+          <div class="journey-path__steps">
+            <div class="journey-step">
+              <div class="journey-step__number">1</div>
+              <div class="journey-step__content">
+                <strong>Ваша проблема:</strong> Купили новую запчасть — она сломалась через 2 месяца. Дилер говорит «ваша вина». Гарантия не действует.
+              </div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__arrow">↓</div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__number">2</div>
+              <div class="journey-step__content">
+                <strong>Звонок нам:</strong> <a href="tel:+79619962067">+7 (961) 996-20-67</a>. Смотрим чек и гарантийный талон. Оцениваем дефект.
+              </div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__arrow">↓</div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__number">3</div>
+              <div class="journey-step__content">
+                <strong>Экспертиза запчасти:</strong> Определяем характер дефекта: производственный брак или неправильная эксплуатация. 87% — брак.
+              </div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__arrow">↓</div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__number">4</div>
+              <div class="journey-step__content">
+                <strong>Претензия:</strong> Составляем юридическую претензию по закону «О защите прав потребителей». Отправляем дилеру/заводу.
+              </div>
+            </div>
+            <div class="journey-step">
+              <div class="journey-step__arrow">↓</div>
+            </div>
+            <div class="journey-step journey-step--result">
+              <div class="journey-step__number">5</div>
+              <div class="journey-step__content">
+                <strong>Результат:</strong> Дилер возвращает деньги. Или суд взыскивает. Средний возврат — 280 000 ₽. 60% дел — без суда.
+              </div>
+            </div>
+          </div>
+          <div class="journey-path__cta">
+            <a href="pages/services/ekspertiza-uzlov-i-agregatov/" class="btn btn--primary">Экспертиза запчастей →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Общий блок: что объединяет все пути -->
+      <div class="common-path-block" style="margin-top:64px; padding:32px; background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+        <h3 style="font-size:1.5rem; margin-bottom:16px; text-align:center;">Что объединяет все пути</h3>
+        <div class="common-path-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:24px; margin-top:24px;">
+          <div class="common-path-item" style="text-align:center;">
+            <div style="font-size:2rem; margin-bottom:8px;">📞</div>
+            <strong style="font-size:1.125rem;">Бесплатная консультация</strong>
+            <p style="color:var(--text-light); margin-top:8px;">Перезвоним за 15 минут. Оценим перспективы. Скажем, стоит ли проводить экспертизу.</p>
+          </div>
+          <div class="common-path-item" style="text-align:center;">
+            <div style="font-size:2rem; margin-bottom:8px;">📋</div>
+            <strong style="font-size:1.125rem;">Заключение по ФЗ-73</strong>
+            <p style="color:var(--text-light); margin-top:8px;">Документ, который принимают все суды РФ. С приложениями: схемы, расчёты, фото.</p>
+          </div>
+          <div class="common-path-item" style="text-align:center;">
+            <div style="font-size:2rem; margin-bottom:8px;">⚖️</div>
+            <strong style="font-size:1.125rem;">Сопровождение в суде</strong>
+            <p style="color:var(--text-light); margin-top:8px;">Наш эксперт выходит в суд. Отвечает на вопросы. Объясняет результаты. Бесплатно.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Отзывы клиентов -->
   <section class="section">
     <div class="container">
       <h2 class="section__title">Отзывы клиентов</h2>
@@ -298,46 +565,46 @@
   <section class="section">
     <div class="container">
       <h2 class="section__title">Рецензирование судебных экспертиз</h2>
-      <p class="section__subtitle" style="text-align: center; max-width: 700px; margin: 16px auto 48px; color: #666; font-size: 1.05rem;">Оспорьте несправедливую судебную экспертизу. Профессиональный разбор заключений экспертами с опытом более 15 лет.</p>
-      <div class="services-cards__grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 48px;">
-        <a href="pages/review/autotech/" class="rc-card" style="text-decoration: none; display: flex; flex-direction: column; gap: 16px;">
+      <p class="section__subtitle section__subtitle--centered">Оспорьте несправедливую судебную экспертизу. Профессиональный разбор заключений экспертами с опытом более 15 лет.</p>
+      <div class="services-cards__grid">
+        <a href="pages/review/autotech/" class="rc-card">
           <div class="rc-card__icon">📹</div>
-          <h3 class="rc-card__title" style="font-size: 1.1rem; font-weight: 600; color: var(--primary, #2A5B9A);">Видеоаналитика</h3>
-          <p class="rc-card__desc" style="font-size: 0.95rem; color: #666; flex-grow: 1;">Временные и пространственные характеристики по видеоизображениям</p>
-          <span class="rc-card__link" style="font-size: 0.9rem; font-weight: 600; color: var(--accent, #E67E22);">Подробнее →</span>
+          <h3 class="rc-card__title">Видеоаналитика</h3>
+          <p class="rc-card__desc">Временные и пространственные характеристики по видеоизображениям</p>
+          <span class="rc-card__link">Подробнее →</span>
         </a>
-        <a href="pages/review/dtp/" class="rc-card" style="text-decoration: none; display: flex; flex-direction: column; gap: 16px;">
+        <a href="pages/review/dtp/" class="rc-card">
           <div class="rc-card__icon">🚗</div>
-          <h3 class="rc-card__title" style="font-size: 1.1rem; font-weight: 600; color: var(--primary, #2A5B9A);">Обстоятельства ДТП</h3>
-          <p class="rc-card__desc" style="font-size: 0.95rem; color: #666; flex-grow: 1;">Механизм столкновений, скорости, обстоятельства</p>
-          <span class="rc-card__link" style="font-size: 0.9rem; font-weight: 600; color: var(--accent, #E67E22);">Подробнее →</span>
+          <h3 class="rc-card__title">Обстоятельства ДТП</h3>
+          <p class="rc-card__desc">Механизм столкновений, скорости, обстоятельства</p>
+          <span class="rc-card__link">Подробнее →</span>
         </a>
-        <a href="pages/review/technical-condition/" class="rc-card" style="text-decoration: none; display: flex; flex-direction: column; gap: 16px;">
+        <a href="pages/review/technical-condition/" class="rc-card">
           <div class="rc-card__icon">⚙️</div>
-          <h3 class="rc-card__title" style="font-size: 1.1rem; font-weight: 600; color: var(--primary, #2A5B9A);">Техническое состояние</h3>
-          <p class="rc-card__desc" style="font-size: 0.95rem; color: #666; flex-grow: 1;">Диагностика, неисправности, износ деталей</p>
-          <span class="rc-card__link" style="font-size: 0.9rem; font-weight: 600; color: var(--accent, #E67E22);">Подробнее →</span>
+          <h3 class="rc-card__title">Техническое состояние</h3>
+          <p class="rc-card__desc">Диагностика, неисправности, износ деталей</p>
+          <span class="rc-card__link">Подробнее →</span>
         </a>
-        <a href="pages/review/trace-diagnostics/" class="rc-card" style="text-decoration: none; display: flex; flex-direction: column; gap: 16px;">
+        <a href="pages/review/trace-diagnostics/" class="rc-card">
           <div class="rc-card__icon">🔍</div>
-          <h3 class="rc-card__title" style="font-size: 1.1rem; font-weight: 600; color: var(--primary, #2A5B9A);">Трасологическая</h3>
-          <p class="rc-card__desc" style="font-size: 0.95rem; color: #666; flex-grow: 1;">Следы, механизмы воздействий, траектории</p>
-          <span class="rc-card__link" style="font-size: 0.9rem; font-weight: 600; color: var(--accent, #E67E22);">Подробнее →</span>
+          <h3 class="rc-card__title">Трасологическая</h3>
+          <p class="rc-card__desc">Следы, механизмы воздействий, траектории</p>
+          <span class="rc-card__link">Подробнее →</span>
         </a>
-        <a href="pages/review/autotrade/" class="rc-card" style="text-decoration: none; display: flex; flex-direction: column; gap: 16px;">
+        <a href="pages/review/autotrade/" class="rc-card">
           <div class="rc-card__icon">🛠️</div>
-          <h3 class="rc-card__title" style="font-size: 1.1rem; font-weight: 600; color: var(--primary, #2A5B9A);">Оценка стоимости</h3>
-          <p class="rc-card__desc" style="font-size: 0.95rem; color: #666; flex-grow: 1;">Стоимость ремонта, утрата стоимости</p>
-          <span class="rc-card__link" style="font-size: 0.9rem; font-weight: 600; color: var(--accent, #E67E22);">Подробнее →</span>
+          <h3 class="rc-card__title">Оценка стоимости</h3>
+          <p class="rc-card__desc">Стоимость ремонта, утрата стоимости</p>
+          <span class="rc-card__link">Подробнее →</span>
         </a>
-        <a href="pages/review/commodity/" class="rc-card" style="text-decoration: none; display: flex; flex-direction: column; gap: 16px;">
+        <a href="pages/review/commodity/" class="rc-card">
           <div class="rc-card__icon">📦</div>
-          <h3 class="rc-card__title" style="font-size: 1.1rem; font-weight: 600; color: var(--primary, #2A5B9A);">Товароведческая</h3>
-          <p class="rc-card__desc" style="font-size: 0.95rem; color: #666; flex-grow: 1;">Дефекты, оценка качества товаров</p>
-          <span class="rc-card__link" style="font-size: 0.9rem; font-weight: 600; color: var(--accent, #E67E22);">Подробнее →</span>
+          <h3 class="rc-card__title">Товароведческая</h3>
+          <p class="rc-card__desc">Дефекты, оценка качества товаров</p>
+          <span class="rc-card__link">Подробнее →</span>
         </a>
       </div>
-      <div style="text-align: center;">
+      <div class="btn-group--center">
         <a href="pages/review/" class="btn btn--primary btn--large">Все услуги рецензирования →</a>
       </div>
     </div>
@@ -401,17 +668,25 @@
         </div>
         <div class="calculator-compact__actions">
           <form class="form calculator-compact__form" id="calcFormCompact">
-            <input type="text" name="name" class="form__input" placeholder="Ваше имя" required>
-            <input type="tel" name="phone" class="form__input" placeholder="Ваш телефон" required>
-            <select name="service" class="form__select" required>
-              <option value="">Выберите услугу</option>
+            <div class="form__group">
+              <label class="form__label" for="calcNameCompact">Ваше имя</label>
+              <input type="text" id="calcNameCompact" name="name" class="form__input" placeholder="Ваше имя" required>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="calcPhoneCompact">Ваш телефон</label>
+              <input type="tel" id="calcPhoneCompact" name="phone" class="form__input" placeholder="Ваш телефон" required>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="calcServiceCompact">Выберите услугу</label>
+              <select id="calcServiceCompact" name="service" class="form__select" required>
+                <option value="">Выберите услугу</option>
               <option value="avtotexnicheskaya">Автотехническая экспертиза</option>
               <option value="avto-tovarisvedcheskaya">Автотовароведческая экспертиза</option>
               <option value="uzlov-i-agregatov">Экспертиза узлов и агрегатов</option>
             </select>
             <label class="calc-checkbox">
               <input type="checkbox" name="privacy" required>
-              <span>Согласен на обработку персональных данных</span>
+              <span>Согласен на <a href="privacy.html" target="_blank" rel="noopener">обработку персональных данных</a></span>
             </label>
             <button type="submit" class="btn btn--primary btn--full">Получить расчёт и консультацию</button>
           </form>
@@ -421,9 +696,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Sticky CTA Button -->
-  <a href="tel:+79619962067" class="sticky-cta" aria-label="Позвонить" title="Позвонить эксперту">📞</a>
 
   <!-- Футер -->
   <footer class="footer">
@@ -446,6 +718,17 @@
     </div>
   </footer>
 
+  <!-- Floating CTA Button (mobile only) -->
+  <a href="tel:+79619962067" class="floating-cta" aria-label="Позвонить">
+    <span class="floating-cta__icon">📞</span>
+    <span class="floating-cta__text">
+      <span class="floating-cta__label">Бесплатная консультация</span>
+      <span class="floating-cta__number">+7 (961) 996-20-67</span>
+    </span>
+  </a>
+
+  </main>
+
     <script src="assets/js/lib/utils.js" defer></script>
   <script src="assets/js/modules/burger.js" defer></script>
   <script src="assets/js/modules/faq.js" defer></script>
@@ -454,5 +737,6 @@
   <script src="assets/js/modules/forms.js" defer></script>
   <script src="assets/js/modules/smooth-scroll.js" defer></script>
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/modules/scroll-animations.js" defer></script>
 </body>
 </html>

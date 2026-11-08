@@ -13,15 +13,17 @@
   border-radius: var(--radius);
   padding: 32px 28px;
   box-shadow: var(--shadow);
-  transition: box-shadow 0.2s, transform 0.2s;
+  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   gap: 16px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 .service-card:hover {
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(42, 91, 154, 0.25), 0 4px 15px rgba(230, 126, 34, 0.2);
+  transform: translateY(-8px) rotateX(2deg);
 }
 
 .service-card__icon {
@@ -88,6 +90,13 @@
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(42, 91, 154, 0.2);
 }
 
 .stat-card__number {
@@ -138,6 +147,13 @@
   padding: 28px;
   text-align: center;
   box-shadow: var(--shadow);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.expert-card:hover {
+  transform: translateY(-6px) rotateY(5deg);
+  box-shadow: 0 12px 35px rgba(42, 91, 154, 0.25);
 }
 
 .expert-card__photo {

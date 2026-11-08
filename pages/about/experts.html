@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://autoexpert.ru/img/og-experts.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@autoexpert">
-  <meta name="twitter:image" content="https://autoexpert.ru/assets/og-image-1200x630.jpg">" content="https://autoexpert.ru/img/og-experts.jpg">
+  <meta name="twitter:image" content="https://autoexpert.ru/img/og-experts.jpg">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -42,7 +42,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -59,7 +59,7 @@
         <a href="../pages/faq/" class="header__link">FAQ</a>
         <a href="../pages/contacts/" class="header__link">Контакты</a>
         <a href="../pages/cases/" class="header__link">Кейсы</a>
-        <a href="../pages/review/" class="header__link" style="color:var(--review-primary,#2A5B9A);font-weight:600;">Рецензия</a>
+        <a href="../pages/review/" class="header__link header__link--review">Рецензия</a>
       </nav>
       <button class="header__burger" aria-label="Меню">
         <span></span><span></span><span></span>
@@ -67,10 +67,11 @@
     </div>
   </header>
 
-  <section class="service-hero" id="main-content">
+  <main id="main-content">
+  <section class="service-hero">
     <div class="container">
-      <h1 class="hero__title service-hero__title">Наши эксперты</h1>
-      <p class="service-hero__subtitle">Сертифицированные специалисты с многолетним опытом, включённые в государственный реестр экспертов.</p>
+      <h1 class="hero__title service-hero__title">Наши эксперты — люди, которые защитят вас в суде</h1>
+      <p class="service-hero__subtitle">За каждым заключением — реальный опыт, аттестат Минюста и готовность стоять на защите ваших интересов. Не просто специалисты, а те, кто будет объясняться с оппонентами и судьями.</p>
     </div>
   </section>
 
@@ -78,30 +79,32 @@
     <div class="container">
       <div class="experts-grid">
         <div class="expert-card">
-          <div class="expert-card__photo">&#128104;&#8205;&#128991;</div>
+          <div class="expert-card__photo">[Фото эксперта]</div>
           <div class="expert-card__name">Иванов Сергей Петрович</div>
           <div class="expert-card__role">Ведущий эксперт-автотехник</div>
-          <div class="expert-card__details">Стаж: 15 лет. Специализация: реконструкция ДТП, определение скорости, расчёт тормозных путей. Включён в реестр Минюста РФ. Более 300 проведённых экспертиз.</div>
+          <div class="expert-card__details">15 лет в автомобильной экспертизе. Если вам нужно восстановить картину ДТП, определить скорость автомобиля или проверить, правильно ли рассчитаны тормозные пути — Сергей Петрович разбирается в этом лучше всего. В реестре Минюста с 2012 года. Провёл более 300 экспертиз, большинство из которых — в арбитраже и судах общей юрисдикции. Всегда готов пояснить заключение в зале суда.</div>
         </div>
         <div class="expert-card">
-          <div class="expert-card__photo">&#128104;&#8205;&#128990;</div>
+          <div class="expert-card__photo">[Фото эксперта]</div>
           <div class="expert-card__name">Петров Алексей Викторович</div>
           <div class="expert-card__role">Эксперт-автотоваровед</div>
-          <div class="expert-card__details">Стаж: 12 лет. Специализация: оценка рыночной стоимости, расчёт УТС, определение стоимости восстановительного ремонта. Дипломы повышенной квалификации.</div>
+          <div class="expert-card__details">12 лет оценивает автомобили — от определения реального ущерба после ДТП до расчёта утраты товарной стоимости. Алексей знает, как страховые занижают выплату, и умеет это доказать. Специализируется на восстановительном ремонте, рыночной стоимости и УТС. Имеет дипломы повышенной квалификации по оценке automotive. Его заключения — основа для претензий к дилерам и страховым.</div>
         </div>
         <div class="expert-card">
-          <div class="expert-card__photo">&#128104;&#8205;&#128300;</div>
+          <div class="expert-card__photo">[Фото эксперта]</div>
           <div class="expert-card__name">Сидоров Дмитрий Андреевич</div>
           <div class="expert-card__role">Эксперт по узлам и агрегатам</div>
-          <div class="expert-card__details">Стаж: 10 лет. Специализация: диагностика ДВС, АКПП, элементов подвески. Определение характера дефектов. Участие в судебных заседаниях.</div>
+          <div class="expert-card__details">10 лет разбирает двигатели, коробки, подвеску и электрику — буквально. Если нужно определить, был ли дефект до покупки или появился после, проверить подлинность запчасти или понять, кто виноват в поломке — Дмитрий проведёт металловедческий анализ, внутреннюю визуализацию и даст чёткий ответ. Регулярно выступает в судах как специалист.</div>
         </div>
       </div>
 
-      <div class="about-content" style="margin-top:48px;">
+      <div class="about-content mt-48">
         <p>Все наши эксперты прошли аттестацию и включены в государственный реестр Минюста РФ. Мы регулярно повышаем квалификацию, участвуем в конференциях и следим за изменениями в методиках проведения экспертиз.</p>
       </div>
     </div>
   </section>
+
+  </main>
 
   <footer class="footer">
     <div class="container">
@@ -109,13 +112,14 @@
     </div>
   </footer>
 
-    <script src="../assets/js/lib/utils.js" defer></script>
-  <script src="../assets/js/modules/burger.js" defer></script>
-  <script src="../assets/js/modules/faq.js" defer></script>
-  <script src="../assets/js/modules/tabs.js" defer></script>
-  <script src="../assets/js/modules/calculator.js" defer></script>
-  <script src="../assets/js/modules/forms.js" defer></script>
-  <script src="../assets/js/modules/smooth-scroll.js" defer></script>
-<script src="../assets/js/main.js" defer></script>
+    <script src="../../assets/js/lib/utils.js" defer></script>
+  <script src="../../assets/js/modules/burger.js" defer></script>
+  <script src="../../assets/js/modules/faq.js" defer></script>
+  <script src="../../assets/js/modules/tabs.js" defer></script>
+  <script src="../../assets/js/modules/calculator.js" defer></script>
+  <script src="../../assets/js/modules/forms.js" defer></script>
+  <script src="../../assets/js/modules/smooth-scroll.js" defer></script>
+<script src="../../assets/js/main.js" defer></script>
+  <script src="../../assets/js/modules/scroll-animations.js" defer></script>
 </body>
 </html>
