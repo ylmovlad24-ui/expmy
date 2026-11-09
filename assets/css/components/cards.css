@@ -10,10 +10,11 @@
 .service-card {
   background: var(--bg);
   border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
   border-radius: var(--radius);
-  padding: 32px 28px;
+  padding: 36px 32px;
   box-shadow: var(--shadow);
-  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s, border-left-color 0.3s;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -24,6 +25,32 @@
 .service-card:hover {
   box-shadow: 0 12px 40px rgba(42, 91, 154, 0.25), 0 4px 15px rgba(230, 126, 34, 0.2);
   transform: translateY(-8px) rotateX(2deg);
+  border-left-color: var(--accent);
+}
+
+/* Цветовые варианты service-card */
+.service-card--court {
+  border-left-color: var(--primary);
+}
+
+.service-card--court:hover {
+  border-left-color: var(--primary-dark);
+}
+
+.service-card--informal {
+  border-left-color: var(--accent);
+}
+
+.service-card--informal:hover {
+  border-left-color: var(--accent-hover);
+}
+
+.service-card--review {
+  border-left-color: #6c5ce7;
+}
+
+.service-card--review:hover {
+  border-left-color: #5b4cdb;
 }
 
 .service-card__icon {

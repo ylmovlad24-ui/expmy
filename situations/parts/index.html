@@ -141,10 +141,46 @@
     </div>
   </section>
 
-  <!-- Кейс -->
+  <!-- Кейсы по форматам -->
   <section class="section">
     <div class="container">
-      <h2 class="section__title">Кейс по запчастям</h2>
+      <h2 class="section__title">Кейсы по форматам</h2>
+      <p class="section__subtitle" style="text-align:center; max-width:800px; margin:0 auto 48px;">Результаты по каждому формату экспертизы</p>
+
+      <div class="services-grid" style="grid-template-columns: repeat(3, 1fr); gap: 24px;">
+
+        <!-- Судебный кейс -->
+        <div class="service-card">
+          <h3 style="font-size: 1.125rem; margin-bottom: 12px; color: var(--primary);">⚖️ Судебная экспертиза</h3>
+          <p><strong>Было:</strong> Запчасть сломалась, дилер отказал в гарантии</p>
+          <p><strong>Сделали:</strong> Судебная экспертиза — доказали производственный брак</p>
+          <p><strong>Итог:</strong> Суд взыскал 320 000 ₽ с дилера</p>
+        </div>
+
+        <!-- Внесудебный кейс -->
+        <div class="service-card">
+          <h3 style="font-size: 1.125rem; margin-bottom: 12px; color: var(--accent);">📝 Внесудебная экспертиза</h3>
+          <p><strong>Было:</strong> Запчасть сломалась, дилер отказал в гарантии</p>
+          <p><strong>Сделали:</strong> Внесудебная экспертиза + претензия по ЗоЗПП</p>
+          <p><strong>Итог:</strong> Вернули 280 000 ₽ за 10 дней</p>
+        </div>
+
+        <!-- Рецензия кейс -->
+        <div class="service-card">
+          <h3 style="font-size: 1.125rem; margin-bottom: 12px; color: #6c5ce7;">🔍 Рецензия</h3>
+          <p><strong>Было:</strong> Дилер представил экспертизу — «ваша вина»</p>
+          <p><strong>Сделали:</strong> Рецензия — доказали производственный брак</p>
+          <p><strong>Итог:</strong> Продавец вернул 280 000 ₽ без суда</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Кейс -->
+  <section class="section section--light">
+    <div class="container">
+      <h2 class="section__title">Детальный кейс по запчастям</h2>
       <div style="background: #fff; padding: 32px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); max-width: 800px; margin: 0 auto;">
         <h3 style="font-size: 1.25rem; margin-bottom: 16px;">🔧 Двигатель оказался бракованным — продавец вернул 280 000 ₽ без суда</h3>
         <p><strong>Было:</strong> Купили б/у двигатель, через 6 месяцев — масляное голодание и задиры в цилиндрах. Продавец отказывался признавать вину.</p>
@@ -238,14 +274,32 @@
     </div>
   </section>
 
-  <!-- Финальный CTA -->
+  <!-- Финальный CTA с формой -->
   <section class="section section--cta">
     <div class="container">
       <h2 class="section__title section__title--white">Проверим, есть ли брак</h2>
       <p class="section__subtitle section__subtitle--cta" style="color: rgba(255,255,255,0.8);">Бесплатная консультация — 15 минут. Скажем, стоит ли проводить экспертизу.</p>
-      <div class="cta-buttons" style="justify-content: center;">
-        <a href="tel:+79059830969" class="btn btn--primary btn--large">📞 Бесплатная консультация</a>
-        <a href="#calculator" class="btn btn--outline btn--large btn--white-outline">Рассчитать стоимость</a>
+      <form class="form calculator-compact__form" style="max-width: 500px; margin: 0 auto;">
+        <div class="form__group" style="margin-bottom: 16px;">
+          <label class="form__label" for="partsName" style="color: white;">Ваше имя</label>
+          <input type="text" id="partsName" name="name" class="form__input" placeholder="Ваше имя" required style="width: 100%;">
+        </div>
+        <div class="form__group" style="margin-bottom: 16px;">
+          <label class="form__label" for="partsPhone" style="color: white;">Ваш телефон</label>
+          <input type="tel" id="partsPhone" name="phone" class="form__input" placeholder="Ваш телефон" required style="width: 100%;">
+        </div>
+        <div class="form__group" style="margin-bottom: 16px;">
+          <label class="form__label" for="partsProblem" style="color: white;">Опишите ситуацию</label>
+          <textarea id="partsProblem" name="message" class="form__textarea" placeholder="Кратко опишите вашу ситуацию..." rows="3" style="width: 100%;"></textarea>
+        </div>
+        <label class="calc-checkbox" style="margin-bottom: 16px;">
+          <input type="checkbox" name="privacy" required>
+          <span style="color: rgba(255,255,255,0.7);">Согласен на <a href="../../privacy.html" target="_blank" rel="noopener" style="color: var(--accent);">обработку персональных данных</a></span>
+        </label>
+        <button type="submit" class="btn btn--primary btn--full btn--large">📞 Получить консультацию</button>
+      </form>
+      <div style="text-align: center; margin-top: 24px;">
+        <a href="tel:+79059830969" class="btn btn--outline btn--large btn--white-outline">📞 Или позвонить</a>
       </div>
     </div>
   </section>
