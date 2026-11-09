@@ -77,6 +77,39 @@
   gap: 16px;
 }
 
+/* Hero статистика (нулевой блок) */
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-stat__number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+}
+
+.hero-stat__number--accent {
+  color: var(--accent);
+}
+
+.hero-stat__label {
+  font-size: 0.8125rem;
+  color: var(--white-75);
+  line-height: 1.3;
+}
+
 .hero__phone-note {
   color: var(--white-75);
   font-size: 0.875rem;
@@ -136,6 +169,17 @@
   }
   .hero__subtitle {
     font-size: 1rem;
+  }
+  .hero-stats {
+    gap: 20px;
+    margin-top: 36px;
+    padding-top: 24px;
+  }
+  .hero-stat__number {
+    font-size: 1.5rem;
+  }
+  .hero-stat__label {
+    font-size: 0.75rem;
   }
 }
 

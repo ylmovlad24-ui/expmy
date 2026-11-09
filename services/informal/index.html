@@ -11,6 +11,33 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:url" content="https://objektiv-expert.ru/services/informal/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Объектив-Эксперт — Внесудебная экспертиза в Барнауле",
+    "description": "Внесудебная экспертиза в Барнауле: автотехническая, автотовароведческая, узлы и агрегаты. Для претензии без суда. 60% дел решаются досудебно.",
+    "telephone": "+79059830969",
+    "email": "info@objektiv-expert.ru",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "пер. Прудской, д. 69а, офис 67",
+      "addressLocality": "Барнаул",
+      "addressCountry": "RU"
+    },
+    "openingHours": "Mo-Fr 09:00-18:00, Sa 10:00-15:00",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127"
+    },
+    "priceRange": "от 8 000 ₽",
+    "areaServed": {
+      "@type": "City",
+      "name": "Барнаул"
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -22,11 +49,22 @@
 
   <main id="main-content">
 
+  <!-- Breadcrumbs -->
+  <section class="breadcrumbs-section">
+    <div class="container">
+      <nav class="breadcrumbs">
+        <a href="../../index.html">Главная</a>
+        <span class="breadcrumbs__sep">→</span>
+        <span class="breadcrumbs__current">Внесудебная экспертиза</span>
+      </nav>
+    </div>
+  </section>
+
   <!-- Hero -->
   <section class="hero">
     <div class="container hero__inner">
       <div class="hero__content">
-        <h1 class="hero__title">Внесудебная экспертиза в Барнауле — решаем споры без суда</h1>
+        <h1 class="hero__title">Внесудебная экспертиза — решаем споры без суда</h1>
         <p class="hero__subtitle">Автотехническая, автотовароведческая, экспертиза узлов и агрегатов. Для досудебной претензии. 60% дел решаются без суда за 10-14 дней.</p>
         <div class="hero__badges">
           <span class="badge">60% без суда</span>
@@ -41,88 +79,124 @@
     </div>
   </section>
 
-  <!-- 3 ситуации -->
+  <!-- Роды и виды экспертиз -->
   <section class="section">
     <div class="container">
-      <h2 class="section__title">4 ситуации для внесудебной экспертизы</h2>
-      <p class="section__subtitle" style="text-align:center; max-width:800px; margin:0 auto 48px;">Выберите вашу ситуацию — и получите экспертизу для досудебной претензии</p>
+      <h2 class="format-section__title">Роды и виды экспертиз</h2>
+      <p class="format-section__subtitle">Выберите направление экспертизы и изучите подробности</p>
 
-      <div class="services-grid" style="grid-template-columns: repeat(4, 1fr); gap: 24px;">
+      <div class="situation-cards-grid">
 
-        <!-- Ситуация 1: ДТП -->
-        <div class="service-card" style="border: 2px solid var(--primary);">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" style="width:48px; height:48px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="var(--primary)"/></svg>
+        <!-- Автотехническая -->
+        <div class="situation-card situation-card--primary">
+          <div class="situation-card__header">
+            <div class="situation-card__icon">🚗</div>
+            <h3 class="situation-card__title">Автотехническая экспертиза</h3>
           </div>
-          <h3 class="service-card__title" style="color: var(--primary);">🚗 ДТП — претензия виновнику</h3>
-          <p class="service-card__desc"><strong>Когда нужна:</strong> виновник не хочет платить, спор о виновности</p>
-          <p class="service-card__desc"><strong>Род:</strong> Автотехническая экспертиза (13.1, 13.2, 13.3)</p>
-          <p class="service-card__desc"><strong>Ответы:</strong> 10-16 вопросов (скорость, тормозной путь, виновник)</p>
-          <p class="service-card__desc"><strong>Цена:</strong></p>
-          <ul style="list-style: none; padding: 0; margin: 8px 0 16px 0;">
-            <li style="padding: 4px 0;">• Базовый — 12 000 ₽ (10 вопросов, письменное заключение для претензии)</li>
-            <li style="padding: 4px 0;">• Средний — 20 000 ₽ (14 вопросов + помощь с претензией)</li>
-            <li style="padding: 4px 0;">• Продвинутый — 30 000 ₽ (16 вопросов + сопровождение до результата)</li>
-          </ul>
-          <p style="margin-top: 16px; font-weight: 600; color: var(--success);">Кейс: Претензия виновнику — получил 250 000 ₽ без суда</p>
-          <a href="tel:+79059830969" class="btn btn--primary" style="margin-top: 24px; width: 100%;">📞 Заказать внесудебную автотехническую экспертизу</a>
+          <p class="situation-card__desc">Для претензии виновнику ДТП — споры о виновности, лишении прав</p>
+          <div class="situation-card__info">
+            <div class="info-row">
+              <span class="info-row__label">Виды:</span>
+              <span class="info-row__value">13.1 — Обстоятельства ДТП, 13.2 — Техсостояние ТС, 13.3 — Трасология</span>
+            </div>
+            <div class="info-row">
+              <span class="info-row__label">Что делаем:</span>
+              <span class="info-row__value">Реконструируем ДТП, рассчитываем скорость и тормозной путь, готовим заключение для досудебной претензии</span>
+            </div>
+            <div class="info-row">
+              <span class="info-row__label">Предмет исследования:</span>
+              <span class="info-row__value">ТС, следы на дороге, данные видеорегистратора, протоколы ГИБДД</span>
+            </div>
+          </div>
+          <div class="situation-card__footer">
+            <div class="situation-card__price">от 12 000 ₽ / от 20 000 ₽ / от 30 000 ₽</div>
+            <p class="situation-card__case">Кейс: Претензия виновнику — получил 250 000 ₽ без суда</p>
+          </div>
+          <a href="../../pages/services/avtotexnicheskaya-ekspertiza/" class="btn btn--primary situation-card__btn">Подробнее →</a>
         </div>
 
-        <!-- Ситуация 2: Страховая -->
-        <div class="service-card" style="border: 2px solid var(--accent);">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" style="width:48px; height:48px;"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z" fill="var(--accent)"/></svg>
+        <!-- Автотовароведческая -->
+        <div class="situation-card situation-card--accent">
+          <div class="situation-card__header">
+            <div class="situation-card__icon">💰</div>
+            <h3 class="situation-card__title">Автотовароведческая экспертиза</h3>
           </div>
-          <h3 class="service-card__title" style="color: var(--accent);">💰 Страховая занизилa выплату</h3>
-          <p class="service-card__desc"><strong>Когда нужна:</strong> страховая выплатила меньше рынка, нужно заключение для претензии</p>
-          <p class="service-card__desc"><strong>Род:</strong> Автотовароведческая экспертиза (4 вида)</p>
-          <p class="service-card__desc"><strong>Ответы:</strong> реальная стоимость, УТС, износ</p>
-          <p class="service-card__desc"><strong>Цена:</strong></p>
-          <ul style="list-style: none; padding: 0; margin: 8px 0 16px 0;">
-            <li style="padding: 4px 0;">• Базовый — 10 000 ₽ (оценка ущерба, письменное заключение для претензии)</li>
-            <li style="padding: 4px 0;">• Средний — 15 000 ₽ (+ УТС, износ + помощь с претензией)</li>
-            <li style="padding: 4px 0;">• Продвинутый — 25 000 ₽ (полный пакет + сопровождение до результата)</li>
-          </ul>
-          <p style="margin-top: 16px; font-weight: 600; color: var(--success);">Кейс: Претензия страховой — доплатили 380 000 ₽ за 14 дней</p>
-          <a href="tel:+79059830969" class="btn btn--primary" style="margin-top: 24px; width: 100%;">📞 Заказать внесудебную автотовароведческую экспертизу</a>
+          <p class="situation-card__desc">Для претензии страховой — занизжение выплаты по ОСАГО/КАСКО</p>
+          <div class="situation-card__info">
+            <div class="info-row">
+              <span class="info-row__label">Виды:</span>
+              <span class="info-row__value">Оценка ущерба, Утрата товарной стоимости (УТС), Износ, Идентификация ТС</span>
+            </div>
+            <div class="info-row">
+              <span class="info-row__label">Что делаем:</span>
+              <span class="info-row__value">Определяем реальную стоимость ремонта по рыночным ценам, рассчитываем УТС и износ для претензии</span>
+            </div>
+            <div class="info-row">
+              <span class="info-row__label">Предмет исследования:</span>
+              <span class="info-row__value">Повреждённое ТС, акт осмотра страховой, ПТС, СТС</span>
+            </div>
+          </div>
+          <div class="situation-card__footer">
+            <div class="situation-card__price">от 10 000 ₽ / от 15 000 ₽ / от 25 000 ₽</div>
+            <p class="situation-card__case">Кейс: Претензия страховой — доплатили 380 000 ₽ за 14 дней</p>
+          </div>
+          <a href="../../pages/services/avto-tovarisvedcheskaya-ekspertiza/" class="btn btn--primary situation-card__btn">Подробнее →</a>
         </div>
 
-        <!-- Ситуация 3: Запчасти -->
-        <div class="service-card" style="border: 2px solid #6c5ce7;">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" style="width:48px; height:48px;"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z" fill="#6c5ce7"/></svg>
+        <!-- Узлы и агрегаты -->
+        <div class="situation-card situation-card--review">
+          <div class="situation-card__header">
+            <div class="situation-card__icon">🔧</div>
+            <h3 class="situation-card__title">Экспертиза узлов и агрегатов</h3>
           </div>
-          <h3 class="service-card__title" style="color: #6c5ce7;">🔧 Запчасть сломалась — претензия дилеру</h3>
-          <p class="service-card__desc"><strong>Когда нужна:</strong> сломалась запчасть, дилер отказывает, нужно заключение для претензии</p>
-          <p class="service-card__desc"><strong>Род:</strong> Экспертиза узлов и агрегатов (4 вида)</p>
-          <p class="service-card__desc"><strong>Ответы:</strong> 8-12 вопросов (характер дефекта, брак/эксплуатация)</p>
-          <p class="service-card__desc"><strong>Цена:</strong></p>
-          <ul style="list-style: none; padding: 0; margin: 8px 0 16px 0;">
-            <li style="padding: 4px 0;">• Базовый — 8 000 ₽ (характер дефекта, письменное заключение для претензии)</li>
-            <li style="padding: 4px 0;">• Средний — 12 000 ₽ (+ подлинность + помощь с претензией)</li>
-            <li style="padding: 4px 0;">• Продвинутый — 20 000 ₽ (полный анализ + сопровождение до результата)</li>
-          </ul>
-          <p style="margin-top: 16px; font-weight: 600; color: var(--success);">Кейс: Претензия дилеру — вернули 280 000 ₽ за 10 дней</p>
-          <a href="tel:+79059830969" class="btn btn--primary" style="margin-top: 24px; width: 100%;">📞 Заказать внесудебную экспертизу узлов и агрегатов</a>
+          <p class="situation-card__desc">Для претензии дилеру/заводу — брак запчастей, отказ в гарантии</p>
+          <div class="situation-card__info">
+            <div class="info-row">
+              <span class="info-row__label">Виды:</span>
+              <span class="info-row__value">Характер дефекта, Подлинность, Соответствие НТД, Условия хранения</span>
+            </div>
+            <div class="info-row">
+              <span class="info-row__label">Что делаем:</span>
+              <span class="info-row__value">Определяем характер дефекта (брак или эксплуатация), проверяем подлинность для претензии по ЗоЗПП</span>
+            </div>
+            <div class="info-row">
+              <span class="info-row__label">Предмет исследования:</span>
+              <span class="info-row__value">ДВС, АКПП, подвеска, ЭБУ, чек, гарантийный талон</span>
+            </div>
+          </div>
+          <div class="situation-card__footer">
+            <div class="situation-card__price">от 8 000 ₽ / от 12 000 ₽ / от 20 000 ₽</div>
+            <p class="situation-card__case">Кейс: Претензия дилеру — вернули 280 000 ₽ за 10 дней</p>
+          </div>
+          <a href="../../pages/services/ekspertiza-uzlov-i-agregatov/" class="btn btn--primary situation-card__btn">Подробнее →</a>
         </div>
 
-        <!-- Ситуация 4: Товары -->
-        <div class="service-card" style="border: 2px solid #00b894;">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" style="width:48px; height:48px;"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 17H5c-.55 0-1-.45-1-1V7l7-4 7 4v11c0 .55-.45 1-1 1z" fill="#00b894"/></svg>
+        <!-- Товароведческая -->
+        <div class="situation-card situation-card--success">
+          <div class="situation-card__header">
+            <div class="situation-card__icon">📦</div>
+            <h3 class="situation-card__title">Товароведческая экспертиза</h3>
           </div>
-          <h3 class="service-card__title" style="color: #00b894;">📦 Товар некачественный — претензия магазину</h3>
-          <p class="service-card__desc"><strong>Когда нужна:</strong> купили товар с браком, магазин отказывает, нужно заключение для претензии</p>
-          <p class="service-card__desc"><strong>Род:</strong> Товароведческая экспертиза (10 категорий)</p>
-          <p class="service-card__desc"><strong>Ответы:</strong> 11-15 вопросов (состав, дефект, рыночная стоимость)</p>
-          <p class="service-card__desc"><strong>Цена:</strong></p>
-          <ul style="list-style: none; padding: 0; margin: 8px 0 16px 0;">
-            <li style="padding: 4px 0;">• Базовый — 8 000 ₽ (подтверждение дефекта, письменное заключение для претензии)</li>
-            <li style="padding: 4px 0;">• Средний — 12 000 ₽ (+ рыночная стоимость + помощь с претензией)</li>
-            <li style="padding: 4px 0;">• Продвинутый — 20 000 ₽ (полный анализ + сопровождение до результата)</li>
-          </ul>
-          <p style="margin-top: 16px; font-weight: 600; color: var(--success);">Кейс: Куртка с маркировкой «90% пух» — экспертиза показала 60% синтепон, магазин вернул 8 500 ₽</p>
-          <a href="tel:+79059830969" class="btn btn--primary" style="margin-top: 24px; width: 100%;">📞 Заказать внесудебную товароведческую экспертизу</a>
+          <p class="situation-card__desc">Для претензии магазину — некачественный товар, обман с маркировкой</p>
+          <div class="situation-card__info">
+            <div class="info-row">
+              <span class="info-row__label">Категории:</span>
+              <span class="info-row__value">10 категорий: одежда, электроника, стройматериалы, парфюмерия и др.</span>
+            </div>
+            <div class="info-row">
+              <span class="info-row__label">Что делаем:</span>
+              <span class="info-row__value">Подтверждаем дефект, проверяем состав и маркировку для претензии по ЗоЗПП</span>
+            </div>
+            <div class="info-row">
+              <span class="info-row__label">Предмет исследования:</span>
+              <span class="info-row__value">Товар, упаковка, маркировка, чек, гарантийный талон</span>
+            </div>
+          </div>
+          <div class="situation-card__footer">
+            <div class="situation-card__price">от 8 000 ₽ / от 12 000 ₽ / от 20 000 ₽</div>
+            <p class="situation-card__case">Кейс: Куртка с маркировкой «90% пух» — экспертиза показала 60% синтепон, магазин вернул 8 500 ₽</p>
+          </div>
+          <a href="../../pages/services/tovarovedcheskaya/" class="btn btn--primary situation-card__btn">Подробнее →</a>
         </div>
 
       </div>
@@ -132,7 +206,7 @@
   <!-- Когда нужна внесудебная -->
   <section class="section section--light">
     <div class="container">
-      <h2 class="section__title">Когда нужна внесудебная экспертиза</h2>
+      <h2 class="format-section__title">Когда нужна внесудебная экспертиза</h2>
       <div class="guarantees-grid">
         <div class="guarantee-card">
           <div class="guarantee-card__icon">⚡</div>
@@ -156,7 +230,7 @@
   <!-- Этапы работы -->
   <section class="section">
     <div class="container">
-      <h2 class="section__title">Этапы работы</h2>
+      <h2 class="format-section__title">Этапы работы</h2>
       <div class="steps steps--compact">
         <div class="step"><div class="step__number">1</div><div class="step__title">Бесплатная консультация</div><div class="step__text">Оценим перспективы дела.</div></div>
         <div class="step"><div class="step__number">2</div><div class="step__title">Выезд эксперта</div><div class="step__text">Все замеры, фото и фиксация.</div></div>
@@ -170,19 +244,25 @@
   <!-- Кейсы -->
   <section class="section section--light">
     <div class="container">
-      <h2 class="section__title">Кейсы по внесудебным спорам</h2>
-      <div class="services-grid" style="grid-template-columns: repeat(2, 1fr); gap: 24px;">
-        <div class="service-card">
-          <h3 style="font-size: 1.125rem; margin-bottom: 12px;">💰 Страховая — претензия</h3>
+      <h2 class="format-section__title">Кейсы по внесудебным спорам</h2>
+      <div class="cases-grid">
+        <div class="case-card">
+          <div class="case-card__header">
+            <span class="case-card__icon">💰</span>
+            <h3 class="case-card__title">Страховая — претензия</h3>
+          </div>
           <p><strong>Было:</strong> Страховая выплатила 120 000 ₽, ремонт — 500 000 ₽</p>
           <p><strong>Сделали:</strong> Внесудебная экспертиза + претензия</p>
-          <p><strong>Итог:</strong> Доплатили 380 000 ₽ за 14 дней</p>
+          <p class="case-card__result"><strong>Итог:</strong> Доплатили 380 000 ₽ за 14 дней</p>
         </div>
-        <div class="service-card">
-          <h3 style="font-size: 1.125rem; margin-bottom: 12px;">🔧 Дилер — претензия</h3>
+        <div class="case-card">
+          <div class="case-card__header">
+            <span class="case-card__icon">🔧</span>
+            <h3 class="case-card__title">Дилер — претензия</h3>
+          </div>
           <p><strong>Было:</strong> Запчасть сломалась, дилер отказал в гарантии</p>
           <p><strong>Сделали:</strong> Внесудебная экспертиза + претензия по ЗоЗПП</p>
-          <p><strong>Итог:</strong> Вернули 280 000 ₽ за 10 дней</p>
+          <p class="case-card__result"><strong>Итог:</strong> Вернули 280 000 ₽ за 10 дней</p>
         </div>
       </div>
     </div>
@@ -193,15 +273,15 @@
     <div class="container">
       <h2 class="section__title section__title--white">Гарантии</h2>
       <div class="guarantees-grid">
-        <div class="guarantee-card" style="background: rgba(255,255,255,0.1);">
-          <div class="guarantee-card__icon" style="filter: brightness(0) invert(1);">🛡️</div>
-          <h3 class="guarantee-card__title" style="color: white;">Примет оппонент — или вернём деньги</h3>
-          <p class="guarantee-card__desc" style="color: rgba(255,255,255,0.8);">В 60% случаев оппонент принимает заключение и платит. Если нет — вернём 100% оплаты.</p>
+        <div class="guarantee-card guarantee-card--white">
+          <div class="guarantee-card__icon">🛡️</div>
+          <h3 class="guarantee-card__title">Примет оппонент — или вернём деньги</h3>
+          <p class="guarantee-card__desc">В 60% случаев оппонент принимает заключение и платит. Если нет — вернём 100% оплаты.</p>
         </div>
-        <div class="guarantee-card" style="background: rgba(255,255,255,0.1);">
-          <div class="guarantee-card__icon" style="filter: brightness(0) invert(1);">📋</div>
-          <h3 class="guarantee-card__title" style="color: white;">Претензия по ЗоЗПП</h3>
-          <p class="guarantee-card__desc" style="color: rgba(255,255,255,0.8);">Составляем юридическую претензию по закону «О защите прав потребителей».</p>
+        <div class="guarantee-card guarantee-card--white">
+          <div class="guarantee-card__icon">📋</div>
+          <h3 class="guarantee-card__title">Претензия по ЗоЗПП</h3>
+          <p class="guarantee-card__desc">Составляем юридическую претензию по закону «О защите прав потребителей».</p>
         </div>
       </div>
     </div>
@@ -210,7 +290,7 @@
   <!-- Отзывы -->
   <section class="section">
     <div class="container">
-      <h2 class="section__title">Отзывы клиентов</h2>
+      <h2 class="format-section__title">Отзывы клиентов</h2>
       <div class="reviews-grid">
         <div class="review-card">
           <div class="review-card__stars">★★★★★</div>
@@ -234,24 +314,32 @@
   <!-- FAQ -->
   <section class="section section--light">
     <div class="container">
-      <h2 class="section__title">Частые вопросы</h2>
-      <div style="max-width: 800px; margin: 0 auto;">
-        <details style="margin-bottom: 16px; padding: 16px; background: #fff; border-radius: 8px;">
-          <summary style="font-weight: 600; cursor: pointer;">Чем внесудебная экспертиза отличается от судебной?</summary>
-          <p style="margin-top: 12px; color: var(--text-light);">Внесудебная — для досудебной претензии, дешевле и быстрее. Судебная — по ФЗ-73, принимается всеми судами.</p>
-        </details>
-        <details style="margin-bottom: 16px; padding: 16px; background: #fff; border-radius: 8px;">
-          <summary style="font-weight: 600; cursor: pointer;">Сколько стоит внесудебная экспертиза?</summary>
-          <p style="margin-top: 12px; color: var(--text-light);">Автотехническая — от 12 000 ₽, автотовароведческая — от 10 000 ₽, узлы и агрегаты — от 8 000 ₽.</p>
-        </details>
-        <details style="margin-bottom: 16px; padding: 16px; background: #fff; border-radius: 8px;">
-          <summary style="font-weight: 600; cursor: pointer;">Примет ли оппонент внесудебную экспертизу?</summary>
-          <p style="margin-top: 12px; color: var(--text-light);">В 60% случаев оппонент принимает заключение и платит. Если нет — можно провести судебную экспертизу.</p>
-        </details>
-        <details style="padding: 16px; background: #fff; border-radius: 8px;">
-          <summary style="font-weight: 600; cursor: pointer;">Сколько времени занимает?</summary>
-          <p style="margin-top: 12px; color: var(--text-light);">Экспертиза — 5-7 дней. Ответ от оппонента — 10-14 дней. Итого — 2-3 недели.</p>
-        </details>
+      <h2 class="format-section__title">Частые вопросы</h2>
+      <div class="faq-clean">
+        <div class="faq-clean__item">
+          <details class="faq-clean__details">
+            <summary class="faq-clean__summary">Чем внесудебная экспертиза отличается от судебной?</summary>
+            <div class="faq-clean__answer">Внесудебная — для досудебной претензии, дешевле и быстрее. Судебная — по ФЗ-73, принимается всеми судами.</div>
+          </details>
+        </div>
+        <div class="faq-clean__item">
+          <details class="faq-clean__details">
+            <summary class="faq-clean__summary">Сколько стоит внесудебная экспертиза?</summary>
+            <div class="faq-clean__answer">Автотехническая — от 12 000 ₽, автотовароведческая — от 10 000 ₽, узлы и агрегаты — от 8 000 ₽.</div>
+          </details>
+        </div>
+        <div class="faq-clean__item">
+          <details class="faq-clean__details">
+            <summary class="faq-clean__summary">Примет ли оппонент внесудебную экспертизу?</summary>
+            <div class="faq-clean__answer">В 60% случаев оппонент принимает заключение и платит. Если нет — можно провести судебную экспертизу.</div>
+          </details>
+        </div>
+        <div class="faq-clean__item">
+          <details class="faq-clean__details">
+            <summary class="faq-clean__summary">Сколько времени занимает?</summary>
+            <div class="faq-clean__answer">Экспертиза — 5-7 дней. Ответ от оппонента — 10-14 дней. Итого — 2-3 недели.</div>
+          </details>
+        </div>
       </div>
     </div>
   </section>
@@ -260,8 +348,8 @@
   <section class="section section--cta">
     <div class="container">
       <h2 class="section__title section__title--white">Решаем споры без суда</h2>
-      <p class="section__subtitle section__subtitle--cta" style="color: rgba(255,255,255,0.8);">Бесплатная консультация — 15 минут. Скажем, стоит ли проводить экспертизу.</p>
-      <div class="cta-buttons" style="justify-content: center;">
+      <p class="section__subtitle section__subtitle--cta cta-subtitle">Бесплатная консультация — 15 минут. Скажем, стоит ли проводить экспертизу.</p>
+      <div class="cta-buttons cta-center">
         <a href="tel:+79059830969" class="btn btn--primary btn--large">📞 Бесплатная консультация</a>
         <a href="#calculator" class="btn btn--outline btn--large btn--white-outline">Рассчитать стоимость</a>
       </div>
