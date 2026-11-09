@@ -27,6 +27,8 @@
         var container = document.getElementById(containerId);
         if (container) {
           container.innerHTML = html;
+          // Адаптируем абсолютные пути для GitHub Pages
+          adaptPathsForGitHubPages(container);
           // Инициализируем обработчики после вставки
           if (filePath === 'header.html') {
             initHeader();
@@ -36,6 +38,35 @@
       .catch(function(error) {
         console.warn('Component load error:', error);
       });
+  }
+
+  // Адаптируем абсолютные пути для GitHub Pages
+  function adaptPathsForGitHubPages(container) {
+    var host = window.location.host;
+    // Проверяем, что это GitHub Pages (не основной домен)
+    if (host.indexOf('github.io') === -1) return;
+    
+    // URL GitHub Pages: https://username.github.io/repo-name/...
+    // pathname: /repo-name/... => split => ['', 'repo-name', ...]
+    var pathParts = window.location.pathname.split('/');
+    var repoName = pathParts[1];
+    if (!repoName) return;
+    
+    var prefix = '/' + repoName + '/';
+    var allLinks = container.querySelectorAll('a[href]');
+    allLinks.forEach(function(link) {
+      var href = link.getAttribute('href');
+      // Пропускаем tel:, mailto:, #, http(s)://, javascript:
+      if (!href || href.startsWith('tel:') || href.startsWith('mailto:') || 
+          href.startsWith('#') || href.startsWith('http://') || 
+          href.startsWith('https://') || href.startsWith('javascript:')) return;
+      
+      // Если ссылка абсолютная (начинается с /), добавляем префикс репо
+      if (href.startsWith('/') && !href.startsWith('//')) {
+        var newHref = prefix + href.substring(1);
+        link.setAttribute('href', newHref);
+      }
+    });
   }
 
   // Инициализация шапки (бургер-меню, дропдауны)
