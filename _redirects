@@ -1,0 +1,52 @@
+# 301 Permanent Redirects — Объектив-Эксперт
+# Generated for site restructuring
+
+# Old service index → Home
+/pages/services/index.html / 301
+
+# Old B2C commodity categories → B2B commodity page
+/pages/services/tovarovedcheskaya/index.html /tovarovedcheskaya-b2b/ 301
+/pages/services/tovarovedcheskaya/odezda-i-obuv/ /tovarovedcheskaya-b2b/ 301
+/pages/services/tovarovedcheskaya/electro-byt/ /tovarovedcheskaya-b2b/ 301
+/pages/services/tovarovedcheskaya/parfum-kosmetika/ /tovarovedcheskaya-b2b/ 301
+/pages/services/tovarovedcheskaya/byt-himiya/ /tovarovedcheskaya-b2b/ 301
+/pages/services/tovarovedcheskaya/dom-obyakt/ /tovarovedcheskaya-b2b/ 301
+/pages/services/tovarovedcheskaya/sport/ /tovarovedcheskaya-b2b/ 301
+/pages/services/tovarovedcheskaya/meditsinskie/ /tovarovedcheskaya-b2b/ 301
+/pages/services/tovarovedcheskaya/stroitelnye/ /tovarovedcheskaya-b2b/ 301
+/pages/services/tovarovedcheskaya/mashiny-oborudovanie/ /tovarovedcheskaya-b2b/ 301
+/pages/services/tovarovedcheskaya/transportnye-sredstva/ /tovarovedcheskaya-b2b/ 301
+
+# Old review pages → New review page
+/pages/review/index.html /recenziya/ 301
+/pages/review/autotech/ /recenziya/ 301
+/pages/review/autotrade/ /recenziya/ 301
+/pages/review/cases/ /recenziya/ 301
+/pages/review/commodity/ /recenziya/ 301
+/pages/review/dtp/ /recenziya/ 301
+/pages/review/dtp-conditions/ /recenziya/ 301
+/pages/review/technical-condition/ /recenziya/ 301
+/pages/review/trace-diagnostics/ /recenziya/ 301
+/pages/review/units/ /recenziya/ 301
+
+# Old service pages → New category pages
+/pages/services/automobile/ /avtotehnicheskaya/ 301
+/pages/services/avto-tovarisvedcheskaya-ekspertiza/ /avtotovarovedcheskaya/ 301
+/pages/services/avtotexnicheskaya-ekspertiza/ /avtotehnicheskaya/ 301
+/pages/services/ekspertiza-uzlov-i-agregatov/ /uzly-i-agregaty/ 301
+
+# Old page paths → New page paths
+/pages/prices/ /ceny/ 301
+/pages/cases/ /keysy/ 301
+/pages/about/ /o-kompanii/ 301
+/pages/about/experts.html /eksperty/ 301
+/pages/contacts/ /kontakty/ 301
+/pages/faq/ /faq/ 301
+/pages/offer/ /oferta/ 301
+/pages/partners/ /partners/ 301
+/privacy.html /politika/ 301
+
+# Old service format pages → New format pages
+/services/court/ /sudebnaya/ 301
+/services/informal/ /vnesudebnaya/ 301
+/services/review/ /recenziya/ 301

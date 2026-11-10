@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /pages/thank-you/
 
-Sitemap: https://ylmovlad24-ui.github.io/expmy/sitemap.xml
+Sitemap: https://objektiv-expert.ru/sitemap.xml

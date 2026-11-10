@@ -2,42 +2,33 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <link rel="canonical" href="https://objektiv-expert.ru/404.html">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 — Страница не найдена</title>
-  <link rel="stylesheet" href="assets/css/main.css">
+  <title>Страница не найдена — Объектив-Эксперт</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Перейти к содержимому</a>
-
-  <div id="header-root"></div>
-
-  <main>
-    <section class="error-page">
-      <div class="error-page__container">
-        <svg class="error-page__icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#6c7a89" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-          <line x1="12" y1="17" x2="12.01" y2="17"/>
-        </svg>
-        <h1>Страница не найдена</h1>
-        <p class="error-page__subtitle">Кажется, вы заблудились. Страница, которую вы ищете, могла быть удалена или перемещена.</p>
-
-        <div class="error-page__links">
-          <a href="index.html" class="error-page__link">Вернуться на главную</a>
-          <a href="pages/services/index.html" class="error-page__link">Наши услуги</a>
-          <a href="pages/contacts/index.html" class="error-page__link">Контакты</a>
+  <div id="header-container"></div>
+  <main id="main-content">
+    <section class="section">
+      <div class="container" style="text-align:center;max-width:600px;">
+        <h1 class="section__title">Страница не найдена</h1>
+        <p class="section__subtitle" style="margin-bottom:40px;">Перейдите к одному из родов экспертиз:</p>
+        <div class="category-grid" style="max-width:600px;margin:0 auto;">
+          <a href="/avtotehnicheskaya/" class="category-card"><h3 class="category-card__title">Автотехническая</h3></a>
+          <a href="/avtotovarovedcheskaya/" class="category-card"><h3 class="category-card__title">Автотовароведческая</h3></a>
+          <a href="/uzly-i-agregaty/" class="category-card"><h3 class="category-card__title">Узлы и агрегаты</h3></a>
+          <a href="/tovarovedcheskaya-b2b/" class="category-card"><h3 class="category-card__title">Товароведческая B2B</h3></a>
         </div>
-
-        <p class="error-page__help">
-          Не нашли нужную страницу? <a href="pages/contacts/index.html">Свяжитесь с нами</a> — поможем разобраться.
-        </p>
+        <a href="/" class="btn btn--primary" style="margin-top:40px;">На главную</a>
       </div>
     </section>
   </main>
-
-  <div id="footer-root"></div>
-
-  <script src="assets/js/modules/components-loader.js" defer></script>
-
-  <script src="assets/js/modules/components.js" defer></script></body>
+  <div id="footer-container"></div>
+  <script src="assets/js/modules/components.js" defer></script>
+</body>
 </html>

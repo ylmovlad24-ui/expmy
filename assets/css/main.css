@@ -29,6 +29,9 @@
 @import url('./components/cta-about.css');
 @import url('./components/pricing.css');
 
+/* Components — main page */
+@import url('./components/main-page.css');
+
 /* Components — dianomi */
 @import url('./components/animations.css');
 @import url('./components/services-cards.css');
@@ -45,3 +48,4 @@
 @import url('./pages/about.css');
 @import url('./pages/index.css');
 @import url('./pages/privacy.css');
+@import url('./pages/diplomy.css');

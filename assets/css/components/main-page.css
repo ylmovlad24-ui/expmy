@@ -1,0 +1,439 @@
+/* ===== Situation Cards (главная — 6 плиток) ===== */
+
+.situation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.situation-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.situation-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+
+.situation-card__title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--primary);
+}
+
+.situation-card__desc {
+  font-size: 0.9375rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== Category Cards (роды экспертизы) ===== */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.category-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s, border-left-color 0.3s;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.category-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+  border-left-color: var(--accent);
+}
+
+.category-card__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text);
+  margin: 0;
+}
+
+.category-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.category-card__list li {
+  font-size: 0.9375rem;
+  color: var(--text);
+  padding-left: 20px;
+  position: relative;
+}
+
+.category-card__list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.category-card__question {
+  font-size: 0.9375rem;
+  color: var(--text-light);
+  font-style: italic;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ===== Format Matrix ===== */
+
+.format-matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.format-matrix__row {
+  display: grid;
+  grid-template-columns: 240px 1fr 1fr 1fr;
+  border-bottom: 1px solid var(--border);
+}
+
+.format-matrix__row:last-child {
+  border-bottom: none;
+}
+
+.format-matrix__cell {
+  padding: 16px 20px;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.format-matrix__cell--label {
+  background: var(--bg-light);
+  font-weight: 600;
+  color: var(--primary);
+  border-right: 1px solid var(--border);
+}
+
+.format-matrix__cell:first-child {
+  border-right: 1px solid var(--border);
+}
+
+/* ===== Step Cards (5 шагов) ===== */
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.step-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.step-card__number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.step-card__title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text);
+}
+
+.step-card__desc {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ===== Expert Cards (главная) ===== */
+
+.experts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.expert-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.expert-card__name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.expert-card__specialization {
+  font-size: 0.9375rem;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.expert-card__registry {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  margin: 0;
+}
+
+/* ===== Case Cards ===== */
+
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.case-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.case-card__placeholder {
+  font-size: 0.9375rem;
+  color: var(--text-light);
+  font-style: italic;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ===== Conditions Block ===== */
+
+.conditions-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.condition-item {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  box-shadow: var(--shadow);
+}
+
+.condition-item__title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.condition-item__desc {
+  font-size: 0.9375rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== Contacts Grid ===== */
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-info__address,
+.contact-info__phone,
+.contact-info__email,
+.contact-info__hours {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contact-info__phone a,
+.contact-info__email a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.contact-info__phone a:hover,
+.contact-info__email a:hover {
+  color: var(--accent);
+}
+
+.contact-form-wrap {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.form__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.form__note {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+/* ===== Section utilities ===== */
+
+.section__subtitle {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1024px) {
+  .situation-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .format-matrix__row {
+    grid-template-columns: 180px 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .situation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .format-matrix {
+    font-size: 0.875rem;
+  }
+
+  .format-matrix__row {
+    grid-template-columns: 1fr;
+  }
+
+  .format-matrix__cell--label {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-light);
+  }
+
+  .format-matrix__cell {
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px;
+  }
+
+  .format-matrix__cell:first-child {
+    border-right: none;
+  }
+
+  .contacts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cases-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .situation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .situation-card {
+    padding: 20px 16px;
+  }
+
+  .category-card {
+    padding: 20px 16px;
+  }
+
+  .step-card {
+    padding: 20px 16px;
+  }
+
+  .contact-form-wrap {
+    padding: 20px 16px;
+  }
+}
