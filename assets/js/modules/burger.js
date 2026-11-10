@@ -31,19 +31,6 @@
       closeMenu();
     });
 
-    // Click on dropdown toggle to expand/collapse
-    var dropdownToggles = menuPanel.querySelectorAll('.header__menu-dropdown-toggle');
-    dropdownToggles.forEach(function(toggle) {
-      toggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        var dropdown = toggle.closest('.header__menu-dropdown');
-        if (dropdown) {
-          dropdown.classList.toggle('open');
-        }
-      });
-    });
-
     // Close on link click
     var menuLinks = menuPanel.querySelectorAll('.header__menu-dropdown-item a, .header__menu-nav > .header__link');
     menuLinks.forEach(function(link) {

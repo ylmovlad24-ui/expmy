@@ -4,31 +4,34 @@
  */
 document.addEventListener('DOMContentLoaded', function () {
 
-  // 1. Burger menu
-  BurgerMenu.init();
+  // 1. Burger menu — инициализируется в components.js после загрузки header
 
   // 3. FAQ Accordion
-  FaqAccordion.init();
+  if (typeof FaqAccordion !== 'undefined' && FaqAccordion.init) FaqAccordion.init();
 
   // 4. Tab switching
-  TabSwitcher.init();
+  if (typeof TabSwitcher !== 'undefined' && TabSwitcher.init) TabSwitcher.init();
 
   // 5. Calculators
-  Calculator.initFull();
-  Calculator.initCompact();
+  if (typeof Calculator !== 'undefined') {
+    if (Calculator.initFull) Calculator.initFull();
+    if (Calculator.initCompact) Calculator.initCompact();
+  }
 
   // 6. Form handlers
-  var contactForm = document.getElementById('contactForm');
-  if (contactForm) FormHandler.submitForm(contactForm, false);
+  if (typeof FormHandler !== 'undefined') {
+    var contactForm = document.getElementById('contactForm');
+    if (contactForm) FormHandler.submitForm(contactForm, false);
 
-  var calcForm = document.getElementById('calcForm');
-  if (calcForm) FormHandler.submitForm(calcForm, true);
+    var calcForm = document.getElementById('calcForm');
+    if (calcForm) FormHandler.submitForm(calcForm, true);
 
-  var calcFormCompact = document.getElementById('calcFormCompact');
-  if (calcFormCompact) FormHandler.submitForm(calcFormCompact, true);
+    var calcFormCompact = document.getElementById('calcFormCompact');
+    if (calcFormCompact) FormHandler.submitForm(calcFormCompact, true);
+  }
 
   // 8. Smooth scroll & header shadow
-  SmoothScroll.init();
+  if (typeof SmoothScroll !== 'undefined' && SmoothScroll.init) SmoothScroll.init();
 
   // 9. Scroll progress bar (из dianomi)
   var scrollProgress = document.querySelector('.scroll-progress');

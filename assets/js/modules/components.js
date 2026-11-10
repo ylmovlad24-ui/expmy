@@ -10,6 +10,10 @@
     var path = window.location.pathname;
     if (path.indexOf('/pages/services/') !== -1) return '../../../';
     if (path.indexOf('/pages/') !== -1) return '../';
+    if (path.indexOf('/vnesudebnaya/') !== -1) return '../';
+    if (path.indexOf('/recenziya/') !== -1) return '../';
+    if (path.indexOf('/sudebnaya/') !== -1) return '../';
+    if (path.indexOf('/faq/') !== -1) return '../';
     return '';
   }
 
@@ -32,6 +36,10 @@
           // Инициализируем обработчики после вставки
           if (filePath === 'header.html') {
             initHeader();
+            // Инициализируем бургер после загрузки header
+            if (typeof BurgerMenu !== 'undefined' && BurgerMenu.init) {
+              setTimeout(function() { BurgerMenu.init(); }, 100);
+            }
           }
         }
       })

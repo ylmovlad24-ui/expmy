@@ -9,7 +9,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/main.css?v=3">
+  <link rel="stylesheet" href="../assets/css/motion.css?v=3">
+  <link rel="stylesheet" href="../assets/css/pages/vnesudebnaya.css?v=8">
+  
+  <!-- Progress Bar -->
+  <div class="progress-bar" aria-hidden="true"></div>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -18,27 +23,27 @@
   <main id="main-content">
 
     <!-- 1. Hero + Где используется -->
-    <section class="vnesud-hero">
+    <section class="vnesud-hero reveal-entrance">
       <div class="container vnesud-hero__inner">
         <div class="vnesud-hero__text">
           <h1 class="vnesud-hero__title">Независимая внесудебная экспертиза: объективная оценка</h1>
           <p class="vnesud-hero__badge">Объективность обеспечивается структурой: вопросы, методика, расчёты — на каждом этапе</p>
         </div>
         <div class="vnesud-hero__actions">
-          <a href="#contact-form" class="btn btn--primary">Получить оценку</a>
+          <a href="#cta-section" class="btn btn--primary">Получить оценку</a>
           <a href="#how-we-work" class="vnesud-hero__link">Как мы работаем</a>
         </div>
         <div class="vnesud-hero-uses">
           <div class="vnesud-hero-use">
             <div class="vnesud-hero-use__icon-wrap">
-              <span class="vnesud-hero-use__icon">📋</span>
+              <svg class="vnesud-hero-use__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
             </div>
             <h3 class="vnesud-hero-use__title">К претензии — как обоснование позиции</h3>
             <p class="vnesud-hero-use__desc">Заключение с расчётами и методикой усиливает претензию — оппонент видит, что позиция подкреплена экспертной оценкой</p>
           </div>
           <div class="vnesud-hero-use">
             <div class="vnesud-hero-use__icon-wrap">
-              <span class="vnesud-hero-use__icon">⚖️</span>
+              <svg class="vnesud-hero-use__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M18 9l-6-6-6 6"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
             </div>
             <h3 class="vnesud-hero-use__title">К суду — как письменное доказательство</h3>
             <p class="vnesud-hero-use__desc">Заключение оформлено по правилам — с расчётами, фототаблицей, документальным подтверждением. Суд оценивает его наравне с другими материалами</p>
@@ -47,32 +52,39 @@
       </div>
     </section>
 
+    <!-- Visual divider -->
+    <div class="vnesud-divider">
+      <div class="container">
+        <div class="vnesud-divider__line"></div>
+      </div>
+    </div>
+
     <!-- 2. К каким родам -->
-    <section class="vnesud-section vnesud-section--alt" id="directions">
+    <section class="vnesud-section vnesud-section--alt reveal" id="directions">
       <div class="container">
         <h2 class="vnesud-section__title">К каким родам экспертизы применяется</h2>
         <p class="vnesud-section__subtitle">Внесудебная экспертиза работает с любым родом — подбираем формат под вашу ситуацию</p>
-        <div class="vnesud-directions">
+        <div class="vnesud-directions reveal-stagger">
           <div class="vnesud-direction">
-            <div class="vnesud-direction__icon">🚗</div>
+            <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2z"/><path d="M19 17h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2z"/><path d="M7 17v2a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
             <h3 class="vnesud-direction__title">Автотехническая</h3>
             <p class="vnesud-direction__desc">Обстоятельства ДТП, техническое состояние, трасология. Помогаем доказать, кто виноват, и обосновать размер ущерба.</p>
             <a href="/avtotehnicheskaya/" class="vnesud-direction__link">Подробнее →</a>
           </div>
           <div class="vnesud-direction">
-            <div class="vnesud-direction__icon">🔧</div>
+            <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
             <h3 class="vnesud-direction__title">Автотовароведческая</h3>
             <p class="vnesud-direction__desc">Рыночная стоимость, ремонт, УТС. Считаем реальный ущерб и защищаем от занижения выплат.</p>
             <a href="/avtotovarovedcheskaya/" class="vnesud-direction__link">Подробнее →</a>
           </div>
           <div class="vnesud-direction">
-            <div class="vnesud-direction__icon">⚙️</div>
+            <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
             <h3 class="vnesud-direction__title">Узлы и агрегаты</h3>
             <p class="vnesud-direction__desc">Двигатель, КПП, гидравлика, электроника. Проверяем качество ремонта, брака и износа — чтобы не платить за чужое.</p>
             <a href="/uzly-i-agregaty/" class="vnesud-direction__link">Подробнее →</a>
           </div>
           <div class="vnesud-direction">
-            <div class="vnesud-direction__icon">📦</div>
+            <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
             <h3 class="vnesud-direction__title">Товароведческая B2B</h3>
             <p class="vnesud-direction__desc">Оборудование, силовые агрегаты, запчасти. Объективная оценка качества и стоимости для споров между юрлицами.</p>
             <a href="/tovarovedcheskaya-b2b/" class="vnesud-direction__link">Подробнее →</a>
@@ -82,31 +94,47 @@
     </section>
 
     <!-- 3. Как мы работаем -->
-    <section class="vnesud-section" id="how-we-work">
+    <section class="vnesud-section reveal" id="how-we-work">
       <div class="container">
         <h2 class="vnesud-section__title">Как мы работаем</h2>
-        <div class="vnesud-steps">
+        <p class="vnesud-section__subtitle">От первого контакта до готового заключения — прозрачный процесс на каждом этапе</p>
+        <div class="vnesud-steps reveal-stagger">
           <div class="vnesud-step">
+            <div class="vnesud-step__icon-wrap">
+              <svg class="vnesud-step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            </div>
             <div class="vnesud-step__num">1</div>
             <h3 class="vnesud-step__title">Вы присылаете материалы</h3>
             <p class="vnesud-step__desc">Документы спора, договоры, акты, фото, чужие заключения — что есть. Можно просто описать ситуацию.</p>
           </div>
           <div class="vnesud-step">
+            <div class="vnesud-step__icon-wrap">
+              <svg class="vnesud-step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
             <div class="vnesud-step__num">2</div>
             <h3 class="vnesud-step__title">Оцениваем</h3>
             <p class="vnesud-step__desc">Говорим, что реально можно доказать, какую экспертизу выбрать и какие перспективы у вашего дела.</p>
           </div>
           <div class="vnesud-step">
+            <div class="vnesud-step__icon-wrap">
+              <svg class="vnesud-step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
             <div class="vnesud-step__num">3</div>
             <h3 class="vnesud-step__title">Согласуем сроки и стоимость</h3>
             <p class="vnesud-step__desc">Стоимость и вопросы фиксируются в договоре до начала работ. Никаких доплат после подписания.</p>
           </div>
           <div class="vnesud-step">
+            <div class="vnesud-step__icon-wrap">
+              <svg class="vnesud-step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
             <div class="vnesud-step__num">4</div>
             <h3 class="vnesud-step__title">Готовим заключение</h3>
             <p class="vnesud-step__desc">С выводами и правовой оценкой статуса — с расчётами, фототаблицей и документальным подтверждением.</p>
           </div>
           <div class="vnesud-step">
+            <div class="vnesud-step__icon-wrap">
+              <svg class="vnesud-step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
             <div class="vnesud-step__num">5</div>
             <h3 class="vnesud-step__title">Рекомендации по действиям</h3>
             <p class="vnesud-step__desc">Письменные и устные пояснения к выводам — для претензии, переговоров или судебного заседания.</p>
@@ -116,10 +144,10 @@
     </section>
 
     <!-- 4. Примеры -->
-    <section class="vnesud-section vnesud-section--alt">
+    <section class="vnesud-section vnesud-section--alt reveal">
       <div class="container">
         <h2 class="vnesud-section__title">Примеры из практики</h2>
-        <div class="vnesud-cases">
+        <div class="vnesud-cases reveal-stagger">
           <div class="vnesud-case">
             <h3 class="vnesud-case__title">Спор о размере выплаты по ОСАГО</h3>
             <p class="vnesud-case__desc">Внесудебная автотехническая экспертиза подтвердила завышенную стоимость ремонта, рассчитанную страховщиком. Клиент получил доплату по разнице рыночной и заниженной стоимости.</p>
@@ -140,10 +168,10 @@
     </section>
 
     <!-- 5. Принципы работы -->
-    <section class="vnesud-section">
+    <section class="vnesud-section reveal" id="guarantees">
       <div class="container">
         <h2 class="vnesud-section__title">Принципы работы</h2>
-        <div class="guarantees-grid">
+        <div class="guarantees-grid reveal-stagger">
           <div class="guarantee-card">
             <h3 class="guarantee-card__title">Объективность</h3>
             <p class="guarantee-card__desc">Мы даём объективную экспертизу и честную оценку. Если перспективы слабые — скажем об этом на этапе оценки.</p>
@@ -175,26 +203,17 @@
             <div class="vnesud-faq-item__answer">Судебная экспертиза назначается определением суда — через ходатайство. Внесудебная — по вашей инициативе, без участия суда. Судебная экспертиза даёт обязательные пояснения эксперта в заседании; внесудебная — это письменное доказательство, которое суд оценивает наравне с другими материалами.</div>
           </details>
           <details class="vnesud-faq-item">
-            <summary class="vnesud-faq-item__summary">Правовой статус внесудебного заключения</summary>
+            <summary class="vnesud-faq-item__summary">Правовой статус и можно ли использовать в суде?</summary>
             <div class="vnesud-faq-item__answer">
               <p>Ваше заключение — это письменное доказательство, которое суд оценивает наравне с другими материалами (ГПК РФ ст. 74, АПК РФ ст. 64). Статус полноценной судебной экспертизы документ получает только по назначению суда.</p>
               <div class="vnesud-faq-item__legal">
                 <p>Пленум ВАС РФ № 23, п. 13: суд оценивает письменные доказательства, в том числе заключения лиц, не являющихся судебными экспертами, наравне с другими материалами дела.</p>
-                <p>Определение ВС РФ 41-КГ23-44-К4: внесудебное заключение может быть принято судом в качестве доказательства, если соблюдены требования к его содержанию и методике исследования.</p>
               </div>
             </div>
           </details>
           <details class="vnesud-faq-item">
             <summary class="vnesud-faq-item__summary">Сколько стоит и сколько длится?</summary>
             <div class="vnesud-faq-item__answer">Сроки и стоимость зависят от рода экспертизы и сложности. Оценка материалов — бесплатно и быстро. Само исследование — от нескольких дней до двух недель. Точные сроки и стоимость фиксируются в договоре.</div>
-          </details>
-          <details class="vnesud-faq-item">
-            <summary class="vnesud-faq-item__summary">Что нужно подготовить для начала?</summary>
-            <div class="vnesud-faq-item__answer">Договор, спецификация, акты, протоколы, фото, чужие заключения — что есть по вашему делу. Можно просто описать ситуацию — мы сами скажем, какие документы нужны.</div>
-          </details>
-          <details class="vnesud-faq-item">
-            <summary class="vnesud-faq-item__summary">Можно ли использовать заключение в суде?</summary>
-            <div class="vnesud-faq-item__answer">Да, внесудебное заключение — это письменное доказательство по ГПК РФ ст. 74 и АПК РФ ст. 64. Суд оценит его наравне с другими материалами. Статус экспертизы по назначению суда документ получает только через ходатайство.</div>
           </details>
           <details class="vnesud-faq-item">
             <summary class="vnesud-faq-item__summary">А эксперт не напишет то, что я закажу?</summary>
@@ -208,17 +227,41 @@
       </div>
     </section>
 
+    <!-- 7. CTA-секция -->
+    <section class="vnesud-cta-section" id="cta-section">
+      <div class="container">
+        <div class="vnesud-cta__inner">
+          <div class="vnesud-cta__text">
+            <h2 class="vnesud-cta__title">Оцените перспективы бесплатно</h2>
+            <p class="vnesud-cta__desc">Пришлите материалы — скажем, что реально можно доказать, какую экспертизу выбрать и какие перспективы у вашего дела.</p>
+          </div>
+          <form class="vnesud-cta__form" id="ctaForm">
+            <div class="vnesud-cta__fields">
+              <input type="text" name="name" placeholder="Ваше имя" required>
+              <input type="tel" name="phone" placeholder="Телефон" required>
+              <input type="email" name="email" placeholder="E-mail">
+            </div>
+            <textarea name="message" placeholder="Опишите ситуацию — кратко, своими словами" rows="4"></textarea>
+            <button type="submit" class="btn btn--primary vnesud-cta__btn">Отправить на оценку</button>
+            <p class="vnesud-cta__note">Оценка материалов — бесплатно. Ответим в течение 2 часов в рабочее время.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <div id="footer-container"></div>
 
-  <script src="assets/js/lib/utils.js" defer></script>
-  <script src="assets/js/modules/burger.js" defer></script>
-  <script src="assets/js/modules/faq.js" defer></script>
-  <script src="assets/js/modules/forms.js" defer></script>
-  <script src="assets/js/modules/smooth-scroll.js" defer></script>
-  <script src="assets/js/main.js" defer></script>
-  <script src="assets/js/modules/scroll-animations.js" defer></script>
-  <script src="assets/js/modules/components.js" defer></script>
+  <script src="../assets/js/lib/utils.js" defer></script>
+  <script src="../assets/js/modules/burger.js" defer></script>
+  <script src="../assets/js/modules/faq.js" defer></script>
+  <script src="../assets/js/modules/forms.js" defer></script>
+  <script src="../assets/js/modules/smooth-scroll.js" defer></script>
+  <script src="../assets/js/modules/scroll-animations.js" defer></script>
+  <script src="../assets/js/modules/components.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/modules/motion.js?v=2" defer></script>
+  <script src="../assets/js/modules/webgl-gradient.js" defer></script>
 </body>
 </html>
