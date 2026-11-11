@@ -405,6 +405,15 @@
         }, once: true });
       }
 
+      // vnesud-steps
+      var vs = document.querySelector('.vnesud-steps');
+      if (vs) {
+        var vst = vs.querySelectorAll('.vnesud-step');
+        ScrollTrigger.create({ trigger: vs, start: 'top 75%', onEnter: function() {
+          gsap.to(vst, { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: 'power2.out' });
+        }, once: true });
+      }
+
       // vnesud-cases
       var vc = document.querySelector('.vnesud-cases');
       if (vc) {

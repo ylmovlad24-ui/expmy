@@ -1,5 +1,73 @@
 /* ===== Внесудебная экспертиза — page-specific styles ===== */
 
+/* --- Trust Bar (zero section) --- */
+
+.vnesud-trust {
+  padding: 48px 0 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.vnesud-trust__inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.vnesud-trust-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 24px;
+  border-radius: 12px;
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vnesud-trust-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.vnesud-trust-item__num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.vnesud-trust-item__label {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+.vnesud-trust-item--verified {
+  background: linear-gradient(135deg, rgba(42, 91, 154, 0.04) 0%, rgba(230, 126, 34, 0.04) 100%);
+  border-color: var(--primary);
+}
+
+.vnesud-trust-item--verified .vnesud-trust-item__icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vnesud-trust-item__icon {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  color: var(--success);
+  flex-shrink: 0;
+}
+
+.vnesud-trust-item--verified .vnesud-trust-item__label {
+  color: var(--text);
+  font-weight: 600;
+}
+
 /* --- Hero (full viewport, no centering) --- */
 
 .vnesud-hero {
@@ -287,7 +355,7 @@
 
 .vnesud-steps {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   position: relative;
 }
@@ -296,8 +364,8 @@
   content: '';
   position: absolute;
   top: 40px;
-  left: 12%;
-  right: 12%;
+  left: 10%;
+  right: 10%;
   height: 3px;
   background: linear-gradient(90deg, #E67E22, #f5a623, #E67E22);
   opacity: 0.3;
@@ -318,6 +386,7 @@
   position: relative;
   z-index: 1;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 0;
 }
 
 .vnesud-step:hover {
@@ -371,6 +440,9 @@
   margin: 0;
   color: #1a202c;
   line-height: 1.4;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .vnesud-step__desc {
@@ -378,6 +450,8 @@
   color: #4a5568;
   line-height: 1.6;
   margin: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 /* --- Cases --- */
@@ -712,6 +786,27 @@
 }
 
 @media (max-width: 768px) {
+  .vnesud-trust {
+    padding: 32px 0 0;
+  }
+
+  .vnesud-trust__inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .vnesud-trust-item {
+    padding: 16px 20px;
+  }
+
+  .vnesud-trust-item__num {
+    font-size: 1.625rem;
+  }
+
+  .vnesud-trust-item__label {
+    font-size: 0.8125rem;
+  }
+
   .vnesud-hero {
     padding: 64px 0 48px;
   }

@@ -11,9 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/main.css?v=3">
   <link rel="stylesheet" href="../assets/css/motion.css?v=3">
-  <link rel="stylesheet" href="../assets/css/pages/vnesudebnaya.css?v=8">
+  <link rel="stylesheet" href="../assets/css/pages/vnesudebnaya.css?v=10">
   <link rel="stylesheet" href="../assets/css/components/uni-steps.css?v=1">
-  <link rel="stylesheet" href="../assets/css/pages/avtotehnicheskaya.css?v=1">
+  <link rel="stylesheet" href="../assets/css/pages/avtotehnicheskaya.css?v=11">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -21,39 +21,39 @@
 
   <main id="main-content">
 
-    <!-- 1. Hero -->
+    <!-- 1. Hero (нулевой блок) -->
     <section class="vnesud-hero reveal-entrance">
       <div class="container vnesud-hero__inner">
         <div class="vnesud-hero__text">
           <h1 class="vnesud-hero__title">Автотехническая экспертиза</h1>
           <p class="vnesud-hero__badge">Судебная экспертиза обстоятельств ДТП, технического состояния ТС, следов на ТС и месте ДТП, технического состояния дороги</p>
-        </div>
-        <div class="vnesud-hero__actions">
-          <a href="#contact-form" class="btn btn--primary">Получить консультацию</a>
-          <a href="#directions" class="vnesud-hero__link">Виды экспертизы →</a>
+          <div class="vnesud-hero__actions">
+            <a href="#contact-form" class="btn btn--primary">Получить консультацию</a>
+            <a href="#directions" class="vnesud-hero__link">Виды экспертизы →</a>
+          </div>
         </div>
 
         <!-- Принципы работы — карточки в hero -->
         <div class="vnesud-hero-principles">
           <div class="vnesud-hero-principle">
             <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <span class="vnesud-hero-principle__text">Объективность</span>
+            <h3 class="vnesud-hero-principle__title">Объективность</h3>
+            <p class="vnesud-hero-principle__desc">Не представляем ни одну из сторон — заключение основано на фактах и методиках, а не на чьих-либо интересах</p>
           </div>
           <div class="vnesud-hero-principle">
             <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            <span class="vnesud-hero-principle__text">Всесторонность</span>
+            <h3 class="vnesud-hero-principle__title">Всесторонность</h3>
+            <p class="vnesud-hero-principle__desc">Анализируем все аспекты: скорость, тормозной путь, состояние ТС, дорожные условия, действия обоих водителей</p>
           </div>
           <div class="vnesud-hero-principle">
             <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            <span class="vnesud-hero-principle__text">Полнота</span>
-          </div>
-          <div class="vnesud-hero-principle">
-            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            <span class="vnesud-hero-principle__text">Фиксация в договоре</span>
+            <h3 class="vnesud-hero-principle__title">Полнота</h3>
+            <p class="vnesud-hero-principle__desc">Фиксируем всё: осмотры, эксперименты, расчёты, фототаблицы — чтобы ни у кого не осталось вопросов</p>
           </div>
           <div class="vnesud-hero-principle vnesud-hero-principle--highlight">
             <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <span class="vnesud-hero-principle__text">Эксперты в реестре Минюста</span>
+            <h3 class="vnesud-hero-principle__title">Эксперты в реестре Минюста</h3>
+            <p class="vnesud-hero-principle__desc">Наши эксперты включены в ЕГР — это гарантирует право на проведение судебных экспертиз</p>
           </div>
         </div>
       </div>
@@ -82,7 +82,7 @@
               <li>Установление момента возникновения опасности</li>
               <li>Соответствие действий водителя ПДД</li>
             </ul>
-            <a href="/avtotehnicheskaya/obstoyatelstva-dtp/" class="vnesud-direction__link">Подробнее →</a>
+            <a href="./obstoyatelstva-dtp/" class="vnesud-direction__link">Подробнее →</a>
           </div>
           <div class="vnesud-direction">
             <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
@@ -94,7 +94,7 @@
               <li>Время возникновения неисправности</li>
               <li>Влияние неисправности на развитие ДТП</li>
             </ul>
-            <a href="/avtotehnicheskaya/tekhnicheskoe-sostoyanie/" class="vnesud-direction__link">Подробнее →</a>
+            <a href="./tekhnicheskoe-sostoyanie/" class="vnesud-direction__link">Подробнее →</a>
           </div>
           <div class="vnesud-direction">
             <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
@@ -106,7 +106,7 @@
               <li>Угол и место первичного контакта</li>
               <li>Комплекс с судебно-медицинской экспертизой</li>
             </ul>
-            <a href="/avtotehnicheskaya/sledy/" class="vnesud-direction__link">Подробнее →</a>
+            <a href="./sledy/" class="vnesud-direction__link">Подробнее →</a>
           </div>
           <div class="vnesud-direction">
             <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
@@ -118,7 +118,7 @@
               <li>Состояние покрытия и обустройства</li>
               <li>Причинная связь с ДТП</li>
             </ul>
-            <a href="/avtotehnicheskaya/doroga/" class="vnesud-direction__link">Подробнее →</a>
+            <a href="./doroga/" class="vnesud-direction__link">Подробнее →</a>
           </div>
         </div>
       </div>
@@ -132,28 +132,23 @@
         <div class="vnesud-steps reveal-stagger">
           <div class="vnesud-step">
             <div class="vnesud-step__num">1</div>
-            <h3 class="vnesud-step__title">Назначение экспертизы</h3>
-            <p class="vnesud-step__desc">Постановление или определение суда. Формулировка вопросов эксперту, приобщение материалов дела.</p>
+            <h3 class="vnesud-step__title">Приём и проверка исходных данных</h3>
+            <p class="vnesud-step__desc">Эксперт оценивает, хватает ли материалов для исследования и относится ли вопрос к его специализации. Если данных недостаточно, запрашивает дополнительные сведения или объекты.</p>
           </div>
           <div class="vnesud-step">
             <div class="vnesud-step__num">2</div>
-            <h3 class="vnesud-step__title">Подготовка и исследование материалов</h3>
-            <p class="vnesud-step__desc">Анализ схемы ДТП, протоколов, фото- и видеоизображений, данных ЭБУ, записей видеорегистраторов.</p>
+            <h3 class="vnesud-step__title">Проведение исследования</h3>
+            <p class="vnesud-step__desc">Выполняется осмотр, замеры, анализы и эксперименты по утверждённым методикам. Все промежуточные результаты фиксируют: фото, схемы, протоколы, таблицы — они станут доказательной базой заключения.</p>
           </div>
           <div class="vnesud-step">
             <div class="vnesud-step__num">3</div>
-            <h3 class="vnesud-step__title">Исследование объектов</h3>
-            <p class="vnesud-step__desc">Осмотр ТС, следов на месте ДТП, дорожных условий. Фиксация состояния систем, агрегатов, узлов.</p>
+            <h3 class="vnesud-step__title">Формирование выводов</h3>
+            <p class="vnesud-step__desc">По каждому вопросу готовят чёткий ответ — категорический либо с оговорками (альтернативный, условный) или указывают, почему вопрос решить нельзя, и объясняют причину.</p>
           </div>
           <div class="vnesud-step">
             <div class="vnesud-step__num">4</div>
-            <h3 class="vnesud-step__title">Эксперимент и расчёты</h3>
-            <p class="vnesud-step__desc">Моделирование обстоятельств ДТП, расчёт скорости, тормозного пути, времени реакции. Применение формул и методик.</p>
-          </div>
-          <div class="vnesud-step">
-            <div class="vnesud-step__num">5</div>
-            <h3 class="vnesud-step__title">Выводы и заключение</h3>
-            <p class="vnesud-step__desc">Письменное заключение с обоснованиями, расчётами, фототаблицей. Письменные и устные пояснения к выводам.</p>
+            <h3 class="vnesud-step__title">Оформление и передача экспертного заключения</h3>
+            <p class="vnesud-step__desc">Составляют документ со строгой структурой: вводная часть, описание хода работ и применённых методов, выводы. Заключение подписывают, при необходимости заверяют печатью и передают заказчику (или в суд). Объекты исследования возвращают вместе с материалами.</p>
           </div>
         </div>
       </div>

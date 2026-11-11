@@ -1,48 +1,186 @@
 /* ===== Автотехническая экспертиза — page-specific styles ===== */
 
-/* --- Hero Principles --- */
+/* --- Hero Principles (карточки внутри Hero) --- */
+
+.vnesud-hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.vnesud-hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.vnesud-hero__title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  margin: 0;
+  color: #ffffff;
+}
+
+.vnesud-hero__badge {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.vnesud-hero__actions {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.vnesud-hero__actions .btn--primary {
+  font-size: 1.0625rem;
+  padding: 16px 36px;
+  font-weight: 600;
+}
+
+.vnesud-hero__link {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.vnesud-hero__link:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
 
 .vnesud-hero-principles {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  gap: 16px;
 }
 
 .vnesud-hero-principle {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 10px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
-  transition: background 0.2s, border-color 0.2s;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.vnesud-hero-principle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .vnesud-hero-principle:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
 }
 
+.vnesud-hero-principle:hover::before {
+  opacity: 1;
+}
+
+/* Иконка */
 .vnesud-hero-principle__icon {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
+  color: rgba(255, 255, 255, 0.5);
   flex-shrink: 0;
-  color: var(--accent);
+  transition: color 0.3s ease;
 }
 
+.vnesud-hero-principle:hover .vnesud-hero-principle__icon {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Заголовок карточки */
+.vnesud-hero-principle__title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.vnesud-hero-principle:hover .vnesud-hero-principle__title {
+  color: #ffffff;
+}
+
+/* Описание */
+.vnesud-hero-principle__desc {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.55;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.vnesud-hero-principle:hover .vnesud-hero-principle__desc {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Выделенная карточка (Минюст) — акцентная */
 .vnesud-hero-principle--highlight {
-  background: rgba(42, 157, 143, 0.15);
-  border-color: rgba(42, 157, 143, 0.3);
-  color: #7fdbda;
+  background: rgba(230, 126, 34, 0.08);
+  border-color: rgba(230, 126, 34, 0.2);
+}
+
+.vnesud-hero-principle--highlight::before {
+  background: linear-gradient(90deg, var(--accent), rgba(230, 126, 34, 0.3));
+}
+
+.vnesud-hero-principle--highlight .vnesud-hero-principle__title {
+  color: rgba(255, 200, 150, 0.95);
+}
+
+.vnesud-hero-principle--highlight:hover .vnesud-hero-principle__title {
+  color: #ff9933;
 }
 
 .vnesud-hero-principle--highlight .vnesud-hero-principle__icon {
-  color: #7fdbda;
+  color: rgba(230, 126, 34, 0.7);
+}
+
+.vnesud-hero-principle--highlight:hover .vnesud-hero-principle__icon {
+  color: #ff9933;
+}
+
+.vnesud-hero-principle--highlight .vnesud-hero-principle__desc {
+  color: rgba(255, 200, 150, 0.65);
+}
+
+.vnesud-hero-principle--highlight:hover .vnesud-hero-principle__desc {
+  color: rgba(255, 200, 150, 0.8);
+}
+
+.vnesud-hero-principle--highlight:hover {
+  background: rgba(230, 126, 34, 0.12);
+  border-color: rgba(230, 126, 34, 0.3);
 }
 
 /* --- Direction cards — subtitle and tasks --- */
@@ -107,19 +245,79 @@
 
 /* --- RESPONSIVE --- */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .vnesud-hero__title {
+    font-size: 2.75rem;
+  }
+
+  .vnesud-hero__badge {
+    font-size: 1.0625rem;
+  }
+
+  .vnesud-hero__inner {
+    gap: 48px;
+  }
+
   .vnesud-hero-principles {
-    gap: 8px;
+    gap: 14px;
   }
 
   .vnesud-hero-principle {
-    font-size: 0.8125rem;
-    padding: 8px 12px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vnesud-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .vnesud-hero-principles {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .vnesud-hero-principle {
+    padding: 20px;
+    gap: 12px;
   }
 
   .vnesud-hero-principle__icon {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .vnesud-hero-principle__title {
+    font-size: 0.8125rem;
+  }
+
+  .vnesud-hero-principle__desc {
+    font-size: 0.75rem;
+  }
+
+  .vnesud-hero__text {
+    gap: 20px;
+  }
+
+  .vnesud-hero__title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .vnesud-hero__badge {
+    font-size: 0.9375rem;
+  }
+
+  .vnesud-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .vnesud-hero__actions .btn--primary {
+    width: 100%;
+    text-align: center;
   }
 
   .vnesud-direction__subtitle {
