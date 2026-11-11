@@ -20,7 +20,7 @@
 
   const isMobile = window.innerWidth < 768;
 
-  const heroSection = document.querySelector('.vnesud-hero');
+  const heroSection = document.querySelector('.vnesud-hero, .sudeb-hero, .recz-hero');
   if (!heroSection) return;
 
   // Create WebGL container

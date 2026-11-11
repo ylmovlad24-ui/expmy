@@ -5,12 +5,15 @@
   <link rel="canonical" href="https://objektiv-expert.ru/avtotehnicheskaya/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Автотехническая экспертиза — Объектив-Эксперт</title>
-  <meta name="description" content="Автотехническая экспертиза: обстоятельства ДТП, техническое состояние ТС, трасология. Объекты, вопросы, документы. Судебная, внесудебная, рецензия.">
+  <meta name="description" content="Судебная автотехническая экспертиза: обстоятельства ДТП, техническое состояние ТС, следы на ТС и месте ДТП, техническое состояние дороги. 4 вида САТЭ.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/main.css?v=3">
   <link rel="stylesheet" href="../assets/css/motion.css?v=3">
+  <link rel="stylesheet" href="../assets/css/pages/vnesudebnaya.css?v=8">
+  <link rel="stylesheet" href="../assets/css/components/uni-steps.css?v=1">
+  <link rel="stylesheet" href="../assets/css/pages/avtotehnicheskaya.css?v=1">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -18,206 +21,192 @@
 
   <main id="main-content">
 
-    <section class="section">
+    <!-- 1. Hero -->
+    <section class="vnesud-hero reveal-entrance">
+      <div class="container vnesud-hero__inner">
+        <div class="vnesud-hero__text">
+          <h1 class="vnesud-hero__title">Автотехническая экспертиза</h1>
+          <p class="vnesud-hero__badge">Судебная экспертиза обстоятельств ДТП, технического состояния ТС, следов на ТС и месте ДТП, технического состояния дороги</p>
+        </div>
+        <div class="vnesud-hero__actions">
+          <a href="#contact-form" class="btn btn--primary">Получить консультацию</a>
+          <a href="#directions" class="vnesud-hero__link">Виды экспертизы →</a>
+        </div>
+
+        <!-- Принципы работы — карточки в hero -->
+        <div class="vnesud-hero-principles">
+          <div class="vnesud-hero-principle">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span class="vnesud-hero-principle__text">Объективность</span>
+          </div>
+          <div class="vnesud-hero-principle">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span class="vnesud-hero-principle__text">Всесторонность</span>
+          </div>
+          <div class="vnesud-hero-principle">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span class="vnesud-hero-principle__text">Полнота</span>
+          </div>
+          <div class="vnesud-hero-principle">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span class="vnesud-hero-principle__text">Фиксация в договоре</span>
+          </div>
+          <div class="vnesud-hero-principle vnesud-hero-principle--highlight">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span class="vnesud-hero-principle__text">Эксперты в реестре Минюста</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual divider -->
+    <div class="vnesud-divider">
       <div class="container">
-        <h1 class="section__title">Автотехническая экспертиза</h1>
-        <p class="section__subtitle">Виды: обстоятельства ДТП · техническое состояние ТС · трасология</p>
+        <div class="vnesud-divider__line"></div>
+      </div>
+    </div>
 
-        <!-- Обстоятельства ДТП -->
-        <div class="category-detail">
-          <h2 class="category-detail__title">Обстоятельства ДТП</h2>
-          <div class="category-detail__block">
-            <h3>Объекты исследования</h3>
-            <ul class="objects-list">
-              <li class="object-item">Схема ДТП, протоколы, объяснения участников</li>
-              <li class="object-item">Записи видеорегистраторов, данные навигации</li>
-              <li class="object-item">Данные ЭБУ (бортовой компьютер)</li>
-              <li class="object-item">Погодные условия, состояние дорожного покрытия</li>
+    <!-- 2. 4 карточки видов САТЭ -->
+    <section class="vnesud-section vnesud-section--alt reveal" id="directions">
+      <div class="container">
+        <h2 class="vnesud-section__title">Виды автотехнической экспертизы</h2>
+        <p class="vnesud-section__subtitle">Каждый вид САТЭ имеет определённый круг задач, которые могут быть решены экспертизой данного вида самостоятельно либо в комплексе с другими видами САТЭ</p>
+        <div class="vnesud-directions reveal-stagger">
+          <div class="vnesud-direction">
+            <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2z"/><path d="M19 17h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2z"/><path d="M7 17v2a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+            <h3 class="vnesud-direction__title">Обстоятельства ДТП</h3>
+            <p class="vnesud-direction__subtitle">Скорость · Тормозной путь · ПДД · Время реакции</p>
+            <p class="vnesud-direction__desc">Устанавливаем, как развивалось ДТП: с какой скоростью двигалось ТС, когда возникла опасность, была ли техническая возможность предотвратить происшествие.</p>
+            <ul class="vnesud-direction__tasks">
+              <li>Определение скорости и тормозного пути</li>
+              <li>Установление момента возникновения опасности</li>
+              <li>Соответствие действий водителя ПДД</li>
             </ul>
+            <a href="/avtotehnicheskaya/obstoyatelstva-dtp/" class="vnesud-direction__link">Подробнее →</a>
           </div>
-          <div class="category-detail__block">
-            <h3>Вопросы экспертизы</h3>
-            <ul class="questions-list">
-              <li class="question-item">
-                <span class="question-item__number">1</span>
-                <span class="question-item__text">Какова скорость ТС в заданный момент времени?</span>
-              </li>
-              <li class="question-item">
-                <span class="question-item__number">2</span>
-                <span class="question-item__text">Каков тормозной и остановочный путь при указанных обстоятельствах?</span>
-              </li>
-              <li class="question-item">
-                <span class="question-item__number">3</span>
-                <span class="question-item__text">Была ли техническая возможность предотвратить ДТП при видимости и скорости?</span>
-              </li>
-              <li class="question-item">
-                <span class="question-item__number">4</span>
-                <span class="question-item__text">Какова критическая скорость ТС на повороте с учётом состояния покрытия?</span>
-              </li>
+          <div class="vnesud-direction">
+            <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            <h3 class="vnesud-direction__title">Техническое состояние ТС</h3>
+            <p class="vnesud-direction__subtitle">Тормоза · Рулевое · Шины · Световые приборы</p>
+            <p class="vnesud-direction__desc">Определяем, было ли ТС исправно до ДТП, когда возникла неисправность — до или после столкновения, есть ли причинная связь между неисправностью и ДТП.</p>
+            <ul class="vnesud-direction__tasks">
+              <li>Состояние тормозной и рулевой систем</li>
+              <li>Время возникновения неисправности</li>
+              <li>Влияние неисправности на развитие ДТП</li>
             </ul>
+            <a href="/avtotehnicheskaya/tekhnicheskoe-sostoyanie/" class="vnesud-direction__link">Подробнее →</a>
           </div>
-          <div class="category-detail__block">
-            <h3>Необходимые документы</h3>
-            <ul class="objects-list">
-              <li class="object-item">Схема ДТП, протоколы, постановления</li>
-              <li class="object-item">Записи видеорегистраторов</li>
-              <li class="object-item">Данные с ЭБУ (при наличии)</li>
+          <div class="vnesud-direction">
+            <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            <h3 class="vnesud-direction__title">Следы на ТС и месте ДТП</h3>
+            <p class="vnesud-direction__subtitle">Механизм столкновения · Траектории · Наезд</p>
+            <p class="vnesud-direction__desc">Восстанавливаем механизм ДТП по следам: как произошло столкновение, под каким углом, какой частью ТС, каковы траектории движения до и после.</p>
+            <ul class="vnesud-direction__tasks">
+              <li>Механизм столкновения и наезда</li>
+              <li>Угол и место первичного контакта</li>
+              <li>Комплекс с судебно-медицинской экспертизой</li>
             </ul>
+            <a href="/avtotehnicheskaya/sledy/" class="vnesud-direction__link">Подробнее →</a>
+          </div>
+          <div class="vnesud-direction">
+            <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <h3 class="vnesud-direction__title">Техническое состояние дороги</h3>
+            <p class="vnesud-direction__subtitle">Покрытие · Видимость · Обустройство</p>
+            <p class="vnesud-direction__desc">Оцениваем участок дороги: сцепные качества покрытия, видимость и обзорность, состояние дорожных знаков, разметки, ограждений, освещения.</p>
+            <ul class="vnesud-direction__tasks">
+              <li>Классификационные признаки дороги</li>
+              <li>Состояние покрытия и обустройства</li>
+              <li>Причинная связь с ДТП</li>
+            </ul>
+            <a href="/avtotehnicheskaya/doroga/" class="vnesud-direction__link">Подробнее →</a>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Техническое состояние -->
-        <div class="category-detail">
-          <h2 class="category-detail__title">Техническое состояние ТС</h2>
-          <div class="category-detail__block">
-            <h3>Объекты исследования</h3>
-            <ul class="objects-list">
-              <li class="object-item">Тормозная система</li>
-              <li class="object-item">Рулевое управление</li>
-              <li class="object-item">Шины и колёса</li>
-              <li class="object-item">Световые приборы</li>
-              <li class="object-item">Подвеска, кузов</li>
-            </ul>
+    <!-- 3. Этапы выполнения экспертизы -->
+    <section class="vnesud-section reveal" id="stages">
+      <div class="container">
+        <h2 class="vnesud-section__title">Этапы выполнения экспертизы</h2>
+        <p class="vnesud-section__subtitle">От назначения до готового заключения — каждый этап фиксируется и документируется</p>
+        <div class="vnesud-steps reveal-stagger">
+          <div class="vnesud-step">
+            <div class="vnesud-step__num">1</div>
+            <h3 class="vnesud-step__title">Назначение экспертизы</h3>
+            <p class="vnesud-step__desc">Постановление или определение суда. Формулировка вопросов эксперту, приобщение материалов дела.</p>
           </div>
-          <div class="category-detail__block">
-            <h3>Вопросы экспертизы</h3>
-            <ul class="questions-list">
-              <li class="question-item">
-                <span class="question-item__number">1</span>
-                <span class="question-item__text">Находилось ли ТС в исправном техническом состоянии до ДТП?</span>
-              </li>
-              <li class="question-item">
-                <span class="question-item__number">2</span>
-                <span class="question-item__text">Когда возникла неисправность — до или после ДТП?</span>
-              </li>
-              <li class="question-item">
-                <span class="question-item__number">3</span>
-                <span class="question-item__text">Есть ли причинная связь между неисправностью и ДТП?</span>
-              </li>
-              <li class="question-item">
-                <span class="question-item__number">4</span>
-                <span class="question-item__text">Мог ли водитель обнаружить неисправность при осмотре до поездки?</span>
-              </li>
-            </ul>
+          <div class="vnesud-step">
+            <div class="vnesud-step__num">2</div>
+            <h3 class="vnesud-step__title">Подготовка и исследование материалов</h3>
+            <p class="vnesud-step__desc">Анализ схемы ДТП, протоколов, фото- и видеоизображений, данных ЭБУ, записей видеорегистраторов.</p>
           </div>
-          <div class="category-detail__block">
-            <h3>Необходимые документы</h3>
-            <ul class="objects-list">
-              <li class="object-item">Технический паспорт (ПТС, СТС)</li>
-              <li class="object-item">Диагностическая карта, карта технического осмотра</li>
-              <li class="object-item">Документы о ремонтах и замене деталей</li>
-            </ul>
+          <div class="vnesud-step">
+            <div class="vnesud-step__num">3</div>
+            <h3 class="vnesud-step__title">Исследование объектов</h3>
+            <p class="vnesud-step__desc">Осмотр ТС, следов на месте ДТП, дорожных условий. Фиксация состояния систем, агрегатов, узлов.</p>
+          </div>
+          <div class="vnesud-step">
+            <div class="vnesud-step__num">4</div>
+            <h3 class="vnesud-step__title">Эксперимент и расчёты</h3>
+            <p class="vnesud-step__desc">Моделирование обстоятельств ДТП, расчёт скорости, тормозного пути, времени реакции. Применение формул и методик.</p>
+          </div>
+          <div class="vnesud-step">
+            <div class="vnesud-step__num">5</div>
+            <h3 class="vnesud-step__title">Выводы и заключение</h3>
+            <p class="vnesud-step__desc">Письменное заключение с обоснованиями, расчётами, фототаблицей. Письменные и устные пояснения к выводам.</p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Трасология -->
-        <div class="category-detail">
-          <h2 class="category-detail__title">Трасология</h2>
-          <div class="category-detail__block">
-            <h3>Объекты исследования</h3>
-            <ul class="objects-list">
-              <li class="object-item">Повреждения кузова, элементов конструкции</li>
-              <li class="object-item">Следы контакта ТС с препятствием</li>
-              <li class="object-item">Следы шин на дорожном покрытии</li>
-            </ul>
-          </div>
-          <div class="category-detail__block">
-            <h3>Вопросы экспертизы</h3>
-            <ul class="questions-list">
-              <li class="question-item">
-                <span class="question-item__number">1</span>
-                <span class="question-item__text">Каков механизм столкновения — угол, направление, характер удара?</span>
-              </li>
-              <li class="question-item">
-                <span class="question-item__number">2</span>
-                <span class="question-item__text">Каково место и угол первичного контакта между ТС?</span>
-              </li>
-              <li class="question-item">
-                <span class="question-item__number">3</span>
-                <span class="question-item__text">Каково взаимное положение ТС в момент удара?</span>
-              </li>
-            </ul>
-          </div>
-          <div class="category-detail__block">
-            <h3>Необходимые документы</h3>
-            <ul class="objects-list">
-              <li class="object-item">Схема ДТП с разметкой повреждений</li>
-              <li class="object-item">Фотоматериалы повреждений</li>
-              <li class="object-item">Протоколы осмотра места ДТП</li>
-            </ul>
-          </div>
+    <!-- 4. FAQ -->
+    <section class="vnesud-section vnesud-section--alt">
+      <div class="container">
+        <h2 class="vnesud-section__title">Частые вопросы</h2>
+        <div class="vnesud-faq">
+          <details class="vnesud-faq-item">
+            <summary class="vnesud-faq-item__summary">Чем отличается судебная экспертиза от внесудебной?</summary>
+            <div class="vnesud-faq-item__answer">Судебная экспертиза назначается определением суда — через ходатайство. Внесудебная — по вашей инициативе, без участия суда. Судебная экспертиза даёт обязательные пояснения эксперта в заседании; внесудебная — это письменное доказательство, которое суд оценивает наравне с другими материалами.</div>
+          </details>
+          <details class="vnesud-faq-item">
+            <summary class="vnesud-faq-item__summary">Какой формат выбрать?</summary>
+            <div class="vnesud-faq-item__answer">Если дело уже в суде — нужна судебная экспертиза. Если вы готовите претензию или хотите получить заключение до обращения в суд — внесудебная экспертиза. Рецензия нужна, если у вас уже есть чужое заключение, и вы хотите проверить его на ошибки и нарушения методики.</div>
+          </details>
+          <details class="vnesud-faq-item">
+            <summary class="vnesud-faq-item__summary">Сколько стоит и сколько длится?</summary>
+            <div class="vnesud-faq-item__answer">Сроки и стоимость зависят от рода экспертизы и сложности. Оценка материалов — бесплатно и быстро. Само исследование — от нескольких дней до двух недель. Точные сроки и стоимость фиксируются в договоре.</div>
+          </details>
+          <details class="vnesud-faq-item">
+            <summary class="vnesud-faq-item__summary">А эксперт не напишет то, что я закажу?</summary>
+            <div class="vnesud-faq-item__answer">Нет. Вопросы и методика согласуются до начала работ. Мы не представляем одну сторону — мы даём объективное заключение. Если по материалам вывод не в вашу пользу — сообщим об этом до оплаты.</div>
+          </details>
+          <details class="vnesud-faq-item">
+            <summary class="vnesud-faq-item__summary">Работаете ли вы с клиентами из других городов?</summary>
+            <div class="vnesud-faq-item__answer">Да, проводим экспертизы для клиентов по всей России, включая выезд к месту хранения ТС или оборудования.</div>
+          </details>
         </div>
+      </div>
+    </section>
 
-        <!-- Что получите -->
-        <div class="category-detail">
-          <h2 class="category-detail__title">Что вы получите</h2>
-          <div class="guarantees-grid">
-            <div class="guarantee-card">
-              <h3 class="guarantee-card__title">Ответы для претензии</h3>
-              <p class="guarantee-card__desc">Заключение с расчётами, фототаблицей и выводами, которые можно использовать в претензии и ходатайстве.</p>
+    <!-- 5. CTA -->
+    <section class="vnesud-cta-section" id="contact-form">
+      <div class="container">
+        <div class="vnesud-cta__inner">
+          <div class="vnesud-cta__text">
+            <h2 class="vnesud-cta__title">Обсудить дело</h2>
+            <p class="vnesud-cta__desc">Пришлите материалы — скажем, что реально можно доказать, какую экспертизу выбрать и какие перспективы у вашего дела.</p>
+          </div>
+          <form class="vnesud-cta__form" id="ctaForm">
+            <div class="vnesud-cta__fields">
+              <input type="text" name="name" placeholder="Ваше имя" required>
+              <input type="tel" name="phone" placeholder="Телефон" required>
+              <input type="email" name="email" placeholder="E-mail">
             </div>
-            <div class="guarantee-card">
-              <h3 class="guarantee-card__title">Ответы для суда</h3>
-              <p class="guarantee-card__desc">Письменные и устные пояснения к выводам — для судебного заседания.</p>
-            </div>
-          </div>
+            <textarea name="message" placeholder="Опишите ситуацию — кратко, своими словами" rows="4"></textarea>
+            <button type="submit" class="btn btn--primary vnesud-cta__btn">Отправить на оценку</button>
+            <p class="vnesud-cta__note">Оценка материалов — бесплатно. Ответим в течение 2 часов в рабочее время.</p>
+          </form>
         </div>
-
-        <!-- Развилка формата -->
-        <div class="category-detail">
-          <h2 class="category-detail__title">Выберите формат</h2>
-          <div class="format-grid">
-            <a href="/sudebnaya/" class="format-card format-card--court">
-              <div class="format-card__icon">⚖️</div>
-              <h3 class="format-card__title">Судебная</h3>
-              <p class="format-card__desc">Назначение через ходатайство. Заключение, которое принимают все суды РФ. Эксперт явится в заседание.</p>
-              <a href="/sudebnaya/" class="format-card__link">Подробнее →</a>
-            </a>
-            <a href="/vnesudebnaya/" class="format-card format-card--informal">
-              <div class="format-card__icon">📝</div>
-              <h3 class="format-card__title">Внесудебная</h3>
-              <p class="format-card__desc">Заключение для претензии и переговоров. Быстро, без суда.</p>
-              <a href="/vnesudebnaya/" class="format-card__link">Подробнее →</a>
-            </a>
-            <a href="/recenziya/" class="format-card format-card--review">
-              <div class="format-card__icon">🔍</div>
-              <h3 class="format-card__title">Рецензия</h3>
-              <p class="format-card__desc">Проверка чужого заключения — поиск ошибок и нарушений методики.</p>
-              <a href="/recenziya/" class="format-card__link">Подробнее →</a>
-            </a>
-          </div>
-        </div>
-
-        <!-- Что не входит -->
-        <div class="category-detail">
-          <h2 class="category-detail__title">Что не входит</h2>
-          <ul class="trust-list">
-            <li>Определение вины — устанавливает суд, а не экспертиза</li>
-            <li>Оценка ущерба — отдельный род экспертизы: автотовароведческая</li>
-          </ul>
-        </div>
-
-        <!-- CTA -->
-        <div class="category-detail" id="contact-form">
-          <h2 class="category-detail__title">Обсудить дело</h2>
-          <div class="contact-form-wrap">
-            <form class="form" action="#" method="POST">
-              <h3 class="form__title">Пришлите документ + телефон</h3>
-              <input type="text" class="form__input" name="name" placeholder="Ваше имя" required>
-              <input type="tel" class="form__input" name="phone" placeholder="Телефон" required>
-              <input type="text" class="form__input" name="document" placeholder="Ссылка на документ или описание">
-              <textarea class="form__textarea" name="question" placeholder="Ваш вопрос" rows="4"></textarea>
-              <label class="form__label">
-                <input type="checkbox" name="agree" required>
-                <span>Я согласен на обработку персональных данных</span>
-              </label>
-              <button type="submit" class="form__submit">Отправить</button>
-            </form>
-            <p class="form__note">Пришлите документ + телефон — бесплатно оценим материалы и скажем, какая экспертиза нужна</p>
-            <p class="form__note" style="margin-top: 12px;"><a href="https://reestr.roscert.ru/rtl/t/286" target="_blank" rel="noopener">Эксперты в реестре Минюста</a></p>
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -230,8 +219,11 @@
   <script src="../assets/js/modules/faq.js" defer></script>
   <script src="../assets/js/modules/forms.js" defer></script>
   <script src="../assets/js/modules/smooth-scroll.js" defer></script>
-  <script src="../assets/js/main.js" defer></script>
   <script src="../assets/js/modules/scroll-animations.js" defer></script>
   <script src="../assets/js/modules/components.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/modules/motion.js?v=3" defer></script>
+  <script src="../assets/js/modules/webgl-gradient.js" defer></script>
+  <script src="../assets/js/modules/uni-steps-motion.js" defer></script>
 </body>
 </html>

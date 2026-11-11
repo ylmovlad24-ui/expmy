@@ -48,8 +48,17 @@
 .vnesud-direction,
 .vnesud-step,
 .vnesud-case,
+.sudeb-direction,
+.sudeb-step,
+.sudeb-case,
+.recz-direction,
+.recz-case,
 .guarantee-card {
   transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.webgl-gradient canvas {
+  filter: blur(0px);
 }
 
 /* Hero */

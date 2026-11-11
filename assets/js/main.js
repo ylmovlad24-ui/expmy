@@ -4,6 +4,18 @@
  */
 document.addEventListener('DOMContentLoaded', function () {
 
+  // Favicon — создаём SVG favicon динамически, чтобы убрать 404
+  if (!document.querySelector('link[rel="icon"]')) {
+    var faviconSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="#e8731a"/><text x="16" y="22" font-size="16" font-weight="bold" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif">Э</text></svg>';
+    var blob = new Blob([faviconSVG], { type: 'image/svg+xml' });
+    var url = URL.createObjectURL(blob);
+    var link = document.createElement('link');
+    link.rel = 'icon';
+    link.type = 'image/svg+xml';
+    link.href = url;
+    document.head.appendChild(link);
+  }
+
   // 1. Burger menu — инициализируется в components.js после загрузки header
 
   // 3. FAQ Accordion

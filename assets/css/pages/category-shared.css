@@ -1,0 +1,751 @@
+/* ===== Category Pages — Shared Styles ===== */
+/* Общие стили для: avtotehnicheskaya, avtotovarovedcheskaya, uzly-i-agregaty, tovarovedcheskaya-b2b */
+/* Основано на vnesudebnaya.css */
+
+/* --- Progress Bar --- */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #e8731a, #f5a623);
+  z-index: 10000;
+  will-change: width;
+}
+
+@supports (animation-timeline: scroll()) {
+  .progress-bar {
+    animation: progress linear;
+    animation-timeline: scroll();
+    width: 100%;
+  }
+  @keyframes progress {
+    from { width: 0%; }
+    to { width: 100%; }
+  }
+}
+
+/* --- Hero (full viewport, no centering) --- */
+
+.vnesud-hero {
+  min-height: calc(100vh - var(--header-height, 64px));
+  min-height: calc(100dvh - var(--header-height, 64px));
+  padding: 140px 0 64px;
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-bg-alt) 100%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  border-bottom: none;
+}
+
+/* Декоративный фоновый паттерн hero */
+.vnesud-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(230, 126, 34, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(42, 91, 154, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 60% 80%, rgba(108, 92, 231, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.vnesud-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.vnesud-hero__title,
+.vnesud-hero__badge,
+.vnesud-hero__actions,
+.vnesud-hero__link {
+  color: var(--white) !important;
+}
+
+.vnesud-hero__actions .btn--primary {
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+}
+
+.vnesud-hero__actions .btn--primary:hover {
+  background: var(--accent-hover);
+}
+
+.vnesud-hero__inner {
+  max-width: 1120px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+
+.vnesud-hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.vnesud-hero__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--text);
+}
+
+/* Badge — без alert-стилистики */
+.vnesud-hero__badge {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: transparent;
+  padding: 8px 0;
+  border-radius: 0;
+  border-left: none;
+  margin: 0;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+/* Кнопки — одна залита, вторая текстовая */
+.vnesud-hero__actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.vnesud-hero__actions .btn {
+  font-size: 1.0625rem;
+  padding: 16px 36px;
+}
+
+.vnesud-hero__link {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(42, 91, 154, 0.3);
+  transition: text-decoration-color 0.2s ease, color 0.2s ease;
+}
+
+.vnesud-hero__link:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+/* --- Hero Uses --- */
+
+.vnesud-hero-uses {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.vnesud-hero-use {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 28px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #1a202c;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vnesud-hero-use__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+  color: #1a202c;
+  line-height: 1.4;
+}
+
+.vnesud-hero-use__desc {
+  font-size: 0.9375rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.vnesud-hero-use:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.vnesud-hero-use__icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--accent-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.vnesud-hero-use__icon {
+  width: 28px;
+  height: 28px;
+  line-height: 1;
+  color: var(--accent);
+}
+
+/* --- Visual Divider --- */
+
+.vnesud-divider {
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.vnesud-divider__line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--border) 20%, var(--primary) 50%, var(--border) 80%, transparent 100%);
+  opacity: 0.5;
+}
+
+/* --- Section base (compact rhythm) --- */
+
+.vnesud-section {
+  padding: 72px 0;
+}
+
+.vnesud-section--alt {
+  background: var(--bg-light);
+}
+
+.vnesud-section__title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+
+.vnesud-section__subtitle {
+  text-align: center;
+  font-size: 1.0625rem;
+  color: var(--text-light);
+  margin-bottom: 48px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* --- Directions --- */
+
+.vnesud-directions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.vnesud-direction {
+  background: #ffffff;
+  border: 1px solid #E0E4E8;
+  border-radius: 14px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #333333;
+}
+
+.vnesud-direction:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.vnesud-direction__icon {
+  width: 40px;
+  height: 40px;
+  line-height: 1;
+  color: #E67E22;
+  flex-shrink: 0;
+}
+
+.vnesud-direction__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: #1a202c;
+  line-height: 1.4;
+}
+
+.vnesud-direction__desc {
+  font-size: 0.9375rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.vnesud-direction__link {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #2A5B9A;
+  text-decoration: none;
+  padding: 0;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  align-self: flex-start;
+}
+
+.vnesud-direction__link:hover {
+  color: #E67E22;
+  padding-left: 6px;
+}
+
+/* --- Steps (connector line + mobile stack) --- */
+/* Стили uni-steps уже в components/uni-steps.css, здесь только резервные */
+
+/* --- Cases --- */
+
+.vnesud-cases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  align-items: stretch;
+}
+
+.vnesud-case {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 40px 36px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vnesud-case:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.vnesud-case__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.vnesud-case__desc {
+  font-size: 0.9375rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.vnesud-case__result {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--success);
+  margin: 0;
+  padding-top: 20px;
+  border-top: 2px solid var(--success);
+  line-height: 1.5;
+}
+
+/* --- Guarantees --- */
+
+.guarantees-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.guarantee-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--primary);
+  border-radius: 14px;
+  padding: 36px 32px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.guarantee-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.guarantee-card--highlight {
+  border-top-color: var(--success);
+}
+
+.guarantee-card__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.guarantee-card__desc {
+  color: var(--text-light);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.guarantee-card__link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.guarantee-card__link:hover {
+  color: var(--accent);
+  padding-left: 4px;
+}
+
+/* --- FAQ --- */
+
+.vnesud-faq {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vnesud-faq-item {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.vnesud-faq-item[open] {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(42, 91, 154, 0.1);
+}
+
+.vnesud-faq-item__summary {
+  padding: 24px 32px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1.0625rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s;
+  line-height: 1.5;
+}
+
+.vnesud-faq-item__summary:hover {
+  background: var(--accent-bg);
+}
+
+.vnesud-faq-item__summary::-webkit-details-marker {
+  display: none;
+}
+
+.vnesud-faq-item__summary::after {
+  content: '+';
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--accent);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+.vnesud-faq-item[open] .vnesud-faq-item__summary::after {
+  transform: rotate(45deg);
+}
+
+.vnesud-faq-item__answer {
+  padding: 0 32px 28px;
+  font-size: 0.9375rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.vnesud-faq-item__answer p {
+  margin: 0 0 12px;
+}
+
+.vnesud-faq-item__answer p:last-child {
+  margin-bottom: 0;
+}
+
+/* Legal block inside FAQ */
+.vnesud-faq-item__legal {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.vnesud-faq-item__legal p {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* --- CTA Section --- */
+
+.vnesud-cta-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-bg-alt) 100%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.vnesud-cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(230, 126, 34, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(42, 91, 154, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.vnesud-cta__inner {
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+
+.vnesud-cta__text {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.vnesud-cta__title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--white);
+}
+
+.vnesud-cta__desc {
+  font-size: 1.0625rem;
+  color: var(--white-85);
+  line-height: 1.6;
+}
+
+.vnesud-cta__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vnesud-cta__fields {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.vnesud-cta__fields input,
+.vnesud-cta__form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  font-size: 0.9375rem;
+  font-family: inherit;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.vnesud-cta__fields input::placeholder,
+.vnesud-cta__form textarea::placeholder {
+  color: var(--white-75);
+}
+
+.vnesud-cta__fields input:focus,
+.vnesud-cta__form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.vnesud-cta__form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.vnesud-cta__btn {
+  align-self: center;
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  padding: 16px 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.vnesud-cta__btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.vnesud-cta__note {
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--white-75);
+  margin: 0;
+}
+
+/* --- RESPONSIVE --- */
+
+@media (max-width: 1024px) {
+  .vnesud-hero__title {
+    font-size: 2rem;
+  }
+
+  .vnesud-section__title {
+    font-size: 1.875rem;
+  }
+
+  .vnesud-cases {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .vnesud-hero {
+    padding: 64px 0 48px;
+  }
+
+  .vnesud-hero__inner {
+    gap: 24px;
+  }
+
+  .vnesud-hero__title {
+    font-size: 1.625rem;
+  }
+
+  .vnesud-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .vnesud-hero-uses {
+    grid-template-columns: 1fr;
+  }
+
+  .vnesud-hero-use {
+    padding: 24px 20px;
+  }
+
+  .vnesud-section {
+    padding: 56px 0;
+  }
+
+  .vnesud-section__title {
+    font-size: 1.625rem;
+    margin-bottom: 12px;
+  }
+
+  .vnesud-section__subtitle {
+    font-size: 0.9375rem;
+    margin-bottom: 40px;
+  }
+
+  .vnesud-directions {
+    grid-template-columns: 1fr;
+  }
+
+  .vnesud-direction {
+    padding: 28px 24px;
+  }
+
+  .vnesud-cta-section {
+    padding: 56px 0;
+  }
+
+  .vnesud-cta__title {
+    font-size: 1.625rem;
+  }
+
+  .vnesud-cta__fields {
+    grid-template-columns: 1fr;
+  }
+
+  .vnesud-cta__btn {
+    width: 100%;
+  }
+
+  .vnesud-cases {
+    grid-template-columns: 1fr;
+  }
+
+  .vnesud-case {
+    padding: 28px 24px;
+  }
+
+  .guarantees-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guarantee-card {
+    padding: 28px 24px;
+  }
+
+  .vnesud-faq-item__summary {
+    padding: 20px 24px;
+    font-size: 1rem;
+  }
+
+  .vnesud-faq-item__answer {
+    padding: 0 24px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vnesud-hero__title {
+    font-size: 1.375rem;
+  }
+
+  .vnesud-hero__badge {
+    font-size: 0.9375rem;
+  }
+
+  .vnesud-section__title {
+    font-size: 1.375rem;
+  }
+
+  .vnesud-direction__title {
+    font-size: 1.125rem;
+  }
+
+  .vnesud-case__title {
+    font-size: 1.0625rem;
+  }
+
+  .vnesud-hero-use__title {
+    font-size: 1.125rem;
+  }
+}

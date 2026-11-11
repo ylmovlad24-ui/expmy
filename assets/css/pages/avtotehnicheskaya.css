@@ -1,0 +1,132 @@
+/* ===== Автотехническая экспертиза — page-specific styles ===== */
+
+/* --- Hero Principles --- */
+
+.vnesud-hero-principles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.vnesud-hero-principle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.vnesud-hero-principle:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.vnesud-hero-principle__icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.vnesud-hero-principle--highlight {
+  background: rgba(42, 157, 143, 0.15);
+  border-color: rgba(42, 157, 143, 0.3);
+  color: #7fdbda;
+}
+
+.vnesud-hero-principle--highlight .vnesud-hero-principle__icon {
+  color: #7fdbda;
+}
+
+/* --- Direction cards — subtitle and tasks --- */
+
+.vnesud-direction__subtitle {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.vnesud-direction__tasks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vnesud-direction__tasks li {
+  font-size: 0.8125rem;
+  color: #4a5568;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.vnesud-direction__tasks li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* --- Stages section --- */
+
+#stages {
+  padding: 72px 0;
+}
+
+#stages .vnesud-section__title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+
+#stages .vnesud-section__subtitle {
+  text-align: center;
+  font-size: 1.0625rem;
+  color: var(--text-light);
+  margin-bottom: 48px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* --- RESPONSIVE --- */
+
+@media (max-width: 768px) {
+  .vnesud-hero-principles {
+    gap: 8px;
+  }
+
+  .vnesud-hero-principle {
+    font-size: 0.8125rem;
+    padding: 8px 12px;
+  }
+
+  .vnesud-hero-principle__icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .vnesud-direction__subtitle {
+    font-size: 0.75rem;
+  }
+
+  .vnesud-direction__tasks li {
+    font-size: 0.75rem;
+  }
+}

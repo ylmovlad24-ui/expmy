@@ -48,31 +48,6 @@
     observer.observe(el);
   });
 
-  // Scroll progress bar
-  const scrollProgress = document.createElement('div');
-  scrollProgress.className = 'scroll-progress';
-  scrollProgress.setAttribute('aria-hidden', 'true');
-  document.body.appendChild(scrollProgress);
-
-  let ticking = false;
-  function updateScrollProgress() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrollPercent = (scrollTop / scrollHeight) * 100;
-    scrollProgress.style.setProperty('--scroll-width', scrollPercent + '%');
-    ticking = false;
-  }
-
-  window.addEventListener('scroll', function() {
-    if (!ticking) {
-      window.requestAnimationFrame(function() {
-        updateScrollProgress();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
-
   // Back to top button
   const backToTop = document.createElement('button');
   backToTop.className = 'back-to-top';

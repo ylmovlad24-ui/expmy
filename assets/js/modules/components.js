@@ -14,6 +14,22 @@
     if (path.indexOf('/recenziya/') !== -1) return '../';
     if (path.indexOf('/sudebnaya/') !== -1) return '../';
     if (path.indexOf('/faq/') !== -1) return '../';
+    if (path.indexOf('/avtotehnicheskaya/') !== -1) return '../';
+    if (path.indexOf('/avtotovarovedcheskaya/') !== -1) return '../';
+    if (path.indexOf('/ceny/') !== -1) return '../';
+    if (path.indexOf('/diplomy/') !== -1) return '../';
+    if (path.indexOf('/dosudebnye-dlya-yurfirmy/') !== -1) return '../';
+    if (path.indexOf('/eksperty/') !== -1) return '../';
+    if (path.indexOf('/keysy/') !== -1) return '../';
+    if (path.indexOf('/kontakty/') !== -1) return '../';
+    if (path.indexOf('/o-kompanii/') !== -1) return '../';
+    if (path.indexOf('/oferta/') !== -1) return '../';
+    if (path.indexOf('/partners/') !== -1) return '../';
+    if (path.indexOf('/politika/') !== -1) return '../';
+    if (path.indexOf('/recenzii-dlya-yuristov/') !== -1) return '../';
+    if (path.indexOf('/spasibo/') !== -1) return '../';
+    if (path.indexOf('/tovarovedcheskaya-b2b/') !== -1) return '../';
+    if (path.indexOf('/uzly-i-agregaty/') !== -1) return '../';
     return '';
   }
 

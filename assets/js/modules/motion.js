@@ -1,6 +1,6 @@
 /**
- * Motion Design - Premium Animations
- * Lenis + GSAP + ScrollTrigger
+ * Motion Design - Universal Premium Animations
+ * GSAP + ScrollTrigger — единый для vnesudebnaya, sudebnaya, recenziya
  */
 (function () {
   'use strict';
@@ -15,66 +15,43 @@
     return;
   }
 
-  var lenis;
-
   function init() {
     try {
-      console.log('Motion: Starting initialization...');
-      console.log('Motion: Hero exists:', !!document.querySelector('.vnesud-hero'));
-      console.log('Motion: Title exists:', !!document.querySelector('.vnesud-hero__title'));
-      
-      // Hide elements first (before GSAP loads)
-      hideAnimatedElements();
-      console.log('Motion: Elements hidden, loading Lenis...');
-      
-      // Fallback: show all elements if GSAP fails to load within 3 seconds
-      var fallbackTimeout = setTimeout(function() {
-        console.warn('Motion: GSAP fallback triggered');
-        showAllElements();
-      }, 3000);
-      
-      // Load Lenis first (optional - page works without it)
-      loadScript('https://unpkg.com/lenis@1.1.18/dist/lenis.min.js')
+      // First load GSAP, THEN hide elements and start animations
+      loadGSAP()
         .then(function() {
-          console.log('Motion: Lenis loaded');
-          return loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js');
-        })
-        .catch(function() {
-          console.warn('Motion: Lenis failed, continuing without it');
-          return loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js');
-        })
-        .then(function() {
-          console.log('Motion: GSAP loaded');
-          return loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js');
-        })
-        .then(function() {
-          if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            console.warn('Motion: GSAP not loaded');
-            clearTimeout(fallbackTimeout);
-            showAllElements();
+          console.log('Motion: GSAP + ScrollTrigger loaded');
+          if (typeof gsap === 'undefined') {
+            console.error('Motion: GSAP is not defined after loading');
             return;
           }
-          clearTimeout(fallbackTimeout);
-          console.log('Motion: Registering ScrollTrigger...');
+          if (typeof ScrollTrigger === 'undefined') {
+            console.error('Motion: ScrollTrigger is not defined after loading');
+            return;
+          }
           gsap.registerPlugin(ScrollTrigger);
-          initLenis();
-          initProgressBar();
-          initHeroAnimation();
-          initHeroUseCards();
-          initStepsProgressLine();
-          initMagneticButtons();
-          initSectionReveal();
-          initCardAnimations();
-          initStepsAnimation();
-          initPinningSection();
-          initFooterReveal();
-          initCustomCursor();
-          console.log('Motion: All animations initialized');
+          
+          // Now hide elements and start animations
+          hideAnimatedElements();
+          
+          // Small delay to ensure DOM is ready for animation
+          requestAnimationFrame(function() {
+            initProgressBar();
+            initHeroAnimation();
+            initHeroUseCards();
+            initStepsProgressLine();
+            initMagneticButtons();
+            initSectionReveal();
+            initCardAnimations();
+            initPinningSection();
+            initFooterReveal();
+            initCustomCursor();
+            console.log('Motion: All animations initialized');
+          });
         })
         .catch(function(err) {
           console.warn('Motion init error:', err);
-          clearTimeout(fallbackTimeout);
-          showAllElements();
+          // Elements remain visible if GSAP fails to load
         });
     } catch (e) {
       console.warn('Motion init error:', e);
@@ -82,54 +59,58 @@
   }
 
   function showAllElements() {
-    var all = document.querySelectorAll('.vnesud-hero, .vnesud-hero__title, .vnesud-hero__actions .btn--primary, .vnesud-hero-use, .vnesud-direction, .guarantee-card, .vnesud-case, .vnesud-step, section.reveal, .footer');
+    var all = document.querySelectorAll(
+      '.vnesud-hero, .vnesud-hero__title, .vnesud-hero__actions .btn--primary, .vnesud-hero-use, ' +
+      '.vnesud-direction, .vnesud-case, .vnesud-step, ' +
+      '.sudeb-hero, .sudeb-hero__title, .sudeb-hero__actions .btn--primary, .sudeb-hero-use, ' +
+      '.sudeb-direction, .sudeb-case, .sudeb-animate-hidden, ' +
+      '.recz-hero, .recz-hero__title, .recz-hero-use, ' +
+      '.recz-direction, .recz-case, .recz-animate-hidden, ' +
+      'section.reveal, .footer'
+    );
     all.forEach(function(el) {
       el.style.opacity = '1';
     });
   }
 
   function hideAnimatedElements() {
-    // Hide hero entrance — только opacity, без transform (не ломает layout)
-    var hero = document.querySelector('.vnesud-hero');
+    var hero = document.querySelector('.vnesud-hero, .sudeb-hero, .recz-hero, .category-hero');
     if (hero) hero.style.opacity = '0';
-    // Hide CTA button
-    var btn = document.querySelector('.vnesud-hero__actions .btn--primary');
-    if (btn) {
-      btn.style.opacity = '0';
-    }
-    // Hide hero use cards
-    var useCards = document.querySelectorAll('.vnesud-hero-use');
-    useCards.forEach(function(c) { 
-      c.style.opacity = '0';
-    });
-    // Hide direction cards
-    var dirs = document.querySelectorAll('.vnesud-direction');
-    dirs.forEach(function(c) {
-      c.style.opacity = '0';
-    });
-    // Hide guarantee cards
+    var btn = document.querySelector('.vnesud-hero__actions .btn--primary, .sudeb-hero__actions .btn--primary');
+    if (btn) btn.style.opacity = '0';
+    var useCards = document.querySelectorAll('.vnesud-hero-use, .sudeb-hero-use, .recz-hero-use');
+    useCards.forEach(function(c) { c.style.opacity = '0'; });
+    var dirs = document.querySelectorAll('.vnesud-direction, .sudeb-direction, .recz-direction');
+    dirs.forEach(function(c) { c.style.opacity = '0'; });
     var guar = document.querySelectorAll('.guarantee-card');
-    guar.forEach(function(c) {
-      c.style.opacity = '0';
-    });
-    // Hide case cards
-    var cases = document.querySelectorAll('.vnesud-case');
-    cases.forEach(function(c) {
-      c.style.opacity = '0';
-    });
-    // Hide steps
+    guar.forEach(function(c) { c.style.opacity = '0'; });
+    var cases = document.querySelectorAll('.vnesud-case, .sudeb-case, .recz-case');
+    cases.forEach(function(c) { c.style.opacity = '0'; });
     var steps = document.querySelectorAll('.vnesud-step');
-    steps.forEach(function(c) {
-      c.style.opacity = '0';
-    });
-    // Footer
+    steps.forEach(function(c) { c.style.opacity = '0'; });
     var footer = document.querySelector('.footer');
-    if (footer) {
-      footer.style.opacity = '0';
-    }
+    if (footer) footer.style.opacity = '0';
   }
 
-  function loadScript(src) {
+  function showAllElements() {
+    var all = document.querySelectorAll(
+      '.vnesud-hero, .vnesud-hero__title, .vnesud-hero__actions .btn--primary, .vnesud-hero-use, ' +
+      '.vnesud-direction, .vnesud-case, .vnesud-step, ' +
+      '.sudeb-hero, .sudeb-hero__title, .sudeb-hero__actions .btn--primary, .sudeb-hero-use, ' +
+      '.sudeb-direction, .sudeb-case, .sudeb-animate-hidden, ' +
+      '.recz-hero, .recz-hero__title, .recz-hero-use, ' +
+      '.recz-direction, .recz-case, .recz-animate-hidden, ' +
+      '.category-hero, .category-hero__title, ' +
+      'section.reveal, .footer'
+    );
+    all.forEach(function(el) {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+  }
+
+  function loadScript(src, timeout) {
+    timeout = timeout || 10000;
     return new Promise(function(resolve, reject) {
       if (document.querySelector('script[src="' + src + '"]')) {
         resolve();
@@ -137,22 +118,56 @@
       }
       var script = document.createElement('script');
       script.src = src;
-      script.onload = resolve;
-      script.onerror = function() { reject(new Error('Script load failed: ' + src)); };
+      var timer = setTimeout(function() {
+        script.onerror && script.onerror();
+        reject(new Error('Script load timeout: ' + src));
+      }, timeout);
+      script.onload = function() { clearTimeout(timer); resolve(); };
+      script.onerror = function() { clearTimeout(timer); reject(new Error('Script load failed: ' + src)); };
       document.head.appendChild(script);
     });
   }
 
-  function initLenis() {
-    try {
-      if (typeof Lenis === 'undefined') return;
-      var isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-      lenis = new Lenis({ lerp: 0.1, wheelMultiplier: 1.0, touchMultiplier: isTouch ? 1 : 2, smoothWheel: !isTouch });
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add(function(time) { lenis.raf(time * 1000); });
-      gsap.ticker.lagSmoothing(0);
-      document.body.classList.add('lenis-active');
-    } catch (e) { console.warn('Lenis error:', e); }
+  var gsapLoaded = false;
+  var scrollTriggerLoaded = false;
+
+  function loadGSAP() {
+    // Use jsDelivr as primary (more reliable for GSAP plugin loading)
+    var primary = 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js';
+    var scrollPrimary = 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js';
+    // Fallback CDN: unpkg
+    var fallback = 'https://unpkg.com/gsap@3.12.5/dist/gsap.min.js';
+    var scrollFallback = 'https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js';
+
+    // Check if already loaded — but also verify global namespace
+    if (typeof gsap !== 'undefined' && (typeof ScrollTrigger !== 'undefined' || (typeof gsap !== 'undefined' && gsap.plugins && gsap.plugins.scrolltrigger))) {
+      console.log('Motion: GSAP + ScrollTrigger already loaded');
+      return Promise.resolve();
+    }
+
+    // Sequential loading: GSAP first, then ScrollTrigger
+    return loadScript(primary)
+      .catch(function() {
+        console.warn('Motion: jsDelivr GSAP failed, trying unpkg...');
+        return loadScript(fallback);
+      })
+      .then(function() {
+        gsapLoaded = true;
+        console.log('Motion: GSAP core loaded');
+        // Wait a tick to ensure gsap is fully registered globally
+        return new Promise(function(resolve) { setTimeout(resolve, 50); });
+      })
+      .then(function() {
+        return loadScript(scrollPrimary)
+          .catch(function() {
+            console.warn('Motion: jsDelivr ScrollTrigger failed, trying unpkg...');
+            return loadScript(scrollFallback);
+          })
+          .then(function() {
+            scrollTriggerLoaded = true;
+            console.log('Motion: ScrollTrigger loaded');
+          });
+      });
   }
 
   function initProgressBar() {
@@ -166,46 +181,49 @@
           bar.style.width = ((st / dh) * 100) + '%';
         }, { passive: true });
       }
-    } catch (e) { console.warn('Progress bar error:', e); }
+    } catch (e) { /* ignore */ }
   }
 
   function initHeroAnimation() {
     try {
-      var hero = document.querySelector('.vnesud-hero');
-      if (hero) {
-        gsap.set(hero, { opacity: 1, y: 0 });
-      }
+      var hero = document.querySelector('.vnesud-hero, .sudeb-hero, .recz-hero, .category-hero');
+      var title = document.querySelector('.vnesud-hero__title, .sudeb-hero__title, .recz-hero__title, .category-hero__title');
       
-      var title = document.querySelector('.vnesud-hero__title');
       if (!title) return;
+      
+      // Ensure hero is visible first
+      if (hero) gsap.set(hero, { opacity: 1, y: 0 });
+      
       var words = title.textContent.trim().split(/\s+/);
       if (words.length <= 1) {
         gsap.set(title, { opacity: 1, y: 0 });
         return;
       }
       
-      // Find keyword for handwritten stroke
-      var keyword = 'внесудебная';
+      // Keyword for underline — page-specific
+      var heroEl = document.querySelector('.vnesud-hero, .sudeb-hero, .recz-hero, .category-hero');
+      var keyword = '';
+      if (heroEl && heroEl.classList.contains('vnesud-hero')) keyword = 'внесудебная';
+      else if (heroEl && heroEl.classList.contains('sudeb-hero')) keyword = 'судебная';
+      else if (heroEl && heroEl.classList.contains('recz-hero')) keyword = 'рецензия';
+      else if (heroEl && heroEl.classList.contains('category-hero')) keyword = 'экспертиза';
+      
       var lowerText = title.textContent.toLowerCase();
-      var keywordIndex = lowerText.indexOf(keyword);
+      var keywordIndex = keyword ? lowerText.indexOf(keyword) : -1;
       
       var html = '';
       for (var i = 0; i < words.length; i++) {
         var word = words[i];
         var lowerWord = word.toLowerCase();
         
-        // Check if this word is the keyword
-        if (keywordIndex !== -1 && lowerWord === keyword) {
-          // Wrap keyword in span with SVG underline
+        if (keyword && keywordIndex !== -1 && lowerWord === keyword) {
           html += '<span class="word keyword-wrap" style="display:inline-block;position:relative;">';
           html += word;
           html += '<span class="keyword-stroke" style="position:absolute;bottom:-4px;left:0;right:0;height:8px;overflow:visible;">';
           html += '<svg viewBox="0 0 100 12" preserveAspectRatio="none" style="width:100%;height:100%;display:block;">';
           html += '<path d="M 2 8 Q 25 2, 50 6 T 98 4" fill="none" stroke="#e8731a" stroke-width="2" stroke-linecap="round" class="stroke-path" style="stroke-dasharray: 120; stroke-dashoffset: 120;"/>';
-          html += '</svg>';
-          html += '</span>';
-          html += '</span>';
-          keywordIndex = -1; // Mark as handled
+          html += '</svg></span></span>';
+          keywordIndex = -1;
         } else {
           html += '<span class="word" style="display:inline-block">' + word + '</span>';
         }
@@ -214,51 +232,52 @@
       title.innerHTML = html;
       var spans = title.querySelectorAll('.word');
       gsap.set(spans, { opacity: 0, y: 60 });
-      gsap.to(spans, { opacity: 1, y: 0, duration: 0.7, stagger: 0.075, ease: 'expo.out', delay: 0.3 });
       
-      // Animate handwritten stroke after words appear
+      // Create master timeline for hero animation
+      var tl = gsap.timeline({ delay: 0.3 });
+      tl.to(spans, { opacity: 1, y: 0, duration: 0.7, stagger: 0.075, ease: 'expo.out' });
+      
+      // Animate underline stroke after words appear
       var strokePath = title.querySelector('.stroke-path');
       if (strokePath) {
         var totalDelay = 0.3 + (words.length * 0.075) + 0.3;
-        gsap.to(strokePath, {
-          strokeDashoffset: 0,
-          duration: 1,
-          ease: 'power2.out',
-          delay: totalDelay
-        });
+        tl.to(strokePath, { strokeDashoffset: 0, duration: 1, ease: 'power2.out' }, totalDelay);
       }
       
-      var btn = document.querySelector('.vnesud-hero__actions .btn--primary');
+      // Animate button
+      var btn = document.querySelector('.vnesud-hero__actions .btn--primary, .sudeb-hero__actions .btn--primary');
       if (btn) {
         gsap.set(btn, { opacity: 0, y: 20 });
-        gsap.to(btn, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', delay: 0.3 + (words.length * 0.075) + 0.3 });
+        var btnDelay = 0.3 + (words.length * 0.075) + 0.3;
+        tl.to(btn, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, btnDelay);
       }
+      
+      console.log('Motion: Hero animation timeline created');
     } catch (e) { console.warn('Hero animation error:', e); }
   }
 
   function initHeroUseCards() {
     try {
-      var cards = document.querySelectorAll('.vnesud-hero-use');
+      var cards = document.querySelectorAll('.vnesud-hero-use, .sudeb-hero-use, .recz-hero-use');
       if (cards.length === 0) return;
-      ScrollTrigger.create({ trigger: '.vnesud-hero-uses', start: 'top 80%', onEnter: function() {
-        gsap.to(cards, { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: 'power2.out' });
-      }, once: true });
-    } catch (e) { console.warn('Hero use cards error:', e); }
+      ScrollTrigger.create({
+        trigger: '.vnesud-hero-uses, .sudeb-hero-uses, .recz-hero-uses',
+        start: 'top 80%',
+        onEnter: function() {
+          gsap.to(cards, { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: 'power2.out' });
+        },
+        once: true
+      });
+    } catch (e) { /* ignore */ }
   }
 
-  // 3.3 Вертикальная прогресс-линия scrub (растёт при скролле)
   function initStepsProgressLine() {
     try {
       var line = document.querySelector('.steps-progress-line');
       if (!line) return;
-      
       var section = document.querySelector('#how-we-work');
       if (!section) return;
-      
-      // Начальное состояние — высота 0
       gsap.set(line, { height: 0 });
-      
-      // Scrub: линия растёт от 0 до 100% при скролле секции
       gsap.to(line, {
         height: '100%',
         ease: 'none',
@@ -266,51 +285,36 @@
           trigger: section,
           start: 'top 60%',
           end: 'bottom 40%',
-          scrub: true
+          scrub: 0.3
         }
       });
-    } catch (e) { console.warn('Steps progress line error:', e); }
+    } catch (e) { /* ignore */ }
   }
 
-  // 4.1 Магнитные кнопки (CTA притягивается к курсору)
   function initMagneticButtons() {
     try {
       if ('ontouchstart' in window) return;
-      
       var buttons = document.querySelectorAll('.btn--primary');
       buttons.forEach(function(btn) {
-        var radius = 70; // 60-80px по ТЗ
-        var maxOffset = 10; // 8-10px по ТЗ
-        
+        var radius = 70;
+        var maxOffset = 10;
         btn.addEventListener('mousemove', function(e) {
           var rect = btn.getBoundingClientRect();
           var x = e.clientX - rect.left - rect.width / 2;
           var y = e.clientY - rect.top - rect.height / 2;
           var dist = Math.sqrt(x * x + y * y);
-          
           if (dist < radius) {
             var factor = (1 - dist / radius) * maxOffset;
             var moveX = (x / (dist || 1)) * factor;
             var moveY = (y / (dist || 1)) * factor;
-            gsap.to(btn, {
-              x: moveX,
-              y: moveY,
-              duration: 0.3,
-              ease: 'power2.out'
-            });
+            gsap.to(btn, { x: moveX, y: moveY, duration: 0.3, ease: 'power2.out' });
           }
         });
-        
         btn.addEventListener('mouseleave', function() {
-          gsap.to(btn, {
-            x: 0,
-            y: 0,
-            duration: 1,
-            ease: 'elastic.out(1, 0.5)'
-          });
+          gsap.to(btn, { x: 0, y: 0, duration: 1, ease: 'elastic.out(1, 0.5)' });
         });
       });
-    } catch (e) { console.warn('Magnetic buttons error:', e); }
+    } catch (e) { /* ignore */ }
   }
 
   function initSectionReveal() {
@@ -318,33 +322,81 @@
       var secs = document.querySelectorAll('section.reveal');
       secs.forEach(function(sec) {
         gsap.set(sec, { opacity: 0, y: 40 });
-        ScrollTrigger.create({ 
-          trigger: sec, 
-          start: 'top 85%', 
+        ScrollTrigger.create({
+          trigger: sec,
+          start: 'top 85%',
           onEnter: function() {
             gsap.to(sec, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' });
-          }, 
-          once: true 
+          },
+          once: true
         });
       });
-    } catch (e) { console.warn('Section reveal error:', e); }
+    } catch (e) { /* ignore */ }
   }
 
   function initCardAnimations() {
     try {
-      var dirs = document.querySelector('.vnesud-directions');
-      if (dirs) {
-        var dc = dirs.querySelectorAll('.vnesud-direction');
-        ScrollTrigger.create({ trigger: dirs, start: 'top 75%', onEnter: function() {
-          gsap.to(dc, { opacity: 1, y: 0, duration: 0.6, stagger: 0.09, ease: 'power2.out' });
+      // vnesud-directions
+      var vd = document.querySelector('.vnesud-directions');
+      if (vd) {
+        var vdc = vd.querySelectorAll('.vnesud-direction');
+        ScrollTrigger.create({ trigger: vd, start: 'top 75%', onEnter: function() {
+          gsap.to(vdc, { opacity: 1, y: 0, duration: 0.6, stagger: 0.09, ease: 'power2.out' });
         }, once: true });
-        for (var i = 0; i < dc.length; i++) {
+        for (var i = 0; i < vdc.length; i++) {
           (function(card) {
-            card.addEventListener('mouseenter', function() { gsap.to(dc, { opacity: 0.6, duration: 0.3, ease: 'power2.out', overwrite: true }); gsap.to(card, { opacity: 1, y: -6, boxShadow: '0 12px 40px rgba(0,0,0,0.1)', duration: 0.3, ease: 'power2.out', overwrite: true }); });
-            card.addEventListener('mouseleave', function() { gsap.to(dc, { opacity: 1, y: 0, boxShadow: 'none', duration: 0.3, ease: 'power2.out', overwrite: true }); });
-          })(dc[i]);
+            card.addEventListener('mouseenter', function() {
+              gsap.to(vdc, { opacity: 0.6, duration: 0.3, ease: 'power2.out', overwrite: true });
+              gsap.to(card, { opacity: 1, y: -6, boxShadow: '0 12px 40px rgba(0,0,0,0.1)', duration: 0.3, ease: 'power2.out', overwrite: true });
+            });
+            card.addEventListener('mouseleave', function() {
+              gsap.to(vdc, { opacity: 1, y: 0, boxShadow: 'none', duration: 0.3, ease: 'power2.out', overwrite: true });
+            });
+          })(vdc[i]);
         }
       }
+
+      // sudeb-directions
+      var sd = document.querySelector('.sudeb-directions');
+      if (sd) {
+        var sdc = sd.querySelectorAll('.sudeb-direction');
+        ScrollTrigger.create({ trigger: sd, start: 'top 75%', onEnter: function() {
+          gsap.to(sdc, { opacity: 1, y: 0, duration: 0.6, stagger: 0.09, ease: 'power2.out' });
+        }, once: true });
+        for (var j = 0; j < sdc.length; j++) {
+          (function(card) {
+            card.addEventListener('mouseenter', function() {
+              gsap.to(sdc, { opacity: 0.6, duration: 0.3, ease: 'power2.out', overwrite: true });
+              gsap.to(card, { opacity: 1, y: -6, boxShadow: '0 12px 40px rgba(0,0,0,0.1)', duration: 0.3, ease: 'power2.out', overwrite: true });
+            });
+            card.addEventListener('mouseleave', function() {
+              gsap.to(sdc, { opacity: 1, y: 0, boxShadow: 'none', duration: 0.3, ease: 'power2.out', overwrite: true });
+            });
+          })(sdc[j]);
+        }
+      }
+
+      // recz-directions
+      var rd = document.querySelector('.recz-directions');
+      if (rd) {
+        var rdc = rd.querySelectorAll('.recz-direction');
+        ScrollTrigger.create({ trigger: rd, start: 'top 75%', onEnter: function() {
+          gsap.to(rdc, { opacity: 1, y: 0, duration: 0.6, stagger: 0.09, ease: 'power2.out' });
+        }, once: true });
+        for (var k = 0; k < rdc.length; k++) {
+          (function(card) {
+            card.addEventListener('mouseenter', function() {
+              gsap.to(rdc, { opacity: 0.6, duration: 0.3, ease: 'power2.out', overwrite: true });
+              gsap.to(card, { opacity: 1, y: -6, boxShadow: '0 12px 40px rgba(0,0,0,0.1)', duration: 0.3, ease: 'power2.out', overwrite: true });
+            });
+            card.addEventListener('mouseleave', function() {
+              gsap.to(rdc, { opacity: 1, y: 0, boxShadow: 'none', duration: 0.3, ease: 'power2.out', overwrite: true });
+            });
+          })(rdc[k]);
+        }
+      }
+
+      // guarantees
       var guar = document.querySelector('.guarantees-grid');
       if (guar) {
         var gc = guar.querySelectorAll('.guarantee-card');
@@ -352,64 +404,95 @@
           gsap.to(gc, { opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'power2.out' });
         }, once: true });
       }
-      var cases = document.querySelector('.vnesud-cases');
-      if (cases) {
-        var cc = cases.querySelectorAll('.vnesud-case');
-        ScrollTrigger.create({ trigger: cases, start: 'top 75%', onEnter: function() {
-          gsap.to(cc, { opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'power2.out' });
-        }, once: true });
-      }
-    } catch (e) { console.warn('Card animations error:', e); }
-  }
 
-  function initStepsAnimation() {
-    try {
-      var ss = document.querySelector('#how-we-work');
-      if (!ss) return;
-      
-      // Параллакс номеров при скролле
-      if (window.innerWidth >= 768) {
-        var nums = ss.querySelectorAll('.vnesud-step__num');
-        ScrollTrigger.create({ trigger: ss, start: 'top bottom', end: 'bottom top', scrub: true, onUpdate: function(self) {
-          nums.forEach(function(n, i) { gsap.set(n, { y: -self.progress * 100 * (0.6 + i * 0.1) }); });
-        } });
-      }
-      
-      var steps = ss.querySelectorAll('.vnesud-step');
-      steps.forEach(function(step) {
-        ScrollTrigger.create({ trigger: step, start: 'top 65%', onEnter: function() {
-          gsap.to(step, { opacity: 1, y: 0, duration: 0.7, ease: 'expo.out' });
+      // vnesud-cases
+      var vc = document.querySelector('.vnesud-cases');
+      if (vc) {
+        var vcc = vc.querySelectorAll('.vnesud-case');
+        ScrollTrigger.create({ trigger: vc, start: 'top 75%', onEnter: function() {
+          gsap.to(vcc, { opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'power2.out' });
         }, once: true });
-      });
-    } catch (e) { console.warn('Steps animation error:', e); }
+      }
+
+      // sudeb-cases
+      var sc = document.querySelector('.sudeb-cases');
+      if (sc) {
+        var scc = sc.querySelectorAll('.sudeb-case');
+        ScrollTrigger.create({ trigger: sc, start: 'top 75%', onEnter: function() {
+          gsap.to(scc, { opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'power2.out' });
+        }, once: true });
+      }
+
+      // recz-cases
+      var rc = document.querySelector('.recz-cases');
+      if (rc) {
+        var rcc = rc.querySelectorAll('.recz-case');
+        ScrollTrigger.create({ trigger: rc, start: 'top 75%', onEnter: function() {
+          gsap.to(rcc, { opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'power2.out' });
+        }, once: true });
+      }
+
+      // category-directions (для всех 4 категорий)
+      var cd = document.querySelector('.vnesud-directions');
+      if (cd) {
+        var cdc = cd.querySelectorAll('.vnesud-direction');
+        ScrollTrigger.create({ trigger: cd, start: 'top 75%', onEnter: function() {
+          gsap.to(cdc, { opacity: 1, y: 0, duration: 0.6, stagger: 0.09, ease: 'power2.out' });
+        }, once: true });
+        for (var m = 0; m < cdc.length; m++) {
+          (function(card) {
+            card.addEventListener('mouseenter', function() {
+              gsap.to(cdc, { opacity: 0.6, duration: 0.3, ease: 'power2.out', overwrite: true });
+              gsap.to(card, { opacity: 1, y: -6, boxShadow: '0 12px 40px rgba(0,0,0,0.1)', duration: 0.3, ease: 'power2.out', overwrite: true });
+            });
+            card.addEventListener('mouseleave', function() {
+              gsap.to(cdc, { opacity: 1, y: 0, boxShadow: 'none', duration: 0.3, ease: 'power2.out', overwrite: true });
+            });
+          })(cdc[m]);
+        }
+      }
+
+      // category-cases (для всех 4 категорий)
+      var cc = document.querySelector('.vnesud-cases');
+      if (cc) {
+        var ccc = cc.querySelectorAll('.vnesud-case');
+        ScrollTrigger.create({ trigger: cc, start: 'top 75%', onEnter: function() {
+          gsap.to(ccc, { opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'power2.out' });
+        }, once: true });
+      }
+    } catch (e) { /* ignore */ }
   }
 
   function initPinningSection() {
     try {
-      if (window.innerWidth < 768) return;
       var ps = document.querySelector('#guarantees');
       if (!ps) return;
       var cards = ps.querySelectorAll('.guarantee-card');
-      if (cards.length < 3) return;
-      var tl = gsap.timeline({ scrollTrigger: { trigger: ps, start: 'top 20%', end: '+=200%', pin: true, scrub: true } });
-      for (var i = 1; i < cards.length; i++) {
-        tl.to(cards[i-1], { opacity: 0, y: -30, duration: 0.3, ease: 'power2.inOut' }, (i-1) * 0.5);
-        tl.to(cards[i], { opacity: 1, y: 0, duration: 0.3, ease: 'power2.inOut' }, (i-1) * 0.5);
-      }
-      tl.to(cards[cards.length-1], { opacity: 0, y: 30, duration: 0.2, ease: 'power2.inOut' }, 1);
-      var cardsArr = Array.prototype.slice.call(cards);
-      gsap.set(cardsArr.slice(1), { opacity: 0, y: 30 });
-    } catch (e) { console.warn('Pinning error:', e); }
+      if (cards.length === 0) return;
+      ScrollTrigger.create({
+        trigger: ps,
+        start: 'top 75%',
+        onEnter: function() {
+          gsap.to(cards, { opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: 'power2.out' });
+        },
+        once: true
+      });
+    } catch (e) { /* ignore */ }
   }
 
   function initFooterReveal() {
     try {
       var footer = document.querySelector('.footer');
       if (!footer) return;
-      ScrollTrigger.create({ trigger: 'main', start: 'bottom 80%', onEnter: function() {
-        gsap.to(footer, { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' });
-      }, once: true });
-    } catch (e) { console.warn('Footer reveal error:', e); }
+      ScrollTrigger.create({
+        trigger: 'main',
+        start: 'bottom 80%',
+        onEnter: function() {
+          gsap.to(footer, { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' });
+        },
+        once: true
+      });
+    } catch (e) { /* ignore */ }
   }
 
   function initCustomCursor() {
@@ -424,19 +507,32 @@
       var mx = 0, my = 0, rx = 0, ry = 0;
       document.addEventListener('mousemove', function(e) { mx = e.clientX; my = e.clientY; gsap.set(cursor, { x: mx, y: my }); });
       (function anim() { rx += (mx - rx) * 0.1; ry += (my - ry) * 0.1; gsap.set(ring, { x: rx, y: ry }); requestAnimationFrame(anim); })();
-      var targets = document.querySelectorAll('a, button, .vnesud-direction, .guarantee-card');
+      var targets = document.querySelectorAll(
+        'a, button, .vnesud-direction, .vnesud-case, ' +
+        '.sudeb-direction, .sudeb-case, ' +
+        '.recz-direction, .recz-case'
+      );
       for (var i = 0; i < targets.length; i++) {
         (function(t) {
           t.addEventListener('mouseenter', function() { gsap.to(ring, { width: 64, height: 64, borderColor: 'rgba(232,115,26,0.8)', duration: 0.3 }); });
           t.addEventListener('mouseleave', function() { gsap.to(ring, { width: 40, height: 40, borderColor: 'rgba(232,115,26,0.5)', duration: 0.3 }); });
         })(targets[i]);
       }
-    } catch (e) { console.warn('Cursor error:', e); }
+    } catch (e) { /* ignore */ }
+  }
+
+  // Guard against double initialization
+  var motionInitialized = false;
+  
+  function safeInit() {
+    if (motionInitialized) return;
+    motionInitialized = true;
+    init();
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', safeInit);
   } else {
-    init();
+    safeInit();
   }
 })();
