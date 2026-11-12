@@ -48,33 +48,8 @@
     observer.observe(el);
   });
 
-  // Back to top button
-  const backToTop = document.createElement('button');
-  backToTop.className = 'back-to-top';
-  backToTop.innerHTML = '↑';
-  backToTop.setAttribute('aria-label', 'Наверх');
-  backToTop.setAttribute('title', 'Наверх');
-  document.body.appendChild(backToTop);
-
-  let backToTopVisible = false;
-  
-  window.addEventListener('scroll', function() {
-    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollY > 500 && !backToTopVisible) {
-      backToTop.classList.add('visible');
-      backToTopVisible = true;
-    } else if (scrollY <= 500 && backToTopVisible) {
-      backToTop.classList.remove('visible');
-      backToTopVisible = false;
-    }
-  }, { passive: true });
-
-  backToTop.addEventListener('click', function() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
+  // Back to top button is handled by main.js (dedicated module)
+  // Removed duplicate creation to prevent double buttons
 
   // Animated counters
   function animateCounter(element) {

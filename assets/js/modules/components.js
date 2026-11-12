@@ -99,58 +99,11 @@
     });
   }
 
-  // Инициализация шапки (бургер-меню, дропдауны)
+  // Инициализация шапки (только дропдауны)
+  // Бургер-меню обрабатывается в burger.js (dedicated module)
   function initHeader() {
     var header = document.querySelector('.header');
     if (!header) return;
-
-    var burger = header.querySelector('.header__burger');
-    var overlay = header.querySelector('.header__menu-overlay');
-    var panel = header.querySelector('.header__menu-panel');
-
-    // Бургер-меню
-    if (burger && overlay && panel) {
-      burger.addEventListener('click', function() {
-        var isOpen = burger.getAttribute('aria-expanded') === 'true';
-        burger.setAttribute('aria-expanded', !isOpen);
-        
-        if (!isOpen) {
-          // Открываем меню
-          burger.classList.add('active');
-          overlay.style.display = 'block';
-          panel.style.display = 'block';
-          
-          // Анимация
-          setTimeout(function() {
-            overlay.classList.add('active');
-            panel.classList.add('active');
-          }, 10);
-        } else {
-          // Закрываем меню
-          burger.classList.remove('active');
-          overlay.classList.remove('active');
-          panel.classList.remove('active');
-          
-          setTimeout(function() {
-            overlay.style.display = 'none';
-            panel.style.display = 'none';
-          }, 300);
-        }
-      });
-
-      // Закрытие по клику на overlay
-      overlay.addEventListener('click', function() {
-        burger.setAttribute('aria-expanded', 'false');
-        burger.classList.remove('active');
-        overlay.classList.remove('active');
-        panel.classList.remove('active');
-        
-        setTimeout(function() {
-          overlay.style.display = 'none';
-          panel.style.display = 'none';
-        }, 300);
-      });
-    }
 
     // Мобильные дропдауны
     var mobileToggles = header.querySelectorAll('.header__menu-dropdown-toggle');

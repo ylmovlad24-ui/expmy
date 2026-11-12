@@ -10,14 +10,30 @@
 
   function init() {
     try {
-      loadScript('https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js')
-        .then(function () {
-          return loadScript('https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js');
-        })
-        .then(function () {
-          if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+      // Ждём загрузки GSAP от gsap-loader.js
+      if (window.GSAPLoader && window.GSAPLoader.ready) {
+        window.GSAPLoader.ready()
+          .then(function () {
+            if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+            gsap.registerPlugin(ScrollTrigger);
+            initHeroAnimation();
+            initHeroUseCards();
+            initDirectionsAnimation();
+            initGuaranteesAnimation();
+            initMagnetAnimation();
+            initCasesAnimation();
+            initReviewsAnimation();
+            initLegalAnimation();
+            initFAQAnimation();
+            initCTAAnimation();
+          })
+          .catch(function (err) {
+            console.warn('Review motion init error:', err);
+          });
+      } else {
+        // Fallback: GSAP уже загружен
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
           gsap.registerPlugin(ScrollTrigger);
-
           initHeroAnimation();
           initHeroUseCards();
           initDirectionsAnimation();
@@ -28,27 +44,11 @@
           initLegalAnimation();
           initFAQAnimation();
           initCTAAnimation();
-        })
-        .catch(function (err) {
-          console.warn('Review motion init error:', err);
-        });
+        }
+      }
     } catch (e) {
       console.warn('Review motion init error:', e);
     }
-  }
-
-  function loadScript(src) {
-    return new Promise(function (resolve, reject) {
-      if (document.querySelector('script[src="' + src + '"]')) {
-        resolve();
-        return;
-      }
-      var script = document.createElement('script');
-      script.src = src;
-      script.onload = resolve;
-      script.onerror = function () { reject(new Error('Script load failed: ' + src)); };
-      document.head.appendChild(script);
-    });
   }
 
   function initHeroAnimation() {

@@ -2,16 +2,16 @@
 
 .form {
   max-width: 640px;
-  margin: 0 auto 40px;
+  margin: 0 auto var(--space-10);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--space-4);
 }
 
 .form__row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: var(--space-4);
 }
 
 .form__input,
@@ -20,12 +20,12 @@
   width: 100%;
   padding: 14px 18px;
   border: 1px solid var(--border);
-  border-radius: 8px;
-  font-size: 1rem;
+  border-radius: var(--radius-card);
+  font-size: var(--fs-base);
   font-family: inherit;
   color: var(--text);
   background: var(--bg);
-  transition: border-color 0.2s;
+  transition: border-color var(--transition-normal);
 }
 
 .form__input:focus,
@@ -36,6 +36,39 @@
   box-shadow: 0 0 0 3px rgba(42, 91, 154, 0.15);
 }
 
+/* Focus visible for accessibility */
+.form__input:focus-visible,
+.form__select:focus-visible,
+.form__textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Disabled state */
+.form__input:disabled,
+.form__select:disabled,
+.form__textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--bg-light);
+}
+
+/* Error state */
+.form__input.error,
+.form__select.error,
+.form__textarea.error {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.15);
+}
+
+/* Success state */
+.form__input.success,
+.form__select.success,
+.form__textarea.success {
+  border-color: var(--success);
+  box-shadow: 0 0 0 3px rgba(56, 161, 105, 0.15);
+}
+
 .form__textarea {
   min-height: 100px;
   resize: vertical;
@@ -43,7 +76,34 @@
 
 .form__privacy {
   text-align: center;
-  font-size: 0.75rem;
+  font-size: var(--fs-xs);
   color: var(--white-50);
-  margin-top: 8px;
+  margin-top: var(--space-2);
+}
+
+/* Form field wrapper for micro-interactions */
+.form-field {
+  position: relative;
+}
+
+.form-field__label {
+  display: block;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--text);
+  margin-bottom: var(--space-2);
+}
+
+.form-field__underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width var(--transition-normal) var(--ease-out);
+}
+
+.form-field:focus-within .form-field__underline {
+  width: 100%;
 }

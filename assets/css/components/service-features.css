@@ -203,8 +203,8 @@
   padding: 14px 28px;
 }
 
-/* Stat card */
-.stat-card {
+/* Stat card — dark/review variant (extends base .stat-card from cards.css) */
+.stat-card--dark {
   background: rgba(255, 168, 102, 0.1);
   border: 2px solid rgba(255, 168, 102, 0.3);
   border-radius: 16px;
@@ -212,13 +212,13 @@
 }
 
 /* Stat card icon */
-.stat-card__icon {
+.stat-card--dark .stat-card__icon {
   font-size: 3rem;
   margin-bottom: 12px;
 }
 
 /* Stat card number */
-.stat-card__number {
+.stat-card--dark .stat-card__number {
   color: var(--accent);
   font-size: 2rem;
   font-weight: 700;
@@ -226,7 +226,7 @@
 }
 
 /* Stat card label */
-.stat-card__label {
+.stat-card--dark .stat-card__label {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.875rem;
 }
@@ -239,7 +239,7 @@
 }
 
 /* Stat card price */
-.stat-card__price {
+.stat-card--dark .stat-card__price {
   color: var(--accent);
   font-size: 1.5rem;
   font-weight: 700;
@@ -247,7 +247,7 @@
 }
 
 /* Stat card price label */
-.stat-card__price-label {
+.stat-card--dark .stat-card__price-label {
   color: rgba(255, 255, 255, 0.6);
   font-size: 0.8125rem;
 }

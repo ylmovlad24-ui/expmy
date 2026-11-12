@@ -4,12 +4,12 @@
   position: fixed;
   bottom: 24px;
   right: 24px;
-  z-index: 900;
+  z-index: 999;
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 16px 24px;
-  background: linear-gradient(135deg, #E67E22 0%, #d35400 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
   color: #fff;
   text-decoration: none;
   border-radius: 50px;

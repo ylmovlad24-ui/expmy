@@ -342,43 +342,8 @@
 /* .section__subtitle--mb32 moved to sections.css
    .section__subtitle--cta moved to sections.css */
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-.stat-card {
-  background: #fff;
-  border: 1px solid var(--border, #E0E4E8);
-  border-radius: var(--card-radius, 8px);
-  padding: 24px;
-  box-shadow: var(--shadow-card);
-  transition: transform var(--transition-normal) var(--ease-quick), box-shadow var(--transition-normal);
-}
-
-.stat-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-card-hover);
-}
-
-.stat-card__number {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--primary, #2A5B9A);
-  margin-bottom: 8px;
-}
-
-.stat-card__number--success {
-  color: var(--success, #38a169);
-}
-
-.stat-card__label {
-  font-size: 0.9rem;
-  color: var(--text-secondary, #666);
-  line-height: 1.5;
-}
-
+/* .stats-grid and .stat-card are defined in cards.css — use those for main styling */
+/* Responsive overrides for stats-grid (applied on top of cards.css base) */
 @media (max-width: 992px) {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);

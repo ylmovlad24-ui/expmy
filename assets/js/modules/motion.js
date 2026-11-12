@@ -17,24 +17,38 @@
 
   function init() {
     try {
-      // First load GSAP, THEN hide elements and start animations
-      loadGSAP()
-        .then(function() {
-          console.log('Motion: GSAP + ScrollTrigger loaded');
-          if (typeof gsap === 'undefined') {
-            console.error('Motion: GSAP is not defined after loading');
-            return;
-          }
-          if (typeof ScrollTrigger === 'undefined') {
-            console.error('Motion: ScrollTrigger is not defined after loading');
-            return;
-          }
+      // Ждём загрузки GSAP от gsap-loader.js
+      if (window.GSAPLoader && window.GSAPLoader.ready) {
+        window.GSAPLoader.ready()
+          .then(function() {
+            if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+              console.warn('Motion: GSAP not available');
+              return;
+            }
+            gsap.registerPlugin(ScrollTrigger);
+            hideAnimatedElements();
+            requestAnimationFrame(function() {
+              initProgressBar();
+              initHeroAnimation();
+              initHeroUseCards();
+              initStepsProgressLine();
+              initMagneticButtons();
+              initSectionReveal();
+              initCardAnimations();
+              initPinningSection();
+              initFooterReveal();
+              // Custom cursor is handled by custom-cursor.js (dedicated module)
+              console.log('Motion: All animations initialized');
+            });
+          })
+          .catch(function(err) {
+            console.warn('Motion init error:', err);
+          });
+      } else {
+        // Fallback: GSAP уже загружен
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
           gsap.registerPlugin(ScrollTrigger);
-          
-          // Now hide elements and start animations
           hideAnimatedElements();
-          
-          // Small delay to ensure DOM is ready for animation
           requestAnimationFrame(function() {
             initProgressBar();
             initHeroAnimation();
@@ -45,14 +59,11 @@
             initCardAnimations();
             initPinningSection();
             initFooterReveal();
-            initCustomCursor();
-            console.log('Motion: All animations initialized');
+            // Custom cursor is handled by custom-cursor.js (dedicated module)
+            console.log('Motion: All animations initialized (fallback)');
           });
-        })
-        .catch(function(err) {
-          console.warn('Motion init error:', err);
-          // Elements remain visible if GSAP fails to load
-        });
+        }
+      }
     } catch (e) {
       console.warn('Motion init error:', e);
     }
@@ -109,66 +120,7 @@
     });
   }
 
-  function loadScript(src, timeout) {
-    timeout = timeout || 10000;
-    return new Promise(function(resolve, reject) {
-      if (document.querySelector('script[src="' + src + '"]')) {
-        resolve();
-        return;
-      }
-      var script = document.createElement('script');
-      script.src = src;
-      var timer = setTimeout(function() {
-        script.onerror && script.onerror();
-        reject(new Error('Script load timeout: ' + src));
-      }, timeout);
-      script.onload = function() { clearTimeout(timer); resolve(); };
-      script.onerror = function() { clearTimeout(timer); reject(new Error('Script load failed: ' + src)); };
-      document.head.appendChild(script);
-    });
-  }
 
-  var gsapLoaded = false;
-  var scrollTriggerLoaded = false;
-
-  function loadGSAP() {
-    // Use jsDelivr as primary (more reliable for GSAP plugin loading)
-    var primary = 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js';
-    var scrollPrimary = 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js';
-    // Fallback CDN: unpkg
-    var fallback = 'https://unpkg.com/gsap@3.12.5/dist/gsap.min.js';
-    var scrollFallback = 'https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js';
-
-    // Check if already loaded — but also verify global namespace
-    if (typeof gsap !== 'undefined' && (typeof ScrollTrigger !== 'undefined' || (typeof gsap !== 'undefined' && gsap.plugins && gsap.plugins.scrolltrigger))) {
-      console.log('Motion: GSAP + ScrollTrigger already loaded');
-      return Promise.resolve();
-    }
-
-    // Sequential loading: GSAP first, then ScrollTrigger
-    return loadScript(primary)
-      .catch(function() {
-        console.warn('Motion: jsDelivr GSAP failed, trying unpkg...');
-        return loadScript(fallback);
-      })
-      .then(function() {
-        gsapLoaded = true;
-        console.log('Motion: GSAP core loaded');
-        // Wait a tick to ensure gsap is fully registered globally
-        return new Promise(function(resolve) { setTimeout(resolve, 50); });
-      })
-      .then(function() {
-        return loadScript(scrollPrimary)
-          .catch(function() {
-            console.warn('Motion: jsDelivr ScrollTrigger failed, trying unpkg...');
-            return loadScript(scrollFallback);
-          })
-          .then(function() {
-            scrollTriggerLoaded = true;
-            console.log('Motion: ScrollTrigger loaded');
-          });
-      });
-  }
 
   function initProgressBar() {
     try {
@@ -504,31 +456,8 @@
     } catch (e) { /* ignore */ }
   }
 
-  function initCustomCursor() {
-    try {
-      if ('ontouchstart' in window) return;
-      var cursor = document.createElement('div');
-      cursor.style.cssText = 'position:fixed;width:10px;height:10px;background:#e8731a;border-radius:50%;pointer-events:none;z-index:99999;mix-blend-mode:difference;transform:translate(-50%,-50%)';
-      document.body.appendChild(cursor);
-      var ring = document.createElement('div');
-      ring.style.cssText = 'position:fixed;width:40px;height:40px;border:2px solid rgba(232,115,26,0.5);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%)';
-      document.body.appendChild(ring);
-      var mx = 0, my = 0, rx = 0, ry = 0;
-      document.addEventListener('mousemove', function(e) { mx = e.clientX; my = e.clientY; gsap.set(cursor, { x: mx, y: my }); });
-      (function anim() { rx += (mx - rx) * 0.1; ry += (my - ry) * 0.1; gsap.set(ring, { x: rx, y: ry }); requestAnimationFrame(anim); })();
-      var targets = document.querySelectorAll(
-        'a, button, .vnesud-direction, .vnesud-case, ' +
-        '.sudeb-direction, .sudeb-case, ' +
-        '.recz-direction, .recz-case'
-      );
-      for (var i = 0; i < targets.length; i++) {
-        (function(t) {
-          t.addEventListener('mouseenter', function() { gsap.to(ring, { width: 64, height: 64, borderColor: 'rgba(232,115,26,0.8)', duration: 0.3 }); });
-          t.addEventListener('mouseleave', function() { gsap.to(ring, { width: 40, height: 40, borderColor: 'rgba(232,115,26,0.5)', duration: 0.3 }); });
-        })(targets[i]);
-      }
-    } catch (e) { /* ignore */ }
-  }
+  // Custom cursor is handled by custom-cursor.js module
+  // initCustomCursor() removed to prevent duplicate cursor
 
   // Guard against double initialization
   var motionInitialized = false;

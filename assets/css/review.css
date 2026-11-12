@@ -532,7 +532,7 @@
 }
 
 .review-partnership__cta:hover {
-  background: #e09520;
+  background: var(--accent-hover, #e09520);
 }
 
 /* ─── Reviews section ─── */
@@ -636,7 +636,7 @@
 }
 
 .review-cta__btn-primary:hover {
-  background: #e09520;
+  background: var(--accent-hover, #e09520);
 }
 
 .review-cta__btn-outline {
@@ -981,7 +981,8 @@
   line-height: 1.7;
 }
 
-/* ─── Request Form ─── */
+/* ─── Request Form (review-specific) ─── */
+/* Note: Base .form styles are in components/forms.css — these are review-specific overrides */
 
 .request-form {
   padding: 64px 0;
@@ -994,15 +995,16 @@
   text-align: center;
 }
 
-.form {
+/* Review form — extends base .form from forms.css */
+.review-form {
   margin-top: 32px;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.form__input,
-.form__textarea {
+.review-form__input,
+.review-form__textarea {
   width: 100%;
   padding: 14px 18px;
   border: 1px solid var(--border, #e0e0e0);
@@ -1014,19 +1016,19 @@
   transition: border-color 0.2s;
 }
 
-.form__input:focus,
-.form__textarea:focus {
+.review-form__input:focus,
+.review-form__textarea:focus {
   outline: none;
   border-color: var(--primary, #2A5B9A);
   box-shadow: 0 0 0 3px rgba(42, 91, 154, 0.15);
 }
 
-.form__textarea {
+.review-form__textarea {
   min-height: 100px;
   resize: vertical;
 }
 
-.form__label {
+.review-form__label {
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -1036,13 +1038,13 @@
   margin-top: 8px;
 }
 
-.form__label input[type="checkbox"] {
+.review-form__label input[type="checkbox"] {
   margin-top: 3px;
   min-width: 16px;
   min-height: 16px;
 }
 
-.form__submit {
+.review-form__submit {
   margin-top: 8px;
   padding: 16px 32px;
   background: var(--accent, #E67E22);
@@ -1055,12 +1057,12 @@
   transition: background 0.2s, transform 0.15s;
 }
 
-.form__submit:hover {
+.review-form__submit:hover {
   background: var(--accent-hover, #cf6d15);
   transform: translateY(-2px);
 }
 
-.form__alt {
+.review-form__alt {
   margin-top: 20px;
   font-size: 0.95rem;
   color: var(--text-light, #666);

@@ -1,0 +1,17 @@
+/**
+ * Marquee + Flow — Бесконечные ленты
+ */
+(function() {
+  'use strict';
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) return;
+
+  // Duplicate content for seamless loop
+  document.querySelectorAll('.marquee__track').forEach(function(track) {
+    const content = track.innerHTML;
+    track.innerHTML = content + content;
+  });
+
+  console.log('Motion: Marquee initialized');
+})();

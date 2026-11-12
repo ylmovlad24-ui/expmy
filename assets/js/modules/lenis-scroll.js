@@ -1,0 +1,48 @@
+/**
+ * Lenis Smooth Scroll
+ * Плавный скролл с инерцией — стандарт 2026
+ */
+(function() {
+  'use strict';
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) return;
+
+  // Load Lenis from CDN
+  const lenisScript = document.createElement('script');
+  lenisScript.src = 'https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js';
+  lenisScript.onload = function() {
+    // Initialize Lenis
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+      smoothTouch: false,
+      touchMultiplier: 1.5,
+    });
+
+    // RAF loop
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Integrate with GSAP ScrollTrigger if available
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+      gsap.ticker.lagSmoothing(0);
+    }
+
+    console.log('Motion: Lenis smooth scroll initialized');
+  };
+
+  lenisScript.onerror = function() {
+    console.warn('Motion: Lenis failed to load, using native scroll');
+  };
+
+  document.head.appendChild(lenisScript);
+})();

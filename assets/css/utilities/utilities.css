@@ -6,29 +6,37 @@
   bottom: 24px;
   right: 24px;
   padding: 16px 24px;
-  border-radius: 8px;
-  color: #fff;
-  font-weight: 600;
-  z-index: 99999;
+  border-radius: var(--radius-card);
+  color: var(--white);
+  font-weight: var(--fw-semibold);
+  z-index: var(--z-tooltip);
   animation: fadeIn 0.3s;
+}
+
+.toast-success {
+  background: var(--success);
+}
+
+.toast-error {
+  background: var(--danger);
 }
 
 /* CTA section overrides */
 .section__title--white {
-  color: #fff;
+  color: var(--white);
 }
 
 /* CTA bottom text */
 .cta-note {
   text-align: center;
   color: var(--white-50);
-  margin-top: 16px;
-  font-size: 0.875rem;
+  margin-top: var(--space-4);
+  font-size: var(--fs-sm);
 }
 
 /* Comparison subtitle */
 .section__subtitle--mb32 {
-  margin-bottom: 32px;
+  margin-bottom: var(--space-8);
 }
 
 /* Short steps */
@@ -43,4 +51,61 @@
 
 .btn-group--center a.btn {
   display: inline-block;
+}
+
+/* ==========================================
+   LAYOUT UTILITIES
+   ========================================== */
+
+/* Narrow container */
+.container--narrow {
+  max-width: var(--max-width-narrow);
+}
+
+/* Center container */
+.container--center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Centered grid */
+.category-grid--center {
+  max-width: var(--max-width-narrow);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================
+   MARGIN UTILITIES
+   ========================================== */
+
+.btn--mt40 {
+  margin-top: var(--space-10);
+}
+
+.section__subtitle--mb40 {
+  margin-bottom: var(--space-10);
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
 }

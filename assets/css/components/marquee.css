@@ -1,0 +1,103 @@
+/* Marquee + Flow — Бесконечные ленты */
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 32px 0;
+  position: relative;
+}
+
+.marquee::before,
+.marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg, #ffffff), transparent);
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(-90deg, var(--bg, #ffffff), transparent);
+}
+
+.marquee__track {
+  display: inline-flex;
+  gap: 48px;
+  animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.marquee--slow .marquee__track {
+  animation-duration: 45s;
+}
+
+.marquee--reverse .marquee__track {
+  animation-direction: reverse;
+}
+
+.marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-light, #666666);
+  white-space: nowrap;
+  opacity: 0.6;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.marquee__item:hover {
+  opacity: 1;
+  color: var(--accent, #E67E22);
+}
+
+.marquee__divider {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent, #E67E22);
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track {
+    animation: none;
+  }
+}
+
+/* Flow text effect */
+.flow-text {
+  overflow: hidden;
+}
+
+.flow-text .word {
+  display: inline-block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.flow-text:hover .word {
+  transform: translateY(-5px);
+}
+
+.flow-text:hover .word:nth-child(odd) {
+  transform: translateY(5px);
+}

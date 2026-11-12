@@ -1,0 +1,97 @@
+/**
+ * Motion Design 2026 — Auto-injector (Optimized v3)
+ * 1. Загружает GSAP ОДИН раз через gsap-loader.js
+ * 2. Остальные motion модули ждут GSAP и инициализируются
+ * 3. Лёгкие скрипты — defer, тяжёлые — после load
+ */
+(function() {
+  'use strict';
+
+  var path = window.location.pathname;
+  var basePath = '';
+  var isSubpage = path.indexOf('/sudebnaya/') !== -1 || 
+                  path.indexOf('/vnesudebnaya/') !== -1 || 
+                  path.indexOf('/recenziya/') !== -1 ||
+                  path.indexOf('/avtotehnicheskaya/') !== -1 ||
+                  path.indexOf('/avtotovarovedcheskaya/') !== -1 ||
+                  path.indexOf('/uzly-i-agregaty/') !== -1 ||
+                  path.indexOf('/tovarovedcheskaya-b2b/') !== -1 ||
+                  path.indexOf('/services/review/') !== -1;
+
+  if (path.indexOf('/sudebnaya/') !== -1 || path.indexOf('/vnesudebnaya/') !== -1 || 
+      path.indexOf('/recenziya/') !== -1 || path.indexOf('/avtotehnicheskaya/') !== -1 ||
+      path.indexOf('/avtotovarovedcheskaya/') !== -1 || path.indexOf('/uzly-i-agregaty/') !== -1 ||
+      path.indexOf('/tovarovedcheskaya-b2b/') !== -1 || path.indexOf('/o-kompanii/') !== -1 ||
+      path.indexOf('/eksperty/') !== -1 || path.indexOf('/ceny/') !== -1 ||
+      path.indexOf('/faq/') !== -1 || path.indexOf('/kontakty/') !== -1 ||
+      path.indexOf('/keysy/') !== -1 || path.indexOf('/diplomy/') !== -1 ||
+      path.indexOf('/partners/') !== -1 || path.indexOf('/spasibo/') !== -1 ||
+      path.indexOf('/oferta/') !== -1 || path.indexOf('/politika/') !== -1) {
+    basePath = '../';
+  }
+
+  // === 1. GSAP LOADER (загружается сразу, НЕ defer) ===
+  // Это единственный источник GSAP для всей страницы
+  var gsapLoader = document.createElement('script');
+  gsapLoader.src = basePath + 'assets/js/modules/gsap-loader.js';
+  gsapLoader.async = true;
+  document.head.appendChild(gsapLoader);
+
+  // === 2. ЛЁГКИЕ СКРИПТЫ (defer — не блокируют рендеринг) ===
+  var lightScripts = [
+    basePath + 'assets/js/modules/form-micro-interactions.js',
+    basePath + 'assets/js/modules/animated-icons.js',
+    basePath + 'assets/js/modules/clip-reveals.js',
+    basePath + 'assets/js/modules/page-transitions.js',
+    basePath + 'assets/js/modules/scroll-velocity.js',
+    basePath + 'assets/js/modules/marquee.js'
+  ];
+
+  lightScripts.forEach(function(src) {
+    var script = document.createElement('script');
+    script.src = src;
+    script.defer = true;
+    document.head.appendChild(script);
+  });
+
+  // === 3. GSAP АНИМАЦИИ (defer — ждут загрузки GSAP) ===
+  if (isSubpage) {
+    var gsapScripts = [
+      basePath + 'assets/js/modules/motion.js?v=3',
+      basePath + 'assets/js/modules/uni-steps-motion.js',
+      basePath + 'assets/js/modules/webgl-gradient.js'
+    ];
+
+    // Для страницы рецензий
+    if (path.indexOf('/recenziya/') !== -1 || path.indexOf('/services/review/') !== -1) {
+      gsapScripts.push(basePath + 'assets/js/modules/review-motion.js');
+    }
+
+    gsapScripts.forEach(function(src) {
+      var script = document.createElement('script');
+      script.src = src;
+      script.defer = true;
+      document.head.appendChild(script);
+    });
+  }
+
+  // === 4. ТЯЖЁЛЫЕ СКРИПТЫ (после load — только на десктопе) ===
+  window.addEventListener('load', function() {
+    if (!('ontouchstart' in window)) {
+      var heavyScripts = [
+        basePath + 'assets/js/modules/lenis-scroll.js',
+        basePath + 'assets/js/modules/custom-cursor.js',
+        basePath + 'assets/js/modules/3d-cards.js'
+      ];
+
+      heavyScripts.forEach(function(src) {
+        var script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        document.head.appendChild(script);
+      });
+    }
+  });
+
+  console.log('Motion: Optimized v3 loaded');
+})();

@@ -17,15 +17,9 @@
   margin-bottom: 24px;
 }
 
-/* --- Stat Cards Grid --- */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 24px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
+/* --- Stat Cards Grid (utility variants) --- */
+/* Note: .stats-grid and .stat-card are defined in cards.css — use those for main styling */
+/* These are kept for backward compatibility with inline-style extraction */
 .stats-grid--wide {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
@@ -42,27 +36,7 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-/* --- Stat Card --- */
-.stat-card {
-  text-align: center;
-  padding: 24px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
-}
-
-.stat-card--pricing {
-  padding: 28px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
-}
-
-.stat-card--pricing--highlight {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
-  transform: scale(1.02);
-  border-top: 4px solid var(--primary);
-}
-
-/* --- Stat Number --- */
+/* --- Stat Number (utility) --- */
 .stat-number {
   font-size: 2rem;
   font-weight: 800;
@@ -73,14 +47,27 @@
   font-size: 2.5rem;
 }
 
-/* --- Stat Label --- */
+/* --- Stat Label (utility) --- */
 .stat-label {
-  color: var(--text-secondary);
+  color: var(--text-light);
   font-size: .95rem;
 }
 
 .stat-label--small {
   font-size: .9rem;
+}
+
+/* --- Stat Card Pricing (utility extensions) --- */
+/* Applied on top of .stat-card from cards.css */
+.stat-card--pricing {
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+}
+
+.stat-card--pricing--highlight {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
+  transform: scale(1.02);
+  border-top: 4px solid var(--primary);
 }
 
 /* --- Section Headings --- */
@@ -109,7 +96,7 @@
 
 /* --- Contact Note --- */
 .contact-note {
-  color: var(--text-secondary);
+  color: var(--text-light);
   font-size: .85rem;
   margin-top: 4px;
 }
@@ -143,7 +130,7 @@
 }
 
 .trust-block__list {
-  color: var(--text-secondary);
+  color: var(--text-light);
   line-height: 1.8;
   margin-left: 20px;
   font-size: .95rem;
@@ -166,7 +153,7 @@
 
 /* --- Form Description --- */
 .form-description {
-  color: var(--text-secondary);
+  color: var(--text-light);
   margin-bottom: 24px;
 }
 
@@ -183,7 +170,7 @@
 
 /* --- Map Description --- */
 .map-description {
-  color: var(--text-secondary);
+  color: var(--text-light);
   margin-bottom: 24px;
   text-align: center;
 }
@@ -196,7 +183,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-secondary);
+  color: var(--text-light);
 }
 
 /* --- CTA Container --- */
@@ -265,7 +252,7 @@
 }
 
 .faq-answer-secondary {
-  color: var(--text-secondary);
+  color: var(--text-light);
   line-height: 1.7;
   margin-bottom: 12px;
 }
@@ -317,7 +304,7 @@
 
 .faq-details__content {
   margin-top: 12px;
-  color: var(--text-secondary);
+  color: var(--text-light);
   line-height: 1.6;
 }
 
@@ -344,7 +331,7 @@
   border-radius: 12px;
   padding: 28px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
-  border-top: 4px solid var(--text-secondary);
+  border-top: 4px solid var(--text-light);
 }
 
 .pricing-card--highlight {
@@ -381,18 +368,8 @@
   border-bottom: 1px solid var(--border);
 }
 
-/* --- Service Card --- */
-.service-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* --- Service Card Price --- */
+/* --- Service Card Price (utility) --- */
+/* Note: .service-card is defined in cards.css — use .service-card__price for inline extraction */
 .service-card__price {
   font-weight: 700;
   color: var(--primary);
@@ -456,7 +433,7 @@
 /* --- Table Note --- */
 .table-note {
   margin-top: 16px;
-  color: var(--text-secondary);
+  color: var(--text-light);
   font-size: .9rem;
 }
 
@@ -473,7 +450,7 @@
 
 /* --- Section Subtitle (shared) --- */
 .section-subtitle {
-  color: var(--text-secondary);
+  color: var(--text-light);
   font-size: .95rem;
   margin-top: 8px;
 }
@@ -504,21 +481,21 @@
 
 /* --- FAQ Lists --- */
 .faq-list {
-  color: var(--text-secondary);
+  color: var(--text-light);
   line-height: 1.8;
   margin-left: 20px;
   margin-bottom: 16px;
 }
 
 .faq-list--compact {
-  color: var(--text-secondary);
+  color: var(--text-light);
   line-height: 1.8;
   margin-left: 20px;
   margin-bottom: 12px;
 }
 
 .faq-list--mt {
-  color: var(--text-secondary);
+  color: var(--text-light);
   line-height: 1.8;
   margin-left: 20px;
   margin-top: 8px;
@@ -574,7 +551,7 @@
 
 /* --- Form List --- */
 .form-list {
-  color: var(--text-secondary);
+  color: var(--text-light);
   line-height: 1.8;
   margin-left: 20px;
   margin-bottom: 24px;
