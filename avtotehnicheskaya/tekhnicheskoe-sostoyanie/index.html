@@ -11,6 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/main.css?v=3">
   <link rel="stylesheet" href="../../assets/css/motion.css?v=3">
+  <link rel="stylesheet" href="../../assets/css/pages/vnesudebnaya.css?v=10">
+  <link rel="stylesheet" href="../../assets/css/components/uni-steps.css?v=1">
+  <link rel="stylesheet" href="../../assets/css/pages/avtotehnicheskaya.css?v=11">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -18,100 +21,131 @@
 
   <main id="main-content">
 
-    <section class="section">
+    <!-- 1. Hero -->
+    <section class="vnesud-hero reveal-entrance">
+      <div class="container vnesud-hero__inner">
+        <div class="vnesud-hero__text">
+          <h1 class="vnesud-hero__title">Судебная экспертиза технического состояния ТС</h1>
+          <p class="vnesud-hero__badge">Тормоза · Рулевое · Шины · Световые приборы</p>
+          <div class="vnesud-hero__actions">
+            <a href="#contact-form" class="btn btn--primary">Получить консультацию</a>
+            <a href="#directions" class="vnesud-hero__link">Виды экспертизы →</a>
+          </div>
+        </div>
+
+        <div class="vnesud-hero-principles">
+          <div class="vnesud-hero-principle">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <h3 class="vnesud-hero-principle__title">Объективность</h3>
+            <p class="vnesud-hero-principle__desc">Не представляем ни одну из сторон — заключение основано на фактах и методиках, а не на чьих-либо интересах</p>
+          </div>
+          <div class="vnesud-hero-principle">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <h3 class="vnesud-hero-principle__title">Всесторонность</h3>
+            <p class="vnesud-hero-principle__desc">Анализируем все аспекты: тормоза, рулевое, шины, световые приборы, время возникновения неисправности</p>
+          </div>
+          <div class="vnesud-hero-principle">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <h3 class="vnesud-hero-principle__title">Полнота</h3>
+            <p class="vnesud-hero-principle__desc">Фиксируем всё: осмотры, эксперименты, расчёты, фототаблицы — чтобы ни у кого не осталось вопросов</p>
+          </div>
+          <div class="vnesud-hero-principle vnesud-hero-principle--highlight">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <h3 class="vnesud-hero-principle__title">Эксперты в реестре Минюста</h3>
+            <p class="vnesud-hero-principle__desc">Наши эксперты включены в ЕГР — это гарантирует право на проведение судебных экспертиз</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="vnesud-divider"><div class="container"><div class="vnesud-divider__line"></div></div></div>
+
+    <section class="vnesud-section vnesud-section--alt reveal" id="directions">
       <div class="container">
-        <h1 class="section__title">Судебная экспертиза технического состояния ТС</h1>
-        <p class="section__subtitle">Тормоза, рулевое, шины, световые приборы</p>
+        <h2 class="vnesud-section__title">Предмет экспертизы</h2>
+        <p class="vnesud-section__desc">Фактические данные о техническом состоянии ТС, участвовавших в ДТП.</p>
+      </div>
+    </section>
 
-        <!-- Предмет -->
-        <div class="category-detail">
-          <div class="category-detail__block">
-            <h3>Предмет экспертизы</h3>
-            <p class="category-detail__text">Фактические данные о техническом состоянии ТС, участвовавших в ДТП.</p>
+    <section class="vnesud-section reveal">
+      <div class="container">
+        <h2 class="vnesud-section__title">Объекты экспертизы</h2>
+        <ul class="objects-list">
+          <li class="object-item">Автомототранспорт, городской электротранспорт, тракторы и самоходные механизмы, участвовавшие в ДТП, их агрегаты, детали, фрагменты ТС и следы на них.</li>
+          <li class="object-item">Велосипеды, мотоциклы, мотороллеры, пассажирские и грузовые автомобили отечественного и зарубежного производства, трамваи и троллейбусы, тракторы (гусеничные и колесные), дорожные машины, сельскохозяйственные машины, аэросани, снегоходы, вездеходы, немеханические ТС и т. д.</li>
+          <li class="object-item">Материалы дела, схема ДТП, протоколы осмотра ТС, фото-, видеоизображения и т. п.</li>
+        </ul>
+        <p class="vnesud-section__desc" style="margin-top: 12px; font-size: 0.9em; color: var(--text-secondary);">Не являются объектами исследования САТЭ: морские, речные, воздушные и железнодорожные ТС.</p>
+      </div>
+    </section>
+
+    <section class="vnesud-section vnesud-section--alt reveal">
+      <div class="container">
+        <h2 class="vnesud-section__title">Задачи экспертизы</h2>
+        <ul class="questions-list">
+          <li class="question-item"><span class="question-item__number">1</span><span class="question-item__text">Установление технического состояния ТС, их отдельных узлов, механизмов, систем, агрегатов.</span></li>
+          <li class="question-item"><span class="question-item__number">2</span><span class="question-item__text">Установление причин и времени возникновения неисправности, возможности своевременного выявления её лицами, ответственными за техническое состояние ТС, влияния этих неисправностей на возникновение и развитие ДТП.</span></li>
+          <li class="question-item"><span class="question-item__number">3</span><span class="question-item__text">Установление причинно-следственных связей между неисправностью и ДТП.</span></li>
+          <li class="question-item"><span class="question-item__number">4</span><span class="question-item__text">Установление технической возможности предотвращения ДТП (наезда, столкновения, потери устойчивости и т.д.) при определенном техническом состоянии ТС, их отдельных узлов, механизмов, систем, агрегатов в момент ДТП.</span></li>
+          <li class="question-item"><span class="question-item__number">5</span><span class="question-item__text">Установление обстоятельств, связанных с техническим состоянием ТС, которые способствовали или могли способствовать возникновению ДТП.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="vnesud-section reveal">
+      <div class="container">
+        <h2 class="vnesud-section__title">Важно знать</h2>
+        <p class="vnesud-section__desc">Отдельные задачи экспертизы технического состояния ТС можно решить только в комплексе с металловедческой и/или трасологической экспертизой. К ним, в частности, относится задача установления причины (способа или инструмента) и времени поломки деталей ТС.</p>
+      </div>
+    </section>
+
+    <section class="vnesud-section vnesud-section--alt reveal">
+      <div class="container">
+        <h2 class="vnesud-section__title">Другие виды автотехнической экспертизы</h2>
+        <div class="vnesud-directions reveal-stagger">
+          <div class="vnesud-direction">
+            <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2z"/><path d="M19 17h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2z"/><path d="M7 17v2a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-2"/></svg>
+            <h3 class="vnesud-direction__title">Обстоятельства ДТП</h3>
+            <p class="vnesud-direction__subtitle">Скорость · Тормозной путь · ПДД · Время реакции</p>
+            <p class="vnesud-direction__desc">Скорость, тормозной путь, время реакции, ПДД. 11 задач.</p>
+            <a href="/avtotehnicheskaya/obstoyatelstva-dtp/" class="vnesud-direction__link">Подробнее →</a>
+          </div>
+          <div class="vnesud-direction">
+            <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            <h3 class="vnesud-direction__title">Следы на ТС и месте ДТП</h3>
+            <p class="vnesud-direction__subtitle">Механизм столкновения · Наезд · Траектории</p>
+            <p class="vnesud-direction__desc">Механизм столкновения, наезда, траектории. 11 + 4 задачи.</p>
+            <a href="/avtotehnicheskaya/sledy/" class="vnesud-direction__link">Подробнее →</a>
+          </div>
+          <div class="vnesud-direction">
+            <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <h3 class="vnesud-direction__title">Техническое состояние дороги</h3>
+            <p class="vnesud-direction__subtitle">Покрытие · Видимость · Обустройство</p>
+            <p class="vnesud-direction__desc">Покрытие, видимость, обустройство. 7 задач.</p>
+            <a href="/avtotehnicheskaya/doroga/" class="vnesud-direction__link">Подробнее →</a>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Объекты -->
-        <div class="category-detail">
-          <div class="category-detail__block">
-            <h3>Объекты экспертизы</h3>
-            <ul class="objects-list">
-              <li class="object-item">Автомототранспорт, городской электротранспорт, тракторы и самоходные механизмы, участвовавшие в ДТП, их агрегаты, детали, фрагменты ТС и следы на них.</li>
-              <li class="object-item">Велосипеды, мотоциклы, мотороллеры, пассажирские и грузовые автомобили отечественного и зарубежного производства, трамваи и троллейбусы, тракторы (гусеничные и колесные), дорожные машины, сельскохозяйственные машины, аэросани, снегоходы, вездеходы, немеханические ТС и т. д.</li>
-              <li class="object-item">Материалы дела, схема ДТП, протоколы осмотра ТС, фото-, видеоизображения и т. п.</li>
-            </ul>
-            <p class="category-detail__text" style="margin-top: 12px; font-size: 0.9em; color: var(--text-secondary);">Не являются объектами исследования САТЭ: морские, речные, воздушные и железнодорожные ТС.</p>
+    <section class="vnesud-cta-section" id="contact-form">
+      <div class="container">
+        <div class="vnesud-cta__inner">
+          <div class="vnesud-cta__text">
+            <h2 class="vnesud-cta__title">Обсудить дело</h2>
+            <p class="vnesud-cta__desc">Пришлите материалы — скажем, что реально можно доказать, какую экспертизу выбрать и какие перспективы у вашего дела.</p>
           </div>
+          <form class="vnesud-cta__form" id="ctaForm">
+            <div class="vnesud-cta__fields">
+              <input type="text" name="name" placeholder="Ваше имя" required>
+              <input type="tel" name="phone" placeholder="Телефон" required>
+              <input type="email" name="email" placeholder="E-mail">
+            </div>
+            <textarea name="message" placeholder="Опишите ситуацию — кратко, своими словами" rows="4"></textarea>
+            <button type="submit" class="btn btn--primary vnesud-cta__btn">Отправить на оценку</button>
+            <p class="vnesud-cta__note">Оценка материалов — бесплатно. Ответим в течение 2 часов в рабочее время.</p>
+          </form>
         </div>
-
-        <!-- Задачи -->
-        <div class="category-detail">
-          <h2 class="category-detail__title">Задачи экспертизы</h2>
-          <div class="category-detail__block">
-            <ul class="questions-list">
-              <li class="question-item"><span class="question-item__number">1</span><span class="question-item__text">Установление технического состояния ТС, их отдельных узлов, механизмов, систем, агрегатов.</span></li>
-              <li class="question-item"><span class="question-item__number">2</span><span class="question-item__text">Установление причин и времени возникновения неисправности, возможности своевременного выявления её лицами, ответственными за техническое состояние ТС, влияния этих неисправностей на возникновение и развитие ДТП.</span></li>
-              <li class="question-item"><span class="question-item__number">3</span><span class="question-item__text">Установление причинно-следственных связей между неисправностью и ДТП.</span></li>
-              <li class="question-item"><span class="question-item__number">4</span><span class="question-item__text">Установление технической возможности предотвращения ДТП (наезда, столкновения, потери устойчивости и т.д.) при определенном техническом состоянии ТС, их отдельных узлов, механизмов, систем, агрегатов в момент ДТП.</span></li>
-              <li class="question-item"><span class="question-item__number">5</span><span class="question-item__text">Установление обстоятельств, связанных с техническим состоянием ТС, которые способствовали или могли способствовать возникновению ДТП.</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Примечание -->
-        <div class="category-detail">
-          <div class="category-detail__block">
-            <h3>Важно знать</h3>
-            <p class="category-detail__text">Отдельные задачи экспертизы технического состояния ТС можно решить только в комплексе с металловедческой и/или трасологической экспертизой. К ним, в частности, относится задача установления причины (способа или инструмента) и времени поломки деталей ТС.</p>
-          </div>
-        </div>
-
-        <!-- Перекрёстные ссылки -->
-        <div class="category-detail">
-          <h2 class="category-detail__title">Другие виды автотехнической экспертизы</h2>
-          <div class="format-grid">
-            <a href="/avtotehnicheskaya/obstoyatelstva-dtp/" class="format-card format-card--court">
-              <div class="format-card__icon">🚗</div>
-              <h3 class="format-card__title">Обстоятельства ДТП</h3>
-              <p class="format-card__desc">Скорость, тормозной путь, время реакции, ПДД. 11 задач.</p>
-              <span class="format-card__link">Подробнее →</span>
-            </a>
-            <a href="/avtotehnicheskaya/sledy/" class="format-card format-card--review">
-              <div class="format-card__icon">🔍</div>
-              <h3 class="format-card__title">Следы на ТС и месте ДТП</h3>
-              <p class="format-card__desc">Механизм столкновения, наезда, траектории. 11 + 4 задачи.</p>
-              <span class="format-card__link">Подробнее →</span>
-            </a>
-            <a href="/avtotehnicheskaya/doroga/" class="format-card format-card--informal">
-              <div class="format-card__icon">🛣️</div>
-              <h3 class="format-card__title">Техническое состояние дороги</h3>
-              <p class="format-card__desc">Покрытие, видимость, обустройство. 7 задач.</p>
-              <span class="format-card__link">Подробнее →</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- CTA -->
-        <div class="category-detail" id="contact-form">
-          <h2 class="category-detail__title">Обсудить дело</h2>
-          <div class="contact-form-wrap">
-            <form class="form" action="#" method="POST">
-              <h3 class="form__title">Пришлите документ + телефон</h3>
-              <input type="text" class="form__input" name="name" placeholder="Ваше имя" required>
-              <input type="tel" class="form__input" name="phone" placeholder="Телефон" required>
-              <input type="text" class="form__input" name="document" placeholder="Ссылка на документ или описание">
-              <textarea class="form__textarea" name="question" placeholder="Ваш вопрос" rows="4"></textarea>
-              <label class="form__label">
-                <input type="checkbox" name="agree" required>
-                <span>Я согласен на обработку персональных данных</span>
-              </label>
-              <button type="submit" class="form__submit">Отправить</button>
-            </form>
-            <p class="form__note">Пришлите документ + телефон — бесплатно оценим материалы и скажем, какая экспертиза нужна</p>
-            <p class="form__note" style="margin-top: 12px;"><a href="https://reestr.roscert.ru/rtl/t/286" target="_blank" rel="noopener">Эксперты в реестре Минюста</a></p>
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -127,5 +161,8 @@
   <script src="../../assets/js/modules/scroll-animations.js" defer></script>
   <script src="../../assets/js/modules/components.js" defer></script>
   <script src="../../assets/js/main.js" defer></script>
+  <script src="../../assets/js/modules/motion.js?v=3" defer></script>
+  <script src="../../assets/js/modules/webgl-gradient.js" defer></script>
+  <script src="../../assets/js/modules/uni-steps-motion.js" defer></script>
 </body>
 </html>

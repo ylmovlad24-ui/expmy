@@ -760,6 +760,31 @@
   margin: 0;
 }
 
+/* --- CTA Social Proof --- */
+
+.vnesud-cta-proof {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.vnesud-cta-proof__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: var(--white-85);
+}
+
+.vnesud-cta-proof__icon {
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
 /* --- RESPONSIVE --- */
 
 @media (max-width: 1024px) {
@@ -868,6 +893,14 @@
 
   .vnesud-cta__btn {
     width: 100%;
+  }
+
+  .vnesud-cta-proof {
+    gap: 16px;
+  }
+
+  .vnesud-cta-proof__item {
+    font-size: 0.8125rem;
   }
 
   /* Steps — vertical stack on mobile */

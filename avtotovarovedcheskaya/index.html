@@ -11,159 +11,190 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/main.css?v=3">
   <link rel="stylesheet" href="../assets/css/motion.css?v=3">
+  <link rel="stylesheet" href="../assets/css/pages/vnesudebnaya.css?v=10">
+  <link rel="stylesheet" href="../assets/css/components/uni-steps.css?v=1">
+  <link rel="stylesheet" href="../assets/css/pages/avtotovarovedcheskaya.css?v=1">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Перейти к содержимому</a>
   <div id="header-container"></div>
+
   <main id="main-content">
-    <section class="section">
-      <div class="container">
-        <h1 class="section__title">Автотовароведческая экспертиза</h1>
-        <p class="section__subtitle">Виды: рыночная стоимость · ремонт · УТС · износ · идентификация</p>
 
-        <div class="category-detail">
-          <h2 class="category-detail__title">Рыночная стоимость</h2>
-          <div class="category-detail__block">
-            <h3>Объекты исследования</h3>
-            <ul class="objects-list">
-              <li class="object-item">Транспортное средство в его текущем состоянии</li>
-              <li class="object-item">Аналогичные предложения на рынке</li>
-              <li class="object-item">Техническое состояние, пробег, комплектация</li>
-            </ul>
-          </div>
-          <div class="category-detail__block">
-            <h3>Вопросы экспертизы</h3>
-            <ul class="questions-list">
-              <li class="question-item"><span class="question-item__number">1</span><span class="question-item__text">Какова рыночная стоимость ТС на дату определения?</span></li>
-              <li class="question-item"><span class="question-item__number">2</span><span class="question-item__text">Какова стоимость аналогичного ТС в исправном состоянии?</span></li>
-            </ul>
+    <!-- 1. Hero (нулевой блок) -->
+    <section class="vnesud-hero reveal-entrance">
+      <div class="container vnesud-hero__inner">
+        <div class="vnesud-hero__text">
+          <h1 class="vnesud-hero__title">Автотовароведческая экспертиза</h1>
+          <p class="vnesud-hero__badge">Специальность 13.4 — стоимость ТС, восстановительного ремонта, УТС, страховое возмещение</p>
+          <div class="vnesud-hero__actions">
+            <a href="#contact-form" class="btn btn--primary">Получить консультацию</a>
+            <a href="#directions" class="vnesud-hero__link">Виды экспертизы →</a>
           </div>
         </div>
 
-        <div class="category-detail">
-          <h2 class="category-detail__title">Стоимость ремонта</h2>
-          <div class="category-detail__block">
-            <h3>Объекты исследования</h3>
-            <ul class="objects-list">
-              <li class="object-item">Повреждения ТС после ДТП или эксплуатации</li>
-              <li class="object-item">Сметы СТС, фотофиксация</li>
-            </ul>
+        <!-- Принципы работы — карточки в hero -->
+        <div class="vnesud-hero-principles">
+          <div class="vnesud-hero-principle">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <h3 class="vnesud-hero-principle__title">Объективность</h3>
+            <p class="vnesud-hero-principle__desc">Не представляем ни одну из сторон — заключение основано на методиках ЦБ РФ и Минюста, а не на чьих-либо интересах</p>
           </div>
-          <div class="category-detail__block">
-            <h3>Вопросы экспертизы</h3>
-            <ul class="questions-list">
-              <li class="question-item"><span class="question-item__number">1</span><span class="question-item__text">Какова стоимость восстановления ТС до состояния до повреждения?</span></li>
-              <li class="question-item"><span class="question-item__number">2</span><span class="question-item__text">Какие детали подлежат замене, а какие — ремонту?</span></li>
-            </ul>
+          <div class="vnesud-hero-principle">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <h3 class="vnesud-hero-principle__title">Всесторонность</h3>
+            <p class="vnesud-hero-principle__desc">Анализируем все аспекты: стоимость, УТС, комплектность, износ, страховое возмещение — чтобы ни один вопрос не остался без ответа</p>
           </div>
-        </div>
-
-        <div class="category-detail">
-          <h2 class="category-detail__title">Утрата товарных свойств (УТС)</h2>
-          <div class="category-detail__block">
-            <h3>Объекты исследования</h3>
-            <ul class="objects-list">
-              <li class="object-item">ТС с историей повреждений</li>
-              <li class="object-item">Рыночные данные</li>
-            </ul>
+          <div class="vnesud-hero-principle">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <h3 class="vnesud-hero-principle__title">Полнота</h3>
+            <p class="vnesud-hero-principle__desc">Фиксируем всё: осмотры, расчёты, фототаблицы — чтобы ни у кого не осталось вопросов к нашему заключению</p>
           </div>
-          <div class="category-detail__block">
-            <h3>Вопросы экспертизы</h3>
-            <ul class="questions-list">
-              <li class="question-item"><span class="question-item__number">1</span><span class="question-item__text">Насколько уменьшились товарные свойства ТС вследствие повреждений?</span></li>
-              <li class="question-item"><span class="question-item__number">2</span><span class="question-item__text">Каков размер УТС в денежном выражении?</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="category-detail">
-          <h2 class="category-detail__title">Износ</h2>
-          <div class="category-detail__block">
-            <h3>Объекты исследования</h3>
-            <ul class="objects-list">
-              <li class="object-item">Детали и узлы ТС</li>
-              <li class="object-item">Нормативные документы по износу</li>
-            </ul>
-          </div>
-          <div class="category-detail__block">
-            <h3>Вопросы экспертизы</h3>
-            <ul class="questions-list">
-              <li class="question-item"><span class="question-item__number">1</span><span class="question-item__text">Каков фактический износ деталей?</span></li>
-              <li class="question-item"><span class="question-item__number">2</span><span class="question-item__text">Соответствует ли износ нормативному?</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="category-detail">
-          <h2 class="category-detail__title">Идентификация</h2>
-          <div class="category-detail__block">
-            <h3>Объекты исследования</h3>
-            <ul class="objects-list">
-              <li class="object-item">Номера агрегатов, VIN-код</li>
-              <li class="object-item">Документы на ТС</li>
-            </ul>
-          </div>
-          <div class="category-detail__block">
-            <h3>Вопросы экспертизы</h3>
-            <ul class="questions-list">
-              <li class="question-item"><span class="question-item__number">1</span><span class="question-item__text">Соответствуют ли номера агрегатов данным ПТС и СТС?</span></li>
-              <li class="question-item"><span class="question-item__number">2</span><span class="question-item__text">Не подвергалось ли ТС подмене номеров?</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="category-detail">
-          <h2 class="category-detail__title">Что вы получите</h2>
-          <div class="guarantees-grid">
-            <div class="guarantee-card"><h3 class="guarantee-card__title">Для претензии</h3><p class="guarantee-card__desc">Заключение с расчётами для переговоров и претензии.</p></div>
-            <div class="guarantee-card"><h3 class="guarantee-card__title">Для суда</h3><p class="guarantee-card__desc">Письменные и устные пояснения к выводам.</p></div>
-          </div>
-        </div>
-
-        <div class="category-detail">
-          <h2 class="category-detail__title">Выберите формат</h2>
-          <div class="format-grid">
-            <a href="/sudebnaya/" class="format-card format-card--court"><div class="format-card__icon">⚖️</div><h3 class="format-card__title">Судебная</h3><p class="format-card__desc">Назначение через ходатайство. Заключение, которое принимают все суды РФ.</p><a href="/sudebnaya/" class="format-card__link">Подробнее →</a></a>
-            <a href="/vnesudebnaya/" class="format-card format-card--informal"><div class="format-card__icon">📝</div><h3 class="format-card__title">Внесудебная</h3><p class="format-card__desc">Заключение для претензии и переговоров.</p><a href="/vnesudebnaya/" class="format-card__link">Подробнее →</a></a>
-            <a href="/recenziya/" class="format-card format-card--review"><div class="format-card__icon">🔍</div><h3 class="format-card__title">Рецензия</h3><p class="format-card__desc">Проверка расчётов и методологии чужого заключения.</p><a href="/recenziya/" class="format-card__link">Подробнее →</a></a>
-          </div>
-        </div>
-
-        <div class="category-detail">
-          <h2 class="category-detail__title">Что не входит</h2>
-          <ul class="trust-list">
-            <li>Определение вины — устанавливает суд</li>
-            <li>Обстоятельства ДТП — автотехническая экспертиза</li>
-          </ul>
-        </div>
-
-        <div class="category-detail" id="contact-form">
-          <h2 class="category-detail__title">Обсудить дело</h2>
-          <div class="contact-form-wrap">
-            <form class="form" action="#" method="POST">
-              <h3 class="form__title">Пришлите документ + телефон</h3>
-              <input type="text" class="form__input" name="name" placeholder="Ваше имя" required>
-              <input type="tel" class="form__input" name="phone" placeholder="Телефон" required>
-              <input type="text" class="form__input" name="document" placeholder="Ссылка на документ или описание">
-              <textarea class="form__textarea" name="question" placeholder="Ваш вопрос" rows="4"></textarea>
-              <label class="form__label"><input type="checkbox" name="agree" required><span>Я согласен на обработку персональных данных</span></label>
-              <button type="submit" class="form__submit">Отправить</button>
-            </form>
-            <p class="form__note">Пришлите документ + телефон — бесплатно оценим материалы</p>
-            <p class="form__note" style="margin-top:12px;"><a href="https://reestr.roscert.ru/rtl/t/286" target="_blank" rel="noopener">Эксперты в реестре Минюста</a></p>
+          <div class="vnesud-hero-principle vnesud-hero-principle--highlight">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <h3 class="vnesud-hero-principle__title">Эксперты в реестре Минюста</h3>
+            <p class="vnesud-hero-principle__desc">Наши эксперты аттестованы по специальности 13.4 согласно Приказу Минюста № 237 — это гарантирует право на проведение судебных экспертиз</p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Visual divider -->
+    <div class="vnesud-divider">
+      <div class="container">
+        <div class="vnesud-divider__line"></div>
+      </div>
+    </div>
+
+    <!-- 2. 2 вида экспертизы -->
+    <section class="vnesud-section vnesud-section--alt reveal" id="directions">
+      <div class="container">
+        <h2 class="vnesud-section__title">Виды автотовароведческой экспертизы</h2>
+        <p class="vnesud-section__subtitle">Стоимость и расчёты зависят от контекста: в рамках ОСАГО по методике ЦБ РФ или вне рамок по методике Минюста</p>
+        <div class="vnesud-directions reveal-stagger">
+          <div class="vnesud-direction">
+            <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2z"/><path d="M19 17h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2z"/><path d="M7 17v2a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-2"/></svg>
+            <h3 class="vnesud-direction__title">В рамках ОСАГО</h3>
+            <p class="vnesud-direction__subtitle">Стоимость ремонта · УТС · Страховое возмещение</p>
+            <p class="vnesud-direction__desc">Определяем стоимость восстановительного ремонта и размер страхового возмещения в рамках договора ОСАГО по методике Центрального банка РФ. Помогаем получить полную выплату, если страховщик занижает стоимость.</p>
+            <ul class="vnesud-direction__tasks">
+              <li>Стоимость ремонта по методике ЦБ РФ</li>
+              <li>Размер УТС</li>
+              <li>Проверка расчёта страхового возмещения</li>
+            </ul>
+            <a href="./osago/" class="vnesud-direction__link">Подробнее →</a>
+          </div>
+          <div class="vnesud-direction">
+            <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            <h3 class="vnesud-direction__title">Вне рамок ОСАГО</h3>
+            <p class="vnesud-direction__subtitle">Рыночная стоимость · Реальный ущерб · Годные остатки</p>
+            <p class="vnesud-direction__desc">Определяем рыночную стоимость ТС, размер реального ущерба, стоимость годных остатков вне рамок страхования. Независимая оценка для суда, претензий, споров между сторонами.</p>
+            <ul class="vnesud-direction__tasks">
+              <li>Рыночная стоимость ТС</li>
+              <li>Размер ущерба</li>
+              <li>Стоимость годных остатков</li>
+            </ul>
+            <a href="./vne-ramki/" class="vnesud-direction__link">Подробнее →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Этапы выполнения экспертизы -->
+    <section class="vnesud-section reveal" id="stages">
+      <div class="container">
+        <h2 class="vnesud-section__title">Этапы выполнения экспертизы</h2>
+        <p class="vnesud-section__subtitle">От назначения до готового заключения — каждый этап фиксируется и документируется</p>
+        <div class="vnesud-steps reveal-stagger">
+          <div class="vnesud-step">
+            <div class="vnesud-step__num">1</div>
+            <h3 class="vnesud-step__title">Приём и проверка исходных данных</h3>
+            <p class="vnesud-step__desc">Эксперт оценивает, хватает ли материалов (регистрационные документы, фото, акты осмотра, справки о ДТП) для исследования по специальности 13.4.</p>
+          </div>
+          <div class="vnesud-step">
+            <div class="vnesud-step__num">2</div>
+            <h3 class="vnesud-step__title">Проведение исследования</h3>
+            <p class="vnesud-step__desc">Осмотр ТС, проверка комплектности, определение технического состояния, расчёты по методике ЦБ РФ или Минюста. Фото, схемы, протоколы — доказательная база.</p>
+          </div>
+          <div class="vnesud-step">
+            <div class="vnesud-step__num">3</div>
+            <h3 class="vnesud-step__title">Формирование выводов</h3>
+            <p class="vnesud-step__desc">По каждому вопросу чёткий ответ: категорический, альтернативный или с оговорками. Обоснование расчётов и применённых методик.</p>
+          </div>
+          <div class="vnesud-step">
+            <div class="vnesud-step__num">4</div>
+            <h3 class="vnesud-step__title">Оформление и передача экспертного заключения</h3>
+            <p class="vnesud-step__desc">Документ со структурой: вводная часть, описание хода работ, выводы. Подписан, при необходимости заверен печатью.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FAQ -->
+    <section class="vnesud-section vnesud-section--alt">
+      <div class="container">
+        <h2 class="vnesud-section__title">Частые вопросы</h2>
+        <div class="vnesud-faq">
+          <details class="vnesud-faq-item">
+            <summary class="vnesud-faq-item__summary">Чем отличается экспертиза в рамках ОСАГО от вне рамок?</summary>
+            <div class="vnesud-faq-item__answer">Экспертиза в рамках ОСАГО проводится по методике Центрального банка РФ и определяет стоимость восстановительного ремонта и размер страхового возмещения по договору. Экспертиза вне рамок ОСАГО проводится по методике Минюста России и определяет рыночную стоимость ТС, размер реального ущерба, стоимость годных остатков — для суда, претензий, споров между сторонами.</div>
+          </details>
+          <details class="vnesud-faq-item">
+            <summary class="vnesud-faq-item__summary">Какую методику использовать — ЦБ РФ или Минюста?</summary>
+            <div class="vnesud-faq-item__answer">Если дело касается страховой выплаты по ОСАГО — применяется методика ЦБ РФ. Если вы готовите претензию, обращаетесь в суд вне страховой спора или вам нужна независимая оценка рыночной стоимости — применяется методика Минюста (Приказ № 237). Мы подскажем, какая методика подходит вашей ситуации.</div>
+          </details>
+          <details class="vnesud-faq-item">
+            <summary class="vnesud-faq-item__summary">Что определяет автотовароведческая экспертиза?</summary>
+            <div class="vnesud-faq-item__answer">Автотовароведческая экспертиза по специальности 13.4 определяет: рыночную стоимость транспортного средства, стоимость восстановительного ремонта, размер утраты товарной стоимости, стоимость годных остатков, размер страхового возмещения, комплектность ТС, характер и объём повреждений, причинную связь между событием и повреждениями.</div>
+          </details>
+          <details class="vnesud-faq-item">
+            <summary class="vnesud-faq-item__summary">Можно ли оспорить расчёт страховой компании?</summary>
+            <div class="vnesud-faq-item__answer">Да. Если вы считаете, что страховая компания занизила стоимость ремонта или неправильно рассчитала страховое возмещение — подготовим независимую автотовароведческую экспертизу. Наше заключение станет письменным доказательством для претензии или суда.</div>
+          </details>
+          <details class="vnesud-faq-item">
+            <summary class="vnesud-faq-item__summary">Какую роль играет утрата товарной стоимости (УТС)?</summary>
+            <div class="vnesud-faq-item__answer">Утрата товарной стоимости — это снижение рыночной цены ТС даже после качественного ремонта. УТС определяется по методике Минюста и может составлять значительную сумму. Мы рассчитываем УТС с обоснованием — это дополнительное основание для взыскания ущерба.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CTA -->
+    <section class="vnesud-cta-section" id="contact-form">
+      <div class="container">
+        <div class="vnesud-cta__inner">
+          <div class="vnesud-cta__text">
+            <h2 class="vnesud-cta__title">Обсудить дело</h2>
+            <p class="vnesud-cta__desc">Пришлите материалы — скажем, что реально можно доказать, какую экспертизу выбрать и какие перспективы у вашего дела.</p>
+          </div>
+          <form class="vnesud-cta__form" id="ctaForm">
+            <div class="vnesud-cta__fields">
+              <input type="text" name="name" placeholder="Ваше имя" required>
+              <input type="tel" name="phone" placeholder="Телефон" required>
+              <input type="email" name="email" placeholder="E-mail">
+            </div>
+            <textarea name="message" placeholder="Опишите ситуацию — кратко, своими словами" rows="4"></textarea>
+            <button type="submit" class="btn btn--primary vnesud-cta__btn">Отправить на оценку</button>
+            <p class="vnesud-cta__note">Оценка материалов — бесплатно. Ответим в течение 2 часов в рабочее время.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
   </main>
+
   <div id="footer-container"></div>
+
   <script src="../assets/js/lib/utils.js" defer></script>
   <script src="../assets/js/modules/burger.js" defer></script>
   <script src="../assets/js/modules/faq.js" defer></script>
   <script src="../assets/js/modules/forms.js" defer></script>
   <script src="../assets/js/modules/smooth-scroll.js" defer></script>
-  <script src="../assets/js/main.js" defer></script>
   <script src="../assets/js/modules/scroll-animations.js" defer></script>
   <script src="../assets/js/modules/components.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/modules/motion.js?v=3" defer></script>
+  <script src="../assets/js/modules/webgl-gradient.js" defer></script>
+  <script src="../assets/js/modules/uni-steps-motion.js" defer></script>
 </body>
 </html>

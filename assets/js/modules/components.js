@@ -14,8 +14,14 @@
     if (path.indexOf('/recenziya/') !== -1) return '../';
     if (path.indexOf('/sudebnaya/') !== -1) return '../';
     if (path.indexOf('/faq/') !== -1) return '../';
-    if (path.indexOf('/avtotehnicheskaya/') !== -1) return '../';
-    if (path.indexOf('/avtotovarovedcheskaya/') !== -1) return '../';
+    if (path.indexOf('/avtotehnicheskaya/') !== -1) {
+      var depth = (path.match(/\//g) || []).length;
+      return depth >= 3 ? '../../' : '../';
+    }
+    if (path.indexOf('/avtotovarovedcheskaya/') !== -1) {
+      var depth2 = (path.match(/\//g) || []).length;
+      return depth2 >= 3 ? '../../' : '../';
+    }
     if (path.indexOf('/ceny/') !== -1) return '../';
     if (path.indexOf('/diplomy/') !== -1) return '../';
     if (path.indexOf('/dosudebnye-dlya-yurfirmy/') !== -1) return '../';

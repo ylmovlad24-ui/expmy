@@ -11,6 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/main.css?v=3">
   <link rel="stylesheet" href="../../assets/css/motion.css?v=3">
+  <link rel="stylesheet" href="../../assets/css/pages/vnesudebnaya.css?v=10">
+  <link rel="stylesheet" href="../../assets/css/components/uni-steps.css?v=1">
+  <link rel="stylesheet" href="../../assets/css/pages/avtotehnicheskaya.css?v=11">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -18,110 +21,134 @@
 
   <main id="main-content">
 
-    <section class="section">
+    <section class="vnesud-hero reveal-entrance">
+      <div class="container vnesud-hero__inner">
+        <div class="vnesud-hero__text">
+          <h1 class="vnesud-hero__title">Судебная экспертиза следов на ТС и месте ДТП</h1>
+          <p class="vnesud-hero__badge">Механизм столкновения · Наезд · Траектории</p>
+          <div class="vnesud-hero__actions">
+            <a href="#contact-form" class="btn btn--primary">Получить консультацию</a>
+            <a href="#directions" class="vnesud-hero__link">Виды экспертизы →</a>
+          </div>
+        </div>
+
+        <div class="vnesud-hero-principles">
+          <div class="vnesud-hero-principle">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <h3 class="vnesud-hero-principle__title">Объективность</h3>
+            <p class="vnesud-hero-principle__desc">Не представляем ни одну из сторон — заключение основано на фактах и методиках, а не на чьих-либо интересах</p>
+          </div>
+          <div class="vnesud-hero-principle">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <h3 class="vnesud-hero-principle__title">Всесторонность</h3>
+            <p class="vnesud-hero-principle__desc">Анализируем все аспекты: механизм столкновения, траектории, углы удара, взаимное расположение ТС</p>
+          </div>
+          <div class="vnesud-hero-principle">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <h3 class="vnesud-hero-principle__title">Полнота</h3>
+            <p class="vnesud-hero-principle__desc">Фиксируем всё: осмотры, эксперименты, расчёты, фототаблицы — чтобы ни у кого не осталось вопросов</p>
+          </div>
+          <div class="vnesud-hero-principle vnesud-hero-principle--highlight">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <h3 class="vnesud-hero-principle__title">Эксперты в реестре Минюста</h3>
+            <p class="vnesud-hero-principle__desc">Наши эксперты включены в ЕГР — это гарантирует право на проведение судебных экспертиз</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="vnesud-divider"><div class="container"><div class="vnesud-divider__line"></div></div></div>
+
+    <section class="vnesud-section vnesud-section--alt reveal" id="directions">
       <div class="container">
-        <h1 class="section__title">Судебная экспертиза следов на ТС и месте ДТП</h1>
-        <p class="section__subtitle">Транспортно-трасологическая диагностика</p>
+        <h2 class="vnesud-section__title">Предмет экспертизы</h2>
+        <p class="vnesud-section__desc">Обстоятельства (фактические данные), устанавливаемые экспертом на основе исследования следов, возникающих на месте ДТП в результате воздействия ТС, иных материальных объектов, людей, животных.</p>
+      </div>
+    </section>
 
-        <!-- Предмет -->
-        <div class="category-detail">
-          <div class="category-detail__block">
-            <h3>Предмет экспертизы</h3>
-            <p class="category-detail__text">Обстоятельства (фактические данные), устанавливаемые экспертом на основе исследования следов, возникающих на месте ДТП в результате воздействия ТС, иных материальных объектов, людей, животных.</p>
+    <section class="vnesud-section reveal">
+      <div class="container">
+        <h2 class="vnesud-section__title">Объекты экспертизы</h2>
+        <ul class="objects-list">
+          <li class="object-item">Следы на ТС, проезжей части, вещная обстановка или фрагменты места происшествия.</li>
+          <li class="object-item">Иные сведения, содержащиеся в различных материалах дела.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="vnesud-section vnesud-section--alt reveal">
+      <div class="container">
+        <h2 class="vnesud-section__title">Задачи транспортно-трасологической диагностики</h2>
+        <ul class="questions-list">
+          <li class="question-item"><span class="question-item__number">1</span><span class="question-item__text">Определение механизма столкновения ТС, опрокидывания, наезда на неподвижное препятствие.</span></li>
+          <li class="question-item"><span class="question-item__number">2</span><span class="question-item__text">Установление характера и траекторий движения ТС до и после ДТП.</span></li>
+          <li class="question-item"><span class="question-item__number">3</span><span class="question-item__text">Установление угла взаимного расположения ТС и направления удара в момент столкновения.</span></li>
+          <li class="question-item"><span class="question-item__number">4</span><span class="question-item__text">Установление угла столкновения ТС.</span></li>
+          <li class="question-item"><span class="question-item__number">5</span><span class="question-item__text">Установление взаимного расположения ТС относительно границ и осевой линии проезжей части.</span></li>
+          <li class="question-item"><span class="question-item__number">6</span><span class="question-item__text">Установление расположения места столкновения ТС или места наезда на пешехода.</span></li>
+          <li class="question-item"><span class="question-item__number">7</span><span class="question-item__text">Установление факта движения или неподвижности ТС при столкновении в момент первичного контакта.</span></li>
+          <li class="question-item"><span class="question-item__number">8</span><span class="question-item__text">Установление части ТС, которой нанесены повреждения потерпевшим.</span></li>
+          <li class="question-item"><span class="question-item__number">9</span><span class="question-item__text">Установление частей ТС, контактировавших между собой в первичный момент столкновения.</span></li>
+          <li class="question-item"><span class="question-item__number">10</span><span class="question-item__text">Установление наличия, времени и причины повреждения шин ТС.</span></li>
+          <li class="question-item"><span class="question-item__number">11</span><span class="question-item__text">Установление возможности получения механических повреждений, имеющихся на транспортных средствах, при взаимном контактном взаимодействии.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="vnesud-section reveal">
+      <div class="container">
+        <h2 class="vnesud-section__title">Важно знать</h2>
+        <p class="vnesud-section__desc">Экспертиза следов на ТС и месте ДТП часто проводится в комплексе с судебно-медицинской экспертизой. Вместе они позволяют установить механизм наезда на пешехода, место нахождения потерпевшего в салоне ТС, взаиморасположение человека и частей ТС в момент первичного контакта, а также получить объективную информацию об условиях травмирования для сопоставления с показаниями свидетелей.</p>
+      </div>
+    </section>
+
+    <section class="vnesud-section vnesud-section--alt reveal">
+      <div class="container">
+        <h2 class="vnesud-section__title">Другие виды автотехнической экспертизы</h2>
+        <div class="vnesud-directions reveal-stagger">
+          <div class="vnesud-direction">
+            <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2z"/><path d="M19 17h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2z"/><path d="M7 17v2a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-2"/></svg>
+            <h3 class="vnesud-direction__title">Обстоятельства ДТП</h3>
+            <p class="vnesud-direction__subtitle">Скорость · Тормозной путь · ПДД · Время реакции</p>
+            <p class="vnesud-direction__desc">Скорость, тормозной путь, время реакции, ПДД. 11 задач.</p>
+            <a href="/avtotehnicheskaya/obstoyatelstva-dtp/" class="vnesud-direction__link">Подробнее →</a>
+          </div>
+          <div class="vnesud-direction">
+            <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            <h3 class="vnesud-direction__title">Техническое состояние ТС</h3>
+            <p class="vnesud-direction__subtitle">Тормоза · Рулевое · Шины · Световые приборы</p>
+            <p class="vnesud-direction__desc">Тормоза, рулевое, шины, световые приборы. 5 задач.</p>
+            <a href="/avtotehnicheskaya/tekhnicheskoe-sostoyanie/" class="vnesud-direction__link">Подробнее →</a>
+          </div>
+          <div class="vnesud-direction">
+            <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <h3 class="vnesud-direction__title">Техническое состояние дороги</h3>
+            <p class="vnesud-direction__subtitle">Покрытие · Видимость · Обустройство</p>
+            <p class="vnesud-direction__desc">Покрытие, видимость, обустройство. 7 задач.</p>
+            <a href="/avtotehnicheskaya/doroga/" class="vnesud-direction__link">Подробнее →</a>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Объекты -->
-        <div class="category-detail">
-          <div class="category-detail__block">
-            <h3>Объекты экспертизы</h3>
-            <ul class="objects-list">
-              <li class="object-item">Следы на ТС, проезжей части, вещная обстановка или фрагменты места происшествия.</li>
-              <li class="object-item">Иные сведения, содержащиеся в различных материалах дела.</li>
-            </ul>
+    <section class="vnesud-cta-section" id="contact-form">
+      <div class="container">
+        <div class="vnesud-cta__inner">
+          <div class="vnesud-cta__text">
+            <h2 class="vnesud-cta__title">Обсудить дело</h2>
+            <p class="vnesud-cta__desc">Пришлите материалы — скажем, что реально можно доказать, какую экспертизу выбрать и какие перспективы у вашего дела.</p>
           </div>
+          <form class="vnesud-cta__form" id="ctaForm">
+            <div class="vnesud-cta__fields">
+              <input type="text" name="name" placeholder="Ваше имя" required>
+              <input type="tel" name="phone" placeholder="Телефон" required>
+              <input type="email" name="email" placeholder="E-mail">
+            </div>
+            <textarea name="message" placeholder="Опишите ситуацию — кратко, своими словами" rows="4"></textarea>
+            <button type="submit" class="btn btn--primary vnesud-cta__btn">Отправить на оценку</button>
+            <p class="vnesud-cta__note">Оценка материалов — бесплатно. Ответим в течение 2 часов в рабочее время.</p>
+          </form>
         </div>
-
-        <!-- Задачи -->
-        <div class="category-detail">
-          <h2 class="category-detail__title">Задачи транспортно-трасологической диагностики</h2>
-          <div class="category-detail__block">
-            <ul class="questions-list">
-              <li class="question-item"><span class="question-item__number">1</span><span class="question-item__text">Определение механизма столкновения ТС, опрокидывания, наезда на неподвижное препятствие.</span></li>
-              <li class="question-item"><span class="question-item__number">2</span><span class="question-item__text">Установление характера и траекторий движения ТС до и после ДТП.</span></li>
-              <li class="question-item"><span class="question-item__number">3</span><span class="question-item__text">Установление угла взаимного расположения ТС и направления удара в момент столкновения.</span></li>
-              <li class="question-item"><span class="question-item__number">4</span><span class="question-item__text">Установление угла столкновения ТС.</span></li>
-              <li class="question-item"><span class="question-item__number">5</span><span class="question-item__text">Установление взаимного расположения ТС относительно границ и осевой линии проезжей части.</span></li>
-              <li class="question-item"><span class="question-item__number">6</span><span class="question-item__text">Установление расположения места столкновения ТС или места наезда на пешехода.</span></li>
-              <li class="question-item"><span class="question-item__number">7</span><span class="question-item__text">Установление факта движения или неподвижности ТС при столкновении в момент первичного контакта.</span></li>
-              <li class="question-item"><span class="question-item__number">8</span><span class="question-item__text">Установление части ТС, которой нанесены повреждения потерпевшим.</span></li>
-              <li class="question-item"><span class="question-item__number">9</span><span class="question-item__text">Установление частей ТС, контактировавших между собой в первичный момент столкновения.</span></li>
-              <li class="question-item"><span class="question-item__number">10</span><span class="question-item__text">Установление наличия, времени и причины повреждения шин ТС.</span></li>
-              <li class="question-item"><span class="question-item__number">11</span><span class="question-item__text">Установление возможности получения механических повреждений, имеющихся на транспортных средствах, при взаимном контактном взаимодействии.</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Комплексная с судебно-медицинской -->
-        <div class="category-detail">
-          <h2 class="category-detail__title">Комплексная экспертиза с судебно-медицинской</h2>
-          <div class="category-detail__block">
-            <p class="category-detail__text" style="margin-bottom: 12px;">Наряду с приведенными существует ряд задач, решаемых экспертизой следов на ТС и месте ДТП в комплексе с судебно-медицинской экспертизой:</p>
-            <ul class="questions-list">
-              <li class="question-item"><span class="question-item__number">1</span><span class="question-item__text">Установление механизма наезда на пешехода.</span></li>
-              <li class="question-item"><span class="question-item__number">2</span><span class="question-item__text">Определение места нахождения потерпевшего в салоне, кабине ТС в момент столкновения.</span></li>
-              <li class="question-item"><span class="question-item__number">3</span><span class="question-item__text">Установление взаиморасположения человека и частей ТС в момент первичного контакта.</span></li>
-              <li class="question-item"><span class="question-item__number">4</span><span class="question-item__text">Получение объективной информации об условиях травмирования для её сопоставления с показаниями свидетелей.</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Перекрёстные ссылки -->
-        <div class="category-detail">
-          <h2 class="category-detail__title">Другие виды автотехнической экспертизы</h2>
-          <div class="format-grid">
-            <a href="/avtotehnicheskaya/obstoyatelstva-dtp/" class="format-card format-card--court">
-              <div class="format-card__icon">🚗</div>
-              <h3 class="format-card__title">Обстоятельства ДТП</h3>
-              <p class="format-card__desc">Скорость, тормозной путь, время реакции, ПДД. 11 задач.</p>
-              <span class="format-card__link">Подробнее →</span>
-            </a>
-            <a href="/avtotehnicheskaya/tekhnicheskoe-sostoyanie/" class="format-card format-card--informal">
-              <div class="format-card__icon">🔧</div>
-              <h3 class="format-card__title">Техническое состояние ТС</h3>
-              <p class="format-card__desc">Тормоза, рулевое, шины, световые приборы. 5 задач.</p>
-              <span class="format-card__link">Подробнее →</span>
-            </a>
-            <a href="/avtotehnicheskaya/doroga/" class="format-card format-card--review">
-              <div class="format-card__icon">🛣️</div>
-              <h3 class="format-card__title">Техническое состояние дороги</h3>
-              <p class="format-card__desc">Покрытие, видимость, обустройство. 7 задач.</p>
-              <span class="format-card__link">Подробнее →</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- CTA -->
-        <div class="category-detail" id="contact-form">
-          <h2 class="category-detail__title">Обсудить дело</h2>
-          <div class="contact-form-wrap">
-            <form class="form" action="#" method="POST">
-              <h3 class="form__title">Пришлите документ + телефон</h3>
-              <input type="text" class="form__input" name="name" placeholder="Ваше имя" required>
-              <input type="tel" class="form__input" name="phone" placeholder="Телефон" required>
-              <input type="text" class="form__input" name="document" placeholder="Ссылка на документ или описание">
-              <textarea class="form__textarea" name="question" placeholder="Ваш вопрос" rows="4"></textarea>
-              <label class="form__label">
-                <input type="checkbox" name="agree" required>
-                <span>Я согласен на обработку персональных данных</span>
-              </label>
-              <button type="submit" class="form__submit">Отправить</button>
-            </form>
-            <p class="form__note">Пришлите документ + телефон — бесплатно оценим материалы и скажем, какая экспертиза нужна</p>
-            <p class="form__note" style="margin-top: 12px;"><a href="https://reestr.roscert.ru/rtl/t/286" target="_blank" rel="noopener">Эксперты в реестре Минюста</a></p>
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -137,5 +164,8 @@
   <script src="../../assets/js/modules/scroll-animations.js" defer></script>
   <script src="../../assets/js/modules/components.js" defer></script>
   <script src="../../assets/js/main.js" defer></script>
+  <script src="../../assets/js/modules/motion.js?v=3" defer></script>
+  <script src="../../assets/js/modules/webgl-gradient.js" defer></script>
+  <script src="../../assets/js/modules/uni-steps-motion.js" defer></script>
 </body>
 </html>

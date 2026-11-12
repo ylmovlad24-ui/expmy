@@ -11,6 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/main.css?v=3">
   <link rel="stylesheet" href="../../assets/css/motion.css?v=3">
+  <link rel="stylesheet" href="../../assets/css/pages/vnesudebnaya.css?v=10">
+  <link rel="stylesheet" href="../../assets/css/components/uni-steps.css?v=1">
+  <link rel="stylesheet" href="../../assets/css/pages/avtotehnicheskaya.css?v=11">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -18,103 +21,270 @@
 
   <main id="main-content">
 
-    <section class="section">
+    <!-- 1. Hero -->
+    <section class="vnesud-hero reveal-entrance">
+      <div class="container vnesud-hero__inner">
+        <div class="vnesud-hero__text">
+          <h1 class="vnesud-hero__title">Судебная экспертиза обстоятельств ДТП</h1>
+          <div class="vnesud-hero-meta">
+            <p class="vnesud-hero__badge">Скорость · Тормозной путь · ПДД · Время реакции</p>
+            <span class="vnesud-hero-badge-count">11 задач</span>
+          </div>
+
+          <!-- Предмет экспертизы -->
+          <div class="vnesud-hero-subject">
+            <h3 class="vnesud-hero-subject__title">Предмет экспертизы</h3>
+            <p class="vnesud-hero-subject__desc">Фактические данные об обстоятельствах ДТП, загруженности, техническом состоянии ТС, скорости его движения, покрытии проезжей части, его состоянии, продольном и поперечном профилях проезжей части, режиме движения ТС и т.д.</p>
+            <div class="vnesud-hero-subject-tags">
+              <span class="vnesud-hero-subject-tag">Скорость</span>
+              <span class="vnesud-hero-subject-tag">Тормозной путь</span>
+              <span class="vnesud-hero-subject-tag">ПДД</span>
+              <span class="vnesud-hero-subject-tag">Время реакции</span>
+              <span class="vnesud-hero-subject-tag">Техсостояние ТС</span>
+              <span class="vnesud-hero-subject-tag">Покрытие</span>
+              <span class="vnesud-hero-subject-tag">Профили</span>
+            </div>
+          </div>
+
+          <div class="vnesud-hero__actions">
+            <a href="#contact-form" class="btn btn--primary">Получить консультацию</a>
+            <a href="#directions" class="vnesud-hero__link">Виды экспертизы →</a>
+          </div>
+        </div>
+
+        <!-- Принципы работы — карточки в hero -->
+        <div class="vnesud-hero-principles">
+          <div class="vnesud-hero-principle">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <h3 class="vnesud-hero-principle__title">Объективность</h3>
+            <p class="vnesud-hero-principle__desc">Не представляем ни одну из сторон — заключение основано на фактах и методиках, а не на чьих-либо интересах</p>
+          </div>
+          <div class="vnesud-hero-principle">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <h3 class="vnesud-hero-principle__title">Всесторонность</h3>
+            <p class="vnesud-hero-principle__desc">Анализируем все аспекты: скорость, тормозной путь, состояние ТС, дорожные условия, действия обоих водителей</p>
+          </div>
+          <div class="vnesud-hero-principle">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <h3 class="vnesud-hero-principle__title">Полнота</h3>
+            <p class="vnesud-hero-principle__desc">Фиксируем всё: осмотры, эксперименты, расчёты, фототаблицы — чтобы ни у кого не осталось вопросов</p>
+          </div>
+          <div class="vnesud-hero-principle vnesud-hero-principle--highlight">
+            <svg class="vnesud-hero-principle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <h3 class="vnesud-hero-principle__title">Эксперты в реестре Минюста</h3>
+            <p class="vnesud-hero-principle__desc">Наши эксперты включены в ЕГР — это гарантирует право на проведение судебных экспертиз</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Объекты -->
+    <section class="vnesud-section reveal">
       <div class="container">
-        <h1 class="section__title">Судебная экспертиза обстоятельств ДТП</h1>
-        <p class="section__subtitle">Скорость, тормозной путь, время реакции, ПДД</p>
+        <h2 class="vnesud-section__title">Объекты экспертизы</h2>
+        <p class="vnesud-section__subtitle">То, что исследуется при проведении экспертизы</p>
 
-        <!-- Предмет -->
-        <div class="category-detail">
-          <div class="category-detail__block">
-            <h3>Предмет экспертизы</h3>
-            <p class="category-detail__text">Фактические данные об обстоятельствах ДТП, загруженности, техническом состоянии ТС, скорости его движения, покрытии проезжей части, его состоянии, продольном и поперечном профилях проезжей части, режиме движения ТС и т.д.</p>
+        <div class="vnesud-objects-grid">
+          <div class="vnesud-object-card">
+            <div class="vnesud-object-card__icon-wrap">
+              <svg class="vnesud-object-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <h3 class="vnesud-object-card__title">Материалы дел</h3>
+            <p class="vnesud-object-card__desc">Уголовные, административные, гражданские и арбитражные дела — постановления, определения, протоколы</p>
+          </div>
+
+          <div class="vnesud-object-card">
+            <div class="vnesud-object-card__icon-wrap vnesud-object-card__icon-wrap--blue">
+              <svg class="vnesud-object-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            </div>
+            <h3 class="vnesud-object-card__title">Фото- и видеоизображения</h3>
+            <p class="vnesud-object-card__desc">Не требующие правовой оценки — фото места ДТП, ТС, следов, повреждений</p>
+          </div>
+
+          <div class="vnesud-object-card">
+            <div class="vnesud-object-card__icon-wrap vnesud-object-card__icon-wrap--purple">
+              <svg class="vnesud-object-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 22 25 2 13 9 1 22"/><polygon points="1 12 13 5 25 18 13 25 1 18"/></svg>
+            </div>
+            <h3 class="vnesud-object-card__title">Схемы и протоколы</h3>
+            <p class="vnesud-object-card__desc">Схемы ДТП, протоколы осмотра ТС, объяснения участников и свидетелей</p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Объекты -->
-        <div class="category-detail">
-          <div class="category-detail__block">
-            <h3>Объекты экспертизы</h3>
-            <ul class="objects-list">
-              <li class="object-item">Материалы уголовного, административного, гражданского и арбитражного дел (включая фото- и видеоизображения), не требующие правовой оценки.</li>
+    <!-- 4. Задачи -->
+    <section class="vnesud-section vnesud-section--alt reveal">
+      <div class="container">
+        <h2 class="vnesud-section__title">Задачи экспертизы</h2>
+        <p class="vnesud-section__subtitle">11 задач, сгруппированных по направлениям</p>
+
+        <div class="vnesud-task-groups">
+          <!-- Группа 1: Скорость -->
+          <div class="vnesud-task-group">
+            <div class="vnesud-task-group__header">
+              <div class="vnesud-task-group__icon-wrap">
+                <svg class="vnesud-task-group__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <h3 class="vnesud-task-group__title">Скорость движения</h3>
+              <span class="vnesud-task-group__count">3 задачи</span>
+            </div>
+            <ul class="vnesud-task-group__list">
+              <li class="task-item"><span class="task-item__num">1</span><span class="task-item__text">Определение скорости движения транспортного средства (далее – ТС) в заданные моменты времени, в частности, перед торможением, в момент наезда на пешехода или столкновения с другим ТС и т. п.</span></li>
+              <li class="task-item"><span class="task-item__num">2</span><span class="task-item__text">Определение скорости ТС, соответствующей дальности общей видимости.</span></li>
+              <li class="task-item"><span class="task-item__num">3</span><span class="task-item__text">Определение критической по заносу или опрокидыванию скорости при движении на повороте.</span></li>
+            </ul>
+          </div>
+
+          <!-- Группа 2: Торможение -->
+          <div class="vnesud-task-group">
+            <div class="vnesud-task-group__header">
+              <div class="vnesud-task-group__icon-wrap vnesud-task-group__icon-wrap--blue">
+                <svg class="vnesud-task-group__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg>
+              </div>
+              <h3 class="vnesud-task-group__title">Торможение и расстояние</h3>
+              <span class="vnesud-task-group__count">3 задачи</span>
+            </div>
+            <ul class="vnesud-task-group__list">
+              <li class="task-item"><span class="task-item__num">4</span><span class="task-item__text">Определение места расположения ТС в заданные моменты времени (в частности, удаление ТС от места наезда или столкновения в момент возникновения опасности для движения).</span></li>
+              <li class="task-item"><span class="task-item__num">5</span><span class="task-item__text">Определение тормозного, остановочного путей, расстояния, преодолеваемого ТС в заданные промежутки времени.</span></li>
+              <li class="task-item"><span class="task-item__num">6</span><span class="task-item__text">Определение тормозного, остановочного времени, а также времени, затраченного ТС на преодоление определенных участков пути.</span></li>
+            </ul>
+          </div>
+
+          <!-- Группа 3: ПДД -->
+          <div class="vnesud-task-group">
+            <div class="vnesud-task-group__header">
+              <div class="vnesud-task-group__icon-wrap vnesud-task-group__icon-wrap--purple">
+                <svg class="vnesud-task-group__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              </div>
+              <h3 class="vnesud-task-group__title">ПДД и время реакции</h3>
+              <span class="vnesud-task-group__count">3 задачи</span>
+            </div>
+            <ul class="vnesud-task-group__list">
+              <li class="task-item"><span class="task-item__num">7</span><span class="task-item__text">Установление момента возникновения опасности для движения в условиях ограниченной видимости или обзорности.</span></li>
+              <li class="task-item"><span class="task-item__num">8</span><span class="task-item__text">Определение требований Правил дорожного движения Российской Федерации (далее – ПДД РФ), которыми в данной дорожно-транспортной ситуации (далее – ДТС) должны были руководствоваться участники дорожного движения.</span></li>
+              <li class="task-item"><span class="task-item__num">9</span><span class="task-item__text">Определение, соответствовали ли действия участников дорожного движения требованиям ПДД РФ, которыми в данной ДТС они должны были руководствоваться.</span></li>
+            </ul>
+          </div>
+
+          <!-- Группа 4: Причинность -->
+          <div class="vnesud-task-group">
+            <div class="vnesud-task-group__header">
+              <div class="vnesud-task-group__icon-wrap vnesud-task-group__icon-wrap--red">
+                <svg class="vnesud-task-group__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <h3 class="vnesud-task-group__title">Причинно-следственная связь</h3>
+              <span class="vnesud-task-group__count">2 задачи</span>
+            </div>
+            <ul class="vnesud-task-group__list">
+              <li class="task-item"><span class="task-item__num">10</span><span class="task-item__text">Установление наличия (отсутствия) у водителя ТС технической возможности предотвратить ДТП путем торможения в момент возникновения опасности или иной момент развития ДТС, определенный органом, назначившим экспертизу.</span></li>
+              <li class="task-item"><span class="task-item__num">11</span><span class="task-item__text">Определение причинной связи между несоответствиями действий участников дорожного движения требованиям ПДД РФ, которыми в данной ДТС они должны были руководствоваться, и фактом ДТП.</span></li>
             </ul>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Задачи -->
-        <div class="category-detail">
-          <h2 class="category-detail__title">Задачи экспертизы</h2>
-          <div class="category-detail__block">
-            <ul class="questions-list">
-              <li class="question-item"><span class="question-item__number">1</span><span class="question-item__text">Определение скорости движения транспортного средства (далее – ТС) в заданные моменты времени, в частности, перед торможением, в момент наезда на пешехода или столкновения с другим ТС и т. п.</span></li>
-              <li class="question-item"><span class="question-item__number">2</span><span class="question-item__text">Определение скорости ТС, соответствующей дальности общей видимости.</span></li>
-              <li class="question-item"><span class="question-item__number">3</span><span class="question-item__text">Определение критической по заносу или опрокидыванию скорости при движении на повороте.</span></li>
-              <li class="question-item"><span class="question-item__number">4</span><span class="question-item__text">Определение места расположения ТС в заданные моменты времени (в частности, удаление ТС от места наезда или столкновения в момент возникновения опасности для движения).</span></li>
-              <li class="question-item"><span class="question-item__number">5</span><span class="question-item__text">Определение тормозного, остановочного путей, расстояния, преодолеваемого ТС в заданные промежутки времени.</span></li>
-              <li class="question-item"><span class="question-item__number">6</span><span class="question-item__text">Определение тормозного, остановочного времени, а также времени, затраченного ТС на преодоление определенных участков пути.</span></li>
-              <li class="question-item"><span class="question-item__number">7</span><span class="question-item__text">Установление момента возникновения опасности для движения в условиях ограниченной видимости или обзорности.</span></li>
-              <li class="question-item"><span class="question-item__number">8</span><span class="question-item__text">Определение требований Правил дорожного движения Российской Федерации (далее – ПДД РФ), которыми в данной дорожно-транспортной ситуации (далее – ДТС) должны были руководствоваться участники дорожного движения.</span></li>
-              <li class="question-item"><span class="question-item__number">9</span><span class="question-item__text">Определение, соответствовали ли действия участников дорожного движения требованиям ПДД РФ, которыми в данной ДТС они должны были руководствоваться.</span></li>
-              <li class="question-item"><span class="question-item__number">10</span><span class="question-item__text">Установление наличия (отсутствия) у водителя ТС технической возможности предотвратить ДТП путем торможения в момент возникновения опасности или иной момент развития ДТС, определенный органом, назначившим экспертизу.</span></li>
-              <li class="question-item"><span class="question-item__number">11</span><span class="question-item__text">Определение причинной связи между несоответствиями действий участников дорожного движения требованиям ПДД РФ, которыми в данной ДТС они должны были руководствоваться, и фактом ДТП.</span></li>
-            </ul>
+    <!-- 5. Важно знать -->
+    <section class="vnesud-section reveal">
+      <div class="container">
+        <h2 class="vnesud-section__title">Важно знать</h2>
+        <p class="vnesud-section__subtitle">Экспертиза обстоятельств ДТП часто требует комплексного подхода</p>
+
+        <div class="vnesud-insights">
+          <div class="vnesud-insight">
+            <div class="vnesud-insight__icon-wrap">
+              <svg class="vnesud-insight__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <h3 class="vnesud-insight__title">Комплексность</h3>
+            <p class="vnesud-insight__desc">Задачи экспертизы обстоятельств ДТП можно решить только после решения задач другими видами САТЭ — техническое состояние, следы, металловедение</p>
+          </div>
+
+          <div class="vnesud-insight">
+            <div class="vnesud-insight__icon-wrap vnesud-insight__icon-wrap--blue">
+              <svg class="vnesud-insight__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2z"/><path d="M19 17h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2z"/><path d="M7 17v2a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-2"/></svg>
+            </div>
+            <h3 class="vnesud-insight__title">Сначала — техсостояние</h3>
+            <p class="vnesud-insight__desc">Вопросы торможения и управления ТС решаются только после определения технического состояния. Если данных нет в материалах дела — нужна отдельная экспертиза</p>
+          </div>
+
+          <div class="vnesud-insight">
+            <div class="vnesud-insight__icon-wrap vnesud-insight__icon-wrap--purple">
+              <svg class="vnesud-insight__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3 class="vnesud-insight__title">Следы и механизм</h3>
+            <p class="vnesud-insight__desc">Для квалификации действий водителей нужно сначала провести экспертизу следов на ТС и месте ДТП по определению механизма ДТП</p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Примечание -->
-        <div class="category-detail">
-          <div class="category-detail__block">
-            <h3>Важно знать</h3>
-            <p class="category-detail__text">Отдельные задачи экспертизы обстоятельств ДТП можно решить только после решения соответствующих задач другими видами САТЭ либо приведенными выше судебными экспертизами, не относящимися к классу транспортных. Например, все вопросы, связанные с исследованием процесса торможения и возможности управления ТС, можно решить лишь после определения технического состояния ТС. Если подобные данные отсутствуют в постановлении (определении) о назначении экспертизы и материалах дела, то необходимо производство судебной экспертизы технического состояния ТС, а в отдельных случаях и металловедческой. Для квалификации действий водителей ТС зачастую необходимо вначале провести судебную экспертизу следов на ТС и месте ДТП по определению механизма ДТП.</p>
+    <!-- 6. Другие виды -->
+    <section class="vnesud-section vnesud-section--alt reveal">
+      <div class="container">
+        <h2 class="vnesud-section__title">Другие виды автотехнической экспертизы</h2>
+        <div class="vnesud-directions reveal-stagger">
+          <div class="vnesud-direction">
+            <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            <h3 class="vnesud-direction__title">Техническое состояние ТС</h3>
+            <p class="vnesud-direction__subtitle">Тормоза · Рулевое · Шины · Световые приборы</p>
+            <p class="vnesud-direction__desc">Тормоза, рулевое, шины, световые приборы. 5 задач.</p>
+            <a href="/avtotehnicheskaya/tekhnicheskoe-sostoyanie/" class="vnesud-direction__link">Подробнее →</a>
+          </div>
+          <div class="vnesud-direction">
+            <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            <h3 class="vnesud-direction__title">Следы на ТС и месте ДТП</h3>
+            <p class="vnesud-direction__subtitle">Механизм столкновения · Наезд · Траектории</p>
+            <p class="vnesud-direction__desc">Механизм столкновения, наезда, траектории. 11 + 4 задачи.</p>
+            <a href="/avtotehnicheskaya/sledy/" class="vnesud-direction__link">Подробнее →</a>
+          </div>
+          <div class="vnesud-direction">
+            <svg class="vnesud-direction__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <h3 class="vnesud-direction__title">Техническое состояние дороги</h3>
+            <p class="vnesud-direction__subtitle">Покрытие · Видимость · Обустройство</p>
+            <p class="vnesud-direction__desc">Покрытие, видимость, обустройство. 7 задач.</p>
+            <a href="/avtotehnicheskaya/doroga/" class="vnesud-direction__link">Подробнее →</a>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Перекрёстные ссылки -->
-        <div class="category-detail">
-          <h2 class="category-detail__title">Другие виды автотехнической экспертизы</h2>
-          <div class="format-grid">
-            <a href="/avtotehnicheskaya/tekhnicheskoe-sostoyanie/" class="format-card format-card--informal">
-              <div class="format-card__icon">🔧</div>
-              <h3 class="format-card__title">Техническое состояние ТС</h3>
-              <p class="format-card__desc">Тормоза, рулевое, шины, световые приборы. 5 задач.</p>
-              <span class="format-card__link">Подробнее →</span>
-            </a>
-            <a href="/avtotehnicheskaya/sledy/" class="format-card format-card--review">
-              <div class="format-card__icon">🔍</div>
-              <h3 class="format-card__title">Следы на ТС и месте ДТП</h3>
-              <p class="format-card__desc">Механизм столкновения, наезда, траектории. 11 + 4 задачи.</p>
-              <span class="format-card__link">Подробнее →</span>
-            </a>
-            <a href="/avtotehnicheskaya/doroga/" class="format-card format-card--court">
-              <div class="format-card__icon">🛣️</div>
-              <h3 class="format-card__title">Техническое состояние дороги</h3>
-              <p class="format-card__desc">Покрытие, видимость, обустройство. 7 задач.</p>
-              <span class="format-card__link">Подробнее →</span>
-            </a>
+    <!-- 7. CTA -->
+    <section class="vnesud-cta-section" id="contact-form">
+      <div class="container">
+        <div class="vnesud-cta__inner">
+          <div class="vnesud-cta__text">
+            <h2 class="vnesud-cta__title">Обсудить дело</h2>
+            <p class="vnesud-cta__desc">Пришлите материалы — скажем, что реально можно доказать, какую экспертизу выбрать и какие перспективы у вашего дела.</p>
           </div>
-        </div>
 
-        <!-- CTA -->
-        <div class="category-detail" id="contact-form">
-          <h2 class="category-detail__title">Обсудить дело</h2>
-          <div class="contact-form-wrap">
-            <form class="form" action="#" method="POST">
-              <h3 class="form__title">Пришлите документ + телефон</h3>
-              <input type="text" class="form__input" name="name" placeholder="Ваше имя" required>
-              <input type="tel" class="form__input" name="phone" placeholder="Телефон" required>
-              <input type="text" class="form__input" name="document" placeholder="Ссылка на документ или описание">
-              <textarea class="form__textarea" name="question" placeholder="Ваш вопрос" rows="4"></textarea>
-              <label class="form__label">
-                <input type="checkbox" name="agree" required>
-                <span>Я согласен на обработку персональных данных</span>
-              </label>
-              <button type="submit" class="form__submit">Отправить</button>
-            </form>
-            <p class="form__note">Пришлите документ + телефон — бесплатно оценим материалы и скажем, какая экспертиза нужна</p>
-            <p class="form__note" style="margin-top: 12px;"><a href="https://reestr.roscert.ru/rtl/t/286" target="_blank" rel="noopener">Эксперты в реестре Минюста</a></p>
+          <!-- Социальные доказательства -->
+          <div class="vnesud-cta-proof">
+            <div class="vnesud-cta-proof__item">
+              <svg class="vnesud-cta-proof__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Эксперты в реестре Минюста</span>
+            </div>
+            <div class="vnesud-cta-proof__item">
+              <svg class="vnesud-cta-proof__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Ответ в течение 2 часов</span>
+            </div>
+            <div class="vnesud-cta-proof__item">
+              <svg class="vnesud-cta-proof__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <span>Оценка материалов — бесплатно</span>
+            </div>
           </div>
-        </div>
 
+          <form class="vnesud-cta__form" id="ctaForm">
+            <div class="vnesud-cta__fields">
+              <input type="text" name="name" placeholder="Ваше имя" required>
+              <input type="tel" name="phone" placeholder="Телефон" required>
+              <input type="email" name="email" placeholder="E-mail">
+            </div>
+            <textarea name="message" placeholder="Опишите ситуацию — кратко, своими словами" rows="4"></textarea>
+            <button type="submit" class="btn btn--primary vnesud-cta__btn">Отправить на оценку</button>
+            <p class="vnesud-cta__note">Оценка материалов — бесплатно. Ответим в течение 2 часов в рабочее время.</p>
+          </form>
+        </div>
       </div>
     </section>
 
@@ -130,5 +300,8 @@
   <script src="../../assets/js/modules/scroll-animations.js" defer></script>
   <script src="../../assets/js/modules/components.js" defer></script>
   <script src="../../assets/js/main.js" defer></script>
+  <script src="../../assets/js/modules/motion.js?v=3" defer></script>
+  <script src="../../assets/js/modules/webgl-gradient.js" defer></script>
+  <script src="../../assets/js/modules/uni-steps-motion.js" defer></script>
 </body>
 </html>
