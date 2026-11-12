@@ -81,18 +81,20 @@
 }
 
 .vnesud-hero-subject-tag:hover {
-  background: rgba(230, 126, 34, 0.12);
-  border-color: rgba(230, 126, 34, 0.3);
+  background: rgba(230, 126, 34, 0.15);
+  border-color: rgba(230, 126, 34, 0.4);
   color: #ff9933;
+  transform: translateY(-1px);
 }
 
 .vnesud-hero__title {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1.12;
   letter-spacing: -0.025em;
   margin: 0;
   color: #ffffff;
+  max-width: 28ch;
 }
 
 .vnesud-hero__badge {
@@ -114,6 +116,13 @@
   font-size: 1.0625rem;
   padding: 16px 36px;
   font-weight: 600;
+  box-shadow: 0 4px 20px rgba(230, 126, 34, 0.35), 0 0 40px rgba(230, 126, 34, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vnesud-hero__actions .btn--primary:hover {
+  box-shadow: 0 6px 28px rgba(230, 126, 34, 0.45), 0 0 56px rgba(230, 126, 34, 0.2);
+  transform: translateY(-2px);
 }
 
 .vnesud-hero__link {
@@ -252,6 +261,16 @@
 .vnesud-hero-principle--highlight:hover {
   background: rgba(230, 126, 34, 0.12);
   border-color: rgba(230, 126, 34, 0.3);
+}
+
+/* CTA Button Pulse Animation */
+@keyframes btn-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(230, 126, 34, 0.35), 0 0 40px rgba(230, 126, 34, 0.15); }
+  50% { box-shadow: 0 4px 28px rgba(230, 126, 34, 0.5), 0 0 56px rgba(230, 126, 34, 0.25); }
+}
+
+.vnesud-hero__actions .btn--primary {
+  animation: btn-pulse 3s ease-in-out infinite;
 }
 
 /* --- Direction cards — subtitle and tasks --- */
@@ -666,7 +685,7 @@
   }
 
   .vnesud-hero__title {
-    font-size: 2.75rem;
+    font-size: 2.25rem;
   }
 
   .vnesud-hero__badge {
@@ -720,7 +739,7 @@
   }
 
   .vnesud-hero__title {
-    font-size: 2rem;
+    font-size: 1.75rem;
     line-height: 1.2;
   }
 

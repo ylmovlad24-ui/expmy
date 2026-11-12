@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../../assets/css/motion.css?v=3">
   <link rel="stylesheet" href="../../assets/css/pages/vnesudebnaya.css?v=10">
   <link rel="stylesheet" href="../../assets/css/components/uni-steps.css?v=1">
-  <link rel="stylesheet" href="../../assets/css/pages/avtotovarovedcheskaya.css?v=1">
+  <link rel="stylesheet" href="../../assets/css/pages/avtotovarovedcheskaya.css?v=2">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Перейти к содержимому</a>
@@ -25,7 +25,22 @@
       <div class="container vnesud-hero__inner">
         <div class="vnesud-hero__text">
           <h1 class="vnesud-hero__title">Автотовароведческая экспертиза вне рамок ОСАГО</h1>
-          <p class="vnesud-hero__badge">Рыночная стоимость · Реальный ущерб · Годные остатки — методика Минюста</p>
+          <div class="vnesud-hero-meta">
+            <p class="vnesud-hero__badge">Рыночная стоимость · Реальный ущерб · Годные остатки</p>
+          </div>
+
+          <!-- Что установит экспертиза -->
+          <div class="vnesud-hero-subject">
+            <h3 class="vnesud-hero-subject__title">Что установит экспертиза</h3>
+            <p class="vnesud-hero-subject__desc">Определим полную рыночную стоимость ТС и реальный ущерб по методике Минюста — для суда и претензий.</p>
+            <div class="vnesud-hero-subject-tags">
+              <span class="vnesud-hero-subject-tag">Рыночная стоимость</span>
+              <span class="vnesud-hero-subject-tag">Реальный ущерб</span>
+              <span class="vnesud-hero-subject-tag">Годные остатки</span>
+              <span class="vnesud-hero-subject-tag">Методика Минюста</span>
+            </div>
+          </div>
+
           <div class="vnesud-hero__actions">
             <a href="#contact-form" class="btn btn--primary">Получить консультацию</a>
             <a href="#directions" class="vnesud-hero__link">Виды экспертизы →</a>
@@ -57,45 +72,110 @@
       </div>
     </section>
 
-    <div class="vnesud-divider"><div class="container"><div class="vnesud-divider__line"></div></div></div>
-
-    <section class="vnesud-section vnesud-section--alt reveal" id="directions">
-      <div class="container">
-        <h2 class="vnesud-section__title">Предмет экспертизы</h2>
-        <p class="vnesud-section__desc">Фактические данные о рыночной стоимости транспортного средства, размере реального ущерба, стоимости годных остатков, рассчитанные по методике Минюста России (Приказ № 237).</p>
-      </div>
-    </section>
-
     <section class="vnesud-section reveal">
       <div class="container">
         <h2 class="vnesud-section__title">Объекты экспертизы</h2>
-        <ul class="objects-list">
-          <li class="object-item">Транспортное средство в его текущем состоянии</li>
-          <li class="object-item">Рыночные предложения об аналогичных ТС</li>
-          <li class="object-item">Техническое состояние, пробег, комплектация</li>
-          <li class="object-item">Документы на ТС (ПТС, СТС, договор купли-продажи)</li>
-        </ul>
+        <p class="vnesud-section__subtitle">То, что исследуется при проведении экспертизы</p>
+
+        <div class="vnesud-objects-grid">
+          <div class="vnesud-object-card">
+            <div class="vnesud-object-card__icon-wrap">
+              <svg class="vnesud-object-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2z"/><path d="M19 17h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2z"/><path d="M7 17v2a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-2"/></svg>
+            </div>
+            <h3 class="vnesud-object-card__title">Повреждённое ТС</h3>
+            <p class="vnesud-object-card__desc">Транспортное средство в его текущем состоянии после повреждения.</p>
+          </div>
+
+          <div class="vnesud-object-card">
+            <div class="vnesud-object-card__icon-wrap vnesud-object-card__icon-wrap--blue">
+              <svg class="vnesud-object-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/></svg>
+            </div>
+            <h3 class="vnesud-object-card__title">Рыночные данные</h3>
+            <p class="vnesud-object-card__desc">Рыночные предложения об аналогичных ТС — пробег, комплектация, состояние.</p>
+          </div>
+
+          <div class="vnesud-object-card">
+            <div class="vnesud-object-card__icon-wrap vnesud-object-card__icon-wrap--purple">
+              <svg class="vnesud-object-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <h3 class="vnesud-object-card__title">Документы на ТС</h3>
+            <p class="vnesud-object-card__desc">ПТС, СТС, договор купли-продажи — подтверждение истории и комплектации.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="vnesud-section vnesud-section--alt reveal">
       <div class="container">
         <h2 class="vnesud-section__title">Задачи экспертизы</h2>
-        <ul class="questions-list">
-          <li class="question-item"><span class="question-item__number">1</span><span class="question-item__text">Какова рыночная стоимость транспортного средства на дату определения?</span></li>
-          <li class="question-item"><span class="question-item__number">2</span><span class="question-item__text">Какова стоимость аналогичного транспортного средства в исправном состоянии?</span></li>
-          <li class="question-item"><span class="question-item__number">3</span><span class="question-item__text">Каков размер реального ущерба, причинённый транспортному средству?</span></li>
-          <li class="question-item"><span class="question-item__number">4</span><span class="question-item__text">Какова стоимость годных остатков повреждённого транспортного средства?</span></li>
-          <li class="question-item"><span class="question-item__number">5</span><span class="question-item__text">Каков характер и объём повреждений транспортного средства?</span></li>
-          <li class="question-item"><span class="question-item__number">6</span><span class="question-item__text">Какова причинная связь между событием и повреждениями ТС?</span></li>
-        </ul>
+        <p class="vnesud-section__subtitle">Сгруппированы по направлениям</p>
+
+        <div class="vnesud-task-groups">
+          <!-- Группа 1: Оценка стоимости -->
+          <div class="vnesud-task-group">
+            <div class="vnesud-task-group__header">
+              <div class="vnesud-task-group__icon-wrap">
+                <svg class="vnesud-task-group__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <h3 class="vnesud-task-group__title">Оценка стоимости</h3>
+              <span class="vnesud-task-group__count">3 задачи</span>
+            </div>
+            <ul class="vnesud-task-group__list">
+              <li class="task-item"><span class="task-item__num">1</span><span class="task-item__text">Какова рыночная стоимость транспортного средства на дату определения?</span></li>
+              <li class="task-item"><span class="task-item__num">2</span><span class="task-item__text">Какова стоимость аналогичного транспортного средства в исправном состоянии?</span></li>
+              <li class="task-item"><span class="task-item__num">3</span><span class="task-item__text">Каков размер реального ущерба, причинённый ТС?</span></li>
+            </ul>
+          </div>
+
+          <!-- Группа 2: Повреждения и причинность -->
+          <div class="vnesud-task-group">
+            <div class="vnesud-task-group__header">
+              <div class="vnesud-task-group__icon-wrap vnesud-task-group__icon-wrap--blue">
+                <svg class="vnesud-task-group__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <h3 class="vnesud-task-group__title">Повреждения и причинность</h3>
+              <span class="vnesud-task-group__count">3 задачи</span>
+            </div>
+            <ul class="vnesud-task-group__list">
+              <li class="task-item"><span class="task-item__num">4</span><span class="task-item__text">Какова стоимость годных остатков повреждённого ТС?</span></li>
+              <li class="task-item"><span class="task-item__num">5</span><span class="task-item__text">Каков характер и объём повреждений транспортного средства?</span></li>
+              <li class="task-item"><span class="task-item__num">6</span><span class="task-item__text">Какова причинная связь между событием и повреждениями ТС?</span></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="vnesud-section reveal">
       <div class="container">
         <h2 class="vnesud-section__title">Важно знать</h2>
-        <p class="vnesud-section__desc">Экспертиза вне рамок ОСАГО применяется для суда, претензий к продавцу, спорам между сторонами. Методика Минюста позволяет определить полную рыночную стоимость ТС и реальный ущерб — часто значительно превышающий расчёты страховых компаний.</p>
+        <p class="vnesud-section__subtitle">Методика Минюста для полных расчётов</p>
+
+        <div class="vnesud-insights">
+          <div class="vnesud-insight">
+            <div class="vnesud-insight__icon-wrap">
+              <svg class="vnesud-insight__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <h3 class="vnesud-insight__title">Для суда и претензий</h3>
+            <p class="vnesud-insight__desc">Экспертиза вне рамок ОСАГО применяется для суда, претензий к продавцу, спорам между сторонами.</p>
+          </div>
+
+          <div class="vnesud-insight">
+            <div class="vnesud-insight__icon-wrap vnesud-insight__icon-wrap--blue">
+              <svg class="vnesud-insight__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 class="vnesud-insight__title">Методика Минюста</h3>
+            <p class="vnesud-insight__desc">Позволяет определить полную рыночную стоимость ТС и реальный ущерб.</p>
+          </div>
+
+          <div class="vnesud-insight">
+            <div class="vnesud-insight__icon-wrap vnesud-insight__icon-wrap--purple">
+              <svg class="vnesud-insight__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3 class="vnesud-insight__title">Выше выплат страховых</h3>
+            <p class="vnesud-insight__desc">Часто значительно превышающий расчёты страховых компаний.</p>
+          </div>
+        </div>
       </div>
     </section>
 
