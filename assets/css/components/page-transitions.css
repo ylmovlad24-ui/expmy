@@ -11,6 +11,7 @@
   transform: scaleY(0);
   transform-origin: bottom;
   pointer-events: none;
+  display: none !important;
 }
 
 .page-transition-overlay.active {

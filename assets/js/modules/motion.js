@@ -23,6 +23,7 @@
           .then(function() {
             if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
               console.warn('Motion: GSAP not available');
+              showAllElements();
               return;
             }
             gsap.registerPlugin(ScrollTrigger);
@@ -39,10 +40,19 @@
               initFooterReveal();
               // Custom cursor is handled by custom-cursor.js (dedicated module)
               console.log('Motion: All animations initialized');
+
+              // Fallback: если GSAP не загрузился через 3 секунды — показать элементы
+              setTimeout(function() {
+                if (typeof gsap === 'undefined') {
+                  console.warn('Motion: GSAP not loaded after 3s, showing all elements');
+                  showAllElements();
+                }
+              }, 3000);
             });
           })
           .catch(function(err) {
             console.warn('Motion init error:', err);
+            showAllElements();
           });
       } else {
         // Fallback: GSAP уже загружен
@@ -62,6 +72,10 @@
             // Custom cursor is handled by custom-cursor.js (dedicated module)
             console.log('Motion: All animations initialized (fallback)');
           });
+        } else {
+          // GSAP не загружен — показать все элементы
+          console.warn('Motion: GSAP not available, showing all elements');
+          showAllElements();
         }
       }
     } catch (e) {
@@ -101,6 +115,22 @@
     steps.forEach(function(c) { c.style.opacity = '0'; });
     var footer = document.querySelector('.footer');
     if (footer) footer.style.opacity = '0';
+
+    // Fallback: если через 1 секунду элементы скрыты И GSAP не загружен — показать их
+    setTimeout(function() {
+      var hidden = 0;
+      var all = document.querySelectorAll('.vnesud-hero, .sudeb-hero, .recz-hero, .vnesud-direction, .sudeb-direction, .recz-direction, .vnesud-case, .sudeb-case, .recz-case, .vnesud-step, .guarantee-card, .footer');
+      all.forEach(function(el) {
+        if (getComputedStyle(el).opacity === '0') {
+          hidden++;
+        }
+      });
+      // Если слишком много элементов скрыты И GSAP не загружен — показать принудительно
+      if (hidden > 10 && typeof gsap === 'undefined') {
+        console.warn('Motion: ' + hidden + ' elements still hidden and GSAP not available');
+        showAllElements();
+      }
+    }, 1000);
   }
 
   function showAllElements() {

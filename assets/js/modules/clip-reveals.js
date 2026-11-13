@@ -1,6 +1,6 @@
 /**
  * Clip-path Reveals
- * IntersectionObserver для clip-path, blur-in и split text анимаций
+ * Показывает все элементы сразу — без анимации
  */
 (function() {
   'use strict';
@@ -14,43 +14,23 @@
     return;
   }
 
-  const revealObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-        revealObserver.unobserve(entry.target);
-      }
+  // Показываем все элементы сразу — без задержек
+  function showAllElements() {
+    document.querySelectorAll('.reveal-clip, .reveal-blur, .reveal-text').forEach(function(el) {
+      el.classList.add('revealed');
+      // Принудительно сбросим стили с !important, чтобы переопределить CSS
+      el.style.setProperty('opacity', '1', 'important');
+      el.style.setProperty('filter', 'none', 'important');
+      el.style.setProperty('transform', 'none', 'important');
+      el.style.setProperty('clip-path', 'none', 'important');
     });
-  }, { threshold: 0.3 });
-
-  // Observe clip and blur reveals
-  document.querySelectorAll('.reveal-clip, .reveal-blur').forEach(function(el) {
-    revealObserver.observe(el);
-  });
-
-  // Split text for headings
-  function splitTextForReveal() {
-    document.querySelectorAll('.reveal-text').forEach(function(element) {
-      if (element.dataset.split) return; // Already split
-      const text = element.textContent;
-      element.innerHTML = '';
-      element.dataset.split = 'true';
-
-      text.split('').forEach(function(char, index) {
-        const span = document.createElement('span');
-        span.textContent = char === ' ' ? '\u00A0' : char;
-        span.style.transitionDelay = (index * 0.03) + 's';
-        element.appendChild(span);
-      });
-
-      revealObserver.observe(element);
-    });
+    console.log('ClipReveals: all elements shown');
   }
 
-  // Run after DOM ready
+  // Ждём DOM ready и показываем элементы
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', splitTextForReveal);
+    document.addEventListener('DOMContentLoaded', showAllElements);
   } else {
-    splitTextForReveal();
+    showAllElements();
   }
 })();
