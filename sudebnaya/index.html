@@ -261,17 +261,31 @@
             <h2 class="sudeb-cta__title">Обсудить дело</h2>
             <p class="sudeb-cta__desc">Пришлите документ + телефон — бесплатно оценим материалы и подготовим ходатайство</p>
           </div>
-          <form class="sudeb-cta__form" action="#" method="POST">
+          <form class="sudeb-cta__form" action="#" method="POST" novalidate>
             <div class="sudeb-cta__fields">
-              <input type="text" name="name" placeholder="Ваше имя" required>
-              <input type="tel" name="phone" placeholder="Телефон" required>
-              <input type="text" name="document" placeholder="Ссылка на документ или описание">
+              <div class="sudeb-cta__field">
+                <label for="sudeb-name" class="sr-only">Ваше имя</label>
+                <input id="sudeb-name" type="text" name="name" placeholder="Ваше имя" required autocomplete="name" aria-required="true">
+              </div>
+              <div class="sudeb-cta__field">
+                <label for="sudeb-phone" class="sr-only">Телефон</label>
+                <input id="sudeb-phone" type="tel" name="phone" placeholder="Телефон" required autocomplete="tel" aria-required="true">
+              </div>
+              <div class="sudeb-cta__field">
+                <label for="sudeb-document" class="sr-only">Документ</label>
+                <input id="sudeb-document" type="text" name="document" placeholder="Ссылка на документ или описание" autocomplete="off">
+              </div>
             </div>
-            <textarea name="question" placeholder="Ваш вопрос" rows="4"></textarea>
-            <label class="form__label">
-              <input type="checkbox" name="agree" required>
-              <span>Я согласен на обработку персональных данных</span>
-            </label>
+            <div class="sudeb-cta__field">
+              <label for="sudeb-question" class="sr-only">Ваш вопрос</label>
+              <textarea id="sudeb-question" name="question" placeholder="Ваш вопрос" rows="4"></textarea>
+            </div>
+            <div class="sudeb-cta__field">
+              <label class="form__label">
+                <input id="sudeb-agree" type="checkbox" name="agree" required aria-required="true">
+                <span>Я согласен на обработку персональных данных *</span>
+              </label>
+            </div>
             <button type="submit" class="btn btn--primary sudeb-cta__btn">Отправить</button>
           </form>
           <p class="sudeb-cta__note"><a href="https://reestr.roscert.ru/rtl/t/286" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline;">Эксперты в реестре Минюста</a></p>

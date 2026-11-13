@@ -1,10 +1,12 @@
 /**
  * 3D Card Transforms — Tilt эффект по курсору
+ * WCAG 2.3.3: Respects prefers-reduced-motion
+ * FIX: Proper cleanup on page unload to prevent memory leaks
  */
 (function() {
   'use strict';
 
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReducedMotion) return;
 
   // Only on non-touch devices
@@ -22,6 +24,11 @@
       this.bounds = null;
       this.isHovering = false;
 
+      // Bind methods to prevent memory leaks
+      this.handleEnter = this.handleEnter.bind(this);
+      this.handleMove = this.handleMove.bind(this);
+      this.handleLeave = this.handleLeave.bind(this);
+
       this.init();
     }
 
@@ -30,19 +37,19 @@
       this.el.style.transformStyle = 'preserve-3d';
 
       // Add depth layers
-      const icon = this.el.querySelector('.card__icon, .card__image, .service-card__icon');
+      var icon = this.el.querySelector('.card__icon, .card__image, .service-card__icon');
       if (icon) icon.style.transform = 'translateZ(30px)';
 
-      const title = this.el.querySelector('.card__title, .service-card__title');
+      var title = this.el.querySelector('.card__title, .service-card__title');
       if (title) title.style.transform = 'translateZ(20px)';
 
-      const desc = this.el.querySelector('.card__desc, .service-card__desc');
+      var desc = this.el.querySelector('.card__desc, .service-card__desc');
       if (desc) desc.style.transform = 'translateZ(10px)';
 
       // Events
-      this.el.addEventListener('mouseenter', this.handleEnter.bind(this));
-      this.el.addEventListener('mousemove', this.handleMove.bind(this));
-      this.el.addEventListener('mouseleave', this.handleLeave.bind(this));
+      this.el.addEventListener('mouseenter', this.handleEnter);
+      this.el.addEventListener('mousemove', this.handleMove);
+      this.el.addEventListener('mouseleave', this.handleLeave);
     }
 
     handleEnter() {
@@ -56,13 +63,13 @@
     handleMove(e) {
       if (!this.isHovering || !this.bounds) return;
 
-      const mouseX = e.clientX - this.bounds.left;
-      const mouseY = e.clientY - this.bounds.top;
-      const centerX = this.bounds.width / 2;
-      const centerY = this.bounds.height / 2;
+      var mouseX = e.clientX - this.bounds.left;
+      var mouseY = e.clientY - this.bounds.top;
+      var centerX = this.bounds.width / 2;
+      var centerY = this.bounds.height / 2;
 
-      const rotateX = ((mouseY - centerY) / centerY) * -this.maxTilt;
-      const rotateY = ((mouseX - centerX) / centerX) * this.maxTilt;
+      var rotateX = ((mouseY - centerY) / centerY) * -this.maxTilt;
+      var rotateY = ((mouseX - centerX) / centerX) * this.maxTilt;
 
       this.el.style.transform = 'scale(' + this.scale + ') rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
     }
@@ -73,11 +80,28 @@
       this.el.style.transform = 'scale(1) rotateX(0) rotateY(0)';
       this.el.style.boxShadow = '';
     }
+
+    // FIX: Cleanup method to prevent memory leaks
+    destroy() {
+      this.el.removeEventListener('mouseenter', this.handleEnter);
+      this.el.removeEventListener('mousemove', this.handleMove);
+      this.el.removeEventListener('mouseleave', this.handleLeave);
+    }
   }
 
   // Initialize on all cards
-  document.querySelectorAll('.service-card, .vnesud-direction, .sudeb-direction, .recz-direction, .category-card, .guarantee-card').forEach(function(card) {
-    new Card3D(card);
+  var cards = document.querySelectorAll('.service-card, .vnesud-direction, .sudeb-direction, .recz-direction, .category-card, .guarantee-card');
+  var cardInstances = [];
+
+  cards.forEach(function(card) {
+    cardInstances.push(new Card3D(card));
+  });
+
+  // FIX: Cleanup on page unload to prevent memory leaks
+  window.addEventListener('beforeunload', function() {
+    cardInstances.forEach(function(instance) {
+      instance.destroy();
+    });
   });
 
   console.log('Motion: 3D cards initialized');

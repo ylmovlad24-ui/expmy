@@ -2,55 +2,67 @@
   <div class="container header__inner">
     <a href="/" class="header__logo">Объектив-Эксперт</a>
 
-    <nav class="header__nav">
+    <nav class="header__nav" aria-label="Основная навигация" role="navigation">
       <a href="/" class="header__link">Главная</a>
 
       <!-- Выпадающее в 3 группы -->
       <div class="header__dropdown">
-        <a href="#" class="header__link header__dropdown-toggle">Экспертизы</a>
-        <ul class="header__dropdown-menu">
-          <li class="header__dropdown-section">Виды экспертиз</li>
-          <li class="header__dropdown-item"><a href="/avtotehnicheskaya/">Автотехническая</a></li>
-          <li class="header__dropdown-item"><a href="/avtotovarovedcheskaya/">Автотовароведческая</a></li>
-          <li class="header__dropdown-item"><a href="/uzly-i-agregaty/">Узлы и агрегаты</a></li>
-          <li class="header__dropdown-item"><a href="/tovarovedcheskaya-b2b/">Товароведческая B2B</a></li>
+        <button class="header__link header__dropdown-toggle" 
+                aria-expanded="false" 
+                aria-haspopup="true" 
+                aria-controls="dropdown-expertizy"
+                aria-label="Экспертизы">
+          Экспертизы
+        </button>
+        <ul id="dropdown-expertizy" class="header__dropdown-menu" role="menu">
+          <li class="header__dropdown-section" role="none">Виды экспертиз</li>
+          <li class="header__dropdown-item" role="none"><a href="/avtotehnicheskaya/" role="menuitem">Автотехническая</a></li>
+          <li class="header__dropdown-item" role="none"><a href="/avtotovarovedcheskaya/" role="menuitem">Автотовароведческая</a></li>
+          <li class="header__dropdown-item" role="none"><a href="/uzly-i-agregaty/" role="menuitem">Узлы и агрегаты</a></li>
+          <li class="header__dropdown-item" role="none"><a href="/tovarovedcheskaya-b2b/" role="menuitem">Товароведческая B2B</a></li>
           <li class="header__dropdown-divider"></li>
-          <li class="header__dropdown-section">Автотехническая</li>
-          <li class="header__dropdown-item"><a href="/avtotehnicheskaya/obstoyatelstva-dtp/">Обстоятельства ДТП</a></li>
-          <li class="header__dropdown-item"><a href="/avtotehnicheskaya/tekhnicheskoe-sostoyanie/">Техническое состояние ТС</a></li>
-          <li class="header__dropdown-item"><a href="/avtotehnicheskaya/sledy/">Следы на ТС и месте ДТП</a></li>
-          <li class="header__dropdown-item"><a href="/avtotehnicheskaya/doroga/">Техническое состояние дороги</a></li>
+          <li class="header__dropdown-section" role="none">Автотехническая</li>
+          <li class="header__dropdown-item" role="none"><a href="/avtotehnicheskaya/obstoyatelstva-dtp/" role="menuitem">Обстоятельства ДТП</a></li>
+          <li class="header__dropdown-item" role="none"><a href="/avtotehnicheskaya/tekhnicheskoe-sostoyanie/" role="menuitem">Техническое состояние ТС</a></li>
+          <li class="header__dropdown-item" role="none"><a href="/avtotehnicheskaya/sledy/" role="menuitem">Следы на ТС и месте ДТП</a></li>
+          <li class="header__dropdown-item" role="none"><a href="/avtotehnicheskaya/doroga/" role="menuitem">Техническое состояние дороги</a></li>
           <li class="header__dropdown-divider"></li>
-          <li class="header__dropdown-section">Автотовароведческая</li>
-          <li class="header__dropdown-item"><a href="/avtotovarovedcheskaya/osago/">В рамках ОСАГО</a></li>
-          <li class="header__dropdown-item"><a href="/avtotovarovedcheskaya/vne-ramki/">Вне рамок ОСАГО</a></li>
+          <li class="header__dropdown-section" role="none">Автотовароведческая</li>
+          <li class="header__dropdown-item" role="none"><a href="/avtotovarovedcheskaya/osago/" role="menuitem">В рамках ОСАГО</a></li>
+          <li class="header__dropdown-item" role="none"><a href="/avtotovarovedcheskaya/vne-ramki/" role="menuitem">Вне рамок ОСАГО</a></li>
           <li class="header__dropdown-divider"></li>
-          <li class="header__dropdown-section">Товароведческая B2B</li>
-          <li class="header__dropdown-item"><a href="/tovarovedcheskaya-b2b/transport/">Транспортные средства</a></li>
-          <li class="header__dropdown-item"><a href="/tovarovedcheskaya-b2b/construction/">Строительные товары</a></li>
-          <li class="header__dropdown-item"><a href="/tovarovedcheskaya-b2b/equipment/">Машины и оборудование</a></li>
+          <li class="header__dropdown-section" role="none">Товароведческая B2B</li>
+          <li class="header__dropdown-item" role="none"><a href="/tovarovedcheskaya-b2b/transport/" role="menuitem">Транспортные средства</a></li>
+          <li class="header__dropdown-item" role="none"><a href="/tovarovedcheskaya-b2b/construction/" role="menuitem">Строительные товары</a></li>
+          <li class="header__dropdown-item" role="none"><a href="/tovarovedcheskaya-b2b/equipment/" role="menuitem">Машины и оборудование</a></li>
           <li class="header__dropdown-divider"></li>
-          <li class="header__dropdown-section">Форматы экспертиз</li>
-          <li class="header__dropdown-item"><a href="/sudebnaya/">Судебная</a></li>
-          <li class="header__dropdown-item"><a href="/vnesudebnaya/">Внесудебная</a></li>
-          <li class="header__dropdown-item"><a href="/recenziya/">Рецензия</a></li>
+          <li class="header__dropdown-section" role="none">Форматы экспертиз</li>
+          <li class="header__dropdown-item" role="none"><a href="/sudebnaya/" role="menuitem">Судебная</a></li>
+          <li class="header__dropdown-item" role="none"><a href="/vnesudebnaya/" role="menuitem">Внесудебная</a></li>
+          <li class="header__dropdown-item" role="none"><a href="/recenziya/" role="menuitem">Рецензия</a></li>
           <li class="header__dropdown-divider"></li>
-          <li class="header__dropdown-section">Ситуации</li>
-          <li class="header__dropdown-item"><a href="/situations/dtp/">ДТП</a></li>
-          <li class="header__dropdown-item"><a href="/situations/osago/">ОСАГО</a></li>
-          <li class="header__dropdown-item"><a href="/situations/defekt/">Дефект</a></li>
-          <li class="header__dropdown-item"><a href="/situations/postavka/">Поставка</a></li>
+          <li class="header__dropdown-section" role="none">Ситуации</li>
+          <li class="header__dropdown-item" role="none"><a href="/situations/dtp/" role="menuitem">ДТП</a></li>
+          <li class="header__dropdown-item" role="none"><a href="/situations/osago/" role="menuitem">ОСАГО</a></li>
+          <li class="header__dropdown-item" role="none"><a href="/situations/defekt/" role="menuitem">Дефект</a></li>
+          <li class="header__dropdown-item" role="none"><a href="/situations/postavka/" role="menuitem">Поставка</a></li>
         </ul>
       </div>
 
       <!-- B2B -->
       <div class="header__dropdown">
-        <a href="#" class="header__link header__dropdown-toggle">B2B</a>
-        <ul class="header__dropdown-menu">
-          <li class="header__dropdown-item"><a href="/recenzii-dlya-yuristov/">Рецензия для юристов</a></li>
-          <li class="header__dropdown-item"><a href="/dosudebnye-dlya-yurfirmy/">Досудебные для ЮР</a></li>
-          <li class="header__dropdown-divider"></li>
-          <li class="header__dropdown-item"><a href="/partners/">Партнёрам</a></li>
+        <button class="header__link header__dropdown-toggle" 
+                aria-expanded="false" 
+                aria-haspopup="true" 
+                aria-controls="dropdown-b2b"
+                aria-label="B2B">
+          B2B
+        </button>
+        <ul id="dropdown-b2b" class="header__dropdown-menu" role="menu">
+          <li class="header__dropdown-item" role="none"><a href="/recenzii-dlya-yuristov/" role="menuitem">Рецензия для юристов</a></li>
+          <li class="header__dropdown-item" role="none"><a href="/dosudebnye-dlya-yurfirmy/" role="menuitem">Досудебные для ЮР</a></li>
+          <li class="header__dropdown-divider" role="separator"></li>
+          <li class="header__dropdown-item" role="none"><a href="/partners/" role="menuitem">Партнёрам</a></li>
         </ul>
       </div>
 
@@ -82,10 +94,13 @@
 
       <!-- Mobile dropdown: Экспертизы -->
       <div class="header__menu-dropdown">
-        <button class="header__menu-dropdown-toggle">
+        <button class="header__menu-dropdown-toggle" 
+                aria-expanded="false" 
+                aria-controls="mobile-dropdown-expertizy"
+                aria-label="Открыть подменю Экспертизы">
           Экспертизы
         </button>
-        <div class="header__menu-dropdown-menu">
+        <div id="mobile-dropdown-expertizy" class="header__menu-dropdown-menu">
           <div class="header__menu-dropdown-section">Виды экспертиз</div>
           <div class="header__menu-dropdown-item"><a href="/avtotehnicheskaya/">Автотехническая</a></div>
           <div class="header__menu-dropdown-item"><a href="/avtotovarovedcheskaya/">Автотовароведческая</a></div>
@@ -94,10 +109,13 @@
           <div class="header__menu-dropdown-divider"></div>
           <!-- Mobile dropdown: Автотехническая -->
           <div class="header__menu-dropdown">
-            <button class="header__menu-dropdown-toggle">
+            <button class="header__menu-dropdown-toggle" 
+                    aria-expanded="false" 
+                    aria-controls="mobile-dropdown-avtoteh"
+                    aria-label="Открыть подменю Автотехническая">
               Автотехническая
             </button>
-            <div class="header__menu-dropdown-menu">
+            <div id="mobile-dropdown-avtoteh" class="header__menu-dropdown-menu">
               <div class="header__menu-dropdown-item"><a href="/avtotehnicheskaya/obstoyatelstva-dtp/">Обстоятельства ДТП</a></div>
               <div class="header__menu-dropdown-item"><a href="/avtotehnicheskaya/tekhnicheskoe-sostoyanie/">Техническое состояние ТС</a></div>
               <div class="header__menu-dropdown-item"><a href="/avtotehnicheskaya/sledy/">Следы на ТС и месте ДТП</a></div>
@@ -106,20 +124,26 @@
           </div>
           <!-- Mobile dropdown: Автотовароведческая -->
           <div class="header__menu-dropdown">
-            <button class="header__menu-dropdown-toggle">
+            <button class="header__menu-dropdown-toggle" 
+                    aria-expanded="false" 
+                    aria-controls="mobile-dropdown-avtotov"
+                    aria-label="Открыть подменю Автотовароведческая">
               Автотовароведческая
             </button>
-            <div class="header__menu-dropdown-menu">
+            <div id="mobile-dropdown-avtotov" class="header__menu-dropdown-menu">
               <div class="header__menu-dropdown-item"><a href="/avtotovarovedcheskaya/osago/">В рамках ОСАГО</a></div>
               <div class="header__menu-dropdown-item"><a href="/avtotovarovedcheskaya/vne-ramki/">Вне рамок ОСАГО</a></div>
             </div>
           </div>
           <!-- Mobile dropdown: Товароведческая B2B -->
           <div class="header__menu-dropdown">
-            <button class="header__menu-dropdown-toggle">
+            <button class="header__menu-dropdown-toggle" 
+                    aria-expanded="false" 
+                    aria-controls="mobile-dropdown-b2b"
+                    aria-label="Открыть подменю Товароведческая B2B">
               Товароведческая B2B
             </button>
-            <div class="header__menu-dropdown-menu">
+            <div id="mobile-dropdown-b2b" class="header__menu-dropdown-menu">
               <div class="header__menu-dropdown-item"><a href="/tovarovedcheskaya-b2b/transport/">Транспортные средства</a></div>
               <div class="header__menu-dropdown-item"><a href="/tovarovedcheskaya-b2b/construction/">Строительные товары</a></div>
               <div class="header__menu-dropdown-item"><a href="/tovarovedcheskaya-b2b/equipment/">Машины и оборудование</a></div>
@@ -141,10 +165,13 @@
 
       <!-- Mobile dropdown: B2B -->
       <div class="header__menu-dropdown">
-        <button class="header__menu-dropdown-toggle">
+        <button class="header__menu-dropdown-toggle" 
+                aria-expanded="false" 
+                aria-controls="mobile-dropdown-b2b-main"
+                aria-label="Открыть подменю B2B">
           B2B
         </button>
-        <div class="header__menu-dropdown-menu">
+        <div id="mobile-dropdown-b2b-main" class="header__menu-dropdown-menu">
           <div class="header__menu-dropdown-item"><a href="/recenzii-dlya-yuristov/">Рецензия для юристов</a></div>
           <div class="header__menu-dropdown-item"><a href="/dosudebnye-dlya-yurfirmy/">Досудебные для ЮР</a></div>
           <div class="header__menu-dropdown-divider"></div>

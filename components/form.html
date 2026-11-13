@@ -1,14 +1,31 @@
-﻿<section class="request-form" id="form-root">
+﻿<section class="request-form" id="form-root" aria-label="Форма заявки">
   <div class="request-form__container">
     <h2 class="section-title">Оставить заявку</h2>
-    <form class="form" action="#" method="POST">
-      <input type="text" class="form__input" name="name" placeholder="Ваше имя" required>
-      <input type="tel" class="form__input" name="phone" placeholder="Телефон" required>
-      <textarea class="form__textarea" name="message" placeholder="Опишите вашу ситуацию..." rows="4"></textarea>
-      <label class="form__label">
-        <input type="checkbox" name="agree" required>
-        <span>Я согласен на обработку персональных данных</span>
-      </label>
+    <form class="form" action="#" method="POST" novalidate>
+      <div class="form-field">
+        <label for="form-name" class="form-field__label">
+          <span>Ваше имя *</span>
+          <input id="form-name" class="form__input" name="name" placeholder="Ваше имя" required autocomplete="name" aria-required="true">
+        </label>
+      </div>
+      <div class="form-field">
+        <label for="form-phone" class="form-field__label">
+          <span>Телефон *</span>
+          <input id="form-phone" class="form__input" name="phone" placeholder="Телефон" required autocomplete="tel" aria-required="true">
+        </label>
+      </div>
+      <div class="form-field">
+        <label for="form-message" class="form-field__label">
+          <span>Опишите вашу ситуацию</span>
+          <textarea id="form-message" class="form__textarea" name="message" placeholder="Опишите вашу ситуацию..." rows="4"></textarea>
+        </label>
+      </div>
+      <div class="form-field">
+        <label for="form-agree" class="form-field__label">
+          <input id="form-agree" type="checkbox" name="agree" required aria-required="true">
+          <span>Я согласен на обработку персональных данных *</span>
+        </label>
+      </div>
       <button type="submit" class="form__submit">Отправить заявку</button>
     </form>
   </div>

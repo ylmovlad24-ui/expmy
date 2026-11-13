@@ -61,6 +61,21 @@
   box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.15);
 }
 
+/* Error message */
+.form-error {
+  color: var(--danger, #dc3545);
+  font-size: var(--fs-xs, 0.875rem);
+  margin-top: 4px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Checkbox error state */
+.form-field__label input[type="checkbox"].error {
+  outline: 2px solid var(--danger, #dc3545);
+  outline-offset: 2px;
+}
+
 /* Success state */
 .form__input.success,
 .form__select.success,

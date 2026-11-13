@@ -188,3 +188,60 @@
   --grid-gap-sm: var(--space-4);
   --grid-gap-lg: var(--space-8);
 }
+
+/* ==========================================
+   DARK MODE SUPPORT (WCAG 2.2 AA)
+   ========================================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1a2e;
+    --bg-light: #16213e;
+    --text: #e0e0e0;
+    --text-light: #a0a0a0;
+    --border: #2a2a4a;
+    --accent: #f39c12;
+    --accent-hover: #e67e22;
+    --primary: #3498db;
+    --primary-dark: #2980b9;
+  }
+
+  .header {
+    background: #1a1a2e;
+    border-bottom-color: #2a2a4a;
+  }
+
+  .header__link {
+    color: #a0a0a0;
+  }
+
+  .header__link:hover {
+    color: #f39c12;
+  }
+
+  .section--light {
+    background: #16213e;
+  }
+
+  .card, .service-card, .situation-card, .category-card {
+    background: #1a1a2e;
+    border-color: #2a2a4a;
+  }
+
+  .form__input, .form__select, .form__textarea {
+    background: #16213e;
+    color: #e0e0e0;
+    border-color: #2a2a4a;
+  }
+
+  .footer {
+    background: #0f0f23;
+  }
+
+  .footer__link {
+    color: #a0a0a0;
+  }
+
+  .footer__link:hover {
+    color: #f39c12;
+  }
+}

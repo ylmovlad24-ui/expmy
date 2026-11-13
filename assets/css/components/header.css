@@ -314,6 +314,11 @@
   display: block;
 }
 
+/* Ensure nested dropdowns also work */
+.header__menu-dropdown.open > .header__menu-dropdown-menu {
+  display: block;
+}
+
 .header__menu-dropdown-item a {
   display: block;
   padding: 12px 24px 12px 40px;

@@ -5,7 +5,6 @@
 (function() {
   'use strict';
 
-  // Определяем базовый путь в зависимости от глубины страницы
   function getBasePath() {
     var path = window.location.pathname;
     if (path.indexOf('/pages/services/') !== -1) return '../../../';
@@ -39,7 +38,6 @@
     return '';
   }
 
-  // Загрузка HTML-компонента
   function loadComponent(filePath, containerId) {
     var basePath = getBasePath();
     var url = basePath + 'components/' + filePath;
@@ -53,12 +51,9 @@
         var container = document.getElementById(containerId);
         if (container) {
           container.innerHTML = html;
-          // Адаптируем абсолютные пути для GitHub Pages
           adaptPathsForGitHubPages(container);
-          // Инициализируем обработчики после вставки
           if (filePath === 'header.html') {
             initHeader();
-            // Инициализируем бургер после загрузки header
             if (typeof BurgerMenu !== 'undefined' && BurgerMenu.init) {
               setTimeout(function() { BurgerMenu.init(); }, 100);
             }
@@ -70,14 +65,10 @@
       });
   }
 
-  // Адаптируем абсолютные пути для GitHub Pages
   function adaptPathsForGitHubPages(container) {
     var host = window.location.host;
-    // Проверяем, что это GitHub Pages (не основной домен)
     if (host.indexOf('github.io') === -1) return;
     
-    // URL GitHub Pages: https://username.github.io/repo-name/...
-    // pathname: /repo-name/... => split => ['', 'repo-name', ...]
     var pathParts = window.location.pathname.split('/');
     var repoName = pathParts[1];
     if (!repoName) return;
@@ -86,12 +77,10 @@
     var allLinks = container.querySelectorAll('a[href]');
     allLinks.forEach(function(link) {
       var href = link.getAttribute('href');
-      // Пропускаем tel:, mailto:, #, http(s)://, javascript:
       if (!href || href.startsWith('tel:') || href.startsWith('mailto:') || 
           href.startsWith('#') || href.startsWith('http://') || 
           href.startsWith('https://') || href.startsWith('javascript:')) return;
       
-      // Если ссылка абсолютная (начинается с /), добавляем префикс репо
       if (href.startsWith('/') && !href.startsWith('//')) {
         var newHref = prefix + href.substring(1);
         link.setAttribute('href', newHref);
@@ -99,27 +88,98 @@
     });
   }
 
-  // Инициализация шапки (только дропдауны)
-  // Бургер-меню обрабатывается в burger.js (dedicated module)
   function initHeader() {
     var header = document.querySelector('.header');
     if (!header) return;
 
-    // Мобильные дропдауны
+    // Desktop dropdowns — click to toggle
+    var desktopToggles = header.querySelectorAll('.header__dropdown-toggle');
+    desktopToggles.forEach(function(toggle) {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var dropdown = this.closest('.header__dropdown');
+        if (!dropdown) return;
+        var menu = dropdown.querySelector('.header__dropdown-menu');
+        var isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+        // Close all other dropdowns
+        header.querySelectorAll('.header__dropdown').forEach(function(d) {
+          if (d !== dropdown) {
+            var btn = d.querySelector('.header__dropdown-toggle');
+            var m = d.querySelector('.header__dropdown-menu');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+            if (m) m.classList.remove('open');
+          }
+        });
+
+        // Toggle current
+        this.setAttribute('aria-expanded', String(!isExpanded));
+        menu.classList.toggle('open', !isExpanded);
+      });
+
+      // Keyboard support
+      toggle.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+        if (e.key === 'Escape') {
+          var dropdown = this.closest('.header__dropdown');
+          var menu = dropdown.querySelector('.header__dropdown-menu');
+          this.setAttribute('aria-expanded', 'false');
+          menu.classList.remove('open');
+          this.blur();
+        }
+      });
+    });
+
+    // Close desktop dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!header.contains(e.target)) {
+        header.querySelectorAll('.header__dropdown').forEach(function(d) {
+          var btn = d.querySelector('.header__dropdown-toggle');
+          var m = d.querySelector('.header__dropdown-menu');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+          if (m) m.classList.remove('open');
+        });
+      }
+    });
+
+    // Mobile dropdowns
     var mobileToggles = header.querySelectorAll('.header__menu-dropdown-toggle');
     mobileToggles.forEach(function(toggle) {
       toggle.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        var dropdown = this.parentElement;
-        if (dropdown) {
-          dropdown.classList.toggle('open');
+        var dropdown = this.closest('.header__menu-dropdown');
+        if (!dropdown) return;
+        var menu = dropdown.querySelector('.header__menu-dropdown-menu');
+        var isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+        this.setAttribute('aria-expanded', String(!isExpanded));
+        dropdown.classList.toggle('open', !isExpanded);
+        if (menu) menu.style.display = !isExpanded ? 'block' : 'none';
+      });
+
+      // Keyboard support
+      toggle.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+        if (e.key === 'Escape') {
+          var dropdown = this.closest('.header__menu-dropdown');
+          var menu = dropdown.querySelector('.header__menu-dropdown-menu');
+          this.setAttribute('aria-expanded', 'false');
+          dropdown.classList.remove('open');
+          if (menu) menu.style.display = 'none';
+          this.blur();
         }
       });
     });
   }
 
-  // Загружаем header и footer при готовности DOM
   document.addEventListener('DOMContentLoaded', function() {
     loadComponent('header.html', 'header-container');
     loadComponent('footer.html', 'footer-container');

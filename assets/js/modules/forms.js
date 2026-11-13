@@ -1,6 +1,8 @@
 /**
  * Form submission module
  * Unified form handler with validation and toast notifications
+ * WCAG 3.3.1: Error identification with aria-invalid, aria-describedby
+ * WCAG 4.1.3: Status messages via aria-live regions
  */
 var FormHandler = (function() {
   'use strict';
@@ -16,6 +18,17 @@ var FormHandler = (function() {
     toast.style.background = type === 'error' ? 'var(--danger, #dc3545)' : 'var(--success, #28a745)';
     document.body.appendChild(toast);
 
+    // Announce to screen readers via aria-live region
+    var liveRegionId = type === 'error' ? 'aria-live-assertive' : 'aria-live-region';
+    var liveRegion = document.getElementById(liveRegionId);
+    if (liveRegion) {
+      liveRegion.textContent = message;
+      // Clear after toast disappears
+      setTimeout(function() {
+        liveRegion.textContent = '';
+      }, 5000);
+    }
+
     setTimeout(function() {
       toast.remove();
     }, 4000);
@@ -25,10 +38,90 @@ var FormHandler = (function() {
     return /^\+?[0-9\s\-]{10,18}$/.test(phone.trim());
   }
 
+  // WCAG 3.3.1: Show error with aria-invalid and aria-describedby
+  function showError(input, message) {
+    // Remove previous error
+    removeError(input);
+
+    input.classList.add('error');
+    input.setAttribute('aria-invalid', 'true');
+
+    var errorId = input.id + '-error';
+    var errorEl = document.getElementById(errorId);
+    if (!errorEl) {
+      errorEl = document.createElement('span');
+      errorEl.id = errorId;
+      errorEl.className = 'form-error';
+      errorEl.setAttribute('role', 'alert');
+      errorEl.setAttribute('aria-live', 'polite');
+      // Insert after input
+      input.parentNode.appendChild(errorEl);
+    }
+    errorEl.textContent = message;
+    input.setAttribute('aria-describedby', errorId);
+  }
+
+  // Remove error state
+  function removeError(input) {
+    input.classList.remove('error');
+    input.removeAttribute('aria-invalid');
+    input.removeAttribute('aria-describedby');
+
+    var errorEl = input.querySelector('[role="alert"]') ||
+                  input.parentNode.querySelector('.form-error');
+    if (errorEl) {
+      errorEl.remove();
+    }
+  }
+
+  // Validate all required fields
+  function validateForm(formEl) {
+    var isValid = true;
+
+    // Validate name
+    var nameInput = formEl.querySelector('input[name="name"]');
+    if (nameInput && nameInput.hasAttribute('required')) {
+      if (!nameInput.value.trim()) {
+        showError(nameInput, 'Пожалуйста, введите ваше имя');
+        isValid = false;
+      } else {
+        removeError(nameInput);
+      }
+    }
+
+    // Validate phone
+    var phoneInput = formEl.querySelector('input[name="phone"]');
+    if (phoneInput && phoneInput.hasAttribute('required')) {
+      if (!phoneInput.value.trim()) {
+        showError(phoneInput, 'Пожалуйста, введите номер телефона');
+        isValid = false;
+      } else if (!validatePhone(phoneInput.value)) {
+        showError(phoneInput, 'Пожалуйста, введите корректный номер телефона');
+        isValid = false;
+      } else {
+        removeError(phoneInput);
+      }
+    }
+
+    // Validate checkbox
+    var agreeInput = formEl.querySelector('input[name="agree"]');
+    if (agreeInput && agreeInput.hasAttribute('required')) {
+      if (!agreeInput.checked) {
+        showError(agreeInput, 'Необходимо дать согласие на обработку данных');
+        isValid = false;
+      } else {
+        removeError(agreeInput);
+      }
+    }
+
+    return isValid;
+  }
+
   function sendToTelegram(data) {
-    // КОНФИГУРАЦИЯ — замените на свои данные
-    var BOT_TOKEN = '7940926360:AAE43PSqLXyREqkpF0O6_TvI8hH7ovXlN60';
-    var CHAT_ID = '-4803799516';
+    // ⚠️ БЕЗОПАСНОСТЬ: Отправка через серверный прокси
+    // Никогда не храните BOT_TOKEN в клиентском JS!
+    // Замените URL на ваш бэкенд (PHP/Node.js/Cloudflare Workers)
+    var API_ENDPOINT = '/api/send-form.php'; // Серверный endpoint
 
     // Формируем сообщение
     var message = '📩 <b>Новая заявка с сайта</b>\n\n';
@@ -42,25 +135,24 @@ var FormHandler = (function() {
     var now = new Date();
     message += '\n📅 ' + now.toLocaleString('ru-RU');
 
-    var url = 'https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage';
-
-    return fetch(url, {
+    // Отправка через серверный прокси (безопасно!)
+    return fetch(API_ENDPOINT, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        chat_id: CHAT_ID,
-        text: message,
-        parse_mode: 'HTML'
+        message: message
       })
     })
     .then(function(response) {
       if (!response.ok) {
-        console.error('Telegram error:', response.status, response.statusText);
+        console.error('Server error:', response.status, response.statusText);
       }
       return response;
     })
     .catch(function(error) {
-      console.error('Отправка в Telegram не удалась:', error);
+      console.error('Отправка не удалась:', error);
+      // Fallback: показать пользователю
+      showToast('Ошибка отправки. Позвоните нам: +7 (905) 983-09-69', 'error');
     });
   }
 
@@ -68,21 +160,25 @@ var FormHandler = (function() {
     formEl.addEventListener('submit', function(e) {
       e.preventDefault();
 
+      // Clear all previous errors
+      formEl.querySelectorAll('.error').forEach(function(el) {
+        removeError(el);
+      });
+
+      // Validate form
+      if (!validateForm(formEl)) {
+        showToast('Пожалуйста, заполните все обязательные поля', 'error');
+        // Focus first error field
+        var firstError = formEl.querySelector('[aria-invalid="true"]');
+        if (firstError) firstError.focus();
+        return;
+      }
+
       var data = {};
       var formData = new FormData(formEl);
       formData.forEach(function(value, key) {
         data[key] = value;
       });
-
-      // Phone validation
-      var phone = formEl.querySelector('input[name="phone"]');
-      if (phone) {
-        data.phone = phone.value;
-        if (!validatePhone(phone.value)) {
-          showToast('Пожалуйста, введите корректный номер телефона', 'error');
-          return;
-        }
-      }
 
       // Materials for contact form
       if (!isCalculator) {
@@ -103,10 +199,15 @@ var FormHandler = (function() {
       }
 
       // Отправка на Telegram
-      var sendSuccess = sendToTelegram(data);
+      sendToTelegram(data);
 
       showToast('Заявка отправлена! Мы перезвоним вам в течение 15 минут.', 'success');
       formEl.reset();
+
+      // Clear all aria states after reset
+      formEl.querySelectorAll('[aria-invalid]').forEach(function(el) {
+        el.removeAttribute('aria-invalid');
+      });
     });
   }
 
@@ -114,6 +215,9 @@ var FormHandler = (function() {
     submitForm: submitForm,
     validatePhone: validatePhone,
     showToast: showToast,
-    sendToTelegram: sendToTelegram
+    sendToTelegram: sendToTelegram,
+    showError: showError,
+    removeError: removeError,
+    validateForm: validateForm
   };
 })();
