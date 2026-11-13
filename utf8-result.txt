@@ -1,0 +1,8 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link rel="canonical" href="https://objektiv-expert.ru/avtotehnicheskaya/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Автотехническая экспертиза — Объектив-Эксперт</title>
+  <meta name="description" content="Судебная автотехническая экспертиза: обстоятельства ДТП, техническое сос
