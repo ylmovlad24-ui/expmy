@@ -212,3 +212,143 @@
     width: 100%;
   }
 }
+
+/* === Mobile Landscape Optimizations === */
+/* Оптимизация отображения при повороте устройства в ландшафтном режиме */
+@media (max-width: 1024px) and (orientation: landscape) {
+  /* Уменьшаем padding для экономии вертикального пространства */
+  .hero {
+    padding: 60px 0 40px;
+  }
+
+  .hero__title {
+    font-size: 1.75rem;
+    margin-bottom: 16px;
+  }
+
+  .hero__subtitle {
+    font-size: 0.9375rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-conditions {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .hero-conditions__item {
+    padding: 16px 12px;
+  }
+
+  .hero-conditions__title {
+    font-size: 0.875rem;
+  }
+
+  .hero-conditions__desc {
+    font-size: 0.75rem;
+  }
+
+  .section {
+    padding: 32px 0;
+  }
+
+  .section__title {
+    font-size: 1.375rem;
+    margin-bottom: 24px;
+  }
+
+  /* Сетки — сохраняем читаемость в узком вертикальном пространстве */
+  .situation-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .situation-card {
+    padding: 16px;
+  }
+
+  .situation-card__title {
+    font-size: 0.9375rem;
+  }
+
+  .situation-card__desc {
+    font-size: 0.8125rem;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .category-card {
+    padding: 16px;
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+  }
+
+  .step-card {
+    padding: 16px 10px;
+  }
+
+  .step-card__number {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .step-card__title {
+    font-size: 0.8125rem;
+  }
+
+  .step-card__desc {
+    font-size: 0.6875rem;
+  }
+
+  .experts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .expert-card {
+    padding: 16px;
+  }
+
+  /* FAQ — компактный режим */
+  .faq-main-grid {
+    gap: 12px;
+  }
+
+  .faq-main-item {
+    padding: 16px;
+  }
+
+  .faq-main-item__question {
+    font-size: 0.9375rem;
+  }
+
+  .faq-main-item__answer {
+    font-size: 0.8125rem;
+    padding-left: 24px;
+  }
+
+  /* Контакты — компактный режим */
+  .contacts-grid {
+    gap: 24px;
+  }
+
+  /* Скрываем анимации появления для производительности в landscape */
+  .reveal-blur,
+  .reveal-clip {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Marquee — ускоряем при необходимости */
+  .marquee {
+    --marquee-duration: 20s;
+  }
+}

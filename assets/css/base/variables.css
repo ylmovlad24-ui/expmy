@@ -34,8 +34,6 @@
   --white-40: rgba(255, 255, 255, 0.4);
 
   /* === Semantic colors === */
-  --success: #38a169;
-  --danger: #e53e3e;
   --purple: #6c5ce7;
   --purple-dark: #5b4cdb;
   --purple-bg: rgba(108, 92, 231, 0.08);
@@ -269,5 +267,73 @@
 
   .footer__link:hover {
     color: #f39c12;
+  }
+}
+
+/* === Mobile Landscape Override === */
+/* Принудительная светлая тема для мобильных устройств в ландшафтной ориентации.
+   Предотвращает некорректное срабатывание prefers-color-scheme при повороте устройства. */
+@media (max-width: 1024px) and (orientation: landscape) {
+  :root {
+    --bg: #ffffff;
+    --bg-light: #f8f9fa;
+    --text: #333333;
+    --text-light: #666666;
+    --border: #e0e4e8;
+    --primary: #2a5b9a;
+    --primary-dark: #1a4070;
+    --accent: #e67e22;
+    --accent-hover: #cf6d15;
+    --dark-bg: #2a5b9a;
+    --dark-bg-alt: #1a4070;
+  }
+
+  .header {
+    background: #ffffff;
+    border-bottom-color: #e0e4e8;
+  }
+
+  .header__link {
+    color: #666666;
+  }
+
+  .header__link:hover {
+    color: #e67e22;
+  }
+
+  .section--light {
+    background: #f8f9fa;
+  }
+
+  .card,
+  .service-card,
+  .situation-card,
+  .category-card,
+  .step-card,
+  .expert-card,
+  .faq-main-item,
+  .contact-form-wrap {
+    background: #ffffff;
+    border-color: #e0e4e8;
+  }
+
+  .form__input,
+  .form__select,
+  .form__textarea {
+    background: #ffffff;
+    color: #333333;
+    border-color: #e0e4e8;
+  }
+
+  .footer {
+    background: #ffffff;
+  }
+
+  .footer__link {
+    color: #666666;
+  }
+
+  .footer__link:hover {
+    color: #e67e22;
   }
 }
