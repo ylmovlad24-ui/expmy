@@ -8,13 +8,13 @@
   display: inline-block;
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   margin-bottom: 16px;
   transition: color 0.2s;
 }
 
 .contacts__phone:hover {
-  color: var(--accent-hover);
+  color: var(--accent-hover, #cf6d15);
 }
 
 .contacts__messengers {
@@ -39,7 +39,7 @@
 
 .contact-item__label {
   font-size: 0.875rem;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
 }
 
 .contact-item__value {
@@ -49,8 +49,8 @@
 
 .contacts-map {
   padding: 48px;
-  background: var(--bg-light);
+  background: var(--bg-light, #f8f9fa);
   border-radius: var(--radius);
   text-align: center;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
 }

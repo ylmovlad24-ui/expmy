@@ -10,7 +10,7 @@
   left: 16px;
   top: 16px;
   font-size: 1rem;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   pointer-events: none;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform-origin: left;
@@ -21,12 +21,12 @@
 .form-field__select {
   width: 100%;
   padding: 16px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border, #e0e4e8);
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
-  color: var(--text);
-  background: var(--bg);
+  color: var(--text, #333333);
+  background: var(--bg, #ffffff);
   transition:
     border-color 0.3s ease,
     box-shadow 0.3s ease;
@@ -38,14 +38,14 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--accent);
+  background: var(--accent, #e67e22);
   transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .form-field__input:focus,
 .form-field__textarea:focus,
 .form-field__select:focus {
-  border-color: var(--accent);
+  border-color: var(--accent, #e67e22);
   box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.1);
   outline: none;
 }
@@ -57,8 +57,8 @@
   top: -10px;
   left: 12px;
   font-size: 0.75rem;
-  color: var(--accent);
-  background: var(--bg);
+  color: var(--accent, #e67e22);
+  background: var(--bg, #ffffff);
   padding: 0 4px;
 }
 

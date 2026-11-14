@@ -13,7 +13,7 @@
   padding: 24px;
   background: #fff;
   border-radius: 12px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border, #e0e4e8);
   display: flex;
   gap: 16px;
   align-items: flex-start;
@@ -35,7 +35,7 @@
 /* Description inside feature item */
 .feature-item__desc {
   font-size: 0.875rem;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   margin: 0;
 }
 
@@ -51,7 +51,7 @@
   padding: 24px;
   background: #fff;
   border-radius: 12px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border, #e0e4e8);
 }
 
 /* Title inside simple card */
@@ -69,14 +69,14 @@
   flex-direction: column;
   gap: 8px;
   font-size: 0.9375rem;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
 }
 
 /* Accent box (info/case) */
 .accent-box {
   margin-top: 32px;
   padding: 20px;
-  background: var(--accent);
+  background: var(--accent, #e67e22);
   border-radius: 12px;
   color: var(--dark);
 }
@@ -105,7 +105,7 @@
 .step-circle {
   width: 48px;
   height: 48px;
-  background: var(--accent);
+  background: var(--accent, #e67e22);
   color: var(--dark);
   border-radius: 50%;
   display: flex;
@@ -126,7 +126,7 @@
 /* Step description */
 .step-desc {
   font-size: 0.875rem;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
 }
 
 /* .cta-buttons moved to cta-about.css
@@ -134,8 +134,8 @@
 
 /* Outline button for dark backgrounds */
 .btn--outline-white {
-  border-color: var(--white);
-  color: var(--white);
+  border-color: var(--white, #ffffff);
+  color: var(--white, #ffffff);
 }
 
 /* Review section background */
@@ -155,7 +155,7 @@
 /* Badge/pill */
 .badge-pill {
   display: inline-block;
-  background: var(--accent);
+  background: var(--accent, #e67e22);
   color: var(--dark);
   padding: 6px 16px;
   border-radius: 20px;
@@ -196,7 +196,7 @@
 
 /* Review button */
 .review-btn {
-  background: var(--accent);
+  background: var(--accent, #e67e22);
   color: var(--dark);
   font-weight: 600;
   font-size: 1rem;
@@ -219,7 +219,7 @@
 
 /* Stat card number */
 .stat-card--dark .stat-card__number {
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 4px;
@@ -240,7 +240,7 @@
 
 /* Stat card price */
 .stat-card--dark .stat-card__price {
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 4px;
@@ -272,7 +272,7 @@
 /* CTA paragraph */
 .cta-paragraph {
   font-size: 1.125rem;
-  color: var(--white-75);
+  color: var(--white-75, rgba(255,255,255,0.75));
   max-width: 640px;
   margin: 0 auto 32px;
 }

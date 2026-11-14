@@ -6,37 +6,37 @@
   bottom: 24px;
   right: 24px;
   padding: 16px 24px;
-  border-radius: var(--radius-card);
-  color: var(--white);
-  font-weight: var(--fw-semibold);
+  border-radius: var(--radius-card, 8px);
+  color: var(--white, #ffffff);
+  font-weight: var(--fw-semibold, 600);
   z-index: var(--z-tooltip);
   animation: fadeIn 0.3s;
 }
 
 .toast-success {
-  background: var(--success);
+  background: var(--success, #059669);
 }
 
 .toast-error {
-  background: var(--danger);
+  background: var(--danger, #dc2626);
 }
 
 /* CTA section overrides */
 .section__title--white {
-  color: var(--white);
+  color: var(--white, #ffffff);
 }
 
 /* CTA bottom text */
 .cta-note {
   text-align: center;
-  color: var(--white-50);
-  margin-top: var(--space-4);
-  font-size: var(--fs-sm);
+  color: var(--white-50, rgba(255,255,255,0.5));
+  margin-top: var(--space-4, 16px);
+  font-size: var(--fs-sm, 0.8125rem);
 }
 
 /* Comparison subtitle */
 .section__subtitle--mb32 {
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-8, 32px);
 }
 
 /* Short steps */
@@ -81,11 +81,11 @@
    ========================================== */
 
 .btn--mt40 {
-  margin-top: var(--space-10);
+  margin-top: var(--space-10, 40px);
 }
 
 .section__subtitle--mb40 {
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--space-10, 40px);
 }
 
 /* ==========================================

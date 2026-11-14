@@ -5,19 +5,19 @@
   align-items: center;
   justify-content: center;
   padding: 14px 28px;
-  border-radius: var(--radius-card);
-  font-size: var(--fs-base);
-  font-weight: var(--fw-semibold);
+  border-radius: var(--radius-card, 8px);
+  font-size: var(--fs-base, 1rem);
+  font-weight: var(--fw-semibold, 600);
   cursor: pointer;
   border: 2px solid transparent;
   transition:
     background var(--transition-normal),
     color var(--transition-normal),
     border-color var(--transition-normal),
-    transform var(--transition-normal) var(--ease-out),
-    box-shadow var(--transition-normal) var(--ease-out);
+    transform var(--transition-normal, 0.3s) var(--ease-out),
+    box-shadow var(--transition-normal, 0.3s) var(--ease-out);
   text-align: center;
-  box-shadow: var(--shadow-button);
+  box-shadow: var(--shadow-button, 0 2px 8px rgba(230,126,34,0.3));
   position: relative;
   overflow: hidden;
 }
@@ -42,34 +42,34 @@
 
 .btn:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: var(--shadow-button-hover);
+  box-shadow: var(--shadow-button-hover, 0 8px 25px rgba(230,126,34,0.4));
 }
 
 .btn:active {
   transform: translateY(-1px) scale(0.98);
-  transition-duration: var(--transition-fast);
+  transition-duration: var(--transition-fast, 0.15s);
 }
 
 .btn--primary {
-  background: var(--accent);
-  color: var(--white);
-  border-color: var(--accent);
+  background: var(--accent, #e67e22);
+  color: var(--white, #ffffff);
+  border-color: var(--accent, #e67e22);
 }
 
 .btn--primary:hover {
-  background: var(--accent-hover);
-  border-color: var(--accent-hover);
+  background: var(--accent-hover, #cf6d15);
+  border-color: var(--accent-hover, #cf6d15);
 }
 
 .btn--outline {
   background: transparent;
-  color: var(--accent);
-  border-color: var(--accent);
+  color: var(--accent, #e67e22);
+  border-color: var(--accent, #e67e22);
 }
 
 .btn--outline:hover {
-  background: var(--accent);
-  color: var(--white);
+  background: var(--accent, #e67e22);
+  color: var(--white, #ffffff);
 }
 
 .btn--full {
@@ -77,25 +77,25 @@
 }
 
 .btn--large {
-  font-size: var(--fs-lg);
+  font-size: var(--fs-lg, 1.125rem);
   padding: 16px 32px;
 }
 
 .btn--white {
-  background: var(--white);
-  color: var(--primary);
-  font-size: var(--fs-lg);
+  background: var(--white, #ffffff);
+  color: var(--primary, #2a5b9a);
+  font-size: var(--fs-lg, 1.125rem);
   padding: 16px 32px;
-  font-weight: var(--fw-semibold);
+  font-weight: var(--fw-semibold, 600);
 }
 
 .btn--white-outline {
   background: transparent;
-  color: var(--white);
-  border: 2px solid var(--white);
-  font-size: var(--fs-lg);
+  color: var(--white, #ffffff);
+  border: 2px solid var(--white, #ffffff);
+  font-size: var(--fs-lg, 1.125rem);
   padding: 16px 32px;
-  font-weight: var(--fw-semibold);
+  font-weight: var(--fw-semibold, 600);
 }
 
 .btn--white-outline:hover {

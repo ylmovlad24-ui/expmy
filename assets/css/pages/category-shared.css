@@ -36,8 +36,8 @@
   min-height: calc(100vh - var(--header-height, 64px));
   min-height: calc(100dvh - var(--header-height, 64px));
   padding: 140px 0 64px;
-  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-bg-alt) 100%);
-  color: var(--white);
+  background: linear-gradient(135deg, var(--dark-bg, #2a5b9a) 0%, var(--dark-bg-alt, #1a4070) 100%);
+  color: var(--white, #ffffff);
   position: relative;
   overflow: hidden;
   border-bottom: none;
@@ -68,17 +68,17 @@
 .vnesud-hero__badge,
 .vnesud-hero__actions,
 .vnesud-hero__link {
-  color: var(--white) !important;
+  color: var(--white, #ffffff) !important;
 }
 
 .vnesud-hero__actions .btn--primary {
-  background: var(--accent);
-  color: var(--white);
+  background: var(--accent, #e67e22);
+  color: var(--white, #ffffff);
   border: none;
 }
 
 .vnesud-hero__actions .btn--primary:hover {
-  background: var(--accent-hover);
+  background: var(--accent-hover, #cf6d15);
 }
 
 .vnesud-hero__inner {
@@ -100,14 +100,14 @@
   font-weight: 700;
   line-height: 1.2;
   margin: 0;
-  color: var(--text);
+  color: var(--text, #333333);
 }
 
 /* Badge — без alert-стилистики */
 .vnesud-hero__badge {
   font-size: 1.0625rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   background: transparent;
   padding: 8px 0;
   border-radius: 0;
@@ -133,7 +133,7 @@
 .vnesud-hero__link {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--primary, #2a5b9a);
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-color: rgba(42, 91, 154, 0.3);
@@ -143,8 +143,8 @@
 }
 
 .vnesud-hero__link:hover {
-  color: var(--accent);
-  text-decoration-color: var(--accent);
+  color: var(--accent, #e67e22);
+  text-decoration-color: var(--accent, #e67e22);
 }
 
 /* --- Hero Uses --- */
@@ -157,11 +157,11 @@
 }
 
 .vnesud-hero-use {
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: var(--bg, #ffffff);
+  border: 1px solid var(--border, #e0e4e8);
   border-radius: 14px;
   padding: 28px 28px;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-card, 0 1px 3px rgba(0,0,0,0.06));
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -188,14 +188,14 @@
 
 .vnesud-hero-use:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-card-hover);
+  box-shadow: var(--shadow-card-hover, 0 20px 25px rgba(0,0,0,0.08));
 }
 
 .vnesud-hero-use__icon-wrap {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: var(--accent-bg);
+  background: var(--accent-bg, rgba(230,126,34,0.05));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -206,7 +206,7 @@
   width: 28px;
   height: 28px;
   line-height: 1;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
 }
 
 /* --- Visual Divider --- */
@@ -222,9 +222,9 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    var(--border) 20%,
-    var(--primary) 50%,
-    var(--border) 80%,
+    var(--border, #e0e4e8) 20%,
+    var(--primary, #2a5b9a) 50%,
+    var(--border, #e0e4e8) 80%,
     transparent 100%
   );
   opacity: 0.5;
@@ -237,7 +237,7 @@
 }
 
 .vnesud-section--alt {
-  background: var(--bg-light);
+  background: var(--bg-light, #f8f9fa);
 }
 
 .vnesud-section__title {
@@ -251,7 +251,7 @@
 .vnesud-section__subtitle {
   text-align: center;
   font-size: 1.0625rem;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   margin-bottom: 48px;
   max-width: 700px;
   margin-left: auto;
@@ -341,11 +341,11 @@
 }
 
 .vnesud-case {
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: var(--bg, #ffffff);
+  border: 1px solid var(--border, #e0e4e8);
   border-radius: 14px;
   padding: 40px 36px;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-card, 0 1px 3px rgba(0,0,0,0.06));
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -356,20 +356,20 @@
 
 .vnesud-case:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-card-hover);
+  box-shadow: var(--shadow-card-hover, 0 20px 25px rgba(0,0,0,0.08));
 }
 
 .vnesud-case__title {
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0;
-  color: var(--text);
+  color: var(--text, #333333);
   line-height: 1.4;
 }
 
 .vnesud-case__desc {
   font-size: 0.9375rem;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   line-height: 1.6;
   margin: 0;
 }
@@ -377,10 +377,10 @@
 .vnesud-case__result {
   font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--success);
+  color: var(--success, #059669);
   margin: 0;
   padding-top: 20px;
-  border-top: 2px solid var(--success);
+  border-top: 2px solid var(--success, #059669);
   line-height: 1.5;
 }
 
@@ -393,12 +393,12 @@
 }
 
 .guarantee-card {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-top: 3px solid var(--primary);
+  background: var(--bg, #ffffff);
+  border: 1px solid var(--border, #e0e4e8);
+  border-top: 3px solid var(--primary, #2a5b9a);
   border-radius: 14px;
   padding: 36px 32px;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-card, 0 1px 3px rgba(0,0,0,0.06));
   transition:
     transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -406,11 +406,11 @@
 
 .guarantee-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-card-hover);
+  box-shadow: var(--shadow-card-hover, 0 20px 25px rgba(0,0,0,0.08));
 }
 
 .guarantee-card--highlight {
-  border-top-color: var(--success);
+  border-top-color: var(--success, #059669);
 }
 
 .guarantee-card__title {
@@ -421,7 +421,7 @@
 }
 
 .guarantee-card__desc {
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   font-size: 0.9375rem;
   line-height: 1.6;
 }
@@ -431,7 +431,7 @@
   margin-top: 8px;
   font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--primary, #2a5b9a);
   text-decoration: none;
   transition:
     color 0.2s ease,
@@ -439,7 +439,7 @@
 }
 
 .guarantee-card__link:hover {
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   padding-left: 4px;
 }
 
@@ -454,8 +454,8 @@
 }
 
 .vnesud-faq-item {
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: var(--bg, #ffffff);
+  border: 1px solid var(--border, #e0e4e8);
   border-radius: 12px;
   overflow: hidden;
   transition:
@@ -464,7 +464,7 @@
 }
 
 .vnesud-faq-item[open] {
-  border-color: var(--primary);
+  border-color: var(--primary, #2a5b9a);
   box-shadow: 0 0 0 3px rgba(42, 91, 154, 0.1);
 }
 
@@ -482,7 +482,7 @@
 }
 
 .vnesud-faq-item__summary:hover {
-  background: var(--accent-bg);
+  background: var(--accent-bg, rgba(230,126,34,0.05));
 }
 
 .vnesud-faq-item__summary::-webkit-details-marker {
@@ -493,7 +493,7 @@
   content: "+";
   font-size: 1.5rem;
   font-weight: 300;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   transition: transform 0.3s;
   flex-shrink: 0;
   margin-left: 20px;
@@ -506,7 +506,7 @@
 .vnesud-faq-item__answer {
   padding: 0 32px 28px;
   font-size: 0.9375rem;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   line-height: 1.7;
 }
 
@@ -522,12 +522,12 @@
 .vnesud-faq-item__legal {
   margin-top: 12px;
   padding-top: 12px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--border, #e0e4e8);
 }
 
 .vnesud-faq-item__legal p {
   font-size: 0.875rem;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   line-height: 1.6;
 }
 
@@ -535,8 +535,8 @@
 
 .vnesud-cta-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-bg-alt) 100%);
-  color: var(--white);
+  background: linear-gradient(135deg, var(--dark-bg, #2a5b9a) 0%, var(--dark-bg-alt, #1a4070) 100%);
+  color: var(--white, #ffffff);
   position: relative;
   overflow: hidden;
 }
@@ -569,12 +569,12 @@
   font-size: 2.25rem;
   font-weight: 700;
   margin-bottom: 12px;
-  color: var(--white);
+  color: var(--white, #ffffff);
 }
 
 .vnesud-cta__desc {
   font-size: 1.0625rem;
-  color: var(--white-85);
+  color: var(--white-85, rgba(255,255,255,0.85));
   line-height: 1.6;
 }
 
@@ -597,7 +597,7 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.1);
-  color: var(--white);
+  color: var(--white, #ffffff);
   font-size: 0.9375rem;
   font-family: inherit;
   transition:
@@ -607,13 +607,13 @@
 
 .vnesud-cta__fields input::placeholder,
 .vnesud-cta__form textarea::placeholder {
-  color: var(--white-75);
+  color: var(--white-75, rgba(255,255,255,0.75));
 }
 
 .vnesud-cta__fields input:focus,
 .vnesud-cta__form textarea:focus {
   outline: none;
-  border-color: var(--accent);
+  border-color: var(--accent, #e67e22);
   background: rgba(255, 255, 255, 0.15);
 }
 
@@ -624,8 +624,8 @@
 
 .vnesud-cta__btn {
   align-self: center;
-  background: var(--accent);
-  color: var(--white);
+  background: var(--accent, #e67e22);
+  color: var(--white, #ffffff);
   border: none;
   padding: 16px 40px;
   font-size: 1rem;
@@ -638,14 +638,14 @@
 }
 
 .vnesud-cta__btn:hover {
-  background: var(--accent-hover);
+  background: var(--accent-hover, #cf6d15);
   transform: translateY(-2px);
 }
 
 .vnesud-cta__note {
   text-align: center;
   font-size: 0.8125rem;
-  color: var(--white-75);
+  color: var(--white-75, rgba(255,255,255,0.75));
   margin: 0;
 }
 

@@ -35,7 +35,7 @@
 }
 
 .privacy-content a {
-  color: var(--primary);
+  color: var(--primary, #2a5b9a);
   text-decoration: underline;
 }
 
@@ -46,7 +46,7 @@
 .privacy-back {
   display: inline-block;
   margin-bottom: 24px;
-  color: var(--primary);
+  color: var(--primary, #2a5b9a);
   text-decoration: none;
   font-weight: 500;
 }

@@ -55,6 +55,14 @@
 @import url("./components/velocity-effects.css");
 @import url("./components/marquee.css");
 
+/* === New Effects 2026 === */
+@import url("./components/card-glare.css");
+@import url("./components/block-reveal.css");
+@import url("./components/text-reveal.css");
+@import url("./components/parallax.css");
+@import url("./components/spotlight.css");
+@import url("./components/section-transitions.css");
+
 /* Pages — core */
 @import url("./pages/about.css");
 @import url("./pages/index.css");

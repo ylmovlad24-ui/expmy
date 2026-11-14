@@ -91,10 +91,10 @@
   opacity: 0;
   transform: translateY(20px);
   transition:
-    opacity var(--transition-normal) var(--ease-quick),
-    transform var(--transition-normal) var(--ease-quick),
+    opacity var(--transition-normal, 0.3s) var(--ease-quick),
+    transform var(--transition-normal, 0.3s) var(--ease-quick),
     background var(--transition-fast),
-    box-shadow var(--transition-fast);
+    box-shadow var(--transition-fast, 0.15s);
   z-index: 150;
   cursor: pointer;
   border: none;
@@ -117,7 +117,7 @@
 
 .back-to-top:active {
   transform: scale(0.92) translateY(0);
-  transition-duration: var(--transition-fast);
+  transition-duration: var(--transition-fast, 0.15s);
 }
 
 /* Scroll progress bar */

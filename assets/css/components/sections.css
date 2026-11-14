@@ -5,12 +5,12 @@
 }
 
 .section--light {
-  background: var(--bg-light);
+  background: var(--bg-light, #f8f9fa);
 }
 
 .section--cta {
-  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-bg-alt) 100%);
-  color: var(--white);
+  background: linear-gradient(135deg, var(--dark-bg, #2a5b9a) 0%, var(--dark-bg-alt, #1a4070) 100%);
+  color: var(--white, #ffffff);
 }
 
 .section__title {
@@ -24,7 +24,7 @@
 .section__subtitle {
   text-align: center;
   font-size: 1.125rem;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   margin-bottom: 40px;
   max-width: 640px;
   margin-left: auto;

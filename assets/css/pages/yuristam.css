@@ -4,11 +4,11 @@
 
 .yuristam-nav {
   position: sticky;
-  top: var(--header-height);
+  top: var(--header-height, 64px);
   z-index: 250;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border, #e0e4e8);
   padding: 12px 0;
   transition: box-shadow 0.3s;
 }
@@ -26,7 +26,7 @@
 .yuristam-nav__link {
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   text-decoration: none;
   transition: color 0.2s;
   position: relative;
@@ -39,12 +39,12 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--accent);
+  background: var(--accent, #e67e22);
   transition: width 0.3s;
 }
 
 .yuristam-nav__link:hover {
-  color: var(--accent);
+  color: var(--accent, #e67e22);
 }
 
 .yuristam-nav__link:hover::after {
@@ -55,8 +55,8 @@
 
 .yuristam-hero {
   padding: 100px 0 80px;
-  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-bg-alt) 100%);
-  color: var(--white);
+  background: linear-gradient(135deg, var(--dark-bg, #2a5b9a) 0%, var(--dark-bg-alt, #1a4070) 100%);
+  color: var(--white, #ffffff);
   text-align: center;
 }
 
@@ -96,29 +96,29 @@
 }
 
 .yuristam-direction-card {
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: var(--bg, #ffffff);
+  border: 1px solid var(--border, #e0e4e8);
   border-radius: 14px;
   padding: 36px 32px;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-card, 0 1px 3px rgba(0,0,0,0.06));
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .yuristam-direction-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-card-hover);
+  box-shadow: var(--shadow-card-hover, 0 20px 25px rgba(0,0,0,0.08));
 }
 
 .yuristam-direction-card h2 {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 12px;
-  color: var(--primary);
+  color: var(--primary, #2a5b9a);
 }
 
 .yuristam-direction-card p {
   font-size: 0.9375rem;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -126,13 +126,13 @@
 .yuristam-direction-card__link {
   font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   text-decoration: none;
   transition: color 0.2s, padding-left 0.2s;
 }
 
 .yuristam-direction-card__link:hover {
-  color: var(--accent-hover);
+  color: var(--accent-hover, #cf6d15);
   padding-left: 4px;
 }
 
@@ -140,7 +140,7 @@
 
 .yuristam-types {
   padding: 72px 0;
-  background: var(--bg-light);
+  background: var(--bg-light, #f8f9fa);
 }
 
 .yuristam-types h2 {
@@ -153,15 +153,15 @@
 .yuristam-types table {
   width: 100%;
   border-collapse: collapse;
-  background: var(--bg);
+  background: var(--bg, #ffffff);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-card, 0 1px 3px rgba(0,0,0,0.06));
 }
 
 .yuristam-types th {
-  background: var(--primary);
-  color: var(--white);
+  background: var(--primary, #2a5b9a);
+  color: var(--white, #ffffff);
   padding: 16px 20px;
   text-align: left;
   font-weight: 600;
@@ -170,7 +170,7 @@
 
 .yuristam-types td {
   padding: 16px 20px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border, #e0e4e8);
   vertical-align: top;
   font-size: 0.9375rem;
   line-height: 1.5;
@@ -181,16 +181,16 @@
 }
 
 .yuristam-types tr:nth-child(even) {
-  background: var(--bg-light);
+  background: var(--bg-light, #f8f9fa);
 }
 
 .yuristam-types tr:hover td {
-  background: var(--accent-bg);
+  background: var(--accent-bg, rgba(230,126,34,0.05));
 }
 
 .yuristam-types td:first-child {
   font-weight: 600;
-  color: var(--text);
+  color: var(--text, #333333);
   white-space: nowrap;
 }
 
@@ -214,29 +214,29 @@
 }
 
 .yuristam-about-item {
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: var(--bg, #ffffff);
+  border: 1px solid var(--border, #e0e4e8);
   border-radius: 14px;
   padding: 28px 24px;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-card, 0 1px 3px rgba(0,0,0,0.06));
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .yuristam-about-item:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-card-hover);
+  box-shadow: var(--shadow-card-hover, 0 20px 25px rgba(0,0,0,0.08));
 }
 
 .yuristam-about-item h3 {
   font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 8px;
-  color: var(--primary);
+  color: var(--primary, #2a5b9a);
 }
 
 .yuristam-about-item p {
   font-size: 0.9375rem;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   line-height: 1.6;
   margin-bottom: 12px;
 }
@@ -244,20 +244,20 @@
 .yuristam-about-item a {
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .yuristam-about-item a:hover {
-  color: var(--accent-hover);
+  color: var(--accent-hover, #cf6d15);
 }
 
 /* === Форма === */
 
 .yuristam-form {
   padding: 72px 0;
-  background: var(--bg-light);
+  background: var(--bg-light, #f8f9fa);
 }
 
 .yuristam-form h2 {
@@ -281,17 +281,17 @@
 
 .yuristam-docs__links {
   font-size: 0.875rem;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
 }
 
 .yuristam-docs__links a {
-  color: var(--primary);
+  color: var(--primary, #2a5b9a);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .yuristam-docs__links a:hover {
-  color: var(--accent);
+  color: var(--accent, #e67e22);
 }
 
 /* === Адаптивность === */

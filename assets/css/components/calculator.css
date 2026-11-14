@@ -17,7 +17,7 @@
 .calculator__label {
   font-size: 1.125rem;
   font-weight: 600;
-  color: var(--text);
+  color: var(--text, #333333);
 }
 
 .calculator__options {
@@ -38,9 +38,9 @@
   align-items: flex-start;
   gap: 12px;
   padding: 16px 20px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border, #e0e4e8);
   border-radius: var(--radius);
-  background: var(--bg);
+  background: var(--bg, #ffffff);
   cursor: pointer;
   transition:
     border-color 0.2s,
@@ -48,13 +48,13 @@
 }
 
 .calc-option:hover {
-  border-color: var(--accent);
+  border-color: var(--accent, #e67e22);
 }
 
 .calc-option input[type="radio"] {
   width: 18px;
   height: 18px;
-  accent-color: var(--accent);
+  accent-color: var(--accent, #e67e22);
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -71,7 +71,7 @@
 
 .calc-option__desc {
   font-size: 0.875rem;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
 }
 
 /* Calc checkbox */
@@ -80,9 +80,9 @@
   align-items: center;
   gap: 12px;
   padding: 12px 20px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border, #e0e4e8);
   border-radius: var(--radius);
-  background: var(--bg);
+  background: var(--bg, #ffffff);
   cursor: pointer;
   font-size: 0.9375rem;
   transition:
@@ -91,20 +91,20 @@
 }
 
 .calc-checkbox:hover {
-  border-color: var(--accent);
+  border-color: var(--accent, #e67e22);
 }
 
 .calc-checkbox input[type="checkbox"] {
   width: 18px;
   height: 18px;
-  accent-color: var(--accent);
+  accent-color: var(--accent, #e67e22);
   flex-shrink: 0;
 }
 
 .calc-checkbox__price {
   margin-left: auto;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   white-space: nowrap;
 }
 
@@ -112,21 +112,21 @@
 .calculator__result {
   text-align: center;
   padding: 32px 24px;
-  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-bg-alt) 100%);
+  background: linear-gradient(135deg, var(--dark-bg, #2a5b9a) 0%, var(--dark-bg-alt, #1a4070) 100%);
   border-radius: var(--radius);
-  color: var(--white);
+  color: var(--white, #ffffff);
 }
 
 .calculator__price-label {
   font-size: 1rem;
-  color: var(--white-75);
+  color: var(--white-75, rgba(255,255,255,0.75));
   margin-bottom: 8px;
 }
 
 .calculator__price {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   transition: opacity 0.2s;
 }
 
@@ -144,13 +144,13 @@
 }
 
 .calculator__call {
-  color: var(--accent);
-  border-color: var(--accent);
+  color: var(--accent, #e67e22);
+  border-color: var(--accent, #e67e22);
 }
 
 .calculator__call:hover {
-  background: var(--accent);
-  color: var(--white);
+  background: var(--accent, #e67e22);
+  color: var(--white, #ffffff);
 }
 
 /* ===== INLINE-STYLE EXTRACTED CLASSES ===== */
@@ -173,8 +173,8 @@
 }
 
 .cta-row__btn--white {
-  color: var(--white);
-  border-color: var(--white);
+  color: var(--white, #ffffff);
+  border-color: var(--white, #ffffff);
 }
 
 .cards-grid {
@@ -204,7 +204,7 @@
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  border-left: 4px solid var(--primary);
+  border-left: 4px solid var(--primary, #2a5b9a);
 }
 
 .card-white {
@@ -227,7 +227,7 @@
 .card__link {
   margin-top: 12px;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--primary, #2a5b9a);
 }
 
 .card__icon-row {
@@ -241,7 +241,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: var(--success);
+  background: var(--success, #059669);
   color: #fff;
   display: flex;
   align-items: center;
@@ -251,7 +251,7 @@
 }
 
 .card__icon-circle--primary {
-  background: var(--primary);
+  background: var(--primary, #2a5b9a);
 }
 
 .card__icon-text strong {
@@ -272,14 +272,14 @@
 .card__result--success {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--success);
+  color: var(--success, #059669);
 }
 
 .step-circle {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: var(--primary);
+  background: var(--primary, #2a5b9a);
   color: #fff;
   display: flex;
   align-items: center;
@@ -290,7 +290,7 @@
 }
 
 .step-circle--success {
-  background: var(--success);
+  background: var(--success, #059669);
 }
 
 .step-text {
@@ -309,14 +309,14 @@
 }
 
 .question-item {
-  border-left: 4px solid var(--primary);
+  border-left: 4px solid var(--primary, #2a5b9a);
   background: #fff;
   padding: 16px 20px;
   border-radius: 0 8px 8px 0;
 }
 
 .question-item__number {
-  background: var(--primary);
+  background: var(--primary, #2a5b9a);
   color: #fff;
   width: 32px;
   height: 32px;
@@ -351,22 +351,22 @@
 }
 
 .table-compare th--primary {
-  background: var(--primary);
+  background: var(--primary, #2a5b9a);
   border-radius: 8px 0 0 0;
 }
 
 .table-compare th--success {
-  background: var(--success);
+  background: var(--success, #059669);
   border-radius: 0 8px 0 0;
 }
 
 .table-compare th--danger {
-  background: var(--danger);
+  background: var(--danger, #dc2626);
 }
 
 .table-compare td {
   padding: 12px 16px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border, #e0e4e8);
 }
 
 .table-compare td--success-bg {
@@ -402,7 +402,7 @@
 }
 
 .section-cta-bg {
-  background: var(--primary);
+  background: var(--primary, #2a5b9a);
   padding: 48px 0;
 }
 
@@ -428,7 +428,7 @@
 
 .section-cta__btn {
   background: #fff;
-  color: var(--primary);
+  color: var(--primary, #2a5b9a);
   font-size: 1.125rem;
   padding: 16px 32px;
   font-weight: 600;

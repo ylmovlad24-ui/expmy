@@ -27,7 +27,7 @@
   gap: 6px;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   background: rgba(230, 126, 34, 0.12);
   padding: 6px 14px;
   border-radius: 100px;
@@ -50,7 +50,7 @@
 .vnesud-hero-subject__title {
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 0;
@@ -142,8 +142,8 @@
 }
 
 .vnesud-hero__link:hover {
-  color: var(--accent);
-  text-decoration-color: var(--accent);
+  color: var(--accent, #e67e22);
+  text-decoration-color: var(--accent, #e67e22);
 }
 
 /* CTA Button Pulse Animation */
@@ -170,7 +170,7 @@
 .vnesud-direction__subtitle {
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   margin: 0;
   letter-spacing: 0.02em;
 }
@@ -196,7 +196,7 @@
   content: "—";
   position: absolute;
   left: 0;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   font-weight: 600;
 }
 
@@ -227,7 +227,7 @@
 .vnesud-object-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  border-color: var(--accent);
+  border-color: var(--accent, #e67e22);
 }
 
 .vnesud-object-card__icon-wrap {
@@ -252,7 +252,7 @@
 .vnesud-object-card__icon {
   width: 22px;
   height: 22px;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
 }
 
 .vnesud-object-card__icon-wrap--blue .vnesud-object-card__icon {
@@ -306,7 +306,7 @@
 .vnesud-insight:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  border-color: var(--accent);
+  border-color: var(--accent, #e67e22);
 }
 
 .vnesud-insight__icon-wrap {
@@ -331,7 +331,7 @@
 .vnesud-insight__icon {
   width: 22px;
   height: 22px;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
 }
 
 .vnesud-insight__icon-wrap--blue .vnesud-insight__icon {
@@ -384,8 +384,8 @@
 }
 
 .vnesud-chip:hover {
-  border-color: var(--accent);
-  background: var(--accent-bg);
+  border-color: var(--accent, #e67e22);
+  background: var(--accent-bg, rgba(230,126,34,0.05));
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(230, 126, 34, 0.12);
 }
@@ -393,7 +393,7 @@
 .vnesud-chip__icon {
   width: 16px;
   height: 16px;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   flex-shrink: 0;
 }
 
@@ -402,7 +402,7 @@
 .vnesud-section__subtitle {
   text-align: center;
   font-size: 1.0625rem;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   margin-bottom: 48px;
   max-width: 700px;
   margin-left: auto;
@@ -435,7 +435,7 @@
 .vnesud-task-group:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  border-color: var(--accent);
+  border-color: var(--accent, #e67e22);
 }
 
 /* Header */
@@ -473,7 +473,7 @@
 .vnesud-task-group__icon {
   width: 22px;
   height: 22px;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
 }
 
 .vnesud-task-group__icon-wrap--blue .vnesud-task-group__icon {
@@ -500,7 +500,7 @@
 .vnesud-task-group__count {
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   background: rgba(230, 126, 34, 0.08);
   padding: 4px 10px;
   border-radius: 20px;
@@ -531,8 +531,8 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: var(--accent-bg);
-  color: var(--accent);
+  background: var(--accent-bg, rgba(230,126,34,0.05));
+  color: var(--accent, #e67e22);
   font-size: 0.75rem;
   font-weight: 700;
   display: flex;
@@ -564,7 +564,7 @@
 #stages .vnesud-section__subtitle {
   text-align: center;
   font-size: 1.0625rem;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   margin-bottom: 48px;
   max-width: 700px;
   margin-left: auto;

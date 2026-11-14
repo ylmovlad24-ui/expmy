@@ -21,7 +21,7 @@
 .calculator-compact__label {
   font-size: 0.8125rem;
   font-weight: 500;
-  color: var(--white-60);
+  color: var(--white-60, rgba(255,255,255,0.6));
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -33,7 +33,7 @@
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
-  color: var(--white);
+  color: var(--white, #ffffff);
   background: rgba(255, 255, 255, 0.08);
   transition:
     border-color 0.2s,
@@ -43,7 +43,7 @@
 
 .calculator-compact__select:focus {
   outline: none;
-  border-color: var(--accent);
+  border-color: var(--accent, #e67e22);
   box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.25);
 }
 
@@ -59,7 +59,7 @@
 .calculator-compact__price {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   white-space: nowrap;
   padding-bottom: 4px;
 }
@@ -101,10 +101,10 @@
 .calculator-compact__note {
   text-align: center;
   font-size: 0.75rem;
-  color: var(--white-40);
+  color: var(--white-40, rgba(255,255,255,0.4));
   font-style: italic;
 }
 
 .calculator-compact__note--white75 {
-  color: var(--white-75);
+  color: var(--white-75, rgba(255,255,255,0.75));
 }

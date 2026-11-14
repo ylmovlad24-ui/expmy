@@ -6,8 +6,8 @@
   min-height: calc(100vh - var(--header-height, 64px));
   min-height: calc(100dvh - var(--header-height, 64px));
   padding: 140px 0 64px;
-  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-bg-alt) 100%);
-  color: var(--white);
+  background: linear-gradient(135deg, var(--dark-bg, #2a5b9a) 0%, var(--dark-bg-alt, #1a4070) 100%);
+  color: var(--white, #ffffff);
   position: relative;
   overflow: hidden;
   border-bottom: none;
@@ -38,17 +38,17 @@
 .sudeb-hero__badge,
 .sudeb-hero__actions,
 .sudeb-hero__link {
-  color: var(--white) !important;
+  color: var(--white, #ffffff) !important;
 }
 
 .sudeb-hero__actions .btn--primary {
-  background: var(--accent);
-  color: var(--white);
+  background: var(--accent, #e67e22);
+  color: var(--white, #ffffff);
   border: none;
 }
 
 .sudeb-hero__actions .btn--primary:hover {
-  background: var(--accent-hover);
+  background: var(--accent-hover, #cf6d15);
 }
 
 .sudeb-hero__inner {
@@ -70,14 +70,14 @@
   font-weight: 700;
   line-height: 1.2;
   margin: 0;
-  color: var(--text);
+  color: var(--text, #333333);
 }
 
 /* Badge — без alert-стилистики */
 .sudeb-hero__badge {
   font-size: 1.0625rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   background: transparent;
   padding: 8px 0;
   border-radius: 0;
@@ -103,7 +103,7 @@
 .sudeb-hero__link {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--primary, #2a5b9a);
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-color: rgba(42, 91, 154, 0.3);
@@ -113,8 +113,8 @@
 }
 
 .sudeb-hero__link:hover {
-  color: var(--accent);
-  text-decoration-color: var(--accent);
+  color: var(--accent, #e67e22);
+  text-decoration-color: var(--accent, #e67e22);
 }
 
 /* --- Hero Uses --- */
@@ -127,11 +127,11 @@
 }
 
 .sudeb-hero-use {
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: var(--bg, #ffffff);
+  border: 1px solid var(--border, #e0e4e8);
   border-radius: 14px;
   padding: 28px 28px;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-card, 0 1px 3px rgba(0,0,0,0.06));
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -158,14 +158,14 @@
 
 .sudeb-hero-use:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-card-hover);
+  box-shadow: var(--shadow-card-hover, 0 20px 25px rgba(0,0,0,0.08));
 }
 
 .sudeb-hero-use__icon-wrap {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: var(--accent-bg);
+  background: var(--accent-bg, rgba(230,126,34,0.05));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -176,7 +176,7 @@
   width: 28px;
   height: 28px;
   line-height: 1;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
 }
 
 /* --- Visual Divider --- */
@@ -192,9 +192,9 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    var(--border) 20%,
-    var(--primary) 50%,
-    var(--border) 80%,
+    var(--border, #e0e4e8) 20%,
+    var(--primary, #2a5b9a) 50%,
+    var(--border, #e0e4e8) 80%,
     transparent 100%
   );
   opacity: 0.5;
@@ -207,7 +207,7 @@
 }
 
 .sudeb-section--alt {
-  background: var(--bg-light);
+  background: var(--bg-light, #f8f9fa);
 }
 
 .sudeb-section__title {
@@ -221,7 +221,7 @@
 .sudeb-section__subtitle {
   text-align: center;
   font-size: 1.0625rem;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   margin-bottom: 48px;
   max-width: 700px;
   margin-left: auto;
@@ -239,11 +239,11 @@
 }
 
 .sudeb-case {
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: var(--bg, #ffffff);
+  border: 1px solid var(--border, #e0e4e8);
   border-radius: 14px;
   padding: 40px 36px;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-card, 0 1px 3px rgba(0,0,0,0.06));
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -254,20 +254,20 @@
 
 .sudeb-case:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-card-hover);
+  box-shadow: var(--shadow-card-hover, 0 20px 25px rgba(0,0,0,0.08));
 }
 
 .sudeb-case__title {
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0;
-  color: var(--text);
+  color: var(--text, #333333);
   line-height: 1.4;
 }
 
 .sudeb-case__desc {
   font-size: 0.9375rem;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   line-height: 1.6;
   margin: 0;
 }
@@ -275,10 +275,10 @@
 .sudeb-case__result {
   font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--success);
+  color: var(--success, #059669);
   margin: 0;
   padding-top: 20px;
-  border-top: 2px solid var(--success);
+  border-top: 2px solid var(--success, #059669);
   line-height: 1.5;
 }
 
@@ -291,12 +291,12 @@
 }
 
 .guarantee-card {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-top: 3px solid var(--primary);
+  background: var(--bg, #ffffff);
+  border: 1px solid var(--border, #e0e4e8);
+  border-top: 3px solid var(--primary, #2a5b9a);
   border-radius: 14px;
   padding: 36px 32px;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-card, 0 1px 3px rgba(0,0,0,0.06));
   transition:
     transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -304,11 +304,11 @@
 
 .guarantee-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-card-hover);
+  box-shadow: var(--shadow-card-hover, 0 20px 25px rgba(0,0,0,0.08));
 }
 
 .guarantee-card--highlight {
-  border-top-color: var(--success);
+  border-top-color: var(--success, #059669);
 }
 
 .guarantee-card__title {
@@ -319,7 +319,7 @@
 }
 
 .guarantee-card__desc {
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   font-size: 0.9375rem;
   line-height: 1.6;
 }
@@ -329,7 +329,7 @@
   margin-top: 8px;
   font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--primary, #2a5b9a);
   text-decoration: none;
   transition:
     color 0.2s ease,
@@ -337,7 +337,7 @@
 }
 
 .guarantee-card__link:hover {
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   padding-left: 4px;
 }
 
@@ -358,12 +358,12 @@
 }
 
 .sudeb-legal__list li {
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: var(--bg, #ffffff);
+  border: 1px solid var(--border, #e0e4e8);
   border-radius: 12px;
   padding: 24px 28px;
   font-size: 0.9375rem;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   line-height: 1.7;
 }
 

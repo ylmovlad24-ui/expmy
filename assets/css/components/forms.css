@@ -2,16 +2,16 @@
 
 .form {
   max-width: 640px;
-  margin: 0 auto var(--space-10);
+  margin: 0 auto var(--space-10, 40px);
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-4, 16px);
 }
 
 .form__row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-4);
+  gap: var(--space-4, 16px);
 }
 
 .form__input,
@@ -19,20 +19,20 @@
 .form__textarea {
   width: 100%;
   padding: 14px 18px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-card);
-  font-size: var(--fs-base);
+  border: 1px solid var(--border, #e0e4e8);
+  border-radius: var(--radius-card, 8px);
+  font-size: var(--fs-base, 1rem);
   font-family: inherit;
-  color: var(--text);
-  background: var(--bg);
-  transition: border-color var(--transition-normal);
+  color: var(--text, #333333);
+  background: var(--bg, #ffffff);
+  transition: border-color var(--transition-normal, 0.3s);
 }
 
 .form__input:focus,
 .form__select:focus,
 .form__textarea:focus {
   outline: none;
-  border-color: var(--primary);
+  border-color: var(--primary, #2a5b9a);
   box-shadow: 0 0 0 3px rgba(42, 91, 154, 0.15);
 }
 
@@ -40,7 +40,7 @@
 .form__input:focus-visible,
 .form__select:focus-visible,
 .form__textarea:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--accent, #e67e22);
   outline-offset: 2px;
 }
 
@@ -50,14 +50,14 @@
 .form__textarea:disabled {
   opacity: 0.6;
   cursor: not-allowed;
-  background: var(--bg-light);
+  background: var(--bg-light, #f8f9fa);
 }
 
 /* Error state */
 .form__input.error,
 .form__select.error,
 .form__textarea.error {
-  border-color: var(--danger);
+  border-color: var(--danger, #dc2626);
   box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.15);
 }
 
@@ -80,7 +80,7 @@
 .form__input.success,
 .form__select.success,
 .form__textarea.success {
-  border-color: var(--success);
+  border-color: var(--success, #059669);
   box-shadow: 0 0 0 3px rgba(56, 161, 105, 0.15);
 }
 
@@ -92,8 +92,8 @@
 .form__privacy {
   text-align: center;
   font-size: var(--fs-xs);
-  color: var(--white-50);
-  margin-top: var(--space-2);
+  color: var(--white-50, rgba(255,255,255,0.5));
+  margin-top: var(--space-2, 8px);
 }
 
 /* Form field wrapper for micro-interactions */
@@ -103,10 +103,10 @@
 
 .form-field__label {
   display: block;
-  font-size: var(--fs-sm);
-  font-weight: var(--fw-medium);
-  color: var(--text);
-  margin-bottom: var(--space-2);
+  font-size: var(--fs-sm, 0.8125rem);
+  font-weight: var(--fw-medium, 500);
+  color: var(--text, #333333);
+  margin-bottom: var(--space-2, 8px);
 }
 
 .form-field__underline {
@@ -115,8 +115,8 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--accent);
-  transition: width var(--transition-normal) var(--ease-out);
+  background: var(--accent, #e67e22);
+  transition: width var(--transition-normal, 0.3s) var(--ease-out);
 }
 
 .form-field:focus-within .form-field__underline {

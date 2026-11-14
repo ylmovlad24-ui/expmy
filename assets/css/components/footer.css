@@ -3,7 +3,7 @@
 /* === Базовые стили === */
 
 .footer {
-  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-bg-alt) 100%);
+  background: linear-gradient(135deg, var(--dark-bg, #2a5b9a) 0%, var(--dark-bg-alt, #1a4070) 100%);
   color: #fff;
   padding: 72px 0 0;
   position: relative;
@@ -17,7 +17,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 50%, var(--primary) 100%);
+  background: linear-gradient(90deg, var(--primary, #2a5b9a) 0%, var(--accent, #e67e22) 50%, var(--primary, #2a5b9a) 100%);
   background-size: 200% 100%;
   animation: footerLineShimmer 4s ease-in-out infinite;
 }
@@ -87,7 +87,7 @@
   flex-shrink: 0;
   width: 36px;
   height: 36px;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
 }
 
 .footer__logo-icon svg {
@@ -130,9 +130,9 @@
 }
 
 .footer__mess-btn:hover {
-  background: var(--accent);
+  background: var(--accent, #e67e22);
   color: #fff;
-  border-color: var(--accent);
+  border-color: var(--accent, #e67e22);
   transform: translateY(-2px);
   box-shadow: 0 4px 16px rgba(230, 126, 34, 0.3);
 }
@@ -147,7 +147,7 @@
   margin-top: 4px;
   padding: 14px 28px;
   background: transparent;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -166,9 +166,9 @@
 }
 
 .footer__cta-btn:hover {
-  background: var(--accent);
+  background: var(--accent, #e67e22);
   color: #fff;
-  border-color: var(--accent);
+  border-color: var(--accent, #e67e22);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(230, 126, 34, 0.25);
 }
@@ -207,7 +207,7 @@
   flex-shrink: 0;
   width: 18px;
   height: 18px;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   margin-top: 2px;
 }
 
@@ -280,7 +280,7 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--accent, #e67e22);
   opacity: 0;
   transition: opacity 0.25s ease;
 }

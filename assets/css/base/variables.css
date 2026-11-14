@@ -22,8 +22,8 @@
   --border: #e0e4e8;
 
   /* === Dark backgrounds (hero / CTA) === */
-  --dark-bg: var(--primary);
-  --dark-bg-alt: var(--primary-dark);
+  --dark-bg: var(--primary, #2a5b9a);
+  --dark-bg-alt: var(--primary-dark, #1a4070);
 
   /* === White variants === */
   --white: #ffffff;
@@ -33,22 +33,14 @@
   --white-60: rgba(255, 255, 255, 0.6);
   --white-40: rgba(255, 255, 255, 0.4);
 
-  /* === Semantic colors === */
+  /* === Semantic colors (with fallbacks for mobile @import reliability) === */
+  --success: #059669;
+  --success-bg: #d1fae5;
+  --danger: #dc2626;
+  --danger-bg: #fee2e2;
   --purple: #6c5ce7;
   --purple-dark: #5b4cdb;
   --purple-bg: rgba(108, 92, 231, 0.08);
-
-  /* === Accent glow === */
-  --accent-glow: rgba(230, 126, 34, 0.15);
-  --accent-bg: rgba(230, 126, 34, 0.05);
-  --accent-bg-hover: rgba(230, 126, 34, 0.08);
-  --accent-bg-soft: rgba(230, 126, 34, 0.1);
-
-  /* === Additional semantic colors === */
-  --danger: #dc2626;
-  --danger-bg: #fee2e2;
-  --success: #059669;
-  --success-bg: #d1fae5;
   --purple-light: #f0f0ff;
   --gray-medium: #4a5568;
   --gray-light: #a0aec0;

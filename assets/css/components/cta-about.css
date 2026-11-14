@@ -26,18 +26,18 @@
 .cta-stat__number {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--accent, #e67e22);
   margin-bottom: 8px;
 }
 
 .cta-stat__text {
-  color: var(--white-75);
+  color: var(--white-75, rgba(255,255,255,0.75));
   font-size: 0.9375rem;
 }
 
 .cta-note {
   text-align: center;
-  color: var(--white-50);
+  color: var(--white-50, rgba(255,255,255,0.5));
   margin-top: 16px;
   font-size: 0.875rem;
 }
@@ -47,7 +47,7 @@
 .about-content {
   font-size: 1rem;
   line-height: 1.7;
-  color: var(--text);
+  color: var(--text, #333333);
   max-width: 800px;
   margin: 0 auto;
 }
@@ -86,12 +86,12 @@
 .about-stat-card__number {
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--primary);
+  color: var(--primary, #2a5b9a);
   margin-bottom: 8px;
 }
 
 .about-stat-card__number--success {
-  color: var(--success);
+  color: var(--success, #059669);
 }
 
 .about-stat-card__label {
@@ -111,7 +111,7 @@
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  border-left: 4px solid var(--primary);
+  border-left: 4px solid var(--primary, #2a5b9a);
 }
 
 .condition-card__title {
@@ -155,15 +155,15 @@
 }
 
 .team-card__avatar--primary {
-  background: var(--primary);
+  background: var(--primary, #2a5b9a);
 }
 
 .team-card__avatar--success {
-  background: var(--success);
+  background: var(--success, #059669);
 }
 
 .team-card__avatar--purple {
-  background: var(--purple);
+  background: var(--purple, #6c5ce7);
 }
 
 .team-card__name {
@@ -178,15 +178,15 @@
 }
 
 .team-card__role--primary {
-  color: var(--primary);
+  color: var(--primary, #2a5b9a);
 }
 
 .team-card__role--success {
-  color: var(--success);
+  color: var(--success, #059669);
 }
 
 .team-card__role--purple {
-  color: var(--purple);
+  color: var(--purple, #6c5ce7);
 }
 
 .team-card__bio {
@@ -200,7 +200,7 @@
 }
 
 .team-card__link a {
-  color: var(--primary);
+  color: var(--primary, #2a5b9a);
   font-weight: 600;
 }
 
@@ -214,5 +214,5 @@
 }
 
 .card--border-left {
-  border-left: 4px solid var(--primary);
+  border-left: 4px solid var(--primary, #2a5b9a);
 }

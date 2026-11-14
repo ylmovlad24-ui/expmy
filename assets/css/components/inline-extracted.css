@@ -40,7 +40,7 @@
 .stat-number {
   font-size: 2rem;
   font-weight: 800;
-  color: var(--primary);
+  color: var(--primary, #2a5b9a);
 }
 
 .stat-number--large {
@@ -49,7 +49,7 @@
 
 /* --- Stat Label (utility) --- */
 .stat-label {
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   font-size: 0.95rem;
 }
 
@@ -67,7 +67,7 @@
 .stat-card--pricing--highlight {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transform: scale(1.02);
-  border-top: 4px solid var(--primary);
+  border-top: 4px solid var(--primary, #2a5b9a);
 }
 
 /* --- Section Headings --- */
@@ -96,7 +96,7 @@
 
 /* --- Contact Note --- */
 .contact-note {
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   font-size: 0.85rem;
   margin-top: 4px;
 }
@@ -130,7 +130,7 @@
 }
 
 .trust-block__list {
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   line-height: 1.8;
   margin-left: 20px;
   font-size: 0.95rem;
@@ -153,7 +153,7 @@
 
 /* --- Form Description --- */
 .form-description {
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   margin-bottom: 24px;
 }
 
@@ -165,12 +165,12 @@
 
 /* --- WhatsApp Link --- */
 .link--whatsapp {
-  color: var(--primary);
+  color: var(--primary, #2a5b9a);
 }
 
 /* --- Map Description --- */
 .map-description {
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   margin-bottom: 24px;
   text-align: center;
 }
@@ -183,7 +183,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
 }
 
 /* --- CTA Container --- */
@@ -204,7 +204,7 @@
 /* --- CTA Buttons --- */
 .btn--cta-white {
   background: #fff;
-  color: var(--primary);
+  color: var(--primary, #2a5b9a);
   font-size: 1.125rem;
   padding: 16px 32px;
   font-weight: 600;
@@ -252,7 +252,7 @@
 }
 
 .faq-answer-secondary {
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   line-height: 1.7;
   margin-bottom: 12px;
 }
@@ -280,7 +280,7 @@
 .faq-table th,
 .faq-table td {
   padding: 10px 14px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border, #e0e4e8);
 }
 
 .faq-table tr:nth-child(even) {
@@ -304,7 +304,7 @@
 
 .faq-details__content {
   margin-top: 12px;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   line-height: 1.6;
 }
 
@@ -331,22 +331,22 @@
   border-radius: 12px;
   padding: 28px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  border-top: 4px solid var(--text-light);
+  border-top: 4px solid var(--text-light, #666666);
 }
 
 .pricing-card--highlight {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border-top: 4px solid var(--primary);
+  border-top: 4px solid var(--primary, #2a5b9a);
   transform: scale(1.02);
 }
 
 .pricing-card--success {
-  border-top: 4px solid var(--success);
+  border-top: 4px solid var(--success, #059669);
 }
 
 /* --- Recommended Badge --- */
 .recommended-badge {
-  background: var(--primary);
+  background: var(--primary, #2a5b9a);
   color: #fff;
   display: inline-block;
   padding: 4px 12px;
@@ -365,20 +365,20 @@
 
 .pricing-list__item {
   padding: 8px 0;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border, #e0e4e8);
 }
 
 /* --- Service Card Price (utility) --- */
 /* Note: .service-card is defined in cards.css — use .service-card__price for inline extraction */
 .service-card__price {
   font-weight: 700;
-  color: var(--primary);
+  color: var(--primary, #2a5b9a);
   white-space: nowrap;
   margin-left: 16px;
 }
 
 .service-card__price--success {
-  color: var(--success);
+  color: var(--success, #059669);
 }
 
 /* --- Full-width Button --- */
@@ -391,14 +391,14 @@
 
 /* --- Button Outline Primary --- */
 .btn--outline-primary {
-  color: var(--primary);
-  border-color: var(--primary);
+  color: var(--primary, #2a5b9a);
+  border-color: var(--primary, #2a5b9a);
 }
 
 /* --- Button Outline Success --- */
 .btn--outline-success {
-  color: var(--success);
-  border-color: var(--success);
+  color: var(--success, #059669);
+  border-color: var(--success, #059669);
 }
 
 /* --- Table Container --- */
@@ -415,7 +415,7 @@
 }
 
 .pricing-table th {
-  background: var(--primary);
+  background: var(--primary, #2a5b9a);
   color: #fff;
   text-align: left;
   padding: 14px 16px;
@@ -423,7 +423,7 @@
 
 .pricing-table td {
   padding: 14px 16px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border, #e0e4e8);
 }
 
 .pricing-table td--bold {
@@ -433,13 +433,13 @@
 /* --- Table Note --- */
 .table-note {
   margin-top: 16px;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   font-size: 0.9rem;
 }
 
 /* --- Extra List Items --- */
 .extra-list__item--disabled {
-  color: var(--text-light);
+  color: var(--text-light, #666666);
 }
 
 /* --- Section Title (shared) --- */
@@ -450,7 +450,7 @@
 
 /* --- Section Subtitle (shared) --- */
 .section-subtitle {
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   font-size: 0.95rem;
   margin-top: 8px;
 }
@@ -462,7 +462,7 @@
   gap: 4px;
   margin-top: 8px;
   font-size: 0.875rem;
-  color: var(--text-light);
+  color: var(--text-light, #666666);
 }
 
 /* --- Section Heading White Large --- */
@@ -481,21 +481,21 @@
 
 /* --- FAQ Lists --- */
 .faq-list {
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   line-height: 1.8;
   margin-left: 20px;
   margin-bottom: 16px;
 }
 
 .faq-list--compact {
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   line-height: 1.8;
   margin-left: 20px;
   margin-bottom: 12px;
 }
 
 .faq-list--mt {
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   line-height: 1.8;
   margin-left: 20px;
   margin-top: 8px;
@@ -517,19 +517,19 @@
 
 /* --- Pricing Divider --- */
 .pricing-divider {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--border, #e0e4e8);
   padding-top: 16px;
 }
 
 /* --- Price Success Label --- */
 .price-success-label {
-  color: var(--success);
+  color: var(--success, #059669);
   margin-bottom: 4px;
 }
 
 /* --- Text Success --- */
 .text-success {
-  color: var(--success);
+  color: var(--success, #059669);
 }
 
 /* --- Text Semibold Small --- */
@@ -545,13 +545,13 @@
 
 /* --- Link Primary Bold --- */
 .link--primary-bold {
-  color: var(--primary);
+  color: var(--primary, #2a5b9a);
   font-weight: 600;
 }
 
 /* --- Form List --- */
 .form-list {
-  color: var(--text-light);
+  color: var(--text-light, #666666);
   line-height: 1.8;
   margin-left: 20px;
   margin-bottom: 24px;
@@ -569,11 +569,11 @@
 
 /* --- Stat Number Success --- */
 .stat-number--success {
-  color: var(--success);
+  color: var(--success, #059669);
   margin-bottom: 4px;
 }
 
 /* --- Text Accent --- */
 .text-accent {
-  color: var(--accent);
+  color: var(--accent, #e67e22);
 }
