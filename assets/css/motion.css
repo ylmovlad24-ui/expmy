@@ -19,8 +19,12 @@
     width: 100%;
   }
   @keyframes progress {
-    from { width: 0%; }
-    to { width: 100%; }
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
   }
 }
 
@@ -41,7 +45,9 @@
 }
 
 @media (max-width: 768px) {
-  .steps-progress-line { display: none; }
+  .steps-progress-line {
+    display: none;
+  }
 }
 
 /* Transitions for GSAP */
@@ -54,7 +60,10 @@
 .recz-direction,
 .recz-case,
 .guarantee-card {
-  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .webgl-gradient canvas {

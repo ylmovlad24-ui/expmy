@@ -53,7 +53,7 @@
 }
 
 .rev-hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -140,7 +140,14 @@
 
 .rev-divider__line {
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, var(--border) 20%, var(--primary) 50%, var(--border) 80%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--border) 20%,
+    var(--primary) 50%,
+    var(--border) 80%,
+    transparent 100%
+  );
   opacity: 0.5;
 }
 
@@ -190,7 +197,7 @@
 .rev-direction__icon {
   width: 40px;
   height: 40px;
-  color: #E67E22;
+  color: #e67e22;
   flex-shrink: 0;
 }
 
@@ -204,14 +211,16 @@
 
 .rev-direction {
   background: #ffffff;
-  border: 1px solid #E0E4E8;
+  border: 1px solid #e0e4e8;
   border-radius: 14px;
   padding: 32px 28px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .rev-direction:hover {
@@ -282,7 +291,9 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .rev-case:hover {
@@ -329,7 +340,9 @@
   border-radius: 14px;
   padding: 32px 28px;
   box-shadow: var(--shadow-card);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .rev-review:hover {
@@ -378,7 +391,9 @@
   border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .rev-faq-item[open] {
@@ -408,7 +423,7 @@
 }
 
 .rev-faq-item__summary::after {
-  content: '+';
+  content: "+";
   font-size: 1.5rem;
   font-weight: 300;
   color: var(--accent);
@@ -439,7 +454,7 @@
 }
 
 .rev-cta-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -502,7 +517,7 @@
 
 .rev-magnet {
   background: #f0f9ff;
-  border: 2px solid #3b82f6;
+  border: 2px solid var(--indigo);
   border-radius: 16px;
   padding: 32px;
   text-align: center;
@@ -570,7 +585,9 @@
   flex-direction: column;
   gap: 12px;
   color: var(--text);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .rev-hero-use:hover {
@@ -637,7 +654,9 @@
   color: var(--white);
   font-size: 0.9375rem;
   font-family: inherit;
-  transition: border-color 0.2s, background 0.2s;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
 }
 
 .rev-cta__fields input::placeholder,
@@ -667,7 +686,9 @@
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition:
+    background 0.2s,
+    transform 0.2s;
 }
 
 .rev-cta__btn:hover {

@@ -50,22 +50,22 @@
 /* --- Stat Label (utility) --- */
 .stat-label {
   color: var(--text-light);
-  font-size: .95rem;
+  font-size: 0.95rem;
 }
 
 .stat-label--small {
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 /* --- Stat Card Pricing (utility extensions) --- */
 /* Applied on top of .stat-card from cards.css */
 .stat-card--pricing {
   padding: 28px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .stat-card--pricing--highlight {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transform: scale(1.02);
   border-top: 4px solid var(--primary);
 }
@@ -97,7 +97,7 @@
 /* --- Contact Note --- */
 .contact-note {
   color: var(--text-light);
-  font-size: .85rem;
+  font-size: 0.85rem;
   margin-top: 4px;
 }
 
@@ -107,12 +107,12 @@
 }
 
 .messenger--whatsapp {
-  background: #25D366;
+  background: var(--whatsapp);
   color: #fff;
 }
 
 .messenger--telegram {
-  background: #0088cc;
+  background: var(--telegram);
   color: #fff;
 }
 
@@ -133,7 +133,7 @@
   color: var(--text-light);
   line-height: 1.8;
   margin-left: 20px;
-  font-size: .95rem;
+  font-size: 0.95rem;
 }
 
 /* --- Form Card --- */
@@ -141,7 +141,7 @@
   background: #fff;
   border-radius: 16px;
   padding: 32px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
 
 /* --- Form Heading --- */
@@ -193,7 +193,7 @@
 
 /* --- CTA Text --- */
 .cta-text {
-  color: rgba(255, 255, 255, .85);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 1.125rem;
   margin-bottom: 24px;
   max-width: 600px;
@@ -211,7 +211,7 @@
 }
 
 .btn--cta-whatsapp {
-  background: #25D366;
+  background: #25d366;
   color: #fff;
   font-size: 1.125rem;
   padding: 16px 32px;
@@ -229,13 +229,13 @@
 
 /* --- Header Link Review --- */
 .header-link--review {
-  color: var(--review-primary, #2A5B9A);
+  color: var(--review-primary, #2a5b9a);
   font-weight: 600;
 }
 
 /* --- ROI Section --- */
 .roi-card {
-  background: linear-gradient(135deg, #1a56db, #3b82f6);
+  background: linear-gradient(135deg, var(--deep-indigo), var(--indigo));
   border-radius: 16px;
   padding: 40px;
   color: #fff;
@@ -263,10 +263,10 @@
 
 /* --- FAQ Highlight --- */
 .faq-highlight {
-  background: #fef3c7;
+  background: var(--amber-light);
   padding: 12px 16px;
   border-radius: 8px;
-  font-size: .95rem;
+  font-size: 0.95rem;
 }
 
 /* --- FAQ Table --- */
@@ -274,7 +274,7 @@
   width: 100%;
   border-collapse: collapse;
   margin: 16px 0;
-  font-size: .95rem;
+  font-size: 0.95rem;
 }
 
 .faq-table th,
@@ -293,7 +293,7 @@
   border-radius: 8px;
   margin-bottom: 12px;
   padding: 16px 20px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
 .faq-details__summary {
@@ -330,12 +330,12 @@
   background: #fff;
   border-radius: 12px;
   padding: 28px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   border-top: 4px solid var(--text-light);
 }
 
 .pricing-card--highlight {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border-top: 4px solid var(--primary);
   transform: scale(1.02);
 }
@@ -351,7 +351,7 @@
   display: inline-block;
   padding: 4px 12px;
   border-radius: 20px;
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: 600;
   margin-bottom: 16px;
 }
@@ -434,7 +434,7 @@
 .table-note {
   margin-top: 16px;
   color: var(--text-light);
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 /* --- Extra List Items --- */
@@ -451,7 +451,7 @@
 /* --- Section Subtitle (shared) --- */
 .section-subtitle {
   color: var(--text-light);
-  font-size: .95rem;
+  font-size: 0.95rem;
   margin-top: 8px;
 }
 
@@ -475,8 +475,8 @@
 
 /* --- Stat Label Muted --- */
 .stat-label--muted {
-  font-size: .95rem;
-  opacity: .85;
+  font-size: 0.95rem;
+  opacity: 0.85;
 }
 
 /* --- FAQ Lists --- */

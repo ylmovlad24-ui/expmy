@@ -3,38 +3,38 @@
  * Просмотр дипломов в полном размере с навигацией
  */
 
-(function() {
-  'use strict';
+(function () {
+  "use strict";
 
-  const lightbox = document.getElementById('diploma-lightbox');
+  const lightbox = document.getElementById("diploma-lightbox");
   if (!lightbox) return;
 
-  const overlay = lightbox.querySelector('.lightbox__overlay');
-  const closeBtn = lightbox.querySelector('.lightbox__close');
-  const prevBtn = lightbox.querySelector('.lightbox__prev');
-  const nextBtn = lightbox.querySelector('.lightbox__next');
-  const image = lightbox.querySelector('.lightbox__image');
-  const caption = lightbox.querySelector('.lightbox__caption');
+  const overlay = lightbox.querySelector(".lightbox__overlay");
+  const closeBtn = lightbox.querySelector(".lightbox__close");
+  const prevBtn = lightbox.querySelector(".lightbox__prev");
+  const nextBtn = lightbox.querySelector(".lightbox__next");
+  const image = lightbox.querySelector(".lightbox__image");
+  const caption = lightbox.querySelector(".lightbox__caption");
 
   // Collect all diploma images
-  const links = Array.from(document.querySelectorAll('[data-lightbox]'));
+  const links = Array.from(document.querySelectorAll("[data-lightbox]"));
   let currentIndex = 0;
 
   function openLightbox(index) {
     currentIndex = index;
     updateLightbox();
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
   }
 
   function closeLightbox() {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
   }
 
   function updateLightbox() {
     const link = links[currentIndex];
-    const img = link.querySelector('img');
+    const img = link.querySelector("img");
     image.src = img.src;
     image.alt = img.alt;
     caption.textContent = img.alt;
@@ -51,30 +51,30 @@
   }
 
   // Click handlers
-  links.forEach(function(link, index) {
-    link.addEventListener('click', function(e) {
+  links.forEach(function (link, index) {
+    link.addEventListener("click", function (e) {
       e.preventDefault();
       openLightbox(index);
     });
   });
 
-  closeBtn.addEventListener('click', closeLightbox);
-  overlay.addEventListener('click', closeLightbox);
-  prevBtn.addEventListener('click', showPrev);
-  nextBtn.addEventListener('click', showNext);
+  closeBtn.addEventListener("click", closeLightbox);
+  overlay.addEventListener("click", closeLightbox);
+  prevBtn.addEventListener("click", showPrev);
+  nextBtn.addEventListener("click", showNext);
 
   // Keyboard navigation
-  document.addEventListener('keydown', function(e) {
-    if (!lightbox.classList.contains('active')) return;
+  document.addEventListener("keydown", function (e) {
+    if (!lightbox.classList.contains("active")) return;
 
-    switch(e.key) {
-      case 'Escape':
+    switch (e.key) {
+      case "Escape":
         closeLightbox();
         break;
-      case 'ArrowLeft':
+      case "ArrowLeft":
         showPrev();
         break;
-      case 'ArrowRight':
+      case "ArrowRight":
         showNext();
         break;
     }
@@ -84,21 +84,28 @@
   let touchStartX = 0;
   let touchEndX = 0;
 
-  lightbox.addEventListener('touchstart', function(e) {
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
+  lightbox.addEventListener(
+    "touchstart",
+    function (e) {
+      touchStartX = e.changedTouches[0].screenX;
+    },
+    { passive: true }
+  );
 
-  lightbox.addEventListener('touchend', function(e) {
-    touchEndX = e.changedTouches[0].screenX;
-    const diff = touchStartX - touchEndX;
+  lightbox.addEventListener(
+    "touchend",
+    function (e) {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
 
-    if (Math.abs(diff) > 50) {
-      if (diff > 0) {
-        showNext();
-      } else {
-        showPrev();
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+          showNext();
+        } else {
+          showPrev();
+        }
       }
-    }
-  }, { passive: true });
-
+    },
+    { passive: true }
+  );
 })();

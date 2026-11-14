@@ -1,11 +1,11 @@
 /**
  * Utility functions shared across modules
  */
-var AutoExpertUtils = (function() {
-  'use strict';
+var AutoExpertUtils = (function () {
+  "use strict";
 
   function formatPrice(num) {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽';
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " ₽";
   }
 
   function getCheckedValue(groupName) {
@@ -26,7 +26,7 @@ var AutoExpertUtils = (function() {
 
     (extraValues || []).forEach(function (val) {
       hasExtra = true;
-      if (val === 'urgent') {
+      if (val === "urgent") {
         total *= pricing.extras.urgent;
       } else {
         total += pricing.extras[val] || 0;
@@ -39,6 +39,6 @@ var AutoExpertUtils = (function() {
   return {
     formatPrice: formatPrice,
     getCheckedValue: getCheckedValue,
-    calculatePrice: calculatePrice
+    calculatePrice: calculatePrice,
   };
 })();

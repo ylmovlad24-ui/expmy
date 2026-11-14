@@ -4,25 +4,25 @@
  * При переходе на Битрикс этот код можно будет заменить на PHP-include.
  */
 (function () {
-  'use strict';
+  "use strict";
 
   /**
    * Определяет относительный путь к components/ от текущей страницы.
    */
   function getComponentsPath() {
     var scripts = document.querySelectorAll('script[src*="components-loader"]');
-    if (scripts.length === 0) return '../components/'; // fallback
+    if (scripts.length === 0) return "../components/"; // fallback
 
-    var src = scripts[0].getAttribute('src');
-    var parts = src.split('/');
+    var src = scripts[0].getAttribute("src");
+    var parts = src.split("/");
     parts.pop(); // убираем filename.js
 
     // Если скрипт лежит в js/, убираем ещё 'js'
-    if (parts[parts.length - 1] === 'js') {
+    if (parts[parts.length - 1] === "js") {
       parts.pop();
     }
 
-    return parts.join('/') + '/components/';
+    return parts.join("/") + "/components/";
   }
 
   var base = getComponentsPath();
@@ -36,19 +36,18 @@
 
     fetch(base + componentFile)
       .then(function (response) {
-        if (!response.ok) throw new Error('HTTP ' + response.status);
+        if (!response.ok) throw new Error("HTTP " + response.status);
         return response.text();
       })
       .then(function (html) {
         container.innerHTML = html;
       })
       .catch(function (err) {
-        console.warn('[components-loader] Не удалось загрузить ' + componentFile + ':', err);
+        console.warn("[components-loader] Не удалось загрузить " + componentFile + ":", err);
       });
   }
 
   // Загружаем header и footer
-  loadComponent('header-root', 'header.html');
-  loadComponent('footer-root', 'footer.html');
-
+  loadComponent("header-root", "header.html");
+  loadComponent("footer-root", "footer.html");
 })();

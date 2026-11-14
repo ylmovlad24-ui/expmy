@@ -10,7 +10,7 @@
 
 /* Декоративный фоновый паттерн */
 .hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -24,7 +24,7 @@
 }
 
 .hero::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   right: -20%;
@@ -97,8 +97,13 @@
 }
 
 @keyframes floatBadge {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .hero__badge-hero {
@@ -282,7 +287,7 @@
 }
 
 .hero__cta--secondary:hover {
-  background: #d35400;
+  background: var(--accent-hover);
   transform: translateY(-2px);
   box-shadow: 0 4px 14px rgba(230, 126, 34, 0.4);
 }
@@ -428,7 +433,10 @@
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 12px;
   padding: 24px 20px;
-  transition: transform 0.3s var(--ease-quick), background 0.3s, border-color 0.3s;
+  transition:
+    transform 0.3s var(--ease-quick),
+    background 0.3s,
+    border-color 0.3s;
 }
 
 .hero-conditions__item:hover {

@@ -42,7 +42,9 @@
   border-radius: var(--radius);
   background: var(--bg);
   cursor: pointer;
-  transition: border-color 0.2s, background 0.2s;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
 }
 
 .calc-option:hover {
@@ -83,7 +85,9 @@
   background: var(--bg);
   cursor: pointer;
   font-size: 0.9375rem;
-  transition: border-color 0.2s, background 0.2s;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
 }
 
 .calc-checkbox:hover {

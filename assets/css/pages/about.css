@@ -36,7 +36,7 @@
   padding: 28px;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .about-stat-card__number {
@@ -66,7 +66,7 @@
   background: #fff;
   border-radius: 12px;
   padding: 24px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   border-left: 4px solid var(--primary);
 }
 
@@ -77,7 +77,7 @@
 
 .condition-card__text {
   color: var(--text-secondary);
-  font-size: .95rem;
+  font-size: 0.95rem;
   line-height: 1.6;
 }
 
@@ -93,7 +93,7 @@
   background: #fff;
   border-radius: 12px;
   padding: 24px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   text-align: center;
 }
 
@@ -128,7 +128,7 @@
 }
 
 .team-card__role {
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 8px;
 }
@@ -147,7 +147,7 @@
 
 .team-card__bio {
   color: var(--text-secondary);
-  font-size: .85rem;
+  font-size: 0.85rem;
 }
 
 .team-card__link {

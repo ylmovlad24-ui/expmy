@@ -1,0 +1,128 @@
+# ============================================================
+# Объектив-Эксперт — Apache .htaccess
+# Оптимизация для PHP-хостинга
+# ============================================================
+
+# ----------------------------------------
+# 1. Кодировка и MIME-типы
+# ----------------------------------------
+AddDefaultCharset UTF-8
+AddType application/javascript .js
+AddType text/css .css
+AddType image/svg+xml .svg
+AddType image/webp .webp
+AddType application/font-woff .woff
+AddType application/font-woff2 .woff2
+AddType application/x-font-ttf .ttf
+AddType application/x-font-opentype .otf
+
+# ----------------------------------------
+# 2. Security Headers
+# ----------------------------------------
+<IfModule mod_headers.c>
+    # Защита от MIME-sniffing
+    Header set X-Content-Type-Options "nosniff"
+    # Защита от clickjacking
+    Header set X-Frame-Options "SAMEORIGIN"
+    # XSS Protection
+    Header set X-XSS-Protection "1; mode=block"
+    # Referrer Policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    # Content Security Policy
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://api.telegram.org; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://api.telegram.org; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none';"
+    # Permissions Policy
+    Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    # Cache-Control для HTML
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=3600, public, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# ----------------------------------------
+# 3. Gzip/Brotli сжатие
+# ----------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE application/font-woff
+    AddOutputFilterByType DEFLATE application/font-woff2
+</IfModule>
+
+# ----------------------------------------
+# 4. Кэширование статики (1 год)
+# ----------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+</IfModule>
+
+# ----------------------------------------
+# 5. ETags (отключаем, используем Cache-Control)
+# ----------------------------------------
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None
+
+# ----------------------------------------
+# 6. Защита чувствительных файлов
+# ----------------------------------------
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "(config\.php|\.env|\.git)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# ----------------------------------------
+# 7. Ошибки и редиректы
+# ----------------------------------------
+# Custom error pages
+ErrorDocument 404 /404.html
+ErrorDocument 403 /404.html
+ErrorDocument 500 /404.html
+
+# ----------------------------------------
+# 8. PHP настройки
+# ----------------------------------------
+<IfModule mod_php.c>
+    php_value default_charset UTF-8
+    php_value display_errors Off
+    php_value log_errors On
+    php_value max_execution_time 30
+    php_value post_max_size 10M
+    php_value upload_max_filesize 10M
+</IfModule>
+
+# ----------------------------------------
+# 9. Сжатие для старых браузеров
+# ----------------------------------------
+<IfModule mod_mime.c>
+    # SVG should always be served with a Content-Type of image/svg+xml
+    AddType image/svg+xml svg svgz
+    AddEncoding gzip svgz
+</IfModule>

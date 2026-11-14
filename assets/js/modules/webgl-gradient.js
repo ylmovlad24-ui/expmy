@@ -3,14 +3,14 @@
  * ТЗ: моушн-дизайн v1.0, п.3.1
  */
 (function () {
-  'use strict';
+  "use strict";
 
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (prefersReducedMotion) return;
 
   // Check WebGL support
-  const canvas = document.createElement('canvas');
-  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  const canvas = document.createElement("canvas");
+  const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
   if (!gl) return;
 
   // Check device capability
@@ -20,12 +20,12 @@
 
   const isMobile = window.innerWidth < 768;
 
-  const heroSection = document.querySelector('.vnesud-hero, .sudeb-hero, .recz-hero');
+  const heroSection = document.querySelector(".vnesud-hero, .sudeb-hero, .recz-hero");
   if (!heroSection) return;
 
   // Create WebGL container
-  const webglContainer = document.createElement('div');
-  webglContainer.className = 'webgl-gradient';
+  const webglContainer = document.createElement("div");
+  webglContainer.className = "webgl-gradient";
   webglContainer.style.cssText = `
     position: absolute;
     top: 0;
@@ -35,8 +35,8 @@
     z-index: 0;
     overflow: hidden;
   `;
-  
-  const canvasEl = document.createElement('canvas');
+
+  const canvasEl = document.createElement("canvas");
   canvasEl.style.cssText = `
     width: 100%;
     height: 100%;
@@ -46,7 +46,7 @@
   webglContainer.appendChild(canvasEl);
 
   // Noise overlay
-  const noiseOverlay = document.createElement('div');
+  const noiseOverlay = document.createElement("div");
   noiseOverlay.style.cssText = `
     position: absolute;
     top: 0;
@@ -60,7 +60,7 @@
   `;
   webglContainer.appendChild(noiseOverlay);
 
-  heroSection.style.position = 'relative';
+  heroSection.style.position = "relative";
   heroSection.insertBefore(webglContainer, heroSection.firstChild);
 
   // Set canvas size
@@ -167,7 +167,7 @@
     gl.shaderSource(shader, source);
     gl.compileShader(shader);
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-      console.warn('WebGL shader compile error:', gl.getShaderInfoLog(shader));
+      console.warn("WebGL shader compile error:", gl.getShaderInfoLog(shader));
       gl.deleteShader(shader);
       return null;
     }
@@ -184,7 +184,7 @@
   gl.linkProgram(program);
 
   if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-    console.warn('WebGL program link error');
+    console.warn("WebGL program link error");
     return;
   }
 
@@ -193,19 +193,16 @@
   // Buffer setup
   const buffer = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
-    -1, -1, 1, -1, -1, 1,
-    -1, 1, 1, -1, 1, 1
-  ]), gl.STATIC_DRAW);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]), gl.STATIC_DRAW);
 
-  const positionLocation = gl.getAttribLocation(program, 'a_position');
+  const positionLocation = gl.getAttribLocation(program, "a_position");
   gl.enableVertexAttribArray(positionLocation);
   gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
 
   // Uniforms
-  const timeLocation = gl.getUniformLocation(program, 'u_time');
-  const resolutionLocation = gl.getUniformLocation(program, 'u_resolution');
-  const mouseLocation = gl.getUniformLocation(program, 'u_mouse');
+  const timeLocation = gl.getUniformLocation(program, "u_time");
+  const resolutionLocation = gl.getUniformLocation(program, "u_resolution");
+  const mouseLocation = gl.getUniformLocation(program, "u_mouse");
 
   // State
   let mouseX = canvasEl.width / 2;
@@ -217,24 +214,27 @@
   let startTime = performance.now();
 
   // Mouse tracking
-  heroSection.addEventListener('mousemove', (e) => {
+  heroSection.addEventListener("mousemove", (e) => {
     const rect = heroSection.getBoundingClientRect();
     targetMouseX = (e.clientX - rect.left) * (isMobile ? 0.5 : 1.0);
     targetMouseY = canvasEl.height - (e.clientY - rect.top) * (isMobile ? 0.5 : 1.0);
   });
 
   // Visibility check
-  const visibilityObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      isVisible = entry.isIntersecting;
-      if (isVisible && !animationId) {
-        animate();
-      } else if (!isVisible && animationId) {
-        cancelAnimationFrame(animationId);
-        animationId = null;
-      }
-    });
-  }, { threshold: 0 });
+  const visibilityObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible && !animationId) {
+          animate();
+        } else if (!isVisible && animationId) {
+          cancelAnimationFrame(animationId);
+          animationId = null;
+        }
+      });
+    },
+    { threshold: 0 }
+  );
 
   visibilityObserver.observe(heroSection);
 

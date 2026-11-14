@@ -2,88 +2,99 @@
  * GSAP Loader — Загружает GSAP + ScrollTrigger ОДИН раз
  * Все остальные модули проверяют typeof gsap и ждут загрузки
  */
-(function() {
-  'use strict';
+(function () {
+  "use strict";
 
-  var GSAP_CDN = 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js';
-  var SCROLLTRIGGER_CDN = 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js';
+  var GSAP_CDN = "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js";
+  var SCROLLTRIGGER_CDN = "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js";
   var GSAP_LOADED = false;
   var ST_LOADED = false;
   var resolveGSAP = null;
   var resolveST = null;
 
-  var gsapPromise = new Promise(function(resolve) { resolveGSAP = resolve; });
-  var stPromise = new Promise(function(resolve) { resolveST = resolve; });
+  var gsapPromise = new Promise(function (resolve) {
+    resolveGSAP = resolve;
+  });
+  var stPromise = new Promise(function (resolve) {
+    resolveST = resolve;
+  });
 
   function loadScript(src) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
       if (document.querySelector('script[src="' + src + '"]')) {
         resolve();
         return;
       }
-      var script = document.createElement('script');
+      var script = document.createElement("script");
       script.src = src;
       script.onload = resolve;
-      script.onerror = function() { reject(new Error('Failed: ' + src)); };
+      script.onerror = function () {
+        reject(new Error("Failed: " + src));
+      };
       document.head.appendChild(script);
     });
   }
 
   function init() {
     // Проверяем, уже загружен ли GSAP (из другого источника)
-    if (typeof gsap !== 'undefined') {
+    if (typeof gsap !== "undefined") {
       GSAP_LOADED = true;
       resolveGSAP();
       // Теперь загружаем ScrollTrigger
-      if (typeof ScrollTrigger !== 'undefined') {
+      if (typeof ScrollTrigger !== "undefined") {
         ST_LOADED = true;
         resolveST();
       } else {
         loadScript(SCROLLTRIGGER_CDN)
-          .then(function() { ST_LOADED = true; resolveST(); })
-          .catch(function() { console.warn('ScrollTrigger load failed'); resolveST(); });
+          .then(function () {
+            ST_LOADED = true;
+            resolveST();
+          })
+          .catch(function () {
+            console.warn("ScrollTrigger load failed");
+            resolveST();
+          });
       }
       return;
     }
 
     // Загружаем GSAP один раз
     loadScript(GSAP_CDN)
-      .then(function() {
+      .then(function () {
         GSAP_LOADED = true;
         resolveGSAP();
-        console.log('GSAP loaded');
+        console.log("GSAP loaded");
         // Теперь загружаем ScrollTrigger
         return loadScript(SCROLLTRIGGER_CDN);
       })
-      .then(function() {
+      .then(function () {
         ST_LOADED = true;
         resolveST();
-        console.log('ScrollTrigger loaded');
+        console.log("ScrollTrigger loaded");
       })
-      .catch(function(err) {
-        console.warn('GSAP load error:', err);
+      .catch(function (err) {
+        console.warn("GSAP load error:", err);
         resolveGSAP();
         resolveST();
       });
   }
 
   // Запускаем сразу, без defer
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
   } else {
     init();
   }
 
   // Экспорт для других модулей
   window.GSAPLoader = {
-    ready: function() {
-      return gsapPromise.then(function() {
+    ready: function () {
+      return gsapPromise.then(function () {
         return stPromise;
       });
     },
-    isLoaded: function() {
+    isLoaded: function () {
       return GSAP_LOADED && ST_LOADED;
-    }
+    },
   };
-
 })();

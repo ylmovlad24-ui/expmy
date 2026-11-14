@@ -4,7 +4,7 @@
 
 .page-header {
   padding: 60px 0 40px;
-  background: linear-gradient(135deg, var(--primary, #2A5B9A) 0%, #1a4070 100%);
+  background: linear-gradient(135deg, var(--primary, #2a5b9a) 0%, #1a4070 100%);
   color: #fff;
 }
 
@@ -36,7 +36,7 @@
 .section-title {
   font-size: 1.75rem;
   font-weight: 700;
-  color: var(--primary, #2A5B9A);
+  color: var(--primary, #2a5b9a);
   margin-bottom: 32px;
   text-align: center;
 }
@@ -45,7 +45,7 @@
 
 .what-we-check {
   padding: 64px 0;
-  background: var(--bg-light, #F8F9FA);
+  background: var(--bg-light, #f8f9fa);
 }
 
 .what-we-check__container {
@@ -118,13 +118,13 @@
   border-radius: 12px;
   padding: 28px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  border-left: 4px solid var(--accent, #E67E22);
+  border-left: 4px solid var(--accent, #e67e22);
 }
 
 .rc-card__title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--primary, #2A5B9A);
+  color: var(--primary, #2a5b9a);
   margin-bottom: 12px;
 }
 
@@ -138,7 +138,7 @@
 
 .pricing {
   padding: 64px 0;
-  background: var(--bg-light, #F8F9FA);
+  background: var(--bg-light, #f8f9fa);
 }
 
 .pricing__container {
@@ -166,7 +166,7 @@
   display: block;
   font-size: 1.75rem;
   font-weight: 800;
-  color: var(--primary, #2A5B9A);
+  color: var(--primary, #2a5b9a);
   margin-bottom: 8px;
 }
 
@@ -198,7 +198,7 @@
 .case-card__title {
   font-size: 1.35rem;
   font-weight: 600;
-  color: var(--primary, #2A5B9A);
+  color: var(--primary, #2a5b9a);
   margin-bottom: 12px;
 }
 
@@ -211,7 +211,7 @@
 
 .case-card__link {
   display: inline-block;
-  color: var(--accent, #E67E22);
+  color: var(--accent, #e67e22);
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
@@ -219,7 +219,7 @@
 }
 
 .case-card__link:hover {
-  color: var(--primary, #2A5B9A);
+  color: var(--primary, #2a5b9a);
 }
 
 /* ─── FAQ Section (duplicate — root review.css has the definition) ─── */
@@ -229,7 +229,7 @@
 
 .trust {
   padding: 48px 0;
-  background: var(--bg-light, #F8F9FA);
+  background: var(--bg-light, #f8f9fa);
 }
 
 .trust__container {
@@ -261,7 +261,7 @@
 .trust__item h3 {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--primary, #2A5B9A);
+  color: var(--primary, #2a5b9a);
   margin: 0;
 }
 
@@ -269,7 +269,7 @@
 
 .expertise-overview {
   padding: 48px 0;
-  background: linear-gradient(135deg, var(--primary, #2A5B9A), #1a4070);
+  background: linear-gradient(135deg, var(--primary, #2a5b9a), #1a4070);
   color: #fff;
 }
 
@@ -308,7 +308,7 @@
 .expertise-column h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--primary, #2A5B9A);
+  color: var(--primary, #2a5b9a);
   margin-bottom: 16px;
 }
 
@@ -333,7 +333,7 @@
   content: "•";
   position: absolute;
   left: 0;
-  color: var(--accent, #E67E22);
+  color: var(--accent, #e67e22);
   font-weight: 700;
   font-size: 1.2rem;
 }
@@ -342,7 +342,7 @@
 
 .expertise-cta {
   padding: 48px 0;
-  background: var(--bg-light, #F8F9FA);
+  background: var(--bg-light, #f8f9fa);
   text-align: center;
 }
 

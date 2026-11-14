@@ -19,3 +19,9 @@ Thumbs.db
 
 # Build
 node_modules/
+
+# Sensitive configs
+api/config.php
+.env
+.env.local
+*.env

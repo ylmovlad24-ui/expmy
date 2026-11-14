@@ -12,7 +12,10 @@
   border-radius: var(--radius);
   padding: 28px 24px;
   box-shadow: var(--shadow);
-  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s;
+  transition:
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s;
   text-decoration: none;
   color: inherit;
   display: flex;
@@ -55,7 +58,11 @@
   border-radius: var(--radius);
   padding: 28px 24px;
   box-shadow: var(--shadow);
-  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s, border-left-color 0.3s;
+  transition:
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s,
+    border-left-color 0.3s;
   text-decoration: none;
   color: inherit;
   display: flex;
@@ -94,7 +101,7 @@
 }
 
 .category-card__list li::before {
-  content: '—';
+  content: "—";
   position: absolute;
   left: 0;
   color: var(--accent);

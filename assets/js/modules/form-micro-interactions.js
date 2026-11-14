@@ -2,27 +2,27 @@
  * Form Micro-interactions
  * Добавляет структуру полей для анимаций
  */
-(function() {
-  'use strict';
+(function () {
+  "use strict";
 
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.form__input, .form__textarea').forEach(function(input) {
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".form__input, .form__textarea").forEach(function (input) {
       // Skip if already wrapped
-      if (input.parentElement.classList.contains('form-field')) return;
+      if (input.parentElement.classList.contains("form-field")) return;
 
-      var wrapper = document.createElement('div');
-      wrapper.className = 'form-field';
+      var wrapper = document.createElement("div");
+      wrapper.className = "form-field";
 
-      var label = document.createElement('label');
-      label.className = 'form-field__label';
-      label.textContent = input.getAttribute('placeholder') || '';
+      var label = document.createElement("label");
+      label.className = "form-field__label";
+      label.textContent = input.getAttribute("placeholder") || "";
 
-      var underline = document.createElement('div');
-      underline.className = 'form-field__underline';
+      var underline = document.createElement("div");
+      underline.className = "form-field__underline";
 
       // Move input into wrapper
-      input.removeAttribute('placeholder');
-      input.setAttribute('aria-label', label.textContent);
+      input.removeAttribute("placeholder");
+      input.setAttribute("aria-label", label.textContent);
 
       wrapper.appendChild(input);
       wrapper.appendChild(label);

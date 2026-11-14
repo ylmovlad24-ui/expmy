@@ -1,13 +1,13 @@
 /**
  * Scroll Velocity Effects — Реакция на скорость скролла
  */
-(function() {
-  'use strict';
+(function () {
+  "use strict";
 
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (prefersReducedMotion) return;
 
-  const velocityElements = document.querySelectorAll('.velocity-blur');
+  const velocityElements = document.querySelectorAll(".velocity-blur");
   if (velocityElements.length === 0) return;
 
   let lastScrollY = window.scrollY;
@@ -16,12 +16,16 @@
   let currentBlur = 0;
 
   // Track scroll velocity
-  window.addEventListener('scroll', function() {
-    const scrollY = window.scrollY;
-    const delta = Math.abs(scrollY - lastScrollY);
-    velocity = Math.min(delta * 2, 15);
-    lastScrollY = scrollY;
-  }, { passive: true });
+  window.addEventListener(
+    "scroll",
+    function () {
+      const scrollY = window.scrollY;
+      const delta = Math.abs(scrollY - lastScrollY);
+      velocity = Math.min(delta * 2, 15);
+      lastScrollY = scrollY;
+    },
+    { passive: true }
+  );
 
   // Smooth decay + apply
   function updateVelocity() {
@@ -32,9 +36,11 @@
 
     currentBlur += (blurAmount - currentBlur) * 0.1;
 
-    velocityElements.forEach(function(el) {
-      el.style.filter = 'blur(' + currentBlur + 'px)';
-      el.style.transform = 'scale(' + (1 + currentBlur * 0.005) + ')';
+    velocityElements.forEach(function (el) {
+      var scaleAmount = 1 + currentBlur * 0.002;
+      var opacityAmount = 1 - currentBlur * 0.03;
+      el.style.transform = "scale(" + scaleAmount + ")";
+      el.style.opacity = Math.max(opacityAmount, 0.7);
     });
 
     rafId = requestAnimationFrame(updateVelocity);
@@ -44,9 +50,9 @@
   updateVelocity();
 
   // Cleanup
-  window.addEventListener('beforeunload', function() {
+  window.addEventListener("beforeunload", function () {
     if (rafId) cancelAnimationFrame(rafId);
   });
 
-  console.log('Motion: Scroll velocity initialized');
+  console.log("Motion: Scroll velocity initialized");
 })();

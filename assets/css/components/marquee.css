@@ -9,7 +9,7 @@
 
 .marquee::before,
 .marquee::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   width: 200px;
@@ -52,26 +52,32 @@
   color: var(--text-light, #666666);
   white-space: nowrap;
   opacity: 0.6;
-  transition: opacity 0.3s ease, color 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    color 0.3s ease;
 }
 
 .marquee__item:hover {
   opacity: 1;
-  color: var(--accent, #E67E22);
+  color: var(--accent, #e67e22);
 }
 
 .marquee__divider {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--accent, #E67E22);
+  background: var(--accent, #e67e22);
   opacity: 0.4;
   flex-shrink: 0;
 }
 
 @keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .marquee:hover .marquee__track {

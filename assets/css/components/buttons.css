@@ -10,7 +10,12 @@
   font-weight: var(--fw-semibold);
   cursor: pointer;
   border: 2px solid transparent;
-  transition: background var(--transition-normal), color var(--transition-normal), border-color var(--transition-normal), transform var(--transition-normal) var(--ease-out), box-shadow var(--transition-normal) var(--ease-out);
+  transition:
+    background var(--transition-normal),
+    color var(--transition-normal),
+    border-color var(--transition-normal),
+    transform var(--transition-normal) var(--ease-out),
+    box-shadow var(--transition-normal) var(--ease-out);
   text-align: center;
   box-shadow: var(--shadow-button);
   position: relative;
@@ -19,7 +24,7 @@
 
 /* Ripple эффект */
 .btn::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100px;
   height: 100px;

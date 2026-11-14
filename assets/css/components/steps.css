@@ -64,7 +64,7 @@
 }
 
 .trust-list li::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 20px;
   top: 24px;

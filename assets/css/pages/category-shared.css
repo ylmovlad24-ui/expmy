@@ -21,8 +21,12 @@
     width: 100%;
   }
   @keyframes progress {
-    from { width: 0%; }
-    to { width: 100%; }
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
   }
 }
 
@@ -41,7 +45,7 @@
 
 /* Декоративный фоновый паттерн hero */
 .vnesud-hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -133,7 +137,9 @@
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-color: rgba(42, 91, 154, 0.3);
-  transition: text-decoration-color 0.2s ease, color 0.2s ease;
+  transition:
+    text-decoration-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .vnesud-hero__link:hover {
@@ -160,7 +166,9 @@
   flex-direction: column;
   gap: 12px;
   color: #1a202c;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .vnesud-hero-use__title {
@@ -211,7 +219,14 @@
 
 .vnesud-divider__line {
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, var(--border) 20%, var(--primary) 50%, var(--border) 80%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--border) 20%,
+    var(--primary) 50%,
+    var(--border) 80%,
+    transparent 100%
+  );
   opacity: 0.5;
 }
 
@@ -254,14 +269,16 @@
 
 .vnesud-direction {
   background: #ffffff;
-  border: 1px solid #E0E4E8;
+  border: 1px solid #e0e4e8;
   border-radius: 14px;
   padding: 32px 28px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: #333333;
 }
 
@@ -274,7 +291,7 @@
   width: 40px;
   height: 40px;
   line-height: 1;
-  color: #E67E22;
+  color: #e67e22;
   flex-shrink: 0;
 }
 
@@ -297,15 +314,17 @@
 .vnesud-direction__link {
   font-size: 0.9375rem;
   font-weight: 600;
-  color: #2A5B9A;
+  color: #2a5b9a;
   text-decoration: none;
   padding: 0;
-  transition: color 0.2s ease, padding-left 0.2s ease;
+  transition:
+    color 0.2s ease,
+    padding-left 0.2s ease;
   align-self: flex-start;
 }
 
 .vnesud-direction__link:hover {
-  color: #E67E22;
+  color: #e67e22;
   padding-left: 6px;
 }
 
@@ -330,7 +349,9 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .vnesud-case:hover {
@@ -378,7 +399,9 @@
   border-radius: 14px;
   padding: 36px 32px;
   box-shadow: var(--shadow-card);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .guarantee-card:hover {
@@ -410,7 +433,9 @@
   font-weight: 600;
   color: var(--primary);
   text-decoration: none;
-  transition: color 0.2s ease, padding-left 0.2s ease;
+  transition:
+    color 0.2s ease,
+    padding-left 0.2s ease;
 }
 
 .guarantee-card__link:hover {
@@ -433,7 +458,9 @@
   border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .vnesud-faq-item[open] {
@@ -463,7 +490,7 @@
 }
 
 .vnesud-faq-item__summary::after {
-  content: '+';
+  content: "+";
   font-size: 1.5rem;
   font-weight: 300;
   color: var(--accent);
@@ -515,7 +542,7 @@
 }
 
 .vnesud-cta-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -573,7 +600,9 @@
   color: var(--white);
   font-size: 0.9375rem;
   font-family: inherit;
-  transition: border-color 0.2s, background 0.2s;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
 }
 
 .vnesud-cta__fields input::placeholder,
@@ -603,7 +632,9 @@
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition:
+    background 0.2s,
+    transform 0.2s;
 }
 
 .vnesud-cta__btn:hover {
@@ -616,6 +647,131 @@
   font-size: 0.8125rem;
   color: var(--white-75);
   margin: 0;
+}
+
+/* --- Hero Principles (shared across category pages) --- */
+
+.vnesud-hero-principles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+
+.vnesud-hero-principle {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.vnesud-hero-principle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vnesud-hero-principle:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.vnesud-hero-principle:hover::before {
+  opacity: 1;
+}
+
+/* Icon */
+.vnesud-hero-principle__icon {
+  width: 26px;
+  height: 26px;
+  color: rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.vnesud-hero-principle:hover .vnesud-hero-principle__icon {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Card title */
+.vnesud-hero-principle__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.vnesud-hero-principle:hover .vnesud-hero-principle__title {
+  color: #ffffff;
+}
+
+/* Description */
+.vnesud-hero-principle__desc {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.55;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.vnesud-hero-principle:hover .vnesud-hero-principle__desc {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Highlighted card (Minjust) - accent variant */
+.vnesud-hero-principle--highlight {
+  background: rgba(230, 126, 34, 0.08);
+  border-color: rgba(230, 126, 34, 0.2);
+}
+
+.vnesud-hero-principle--highlight::before {
+  background: linear-gradient(90deg, var(--accent), rgba(230, 126, 34, 0.3));
+}
+
+.vnesud-hero-principle--highlight .vnesud-hero-principle__title {
+  color: rgba(255, 200, 150, 0.95);
+}
+
+.vnesud-hero-principle--highlight:hover .vnesud-hero-principle__title {
+  color: #ff9933;
+}
+
+.vnesud-hero-principle--highlight .vnesud-hero-principle__icon {
+  color: rgba(230, 126, 34, 0.7);
+}
+
+.vnesud-hero-principle--highlight:hover .vnesud-hero-principle__icon {
+  color: #ff9933;
+}
+
+.vnesud-hero-principle--highlight .vnesud-hero-principle__desc {
+  color: rgba(255, 200, 150, 0.65);
+}
+
+.vnesud-hero-principle--highlight:hover .vnesud-hero-principle__desc {
+  color: rgba(255, 200, 150, 0.8);
+}
+
+.vnesud-hero-principle--highlight:hover {
+  background: rgba(230, 126, 34, 0.12);
+  border-color: rgba(230, 126, 34, 0.3);
 }
 
 /* --- RESPONSIVE --- */

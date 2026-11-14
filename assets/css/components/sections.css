@@ -43,7 +43,7 @@
 }
 
 .section__subtitle--cta {
-  color: rgba(255, 255, 255, .85);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 1.125rem;
   margin-bottom: 24px;
   max-width: 600px;

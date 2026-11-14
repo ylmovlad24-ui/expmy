@@ -4,13 +4,16 @@
   position: fixed;
   width: 12px;
   height: 12px;
-  background: var(--accent, #E67E22);
+  background: var(--accent, #e67e22);
   border-radius: 50%;
   pointer-events: none;
   z-index: 99999;
   mix-blend-mode: difference;
   transform: translate(-50%, -50%);
-  transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+  transition:
+    width 0.3s ease,
+    height 0.3s ease,
+    background 0.3s ease;
 }
 
 .custom-cursor-ring {
@@ -22,17 +25,18 @@
   pointer-events: none;
   z-index: 99998;
   transform: translate(-50%, -50%);
-  transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-              height 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-              border-color 0.3s ease,
-              background 0.3s ease;
+  transition:
+    width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    height 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    border-color 0.3s ease,
+    background 0.3s ease;
 }
 
 /* State: hover on link */
 .custom-cursor-ring.link-hover {
   width: 64px;
   height: 64px;
-  border-color: var(--accent, #E67E22);
+  border-color: var(--accent, #e67e22);
   background: rgba(230, 126, 34, 0.1);
 }
 
@@ -40,8 +44,8 @@
 .custom-cursor-ring.card-hover {
   width: 80px;
   height: 80px;
-  border-color: var(--accent, #E67E22);
-  background: var(--accent, #E67E22);
+  border-color: var(--accent, #e67e22);
+  background: var(--accent, #e67e22);
 }
 
 .custom-cursor-text {
@@ -55,7 +59,9 @@
   text-transform: uppercase;
   opacity: 0;
   transform: translate(-50%, -50%) translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .custom-cursor-text.visible {
