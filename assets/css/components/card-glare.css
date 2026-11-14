@@ -1,0 +1,65 @@
+/* ============================================
+   Card Glare Effect
+   ============================================ */
+
+/* Glare overlay on cards */
+[data-glare]::before,
+[data-glare="true"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at var(--glare-x, 50%) var(--glare-y, 50%),
+    rgba(255, 255, 255, var(--glare-intensity, 0.15)) 0%,
+    rgba(255, 255, 255, calc(var(--glare-intensity, 0.15) * 0.5)) 30%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  will-change: opacity, background-position;
+}
+
+/* Strong glare mode */
+[data-glare="strong"]::before {
+  --glare-intensity: 0.25;
+}
+
+/* Active state on hover/focus */
+[data-glare]:hover::before,
+[data-glare]:focus::before,
+[data-glare].glare-active::before {
+  opacity: 1;
+}
+
+/* Mobile: static glare on reveal */
+@media (hover: none) and (pointer: coarse) {
+  [data-glare]::before,
+  [data-glare="true"]::before {
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, var(--glare-intensity, 0.1)) 0%,
+      transparent 60%
+    );
+    opacity: 0;
+  }
+
+  [data-glare].glare-revealed::before {
+    opacity: 1;
+    transition: opacity 0.6s ease;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  [data-glare]::before,
+  [data-glare]:hover::before,
+  [data-glare]:focus::before,
+  [data-glare].glare-active::before,
+  [data-glare].glare-revealed::before {
+    opacity: 0 !important;
+    transition: none !important;
+  }
+}

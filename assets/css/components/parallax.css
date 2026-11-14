@@ -1,0 +1,84 @@
+/* ============================================
+   Parallax Effects
+   Scroll-driven parallax for images, backgrounds, and text
+   ============================================ */
+
+/* --- Parallax Base --- */
+.parallax-element {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* --- Speed Classes --- */
+.parallax-slow {
+  --parallax-speed: 0.15;
+}
+
+.parallax-medium {
+  --parallax-speed: 0.3;
+}
+
+.parallax-fast {
+  --parallax-speed: 0.5;
+}
+
+/* --- Desktop: GSAP-driven parallax --- */
+@media (hover: hover) and (pointer: fine) {
+  .parallax-element {
+    /* Transforms applied by GSAP ScrollTrigger */
+  }
+}
+
+/* --- Mobile: CSS-only parallax fallback --- */
+@media (hover: none) and (pointer: coarse) {
+  .parallax-element {
+    transform: translateY(calc(var(--parallax-offset, 0) * var(--parallax-speed, 0.3)));
+    will-change: transform;
+  }
+
+  /* Activate on scroll via IntersectionObserver + CSS custom property */
+  .parallax-element.parallax-active {
+    animation: parallaxScroll var(--parallax-duration, 1s) linear forwards;
+  }
+}
+
+/* --- Parallax Backgrounds --- */
+.parallax-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.parallax-bg > * {
+  position: absolute;
+  inset: -20%;
+  width: 140%;
+  height: 140%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+/* --- Parallax Decorations --- */
+.parallax-decoration {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* --- Parallax Hero --- */
+.parallax-hero .parallax-element {
+  --parallax-speed: 0.4;
+}
+
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .parallax-element,
+  .parallax-bg > *,
+  .parallax-decoration {
+    transform: none !important;
+    animation: none !important;
+    will-change: auto !important;
+  }
+}

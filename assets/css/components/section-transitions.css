@@ -1,0 +1,158 @@
+/* ============================================
+   Section Transitions
+   Gradient dividers, alternating backgrounds, smooth section transitions
+   ============================================ */
+
+/* --- Gradient Dividers --- */
+.section-divider {
+  position: relative;
+  height: 80px;
+  overflow: hidden;
+}
+
+.section-divider::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.03) 20%,
+    rgba(0, 0, 0, 0.05) 50%,
+    rgba(0, 0, 0, 0.03) 80%,
+    transparent 100%
+  );
+}
+
+/* Color variant: light */
+.section-divider--light::before {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.5) 20%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.5) 80%,
+    transparent 100%
+  );
+}
+
+/* Color variant: accent */
+.section-divider--accent::before {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(var(--accent-rgb, 59, 130, 246), 0.1) 20%,
+    rgba(var(--accent-rgb, 59, 130, 246), 0.15) 50%,
+    rgba(var(--accent-rgb, 59, 130, 246), 0.1) 80%,
+    transparent 100%
+  );
+}
+
+/* --- Alternating Section Backgrounds --- */
+.section-transition-alt {
+  position: relative;
+}
+
+.section-transition-alt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--bg-color, #ffffff) 0%,
+    var(--bg-alt-color, #f8f9fa) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-transition-alt.revealed::before {
+  opacity: 1;
+}
+
+.section-transition-alt > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Fade-in Section Background --- */
+.section-fade-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-fade-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--section-bg-gradient, linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.02)));
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-fade-bg.revealed::before {
+  opacity: 1;
+}
+
+.section-fade-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Animated Background Wave --- */
+.section-wave-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-wave-bg::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 120px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120'%3E%3Cpath fill='rgba(0,0,0,0.03)' d='M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z'/%3E%3C/svg%3E") no-repeat bottom center;
+  background-size: 50% 100%;
+  animation: waveScroll 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-wave-bg.revealed::after {
+  opacity: 1;
+}
+
+@keyframes waveScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+  .section-divider {
+    height: 40px;
+  }
+
+  .section-wave-bg::after {
+    height: 60px;
+    animation-duration: 30s;
+  }
+}
+
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .section-transition-alt::before,
+  .section-fade-bg::before,
+  .section-wave-bg::after {
+    opacity: 1 !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

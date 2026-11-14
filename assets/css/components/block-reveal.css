@@ -1,0 +1,114 @@
+/* ============================================
+   Block Reveal Effects
+   Additional reveal animation types
+   ============================================ */
+
+/* --- Scale Reveal --- */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* --- Clip Horizontal Reveal --- */
+.reveal-clip-horizontal {
+  clip-path: inset(0 100% 0 0);
+  opacity: 1;
+  transition: clip-path 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-clip-horizontal.revealed {
+  clip-path: inset(0 0% 0 0);
+}
+
+/* --- Split Reveal --- */
+.reveal-split {
+  display: flex;
+  gap: 2rem;
+}
+
+.reveal-split > * {
+  flex: 1;
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-split > *:nth-child(odd) {
+  transform: translateX(-40px);
+}
+
+.reveal-split > *:nth-child(even) {
+  transform: translateX(40px);
+}
+
+.reveal-split.revealed > *:nth-child(odd) {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-split.revealed > *:nth-child(even) {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- Stack Reveal --- */
+.reveal-stack > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-stack.revealed > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+.reveal-stack.revealed > *:nth-child(2) { transition-delay: 0.08s; opacity: 1; transform: translateY(0); }
+.reveal-stack.revealed > *:nth-child(3) { transition-delay: 0.16s; opacity: 1; transform: translateY(0); }
+.reveal-stack.revealed > *:nth-child(4) { transition-delay: 0.24s; opacity: 1; transform: translateY(0); }
+.reveal-stack.revealed > *:nth-child(5) { transition-delay: 0.32s; opacity: 1; transform: translateY(0); }
+.reveal-stack.revealed > *:nth-child(6) { transition-delay: 0.40s; opacity: 1; transform: translateY(0); }
+.reveal-stack.revealed > *:nth-child(7) { transition-delay: 0.48s; opacity: 1; transform: translateY(0); }
+.reveal-stack.revealed > *:nth-child(8) { transition-delay: 0.56s; opacity: 1; transform: translateY(0); }
+.reveal-stack.revealed > *:nth-child(9) { transition-delay: 0.64s; opacity: 1; transform: translateY(0); }
+.reveal-stack.revealed > *:nth-child(10) { transition-delay: 0.72s; opacity: 1; transform: translateY(0); }
+
+/* --- Mobile: reduce complexity --- */
+@media (max-width: 768px) {
+  .reveal-split {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .reveal-split > *:nth-child(odd),
+  .reveal-split > *:nth-child(even) {
+    transform: translateY(20px);
+  }
+
+  .reveal-split.revealed > *:nth-child(odd),
+  .reveal-split.revealed > *:nth-child(even) {
+    transform: translateY(0);
+  }
+
+  /* Reduce stack items visible at once */
+  .reveal-stack > * {
+    transition-delay: calc((min(var(--stack-index, 0), 5)) * 0.1s) !important;
+  }
+}
+
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-scale,
+  .reveal-clip-horizontal,
+  .reveal-split > *,
+  .reveal-stack > * {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+    transition: none !important;
+  }
+}

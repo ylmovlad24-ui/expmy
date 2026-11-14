@@ -1,0 +1,97 @@
+/* ============================================
+   Text Reveal Effects
+   Words, letters, and lines reveal animations
+   ============================================ */
+
+/* --- Text Reveal Words --- */
+.text-reveal-words {
+  overflow: hidden;
+}
+
+.text-reveal-words .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.text-reveal-words.revealed .word {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays set via JS inline styles */
+
+/* --- Text Reveal Letters --- */
+.text-reveal-letters {
+  display: inline;
+  overflow: hidden;
+}
+
+.text-reveal-letters .letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px) rotateX(40deg);
+  transform-origin: center bottom;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.text-reveal-letters.revealed .letter {
+  opacity: 1;
+  transform: translateY(0) rotateX(0deg);
+}
+
+/* Stagger delays set via JS inline styles */
+
+/* --- Text Reveal Lines --- */
+.text-reveal-lines {
+  overflow: hidden;
+}
+
+.text-reveal-lines .line {
+  display: block;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.text-reveal-lines.revealed .line {
+  clip-path: inset(0 0% 0 0);
+}
+
+/* --- Mobile: reduce complexity --- */
+@media (max-width: 768px) {
+  /* Disable letters reveal on mobile */
+  .text-reveal-letters {
+    display: inline;
+  }
+
+  .text-reveal-letters .letter {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Simplify words reveal */
+  .text-reveal-words .word {
+    transition-duration: 0.4s;
+  }
+
+  /* Simplify lines reveal */
+  .text-reveal-lines .line {
+    transition-duration: 0.6s;
+  }
+}
+
+/* --- Low-end devices --- */
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  .text-reveal-words .word,
+  .text-reveal-letters .letter,
+  .text-reveal-lines .line {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,71 @@
+/* ============================================
+   Section Spotlight Effect
+   Mouse-follow (desktop) or static (mobile) glow on sections
+   ============================================ */
+
+/* --- Desktop: mouse-follow spotlight --- */
+.spotlight-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%),
+    rgba(255, 255, 255, var(--spotlight-intensity, 0.04)) 0%,
+    rgba(255, 255, 255, calc(var(--spotlight-intensity, 0.04) * 0.5)) 25%,
+    transparent 55%
+  );
+  pointer-events: none;
+  z-index: 1;
+  transition: background 0.15s ease-out;
+  will-change: background;
+}
+
+/* Intensity variants */
+.spotlight-section[data-spotlight-intensity="strong"]::before {
+  --spotlight-intensity: 0.08;
+}
+
+.spotlight-section[data-spotlight-intensity="medium"]::before {
+  --spotlight-intensity: 0.05;
+}
+
+.spotlight-section[data-spotlight-intensity="soft"]::before {
+  --spotlight-intensity: 0.03;
+}
+
+/* --- Mobile: static spotlight --- */
+@media (hover: none) and (pointer: coarse) {
+  .spotlight-section::before {
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, var(--spotlight-intensity, 0.03)) 0%,
+      transparent 50%
+    );
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+
+  .spotlight-section.spotlight-revealed::before {
+    opacity: 1;
+  }
+}
+
+/* --- Content sits above spotlight --- */
+.spotlight-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .spotlight-section::before {
+    opacity: 0 !important;
+    background: none !important;
+    transition: none !important;
+  }
+}
