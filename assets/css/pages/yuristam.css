@@ -1,0 +1,379 @@
+/* ===== YURISTAM — Для юридических фирм ===== */
+
+/* === Якорная навигация (sticky) === */
+
+.yuristam-nav {
+  position: sticky;
+  top: var(--header-height);
+  z-index: 250;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+  transition: box-shadow 0.3s;
+}
+
+.yuristam-nav.scrolled {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.yuristam-nav .container {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+}
+
+.yuristam-nav__link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.yuristam-nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s;
+}
+
+.yuristam-nav__link:hover {
+  color: var(--accent);
+}
+
+.yuristam-nav__link:hover::after {
+  width: 100%;
+}
+
+/* === Hero === */
+
+.yuristam-hero {
+  padding: 100px 0 80px;
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-bg-alt) 100%);
+  color: var(--white);
+  text-align: center;
+}
+
+.yuristam-hero__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.yuristam-hero__subtitle {
+  font-size: 1.125rem;
+  opacity: 0.9;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+.yuristam-badges {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 0.9375rem;
+  opacity: 0.75;
+}
+
+/* === Два направления === */
+
+.yuristam-directions {
+  padding: 72px 0;
+}
+
+.yuristam-directions .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.yuristam-direction-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 36px 32px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.yuristam-direction-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.yuristam-direction-card h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--primary);
+}
+
+.yuristam-direction-card p {
+  font-size: 0.9375rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.yuristam-direction-card__link {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s, padding-left 0.2s;
+}
+
+.yuristam-direction-card__link:hover {
+  color: var(--accent-hover);
+  padding-left: 4px;
+}
+
+/* === Таблица родов и видов === */
+
+.yuristam-types {
+  padding: 72px 0;
+  background: var(--bg-light);
+}
+
+.yuristam-types h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.yuristam-types table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.yuristam-types th {
+  background: var(--primary);
+  color: var(--white);
+  padding: 16px 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.yuristam-types td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.yuristam-types tr:last-child td {
+  border-bottom: none;
+}
+
+.yuristam-types tr:nth-child(even) {
+  background: var(--bg-light);
+}
+
+.yuristam-types tr:hover td {
+  background: var(--accent-bg);
+}
+
+.yuristam-types td:first-child {
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+/* === О компании === */
+
+.yuristam-about {
+  padding: 72px 0;
+}
+
+.yuristam-about h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.yuristam-about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.yuristam-about-item {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 24px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.yuristam-about-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.yuristam-about-item h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+
+.yuristam-about-item p {
+  font-size: 0.9375rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.yuristam-about-item a {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.yuristam-about-item a:hover {
+  color: var(--accent-hover);
+}
+
+/* === Форма === */
+
+.yuristam-form {
+  padding: 72px 0;
+  background: var(--bg-light);
+}
+
+.yuristam-form h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.yuristam-form .form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* === Документы === */
+
+.yuristam-docs {
+  padding: 32px 0;
+  text-align: center;
+}
+
+.yuristam-docs__links {
+  font-size: 0.875rem;
+  color: var(--text-light);
+}
+
+.yuristam-docs__links a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.yuristam-docs__links a:hover {
+  color: var(--accent);
+}
+
+/* === Адаптивность === */
+
+@media (max-width: 1024px) {
+  .yuristam-nav .container {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .yuristam-nav__link {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .yuristam-directions .container {
+    grid-template-columns: 1fr;
+  }
+
+  .yuristam-about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .yuristam-hero__title {
+    font-size: 1.75rem;
+  }
+
+  .yuristam-hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .yuristam-badges {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .yuristam-types table {
+    font-size: 0.875rem;
+  }
+
+  .yuristam-types th,
+  .yuristam-types td {
+    padding: 12px 14px;
+  }
+
+  .yuristam-nav .container {
+    gap: 12px;
+  }
+
+  .yuristam-nav__link {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .yuristam-hero {
+    padding: 80px 0 60px;
+  }
+
+  .yuristam-hero__title {
+    font-size: 1.5rem;
+  }
+
+  .yuristam-direction-card {
+    padding: 28px 24px;
+  }
+
+  .yuristam-direction-card h2 {
+    font-size: 1.25rem;
+  }
+
+  .yuristam-types table {
+    font-size: 0.8125rem;
+  }
+
+  .yuristam-types th,
+  .yuristam-types td {
+    padding: 10px 12px;
+  }
+
+  .yuristam-about-item {
+    padding: 24px 20px;
+  }
+}

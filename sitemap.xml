@@ -1,9 +1,18 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url><loc>https://objektiv-expert.ru/</loc></url>
 <url><loc>https://objektiv-expert.ru/avtotehnicheskaya/</loc></url>
+<url><loc>https://objektiv-expert.ru/avtotehnicheskaya/doroga/</loc></url>
+<url><loc>https://objektiv-expert.ru/avtotehnicheskaya/obstoyatelstva-dtp/</loc></url>
+<url><loc>https://objektiv-expert.ru/avtotehnicheskaya/sledy/</loc></url>
+<url><loc>https://objektiv-expert.ru/avtotehnicheskaya/tekhnicheskoe-sostoyanie/</loc></url>
 <url><loc>https://objektiv-expert.ru/avtotovarovedcheskaya/</loc></url>
+<url><loc>https://objektiv-expert.ru/avtotovarovedcheskaya/osago/</loc></url>
+<url><loc>https://objektiv-expert.ru/avtotovarovedcheskaya/vne-ramki/</loc></url>
 <url><loc>https://objektiv-expert.ru/uzly-i-agregaty/</loc></url>
 <url><loc>https://objektiv-expert.ru/tovarovedcheskaya-b2b/</loc></url>
+<url><loc>https://objektiv-expert.ru/tovarovedcheskaya-b2b/construction/</loc></url>
+<url><loc>https://objektiv-expert.ru/tovarovedcheskaya-b2b/equipment/</loc></url>
+<url><loc>https://objektiv-expert.ru/tovarovedcheskaya-b2b/transport/</loc></url>
 <url><loc>https://objektiv-expert.ru/sudebnaya/</loc></url>
 <url><loc>https://objektiv-expert.ru/vnesudebnaya/</loc></url>
 <url><loc>https://objektiv-expert.ru/recenziya/</loc></url>
@@ -11,8 +20,10 @@
 <url><loc>https://objektiv-expert.ru/situations/osago/</loc></url>
 <url><loc>https://objektiv-expert.ru/situations/defekt/</loc></url>
 <url><loc>https://objektiv-expert.ru/situations/postavka/</loc></url>
-<url><loc>https://objektiv-expert.ru/recenzii-dlya-yuristov/</loc></url>
-<url><loc>https://objektiv-expert.ru/dosudebnye-dlya-yurfirmy/</loc></url>
+<url><loc>https://objektiv-expert.ru/situations/goods/</loc></url>
+<url><loc>https://objektiv-expert.ru/situations/insurance/</loc></url>
+<url><loc>https://objektiv-expert.ru/situations/parts/</loc></url>
+<url><loc>https://objektiv-expert.ru/yuristam/</loc></url>
 <url><loc>https://objektiv-expert.ru/ceny/</loc></url>
 <url><loc>https://objektiv-expert.ru/keysy/</loc></url>
 <url><loc>https://objektiv-expert.ru/o-kompanii/</loc></url>
@@ -22,6 +33,6 @@
 <url><loc>https://objektiv-expert.ru/oferta/</loc></url>
 <url><loc>https://objektiv-expert.ru/politika/</loc></url>
 <url><loc>https://objektiv-expert.ru/spasibo/</loc></url>
-<url><loc>https://objektiv-expert.ru/partners/</loc></url>
-<url><loc>https://objektiv-expert.ru/404.html</loc></url>
+
+<url><loc>https://objektiv-expert.ru/diplomy/</loc></url>
 </urlset>

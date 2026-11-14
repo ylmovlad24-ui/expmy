@@ -48,5 +48,15 @@
 
 # Old service format pages → New format pages
 /services/court/ /sudebnaya/ 301
+/services/court/* /sudebnaya/ 301
 /services/informal/ /vnesudebnaya/ 301
+/services/informal/* /vnesudebnaya/ 301
 /services/review/ /recenziya/ 301
+/services/review/* /recenziya/ 301
+/services/expert-in-court/ /eksperty/ 301
+/services/expert-in-court/* /eksperty/ 301
+
+# Old B2B pages → New unified page
+/recenzii-dlya-yuristov/* /yuristam/ 301
+/dosudebnye-dlya-yurfirmy/* /yuristam/ 301
+/partners/* /yuristam/ 301
