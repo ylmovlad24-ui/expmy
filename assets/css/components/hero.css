@@ -140,19 +140,19 @@
 
 .hero__inner {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   position: relative;
   z-index: 1;
 }
 
 .hero__content {
-  max-width: 780px;
+  max-width: 900px;
   width: 100%;
 }
 
 .hero__title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -368,7 +368,7 @@
   }
 
   .hero__title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .hero__subtitle {
@@ -421,7 +421,7 @@
 
 .hero-conditions {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 20px;
   margin-top: 40px;
   margin-bottom: 0;
@@ -485,11 +485,41 @@
   animation-delay: 1s;
 }
 
+/* Асимметричные размеры карточек */
+.hero-conditions__item:first-child {
+  padding: 32px 24px;
+}
+
+.hero-conditions__item:nth-child(2),
+.hero-conditions__item:nth-child(3) {
+  padding: 20px 16px;
+}
+
+.hero-conditions__item:nth-child(2) .hero-conditions__title,
+.hero-conditions__item:nth-child(3) .hero-conditions__title {
+  font-size: 0.9rem;
+}
+
+.hero-conditions__item:nth-child(2) .hero-conditions__desc,
+.hero-conditions__item:nth-child(3) .hero-conditions__desc {
+  font-size: 0.8rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero-conditions {
     grid-template-columns: 1fr;
     gap: 12px;
     margin-top: 28px;
+  }
+
+  .hero-conditions__item:nth-child(2),
+  .hero-conditions__item:nth-child(3) {
+    padding: 24px 20px;
+  }
+
+  .hero-conditions__item:nth-child(2) .hero-conditions__title,
+  .hero-conditions__item:nth-child(3) .hero-conditions__title {
+    font-size: 1rem;
   }
 }

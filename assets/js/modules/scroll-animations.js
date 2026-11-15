@@ -9,14 +9,22 @@
   // Check if reduced motion is preferred
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // Device capability detection
+  const isTouch = "ontouchstart" in window;
+  const isLowEnd = (navigator.deviceMemory && navigator.deviceMemory <= 2) ||
+                   (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
+
   if (prefersReducedMotion) {
     // If user prefers reduced motion, just show all elements immediately
-    document
-      .querySelectorAll(".scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .stagger-item")
-      .forEach(function (el) {
-        el.classList.add("revealed");
-        el.style.opacity = "1";
-      });
+    const allRevealSelectors = [
+      ".scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .stagger-item",
+      ".reveal-scale, .reveal-clip-horizontal, .reveal-split, .reveal-stack"
+    ].join(",");
+
+    document.querySelectorAll(allRevealSelectors).forEach(function (el) {
+      el.classList.add("revealed");
+      el.style.opacity = "1";
+    });
     return;
   }
 
@@ -49,6 +57,13 @@
   // Observe all scroll-reveal elements
   document
     .querySelectorAll(".scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .stagger-item")
+    .forEach(function (el) {
+      observer.observe(el);
+    });
+
+  // Observe new block reveal types
+  document
+    .querySelectorAll(".reveal-scale, .reveal-clip-horizontal, .reveal-split, .reveal-stack")
     .forEach(function (el) {
       observer.observe(el);
     });
@@ -121,5 +136,81 @@
       },
       { passive: true }
     );
+  }
+
+  // GSAP-powered block reveals (enhanced animations)
+  function initGSAPBlockReveals() {
+    if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
+
+    var scrollTriggers = [];
+
+    // Scale reveal with GSAP
+    gsap.set(".reveal-scale", { opacity: 0, scale: 0.9 });
+    scrollTriggers.push(
+      ScrollTrigger.create({
+        trigger: ".reveal-scale",
+        start: "top 80%",
+        onEnter: function () {
+          gsap.to(".reveal-scale", { opacity: 1, scale: 1, duration: 0.7, ease: "power3.out", stagger: 0.08 });
+        },
+        once: true
+      })
+    );
+
+    // Clip horizontal reveal with GSAP
+    gsap.set(".reveal-clip-horizontal", { clipPath: "inset(0 100% 0 0)" });
+    scrollTriggers.push(
+      ScrollTrigger.create({
+        trigger: ".reveal-clip-horizontal",
+        start: "top 80%",
+        onEnter: function () {
+          gsap.to(".reveal-clip-horizontal", { clipPath: "inset(0 0% 0 0)", duration: 0.8, ease: "power3.out" });
+        },
+        once: true
+      })
+    );
+
+    // Split reveal with GSAP
+    gsap.set(".reveal-split > *", { opacity: 0 });
+    gsap.set(".reveal-split > *:nth-child(odd)", { x: -40 });
+    gsap.set(".reveal-split > *:nth-child(even)", { x: 40 });
+    scrollTriggers.push(
+      ScrollTrigger.create({
+        trigger: ".reveal-split",
+        start: "top 80%",
+        onEnter: function () {
+          gsap.to(".reveal-split > *", { opacity: 1, x: 0, duration: 0.6, ease: "power2.out", stagger: 0.1 });
+        },
+        once: true
+      })
+    );
+
+    // Stack reveal with GSAP
+    gsap.set(".reveal-stack > *", { opacity: 0, y: 30 });
+    scrollTriggers.push(
+      ScrollTrigger.create({
+        trigger: ".reveal-stack",
+        start: "top 80%",
+        onEnter: function () {
+          gsap.to(".reveal-stack > *", { opacity: 1, y: 0, duration: 0.5, ease: "power2.out", stagger: 0.08 });
+        },
+        once: true
+      })
+    );
+
+    // Cleanup on page unload
+    window.addEventListener("beforeunload", function () {
+      scrollTriggers.forEach(function (st) { st.kill(); });
+      ScrollTrigger.refresh();
+    });
+  }
+
+  // Initialize GSAP reveals if GSAP is available
+  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+    initGSAPBlockReveals();
+  } else if (typeof GSAPLoader !== "undefined" && GSAPLoader.ready) {
+    GSAPLoader.ready().then(function () {
+      initGSAPBlockReveals();
+    });
   }
 })();

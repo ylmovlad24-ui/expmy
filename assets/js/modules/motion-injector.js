@@ -57,6 +57,9 @@
     basePath + "assets/js/modules/page-transitions.js",
     basePath + "assets/js/modules/scroll-velocity.js",
     basePath + "assets/js/modules/marquee.js",
+    basePath + "assets/js/modules/card-glare.js",
+    basePath + "assets/js/modules/section-spotlight.js",
+    basePath + "assets/js/modules/section-transitions.js",
   ];
 
   lightScripts.forEach(function (src) {
@@ -72,6 +75,7 @@
       basePath + "assets/js/modules/motion.js?v=3",
       basePath + "assets/js/modules/uni-steps-motion.js",
       basePath + "assets/js/modules/webgl-gradient.js",
+      basePath + "assets/js/modules/parallax.js",
     ];
 
     // Для страницы рецензий
