@@ -58,8 +58,8 @@
           <h1 class="hero__title">Центр независимых экспертиз «Объектив-Эксперт»</h1>
           <p class="hero__subtitle">Автотехнические, автотовароведческие экспертизы и рецензирование по ФЗ-73. Работаем по назначению физических и юридических лиц, а также по определению суда. С 2016 года.</p>
           <div class="hero__buttons">
-            <a href="#contact-form" class="btn btn--primary">Бесплатная консультация</a>
-            <a href="#materials-form" class="btn btn--outline">Рассчитать стоимость</a>
+            <a href="/kontakty/" class="btn btn--primary">Бесплатная консультация</a>
+            <a href="/kontakty/" class="btn btn--outline">Рассчитать стоимость</a>
           </div>
           <div class="hero-conditions">
             <div class="hero-conditions__item">
@@ -285,8 +285,8 @@
       </div>
     </section>
 
-    <!-- 10. Контакты + форма -->
-    <section class="section" id="contact-form" aria-label="Контакты и форма заявки">
+    <!-- 10. Контакты -->
+    <section class="section" id="contacts" aria-label="Контакты">
       <div class="container">
         <h2 class="section__title reveal-clip">Контакты</h2>
         <div class="contacts-grid">
@@ -297,43 +297,6 @@
             <p class="contact-info__bot"><a href="https://max.ru/id222263914729_bot" target="_blank" rel="noopener" aria-label="Бот в Max.ru (откроется в новой вкладке)">Бот в Max.ru</a></p>
             <p class="contact-info__hours">Режим: 9:00–17:00</p>
           </div>
-          <div class="contact-form-wrap reveal-blur" id="materials-form">
-            <form class="form" action="#" method="POST" novalidate>
-              <h3 class="form__title">Обратная связь + консультация</h3>
-              <div class="form-field">
-                <label for="contact-name" class="form-field__label">
-                  <span>Ваше имя *</span>
-                  <input id="contact-name" class="form__input" name="name" placeholder="Ваше имя" required autocomplete="name" aria-required="true">
-                </label>
-              </div>
-              <div class="form-field">
-                <label for="contact-phone" class="form-field__label">
-                  <span>Телефон *</span>
-                  <input id="contact-phone" class="form__input" name="phone" placeholder="Телефон" required autocomplete="tel" aria-required="true">
-                </label>
-              </div>
-              <div class="form-field">
-                <label for="contact-document" class="form-field__label">
-                  <span>Номер документа</span>
-                  <input id="contact-document" class="form__input" name="document" placeholder="Номер документа (если есть)" autocomplete="off">
-                </label>
-              </div>
-              <div class="form-field">
-                <label for="contact-question" class="form-field__label">
-                  <span>Ваш вопрос</span>
-                  <textarea id="contact-question" class="form__textarea" name="question" placeholder="Ваш вопрос" rows="4"></textarea>
-                </label>
-              </div>
-              <div class="form-field">
-                <label for="contact-agree" class="form-field__label">
-                  <input id="contact-agree" type="checkbox" name="agree" required aria-required="true">
-                  <span>Я согласен на обработку персональных данных *</span>
-                </label>
-              </div>
-              <button type="submit" class="form__submit">Отправить</button>
-            </form>
-            <p class="form__note">Консультация бесплатна и ни к чему не обязывает</p>
-          </div>
         </div>
       </div>
     </section>
@@ -343,29 +306,10 @@
   <!-- Подвал -->
   <div id="footer-container"></div>
 
-  <!-- ARIA Live Regions для screen readers -->
-  <div aria-live="polite" aria-atomic="true" class="sr-only" id="aria-live-region"></div>
-  <div aria-live="assertive" aria-atomic="true" class="sr-only" id="aria-live-assertive"></div>
-
-  <style>
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-  </style>
-
   <script src="assets/js/lib/utils.js" defer></script>
-  <script src="assets/js/modules/burger.js" defer></script>
+  <script src="assets/js/modules/header.js" defer></script>
   <script src="assets/js/modules/faq.js" defer></script>
   <script src="assets/js/modules/tabs.js" defer></script>
-  <script src="assets/js/modules/forms.js" defer></script>
   <script src="assets/js/modules/smooth-scroll.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/modules/scroll-animations.js" defer></script>

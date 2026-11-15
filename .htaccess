@@ -17,6 +17,15 @@ AddType application/x-font-ttf .ttf
 AddType application/x-font-opentype .otf
 
 # ----------------------------------------
+# 1.5. HTTPS redirect
+# ----------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# ----------------------------------------
 # 2. Security Headers
 # ----------------------------------------
 <IfModule mod_headers.c>

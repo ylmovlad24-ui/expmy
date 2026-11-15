@@ -18,6 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 1. Burger menu — инициализируется в components.js после загрузки header
 
+  // 2. Header mega-menu
+  if (typeof HeaderMenu !== "undefined" && HeaderMenu.init) HeaderMenu.init();
+
   // 3. FAQ Accordion
   if (typeof FaqAccordion !== "undefined" && FaqAccordion.init) FaqAccordion.init();
 
@@ -30,19 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (Calculator.initCompact) Calculator.initCompact();
   }
 
-  // 6. Form handlers
-  if (typeof FormHandler !== "undefined") {
-    var contactForm = document.getElementById("contactForm");
-    if (contactForm) FormHandler.submitForm(contactForm, false);
-
-    var calcForm = document.getElementById("calcForm");
-    if (calcForm) FormHandler.submitForm(calcForm, true);
-
-    var calcFormCompact = document.getElementById("calcFormCompact");
-    if (calcFormCompact) FormHandler.submitForm(calcFormCompact, true);
-  }
-
-  // 8. Smooth scroll & header shadow
+  // 6. Smooth scroll & header shadow
   if (typeof SmoothScroll !== "undefined" && SmoothScroll.init) SmoothScroll.init();
 
   // 9. Scroll progress bar (из dianomi)
