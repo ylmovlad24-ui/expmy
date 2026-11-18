@@ -57,6 +57,9 @@
           adaptPathsForGitHubPages(container);
           if (filePath === "header.html") {
             initHeader();
+            if (typeof window.BurgerMenu !== "undefined" && window.BurgerMenu.init) {
+              window.BurgerMenu.init();
+            }
           }
         }
       })
@@ -99,9 +102,10 @@
     var header = document.querySelector(".header");
     if (!header) return;
 
-    // Desktop mega-menu dropdowns
+    // Desktop mega-menu dropdowns — hover + click
     var desktopToggles = header.querySelectorAll(".header__nav-link--dropdown");
     desktopToggles.forEach(function (toggle) {
+      // Click to toggle
       toggle.addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -122,6 +126,31 @@
         this.setAttribute("aria-expanded", String(!isExpanded));
         menu.classList.toggle("is-open", !isExpanded);
       });
+
+      // Hover to open
+      var dropdown = toggle.closest(".header__nav-dropdown");
+      if (dropdown) {
+        dropdown.addEventListener("mouseenter", function () {
+          header.querySelectorAll(".header__nav-dropdown").forEach(function (d) {
+            var btn = d.querySelector(".header__nav-link--dropdown");
+            var m = d.querySelector(".header__mega-menu, .header__simple-menu");
+            if (btn) btn.setAttribute("aria-expanded", "false");
+            if (m) m.classList.remove("is-open");
+          });
+          toggle.setAttribute("aria-expanded", "true");
+          var menu = dropdown.querySelector(".header__mega-menu, .header__simple-menu");
+          if (menu) menu.classList.add("is-open");
+        });
+
+        dropdown.addEventListener("mouseleave", function () {
+          header.querySelectorAll(".header__nav-dropdown").forEach(function (d) {
+            var btn = d.querySelector(".header__nav-link--dropdown");
+            var m = d.querySelector(".header__mega-menu, .header__simple-menu");
+            if (btn) btn.setAttribute("aria-expanded", "false");
+            if (m) m.classList.remove("is-open");
+          });
+        });
+      }
 
       toggle.addEventListener("keydown", function (e) {
         if (e.key === "Enter" || e.key === " ") {
