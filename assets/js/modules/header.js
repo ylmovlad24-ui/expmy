@@ -78,49 +78,51 @@
 
   // ===== MOBILE BURGER MENU =====
 
+  var isOpen = false;
+  var previousFocus = null;
+
+  function openMenu() {
+    if (!burger || !menuPanel || !menuOverlay) return;
+    isOpen = true;
+    previousFocus = document.activeElement;
+
+    burger.classList.add('active');
+    burger.setAttribute('aria-expanded', 'true');
+    burger.setAttribute('aria-label', 'Закрыть меню');
+    menuPanel.classList.add('active');
+    menuOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    // Focus first link
+    setTimeout(function () {
+      var firstLink = menuPanel.querySelector('a, button');
+      if (firstLink) firstLink.focus();
+    }, 100);
+  }
+
+  function closeMenu() {
+    isOpen = false;
+
+    if (!burger || !menuPanel || !menuOverlay) return;
+    burger.classList.remove('active');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Открыть меню');
+    menuPanel.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+
+    if (burger) burger.focus();
+  }
+
+  function toggleMenu() {
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
   if (burger && menuPanel && menuOverlay) {
-    var isOpen = false;
-    var previousFocus = null;
-
-    function openMenu() {
-      isOpen = true;
-      previousFocus = document.activeElement;
-
-      burger.classList.add('active');
-      burger.setAttribute('aria-expanded', 'true');
-      burger.setAttribute('aria-label', 'Закрыть меню');
-      menuPanel.classList.add('active');
-      menuOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-
-      // Focus first link
-      setTimeout(function () {
-        var firstLink = menuPanel.querySelector('a, button');
-        if (firstLink) firstLink.focus();
-      }, 100);
-    }
-
-    function closeMenu() {
-      isOpen = false;
-
-      burger.classList.remove('active');
-      burger.setAttribute('aria-expanded', 'false');
-      burger.setAttribute('aria-label', 'Открыть меню');
-      menuPanel.classList.remove('active');
-      menuOverlay.classList.remove('active');
-      document.body.style.overflow = '';
-
-      if (burger) burger.focus();
-    }
-
-    function toggleMenu() {
-      if (isOpen) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    }
-
     // Burger click
     burger.addEventListener('click', function (e) {
       e.preventDefault();

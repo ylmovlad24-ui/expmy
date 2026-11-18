@@ -72,8 +72,15 @@
       closeMenu();
     });
 
-    menuLinks = Array.from(menuPanel.querySelectorAll(".header__link"));
-    menuLinks.forEach(function (link) {
+    var directLinks = menuPanel.querySelectorAll(".header__menu-link");
+    directLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        closeMenu();
+      });
+    });
+
+    var accordionLinks = menuPanel.querySelectorAll(".header__menu-accordion__item");
+    accordionLinks.forEach(function (link) {
       link.addEventListener("click", function () {
         closeMenu();
       });

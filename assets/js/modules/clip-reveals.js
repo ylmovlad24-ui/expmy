@@ -130,42 +130,48 @@
 
     var scrollTriggers = [];
 
-    // Words reveal with GSAP
-    gsap.set(".text-reveal-words .word", { opacity: 0, y: 30 });
-    scrollTriggers.push(
-      ScrollTrigger.create({
-        trigger: ".text-reveal-words",
-        start: "top 80%",
-        onEnter: function () {
-          gsap.to(".text-reveal-words .word", {
-            opacity: 1,
-            y: 0,
-            duration: 0.5,
-            ease: "power2.out",
-            stagger: 0.05
-          });
-        },
-        once: true
-      })
-    );
+    // Words reveal with GSAP — только если элементы существуют
+    var wordsElements = document.querySelectorAll(".text-reveal-words");
+    if (wordsElements.length) {
+      gsap.set(".text-reveal-words .word", { opacity: 0, y: 30 });
+      scrollTriggers.push(
+        ScrollTrigger.create({
+          trigger: ".text-reveal-words",
+          start: "top 80%",
+          onEnter: function () {
+            gsap.to(".text-reveal-words .word", {
+              opacity: 1,
+              y: 0,
+              duration: 0.5,
+              ease: "power2.out",
+              stagger: 0.05
+            });
+          },
+          once: true
+        })
+      );
+    }
 
-    // Lines reveal with GSAP
-    gsap.set(".text-reveal-lines .line", { clipPath: "inset(0 100% 0 0)" });
-    scrollTriggers.push(
-      ScrollTrigger.create({
-        trigger: ".text-reveal-lines",
-        start: "top 80%",
-        onEnter: function () {
-          gsap.to(".text-reveal-lines .line", {
-            clipPath: "inset(0 0% 0 0)",
-            duration: 0.8,
-            ease: "power3.out",
-            stagger: 0.15
-          });
-        },
-        once: true
-      })
-    );
+    // Lines reveal with GSAP — только если элементы существуют
+    var linesElements = document.querySelectorAll(".text-reveal-lines");
+    if (linesElements.length) {
+      gsap.set(".text-reveal-lines .line", { clipPath: "inset(0 100% 0 0)" });
+      scrollTriggers.push(
+        ScrollTrigger.create({
+          trigger: ".text-reveal-lines",
+          start: "top 80%",
+          onEnter: function () {
+            gsap.to(".text-reveal-lines .line", {
+              clipPath: "inset(0 0% 0 0)",
+              duration: 0.8,
+              ease: "power3.out",
+              stagger: 0.15
+            });
+          },
+          once: true
+        })
+      );
+    }
 
     // Cleanup
     window.addEventListener("beforeunload", function () {

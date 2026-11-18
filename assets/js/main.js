@@ -18,8 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 1. Burger menu — инициализируется в components.js после загрузки header
 
-  // 2. Header mega-menu
-  if (typeof HeaderMenu !== "undefined" && HeaderMenu.init) HeaderMenu.init();
+  // 2. Header mega-menu — инициализируется автоматически через header.js
 
   // 3. FAQ Accordion
   if (typeof FaqAccordion !== "undefined" && FaqAccordion.init) FaqAccordion.init();

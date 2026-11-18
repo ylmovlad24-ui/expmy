@@ -1,6 +1,5 @@
-/* ===== Category Pages — Shared Styles ===== */
-/* Общие стили для: avtotehnicheskaya, avtotovarovedcheskaya, uzly-i-agregaty, tovarovedcheskaya-b2b */
-/* Основано на vnesudebnaya.css */
+/* ===== Category Pages — Unified Shared Styles ===== */
+/* Общие стили для: recenziya, sudebnaya, vnesudebnaya */
 
 /* --- Progress Bar --- */
 .progress-bar {
@@ -21,18 +20,82 @@
     width: 100%;
   }
   @keyframes progress {
-    from {
-      width: 0%;
-    }
-    to {
-      width: 100%;
-    }
+    from { width: 0%; }
+    to { width: 100%; }
   }
+}
+
+/* --- Trust Bar (для vnesudebnaya) --- */
+
+.cat-trust {
+  padding: 48px 0 0;
+  background: var(--bg, #ffffff);
+  border-bottom: 1px solid var(--border, #e0e4e8);
+}
+
+.cat-trust__inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.cat-trust-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 24px;
+  border-radius: 12px;
+  background: var(--bg-light, #f8f9fa);
+  border: 1px solid var(--border, #e0e4e8);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cat-trust-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.cat-trust-item__num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent, #e67e22);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.cat-trust-item__label {
+  font-size: 0.875rem;
+  color: var(--text-light, #666666);
+  line-height: 1.4;
+}
+
+.cat-trust-item--verified {
+  background: linear-gradient(135deg, rgba(42, 91, 154, 0.04) 0%, rgba(230, 126, 34, 0.04) 100%);
+  border-color: var(--primary, #2a5b9a);
+}
+
+.cat-trust-item--verified .cat-trust-item__icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cat-trust-item__icon {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  color: var(--success, #059669);
+  flex-shrink: 0;
+}
+
+.cat-trust-item--verified .cat-trust-item__label {
+  color: var(--text, #333333);
+  font-weight: 600;
 }
 
 /* --- Hero (full viewport, no centering) --- */
 
-.vnesud-hero {
+.cat-hero {
   min-height: calc(100vh - var(--header-height, 64px));
   min-height: calc(100dvh - var(--header-height, 64px));
   padding: 140px 0 64px;
@@ -44,7 +107,7 @@
 }
 
 /* Декоративный фоновый паттерн hero */
-.vnesud-hero::before {
+.cat-hero::before {
   content: "";
   position: absolute;
   top: 0;
@@ -59,29 +122,29 @@
   z-index: 0;
 }
 
-.vnesud-hero > * {
+.cat-hero > * {
   position: relative;
   z-index: 1;
 }
 
-.vnesud-hero__title,
-.vnesud-hero__badge,
-.vnesud-hero__actions,
-.vnesud-hero__link {
+.cat-hero__title,
+.cat-hero__badge,
+.cat-hero__actions,
+.cat-hero__link {
   color: var(--white, #ffffff) !important;
 }
 
-.vnesud-hero__actions .btn--primary {
+.cat-hero__actions .btn--primary {
   background: var(--accent, #e67e22);
   color: var(--white, #ffffff);
   border: none;
 }
 
-.vnesud-hero__actions .btn--primary:hover {
+.cat-hero__actions .btn--primary:hover {
   background: var(--accent-hover, #cf6d15);
 }
 
-.vnesud-hero__inner {
+.cat-hero__inner {
   max-width: 1120px;
   display: flex;
   flex-direction: column;
@@ -89,13 +152,13 @@
   width: 100%;
 }
 
-.vnesud-hero__text {
+.cat-hero__text {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.vnesud-hero__title {
+.cat-hero__title {
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.2;
@@ -104,7 +167,7 @@
 }
 
 /* Badge — без alert-стилистики */
-.vnesud-hero__badge {
+.cat-hero__badge {
   font-size: 1.0625rem;
   font-weight: 600;
   color: var(--accent, #e67e22);
@@ -117,46 +180,62 @@
   letter-spacing: 0.02em;
 }
 
+/* Hero badges (статистика) — для recenziya */
+.cat-hero__badges {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.cat-hero__badges .cat-hero__badge {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--white, #ffffff);
+}
+
 /* Кнопки — одна залита, вторая текстовая */
-.vnesud-hero__actions {
+.cat-hero__actions {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
   align-items: center;
 }
 
-.vnesud-hero__actions .btn {
+.cat-hero__actions .btn {
   font-size: 1.0625rem;
   padding: 16px 36px;
 }
 
-.vnesud-hero__link {
+.cat-hero__link {
   font-size: 1rem;
   font-weight: 600;
   color: var(--primary, #2a5b9a);
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-color: rgba(42, 91, 154, 0.3);
-  transition:
-    text-decoration-color 0.2s ease,
-    color 0.2s ease;
+  transition: text-decoration-color 0.2s ease, color 0.2s ease;
 }
 
-.vnesud-hero__link:hover {
+.cat-hero__link:hover {
   color: var(--accent, #e67e22);
   text-decoration-color: var(--accent, #e67e22);
 }
 
 /* --- Hero Uses --- */
 
-.vnesud-hero-uses {
+.cat-hero-uses {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   align-items: stretch;
 }
 
-.vnesud-hero-use {
+.cat-hero-use {
   background: var(--bg, #ffffff);
   border: 1px solid var(--border, #e0e4e8);
   border-radius: 14px;
@@ -166,12 +245,10 @@
   flex-direction: column;
   gap: 12px;
   color: #1a202c;
-  transition:
-    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.vnesud-hero-use__title {
+.cat-hero-use__title {
   font-size: 1.125rem;
   font-weight: 600;
   margin: 0;
@@ -179,19 +256,19 @@
   line-height: 1.4;
 }
 
-.vnesud-hero-use__desc {
+.cat-hero-use__desc {
   font-size: 0.9375rem;
   color: #4a5568;
   line-height: 1.6;
   margin: 0;
 }
 
-.vnesud-hero-use:hover {
+.cat-hero-use:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-card-hover, 0 20px 25px rgba(0,0,0,0.08));
 }
 
-.vnesud-hero-use__icon-wrap {
+.cat-hero-use__icon-wrap {
   width: 48px;
   height: 48px;
   border-radius: 12px;
@@ -202,7 +279,7 @@
   flex-shrink: 0;
 }
 
-.vnesud-hero-use__icon {
+.cat-hero-use__icon {
   width: 28px;
   height: 28px;
   line-height: 1;
@@ -211,13 +288,13 @@
 
 /* --- Visual Divider --- */
 
-.vnesud-divider {
+.cat-divider {
   padding: 0;
   position: relative;
   z-index: 2;
 }
 
-.vnesud-divider__line {
+.cat-divider__line {
   height: 1px;
   background: linear-gradient(
     90deg,
@@ -232,15 +309,15 @@
 
 /* --- Section base (compact rhythm) --- */
 
-.vnesud-section {
+.cat-section {
   padding: 72px 0;
 }
 
-.vnesud-section--alt {
+.cat-section--alt {
   background: var(--bg-light, #f8f9fa);
 }
 
-.vnesud-section__title {
+.cat-section__title {
   font-size: 2.25rem;
   font-weight: 700;
   text-align: center;
@@ -248,7 +325,7 @@
   line-height: 1.25;
 }
 
-.vnesud-section__subtitle {
+.cat-section__subtitle {
   text-align: center;
   font-size: 1.0625rem;
   color: var(--text-light, #666666);
@@ -261,13 +338,13 @@
 
 /* --- Directions --- */
 
-.vnesud-directions {
+.cat-directions {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
-.vnesud-direction {
+.cat-direction {
   background: #ffffff;
   border: 1px solid #e0e4e8;
   border-radius: 14px;
@@ -276,26 +353,32 @@
   flex-direction: column;
   gap: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-  transition:
-    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: #333333;
 }
 
-.vnesud-direction:hover {
+.cat-direction:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
-.vnesud-direction__icon {
-  width: 40px;
-  height: 40px;
+.cat-direction__icon {
+  width: 48px;
+  height: 48px;
   line-height: 1;
   color: #e67e22;
   flex-shrink: 0;
+  margin-bottom: 16px;
 }
 
-.vnesud-direction__title {
+.cat-direction__icon svg {
+  width: 48px;
+  height: 48px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.cat-direction__title {
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0;
@@ -303,7 +386,7 @@
   line-height: 1.4;
 }
 
-.vnesud-direction__desc {
+.cat-direction__desc {
   font-size: 0.9375rem;
   color: #4a5568;
   line-height: 1.6;
@@ -311,36 +394,46 @@
   flex: 1;
 }
 
-.vnesud-direction__link {
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: #2a5b9a;
-  text-decoration: none;
-  padding: 0;
-  transition:
-    color 0.2s ease,
-    padding-left 0.2s ease;
+.cat-direction__btn {
+  margin-top: 12px;
   align-self: flex-start;
 }
 
-.vnesud-direction__link:hover {
-  color: #e67e22;
-  padding-left: 6px;
+/* Direction extra — для recenziya */
+.cat-direction__details {
+  font-size: 0.875rem;
+  color: var(--text-light, #666666);
+  line-height: 1.6;
 }
 
-/* --- Steps (connector line + mobile stack) --- */
-/* Стили uni-steps уже в components/uni-steps.css, здесь только резервные */
+.cat-direction__label {
+  font-weight: 600;
+  color: var(--text, #333333);
+}
+
+.cat-direction__price {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent, #e67e22);
+  margin-top: 8px;
+}
+
+.cat-direction__case {
+  font-size: 0.875rem;
+  color: var(--success, #059669);
+  margin: 0;
+}
 
 /* --- Cases --- */
 
-.vnesud-cases {
+.cat-cases {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   align-items: stretch;
 }
 
-.vnesud-case {
+.cat-case {
   background: var(--bg, #ffffff);
   border: 1px solid var(--border, #e0e4e8);
   border-radius: 14px;
@@ -349,17 +442,15 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  transition:
-    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.vnesud-case:hover {
+.cat-case:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-card-hover, 0 20px 25px rgba(0,0,0,0.08));
 }
 
-.vnesud-case__title {
+.cat-case__title {
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0;
@@ -367,14 +458,15 @@
   line-height: 1.4;
 }
 
-.vnesud-case__desc {
+.cat-case__desc,
+.cat-case__text {
   font-size: 0.9375rem;
   color: var(--text-light, #666666);
   line-height: 1.6;
   margin: 0;
 }
 
-.vnesud-case__result {
+.cat-case__result {
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--success, #059669);
@@ -399,9 +491,7 @@
   border-radius: 14px;
   padding: 36px 32px;
   box-shadow: var(--shadow-card, 0 1px 3px rgba(0,0,0,0.06));
-  transition:
-    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .guarantee-card:hover {
@@ -433,9 +523,7 @@
   font-weight: 600;
   color: var(--primary, #2a5b9a);
   text-decoration: none;
-  transition:
-    color 0.2s ease,
-    padding-left 0.2s ease;
+  transition: color 0.2s ease, padding-left 0.2s ease;
 }
 
 .guarantee-card__link:hover {
@@ -445,7 +533,7 @@
 
 /* --- FAQ --- */
 
-.vnesud-faq {
+.cat-faq {
   max-width: 960px;
   margin: 0 auto;
   display: flex;
@@ -453,22 +541,20 @@
   gap: 12px;
 }
 
-.vnesud-faq-item {
+.cat-faq-item {
   background: var(--bg, #ffffff);
   border: 1px solid var(--border, #e0e4e8);
   border-radius: 12px;
   overflow: hidden;
-  transition:
-    border-color 0.2s,
-    box-shadow 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.vnesud-faq-item[open] {
+.cat-faq-item[open] {
   border-color: var(--primary, #2a5b9a);
   box-shadow: 0 0 0 3px rgba(42, 91, 154, 0.1);
 }
 
-.vnesud-faq-item__summary {
+.cat-faq-item__summary {
   padding: 24px 32px;
   font-weight: 600;
   cursor: pointer;
@@ -481,15 +567,15 @@
   line-height: 1.5;
 }
 
-.vnesud-faq-item__summary:hover {
+.cat-faq-item__summary:hover {
   background: var(--accent-bg, rgba(230,126,34,0.05));
 }
 
-.vnesud-faq-item__summary::-webkit-details-marker {
+.cat-faq-item__summary::-webkit-details-marker {
   display: none;
 }
 
-.vnesud-faq-item__summary::after {
+.cat-faq-item__summary::after {
   content: "+";
   font-size: 1.5rem;
   font-weight: 300;
@@ -499,33 +585,33 @@
   margin-left: 20px;
 }
 
-.vnesud-faq-item[open] .vnesud-faq-item__summary::after {
+.cat-faq-item[open] .cat-faq-item__summary::after {
   transform: rotate(45deg);
 }
 
-.vnesud-faq-item__answer {
+.cat-faq-item__answer {
   padding: 0 32px 28px;
   font-size: 0.9375rem;
   color: var(--text-light, #666666);
   line-height: 1.7;
 }
 
-.vnesud-faq-item__answer p {
+.cat-faq-item__answer p {
   margin: 0 0 12px;
 }
 
-.vnesud-faq-item__answer p:last-child {
+.cat-faq-item__answer p:last-child {
   margin-bottom: 0;
 }
 
 /* Legal block inside FAQ */
-.vnesud-faq-item__legal {
+.cat-faq-item__legal {
   margin-top: 12px;
   padding-top: 12px;
   border-top: 1px solid var(--border, #e0e4e8);
 }
 
-.vnesud-faq-item__legal p {
+.cat-faq-item__legal p {
   font-size: 0.875rem;
   color: var(--text-light, #666666);
   line-height: 1.6;
@@ -533,7 +619,7 @@
 
 /* --- CTA Section --- */
 
-.vnesud-cta-section {
+.cat-cta-section {
   padding: 80px 0;
   background: linear-gradient(135deg, var(--dark-bg, #2a5b9a) 0%, var(--dark-bg-alt, #1a4070) 100%);
   color: var(--white, #ffffff);
@@ -541,7 +627,7 @@
   overflow: hidden;
 }
 
-.vnesud-cta-section::before {
+.cat-cta-section::before {
   content: "";
   position: absolute;
   top: 0;
@@ -554,44 +640,44 @@
   pointer-events: none;
 }
 
-.vnesud-cta__inner {
+.cat-cta__inner {
   max-width: 800px;
   position: relative;
   z-index: 1;
 }
 
-.vnesud-cta__text {
+.cat-cta__text {
   text-align: center;
   margin-bottom: 40px;
 }
 
-.vnesud-cta__title {
+.cat-cta__title {
   font-size: 2.25rem;
   font-weight: 700;
   margin-bottom: 12px;
   color: var(--white, #ffffff);
 }
 
-.vnesud-cta__desc {
+.cat-cta__desc {
   font-size: 1.0625rem;
   color: var(--white-85, rgba(255,255,255,0.85));
   line-height: 1.6;
 }
 
-.vnesud-cta__form {
+.cat-cta__form {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.vnesud-cta__fields {
+.cat-cta__fields {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
-.vnesud-cta__fields input,
-.vnesud-cta__form textarea {
+.cat-cta__fields input,
+.cat-cta__form textarea {
   width: 100%;
   padding: 14px 16px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -600,29 +686,45 @@
   color: var(--white, #ffffff);
   font-size: 0.9375rem;
   font-family: inherit;
-  transition:
-    border-color 0.2s,
-    background 0.2s;
+  transition: border-color 0.2s, background 0.2s;
 }
 
-.vnesud-cta__fields input::placeholder,
-.vnesud-cta__form textarea::placeholder {
+.cat-cta__fields input::placeholder,
+.cat-cta__form textarea::placeholder {
   color: var(--white-75, rgba(255,255,255,0.75));
 }
 
-.vnesud-cta__fields input:focus,
-.vnesud-cta__form textarea:focus {
+.cat-cta__fields input:focus,
+.cat-cta__form textarea:focus {
   outline: none;
   border-color: var(--accent, #e67e22);
   background: rgba(255, 255, 255, 0.15);
 }
 
-.vnesud-cta__form textarea {
+.cat-cta__form textarea {
   resize: vertical;
   min-height: 80px;
 }
 
-.vnesud-cta__btn {
+.cat-cta__agree {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: var(--white-85, rgba(255,255,255,0.85));
+  text-align: left;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.cat-cta__agree input[type="checkbox"] {
+  margin-top: 3px;
+  min-width: 16px;
+  min-height: 16px;
+  cursor: pointer;
+}
+
+.cat-cta__btn {
   align-self: center;
   background: var(--accent, #e67e22);
   color: var(--white, #ffffff);
@@ -632,233 +734,157 @@
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
-  transition:
-    background 0.2s,
-    transform 0.2s;
+  transition: background 0.2s, transform 0.2s;
 }
 
-.vnesud-cta__btn:hover {
+.cat-cta__btn:hover {
   background: var(--accent-hover, #cf6d15);
   transform: translateY(-2px);
 }
 
-.vnesud-cta__note {
+.cat-cta__note {
   text-align: center;
   font-size: 0.8125rem;
   color: var(--white-75, rgba(255,255,255,0.75));
   margin: 0;
 }
 
-/* --- Hero Principles (shared across category pages) --- */
+/* --- Legal Section (для sudebnaya) --- */
 
-.vnesud-hero-principles {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto auto;
+.cat-legal {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cat-legal__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
   gap: 16px;
 }
 
-.vnesud-hero-principle {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 14px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.vnesud-hero-principle::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.vnesud-hero-principle:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
-}
-
-.vnesud-hero-principle:hover::before {
-  opacity: 1;
-}
-
-/* Icon */
-.vnesud-hero-principle__icon {
-  width: 26px;
-  height: 26px;
-  color: rgba(255, 255, 255, 0.5);
-  flex-shrink: 0;
-  transition: color 0.3s ease;
-}
-
-.vnesud-hero-principle:hover .vnesud-hero-principle__icon {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-/* Card title */
-.vnesud-hero-principle__title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.4;
-  letter-spacing: -0.005em;
-  margin: 0;
-  transition: color 0.3s ease;
-}
-
-.vnesud-hero-principle:hover .vnesud-hero-principle__title {
-  color: #ffffff;
-}
-
-/* Description */
-.vnesud-hero-principle__desc {
-  font-size: 0.875rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.55);
-  line-height: 1.55;
-  margin: 0;
-  transition: color 0.3s ease;
-}
-
-.vnesud-hero-principle:hover .vnesud-hero-principle__desc {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-/* Highlighted card (Minjust) - accent variant */
-.vnesud-hero-principle--highlight {
-  background: rgba(230, 126, 34, 0.08);
-  border-color: rgba(230, 126, 34, 0.2);
-}
-
-.vnesud-hero-principle--highlight::before {
-  background: linear-gradient(90deg, var(--accent), rgba(230, 126, 34, 0.3));
-}
-
-.vnesud-hero-principle--highlight .vnesud-hero-principle__title {
-  color: rgba(255, 200, 150, 0.95);
-}
-
-.vnesud-hero-principle--highlight:hover .vnesud-hero-principle__title {
-  color: #ff9933;
-}
-
-.vnesud-hero-principle--highlight .vnesud-hero-principle__icon {
-  color: rgba(230, 126, 34, 0.7);
-}
-
-.vnesud-hero-principle--highlight:hover .vnesud-hero-principle__icon {
-  color: #ff9933;
-}
-
-.vnesud-hero-principle--highlight .vnesud-hero-principle__desc {
-  color: rgba(255, 200, 150, 0.65);
-}
-
-.vnesud-hero-principle--highlight:hover .vnesud-hero-principle__desc {
-  color: rgba(255, 200, 150, 0.8);
-}
-
-.vnesud-hero-principle--highlight:hover {
-  background: rgba(230, 126, 34, 0.12);
-  border-color: rgba(230, 126, 34, 0.3);
+.cat-legal__list li {
+  background: var(--bg, #ffffff);
+  border: 1px solid var(--border, #e0e4e8);
+  border-radius: 12px;
+  padding: 24px 28px;
+  font-size: 0.9375rem;
+  color: var(--text-light, #666666);
+  line-height: 1.7;
 }
 
 /* --- RESPONSIVE --- */
 
 @media (max-width: 1024px) {
-  .vnesud-hero__title {
+  .cat-hero__title {
     font-size: 2rem;
   }
 
-  .vnesud-section__title {
+  .cat-section__title {
     font-size: 1.875rem;
   }
 
-  .vnesud-cases {
+  .cat-directions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cat-cases {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .vnesud-hero {
-    padding: 64px 0 48px;
+  .cat-trust {
+    padding: 32px 0 0;
   }
 
-  .vnesud-hero__inner {
-    gap: 24px;
+  .cat-trust__inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 
-  .vnesud-hero__title {
+  .cat-trust-item {
+    padding: 16px 20px;
+  }
+
+  .cat-trust-item__num {
     font-size: 1.625rem;
   }
 
-  .vnesud-hero__actions {
+  .cat-trust-item__label {
+    font-size: 0.8125rem;
+  }
+
+  .cat-hero {
+    padding: 64px 0 48px;
+  }
+
+  .cat-hero__inner {
+    gap: 24px;
+  }
+
+  .cat-hero__title {
+    font-size: 1.625rem;
+  }
+
+  .cat-hero__actions {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .vnesud-hero-uses {
+  .cat-hero-uses {
     grid-template-columns: 1fr;
   }
 
-  .vnesud-hero-use {
+  .cat-hero-use {
     padding: 24px 20px;
   }
 
-  .vnesud-section {
+  .cat-section {
     padding: 56px 0;
   }
 
-  .vnesud-section__title {
+  .cat-section__title {
     font-size: 1.625rem;
     margin-bottom: 12px;
   }
 
-  .vnesud-section__subtitle {
+  .cat-section__subtitle {
     font-size: 0.9375rem;
     margin-bottom: 40px;
   }
 
-  .vnesud-directions {
+  .cat-directions {
     grid-template-columns: 1fr;
   }
 
-  .vnesud-direction {
+  .cat-direction {
     padding: 28px 24px;
   }
 
-  .vnesud-cta-section {
+  .cat-cta-section {
     padding: 56px 0;
   }
 
-  .vnesud-cta__title {
+  .cat-cta__title {
     font-size: 1.625rem;
   }
 
-  .vnesud-cta__fields {
+  .cat-cta__fields {
     grid-template-columns: 1fr;
   }
 
-  .vnesud-cta__btn {
+  .cat-cta__btn {
     width: 100%;
   }
 
-  .vnesud-cases {
+  .cat-cases {
     grid-template-columns: 1fr;
   }
 
-  .vnesud-case {
+  .cat-case {
     padding: 28px 24px;
   }
 
@@ -870,38 +896,38 @@
     padding: 28px 24px;
   }
 
-  .vnesud-faq-item__summary {
+  .cat-faq-item__summary {
     padding: 20px 24px;
     font-size: 1rem;
   }
 
-  .vnesud-faq-item__answer {
+  .cat-faq-item__answer {
     padding: 0 24px 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .vnesud-hero__title {
+  .cat-hero__title {
     font-size: 1.375rem;
   }
 
-  .vnesud-hero__badge {
+  .cat-hero__badge {
     font-size: 0.9375rem;
   }
 
-  .vnesud-section__title {
+  .cat-section__title {
     font-size: 1.375rem;
   }
 
-  .vnesud-direction__title {
+  .cat-direction__title {
     font-size: 1.125rem;
   }
 
-  .vnesud-case__title {
+  .cat-case__title {
     font-size: 1.0625rem;
   }
 
-  .vnesud-hero-use__title {
+  .cat-hero-use__title {
     font-size: 1.125rem;
   }
 }
