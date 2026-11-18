@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const OUTPUT_FILE = 'C:/Users/Vlad/Documents/Ptodjec/expmy/assets/css/main-optimized.css';
+const OUTPUT_FILE = 'C:/Users/Vlad/Documents/Ptodjec/expmy/test-output.css';
 
 console.log('Testing write to:', OUTPUT_FILE);
 
