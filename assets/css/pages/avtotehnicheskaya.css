@@ -1,5 +1,66 @@
 /* ===== Автотехническая экспертиза — page-specific styles ===== */
 
+/* --- Icon sizing --- */
+
+.vnesud-hero-principle__icon {
+  width: 24px;
+  height: 24px;
+  color: var(--accent, #e67e22);
+  flex-shrink: 0;
+}
+
+.vnesud-direction__icon {
+  width: 40px;
+  height: 40px;
+  line-height: 1;
+  color: #E67E22;
+  flex-shrink: 0;
+}
+
+/* --- Hero Principles Cards --- */
+
+.vnesud-hero-principles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.vnesud-hero-principle {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.vnesud-hero-principle:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.vnesud-hero-principle--highlight {
+  background: rgba(230, 126, 34, 0.08);
+  border-color: rgba(230, 126, 34, 0.2);
+}
+
+.vnesud-hero-principle__title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin: 0;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.vnesud-hero-principle__desc {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  margin: 0;
+}
+
 /* --- Hero Principles (карточки внутри Hero) --- */
 
 .vnesud-hero__inner {
