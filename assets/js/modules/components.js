@@ -17,19 +17,19 @@
     // Depth-aware directories (need different path for sub-pages)
     if (path.indexOf("/avtotehnicheskaya/") !== -1) {
       var depth = (path.match(/\//g) || []).length;
-      return depth >= 3 ? "../../" : "../";
+      return depth >= 4 ? "../../" : "../";
     }
     if (path.indexOf("/avtotovarovedcheskaya/") !== -1) {
       var depth = (path.match(/\//g) || []).length;
-      return depth >= 3 ? "../../" : "../";
+      return depth >= 4 ? "../../" : "../";
     }
     if (path.indexOf("/tovarovedcheskaya-b2b/") !== -1) {
       var depth = (path.match(/\//g) || []).length;
-      return depth >= 3 ? "../../" : "../";
+      return depth >= 4 ? "../../" : "../";
     }
     if (path.indexOf("/situations/") !== -1) {
       var depth = (path.match(/\//g) || []).length;
-      return depth >= 3 ? "../../" : "../";
+      return depth >= 4 ? "../../" : "../";
     }
 
     // Single-level directories (always "../")
