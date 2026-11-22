@@ -145,7 +145,9 @@
       // Hover to open
       var dropdown = toggle.closest(".header__nav-dropdown");
       if (dropdown) {
-        dropdown.addEventListener("mouseenter", function () {
+        var closeTimeout = null;
+
+        function openMenu() {
           header.querySelectorAll(".header__nav-dropdown").forEach(function (d) {
             var btn = d.querySelector(".header__nav-link--dropdown");
             var m = d.querySelector(".header__mega-menu, .header__simple-menu");
@@ -155,15 +157,29 @@
           toggle.setAttribute("aria-expanded", "true");
           var menu = dropdown.querySelector(".header__mega-menu, .header__simple-menu");
           if (menu) menu.classList.add("is-open");
-        });
+        }
 
-        dropdown.addEventListener("mouseleave", function () {
+        function closeMenu() {
           header.querySelectorAll(".header__nav-dropdown").forEach(function (d) {
             var btn = d.querySelector(".header__nav-link--dropdown");
             var m = d.querySelector(".header__mega-menu, .header__simple-menu");
             if (btn) btn.setAttribute("aria-expanded", "false");
             if (m) m.classList.remove("is-open");
           });
+        }
+
+        dropdown.addEventListener("mouseenter", function () {
+          if (closeTimeout) {
+            clearTimeout(closeTimeout);
+            closeTimeout = null;
+          }
+          openMenu();
+        });
+
+        dropdown.addEventListener("mouseleave", function () {
+          closeTimeout = setTimeout(function () {
+            closeMenu();
+          }, 200);
         });
       }
 
