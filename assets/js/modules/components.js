@@ -9,20 +9,34 @@
 
   function getBasePath() {
     var path = window.location.pathname;
+
+    // Pages directories
     if (path.indexOf("/pages/services/") !== -1) return "../../../";
     if (path.indexOf("/pages/") !== -1) return "../";
-    if (path.indexOf("/vnesudebnaya/") !== -1) return "../";
-    if (path.indexOf("/recenziya/") !== -1) return "../";
-    if (path.indexOf("/sudebnaya/") !== -1) return "../";
-    if (path.indexOf("/faq/") !== -1) return "../";
+
+    // Depth-aware directories (need different path for sub-pages)
     if (path.indexOf("/avtotehnicheskaya/") !== -1) {
       var depth = (path.match(/\//g) || []).length;
       return depth >= 3 ? "../../" : "../";
     }
     if (path.indexOf("/avtotovarovedcheskaya/") !== -1) {
-      var depth2 = (path.match(/\//g) || []).length;
-      return depth2 >= 3 ? "../../" : "../";
+      var depth = (path.match(/\//g) || []).length;
+      return depth >= 3 ? "../../" : "../";
     }
+    if (path.indexOf("/tovarovedcheskaya-b2b/") !== -1) {
+      var depth = (path.match(/\//g) || []).length;
+      return depth >= 3 ? "../../" : "../";
+    }
+    if (path.indexOf("/situations/") !== -1) {
+      var depth = (path.match(/\//g) || []).length;
+      return depth >= 3 ? "../../" : "../";
+    }
+
+    // Single-level directories (always "../")
+    if (path.indexOf("/vnesudebnaya/") !== -1) return "../";
+    if (path.indexOf("/recenziya/") !== -1) return "../";
+    if (path.indexOf("/sudebnaya/") !== -1) return "../";
+    if (path.indexOf("/faq/") !== -1) return "../";
     if (path.indexOf("/ceny/") !== -1) return "../";
     if (path.indexOf("/diplomy/") !== -1) return "../";
     if (path.indexOf("/dosudebnye-dlya-yurfirmy/") !== -1) return "../";
@@ -35,9 +49,10 @@
     if (path.indexOf("/politika/") !== -1) return "../";
     if (path.indexOf("/recenzii-dlya-yuristov/") !== -1) return "../";
     if (path.indexOf("/spasibo/") !== -1) return "../";
-    if (path.indexOf("/tovarovedcheskaya-b2b/") !== -1) return "../";
     if (path.indexOf("/uzly-i-agregaty/") !== -1) return "../";
     if (path.indexOf("/yuristam/") !== -1) return "../";
+
+    // Root pages
     return "";
   }
 
