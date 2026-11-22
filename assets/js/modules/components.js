@@ -233,11 +233,18 @@
     onScroll();
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
+  // Use DOMContentLoaded if still pending, otherwise execute immediately
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      loadComponent("header.html", "header-container");
+      loadComponent("footer.html", "footer-container");
+      initYuristamNav();
+    });
+  } else {
     loadComponent("header.html", "header-container");
     loadComponent("footer.html", "footer-container");
     initYuristamNav();
-  });
+  }
 
   // Export for cleanup
   if (typeof window.ComponentsLoader !== "undefined") {
