@@ -146,6 +146,7 @@
       var dropdown = toggle.closest(".header__nav-dropdown");
       if (dropdown) {
         var closeTimeout = null;
+        var menu = dropdown.querySelector(".header__mega-menu, .header__simple-menu");
 
         function openMenu() {
           header.querySelectorAll(".header__nav-dropdown").forEach(function (d) {
@@ -155,7 +156,6 @@
             if (m) m.classList.remove("is-open");
           });
           toggle.setAttribute("aria-expanded", "true");
-          var menu = dropdown.querySelector(".header__mega-menu, .header__simple-menu");
           if (menu) menu.classList.add("is-open");
         }
 
@@ -168,19 +168,37 @@
           });
         }
 
-        dropdown.addEventListener("mouseenter", function () {
+        function cancelClose() {
           if (closeTimeout) {
             clearTimeout(closeTimeout);
             closeTimeout = null;
           }
+        }
+
+        // Hover on dropdown container (nav link)
+        dropdown.addEventListener("mouseenter", function () {
+          cancelClose();
           openMenu();
         });
 
         dropdown.addEventListener("mouseleave", function () {
           closeTimeout = setTimeout(function () {
             closeMenu();
-          }, 200);
+          }, 300);
         });
+
+        // Hover on mega-menu itself — keep open when cursor is on menu
+        if (menu) {
+          menu.addEventListener("mouseenter", function () {
+            cancelClose();
+          });
+
+          menu.addEventListener("mouseleave", function () {
+            closeTimeout = setTimeout(function () {
+              closeMenu();
+            }, 300);
+          });
+        }
       }
 
       toggle.addEventListener("keydown", function (e) {

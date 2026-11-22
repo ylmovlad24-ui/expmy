@@ -142,7 +142,7 @@
 
 .header__mega-menu {
   position: absolute;
-  top: calc(100% + 4px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(10px);
   background: #ffffff;
@@ -154,6 +154,17 @@
   transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
   z-index: 100;
   pointer-events: none;
+}
+
+/* Invisible bridge between nav link and mega menu */
+.header__mega-menu::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: transparent;
 }
 
 /* Triangle pointer */
