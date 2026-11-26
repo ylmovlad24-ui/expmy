@@ -1,135 +1,160 @@
-# Архитектура сайта АвтоЭксперт + Рецензент.рус
+# Архитектура сайта Объектив-Эксперт
 
 ## 📁 Структура проекта
 
 ```
 expmy/
-├── index.html                    # Главная страница (АвтоЭксперт)
+├── index.html                    # Главная страница
 ├── 404.html                      # Страница ошибки
 ├── privacy.html                  # Политика конфиденциальности
-├── README.md                     # Документация проекта
+├── robots.txt                    # robots.txt
+├── sitemap.xml                   # Карта сайта
+├── favicon.svg                   # Фавикон
+├── .htaccess                     # Apache конфигурация
+├── package.json                  # Зависимости
 │
 ├── assets/                       # ВСЕ ресурсы сайта
 │   ├── css/                      # Каскадные таблицы стилей
 │   │   ├── main.css              # Точка входа (объединяет все стили)
+│   │   ├── main.min.css          # Минифицированная версия
+│   │   ├── motion.css            # GSAP-анимации
+│   │   ├── motion.min.css        # Минифицированная версия
 │   │   │
 │   │   ├── base/                 # Базовые стили
 │   │   │   ├── variables.css     # CSS-переменные (цвета, отступы, шрифты)
 │   │   │   ├── reset.css         # Сброс стилей браузера
-│   │   │   ├── layout.css        # Базовая разметка (container, section)
-│   │   │   └── responsive.css    # Адаптивные breakpoints
+│   │   │   ├── layout.css        # Container, section, grid
+│   │   │   └── responsive.css    # Breakpoints
 │   │   │
-│   │   ├── components/           # Компоненты UI
-│   │   │   ├── header.css        # Шапка сайта (навигация, бургер-меню)
+│   │   ├── components/           # UI-компоненты
+│   │   │   ├── header.css        # Шапка сайта
 │   │   │   ├── footer.css        # Подвал сайта
-│   │   │   ├── hero.css          # Hero-секция (главный баннер)
+│   │   │   ├── hero.css          # Hero-секция
 │   │   │   ├── sections.css      # Общие секции
-│   │   │   ├── buttons.css       # Кнопки (btn, btn--primary, btn--outline)
-│   │   │   ├── cards.css         # Карточки (rc-card, service-card)
-│   │   │   ├── forms.css         # Формы (input, textarea, select)
+│   │   │   ├── buttons.css       # Кнопки
+│   │   │   ├── cards.css         # Карточки
+│   │   │   ├── forms.css         # Формы
 │   │   │   ├── tables.css        # Таблицы
-│   │   │   ├── steps.css         # Шаги процесса (1, 2, 3...)
-│   │   │   ├── calculator.css    # Калькулятор стоимости
-│   │   │   ├── calculator-compact.css  # Компактный калькулятор
-│   │   │   ├── sticky-cta.css    # Липкая кнопка звонка
+│   │   │   ├── steps.css         # Шаги процесса
+│   │   │   ├── calculator.css    # Калькулятор
+│   │   │   ├── calculator-compact.css
+│   │   │   ├── sticky-cta.css    # Липкая кнопка
 │   │   │   ├── reviews.css       # Отзывы
 │   │   │   ├── guarantees.css    # Гарантии
-│   │   │   ├── faq.css           # FAQ (аккордеон)
+│   │   │   ├── faq.css           # FAQ аккордеон
 │   │   │   ├── contacts.css      # Контакты
 │   │   │   ├── tabs.css          # Табы
 │   │   │   ├── cta-about.css     # CTA для about
 │   │   │   ├── pricing.css       # Цены
-│   │   │   ├── animations.css    # Анимации (dianomi)
-│   │   │   ├── services-cards.css # Карточки услуг (dianomi)
-│   │   │   ├── case-card.css     # Карточки кейсов (dianomi)
-│   │   │   └── hero-extended.css # Расширенный hero (dianomi)
+│   │   │   ├── animations.css    # Анимации
+│   │   │   ├── services-cards.css
+│   │   │   ├── case-card.css     # Карточки кейсов
+│   │   │   └── hero-extended.css # Расширенный hero
 │   │   │
 │   │   ├── pages/                # Стили для конкретных страниц
-│   │   │   ├── about.css         # Страница "О компании"
-│   │   │   └── index.css         # Главная страница
+│   │   │   ├── about.css
+│   │   │   └── index.css
 │   │   │
-│   │   ├── review.css            # Стили для Рецензент.рус
 │   │   └── utilities/            # Утилитарные классы
 │   │       └── utilities.css
 │   │
-│   └── js/                       # JavaScript
-│       ├── main.js               # Основной файл
-│       ├── lib/
-│       │   └── utils.js          # Утилиты
-│       └── modules/              # Модули
-│           ├── burger.js         # Бургер-меню
-│           ├── calculator.js     # Калькулятор стоимости
-│           ├── components-loader.js  # Загрузка header/footer
-│           ├── faq.js            # FAQ аккордеон
-│           ├── forms.js          # Обработка форм
-│           ├── smooth-scroll.js  # Плавная прокрутка
-│           └── tabs.js           # Табы
+│   ├── js/                       # JavaScript
+│   │   ├── main.js               # Основной файл
+│   │   ├── lib/
+│   │   │   └── utils.js          # Утилиты (debounce, throttle)
+│   │   ├── modules/              # Модули
+│   │   │   ├── burger.js         # Бургер-меню
+│   │   │   ├── calculator.js     # Калькулятор стоимости
+│   │   │   ├── components-loader.js  # Загрузка header/footer
+│   │   │   ├── faq.js            # FAQ аккордеон
+│   │   │   ├── smooth-scroll.js  # Плавная прокрутка
+│   │   │   ├── tabs.js           # Табы
+│   │   │   ├── scroll-animations.js  # Анимации при скролле
+│   │   │   ├── motion-injector.js    # GSAP-анимации
+│   │   │   ├── motion.js         # Motion-дизайн
+│   │   │   ├── 3d-cards.js       # 3D-карточки
+│   │   │   ├── marquee.js        # Бегущая строка
+│   │   │   ├── clip-reveals.js   # Clip-reveal анимации
+│   │   │   ├── page-transitions.js   # Переходы страниц
+│   │   │   ├── scroll-velocity.js    # Scroll velocity
+│   │   │   ├── lenis-scroll.js       # Smooth scroll (Lenis)
+│   │   │   ├── webgl-gradient.js     # WebGL градиенты
+│   │   │   ├── custom-cursor.js      # Кастомный курсор
+│   │   │   ├── animated-icons.js     # Анимированные иконки
+│   │   │   ├── form-micro-interactions.js  # Микро-взаимодействия
+│   │   │   ├── section-spotlight.js  # Spotlight секций
+│   │   │   ├── section-transitions.js # Переходы секций
+│   │   │   ├── header.js           # Логика header
+│   │   │   ├── diplomas.js         # Анимация дипломов
+│   │   │   ├── review-motion.js    # Motion для review
+│   │   │   ├── card-glare.js       # Glare-эффект карточек
+│   │   │   ├── gsap-loader.js      # Загрузчик GSAP
+│   │   │   └── components.js       # Общие компоненты
+│   │   └── *.min.js              # Минифицированные копии (в корне)
+│   │
+│   ├── fonts/                    # Шрифты Inter
+│   │   ├── Inter-Regular.woff(.2)
+│   │   ├── Inter-Medium.woff(.2)
+│   │   ├── Inter-Bold.woff(.2)
+│   │   └── Inter-SemiBold.woff(.2)
+│   │
+│   └── og-image-1200x630.jpg     # Open Graph изображение
 │
 ├── components/                   # HTML-компоненты для inclusion
 │   ├── header.html               # Шапка сайта
-│   ├── footer.html               # Подвал сайта
-│   └── form.html                 # Форма заявки
+│   └── footer.html               # Подвал сайта
 │
-├── pages/                        # ВСЕ страницы сайта
-│   │
-│   ├── about/                    # О компании
-│   │   ├── index.html            # О компании АвтоЭксперт
-│   │   └── experts.html          # Наши эксперты
-│   │
-│   ├── services/                 # Услуги (АвтоЭксперт)
-│   │   ├── index.html            # Список услуг
-│   │   ├── avtotexnicheskaya-ekspertiza/
-│   │   │   └── index.html        # Автотехническая экспертиза
-│   │   ├── avto-tovarisvedcheskaya-ekspertiza/
-│   │   │   └── index.html        # Автотовароведческая экспертиза
-│   │   └── ekspertiza-uzlov-i-agregatov/
-│   │       └── index.html        # Экспертиза узлов и агрегатов
-│   │
-│   ├── review/                   # Рецензент.рус (подраздел)
-│   │   ├── index.html            # Какие экспертизы рецензируем
-│   │   ├── autotech/             # Автотехническая рецензия
-│   │   │   └── index.html
-│   │   ├── autotrade/            # Автотовароведческая рецензия
-│   │   │   └── index.html
-│   │   ├── commodity/            # Товароведческая рецензия
-│   │   │   └── index.html
-│   │   ├── dtp/                  # Рецензия по ДТП
-│   │   │   └── index.html
-│   │   ├── dtp-conditions/       # Обстоятельства ДТП
-│   │   │   └── index.html
-│   │   ├── technical-condition/  # Техническое состояние
-│   │   │   └── index.html
-│   │   ├── trace-diagnostics/    # Трасологическая диагностика
-│   │   │   └── index.html
-│   │   ├── units/                # Рецензия по узлам
-│   │   │   └── index.html
-│   │   └── cases/                # Кейсы рецензирования
-│   │       ├── index.html
-│   │       └── detail.html
-│   │
-│   ├── cases/                    # Кейсы АвтоЭксперт
-│   │   └── index.html
-│   │
-│   ├── contacts/                 # Контакты
-│   │   └── index.html
-│   │
-│   ├── faq/                      # FAQ
-│   │   └── index.html
-│   │
-│   ├── prices/                   # Цены
-│   │   └── index.html
-│   │
-│   ├── offer/                    # Договор-оферта
-│   │   └── index.html
-│   │
-│   ├── partners/                 # Партнёрство
-│   │   └── index.html
-│   │
-│   └── thank-you/                # Страница благодарности
-│       └── index.html
+├── content-extraction/           # Извлечённый контент (Markdown)
+│   ├── merged/                   # Слитый контент
+│   │   ├── SITE_CONTENT_COMPLETE.md
+│   │   └── SITE_CONTENT_REVISED.md
+│   └── pages/                    # Контент по страницам
+│       ├── root-index.md
+│       ├── about.md
+│       ├── about-experts.md
+│       ├── cases.md
+│       ├── contacts.md
+│       ├── faq.md
+│       ├── offer.md
+│       ├── partners.md
+│       ├── prices.md
+│       ├── root-404.md
+│       ├── root-privacy.md
+│       ├── thank-you.md
+│       ├── services-*.md
+│       ├── review-*.md
+│       ├── legal-*.md
+│       ├── situations-*.md
+│       └── services-tovar-*.md
 │
-└── docs/
-    └── INTEGRATION_COMPLETE.md   # Документация интеграции
+├── docs/                         # Документация
+│   └── INTEGRATION_COMPLETE.md
+│
+├── api/                          # API-эндпоинты
+│
+└── [директории страниц]          # Каждая страница — отдельная папка
+    ├── avtotehnicheskaya/
+    ├── avtotovarovedcheskaya/
+    ├── uzly-i-agregaty/
+    ├── tovarovedcheskaya-b2b/
+    ├── sudebnaya/
+    ├── vnesudebnaya/
+    ├── recenziya/
+    ├── recenzii-dlya-yuristov/
+    ├── dosudebnye-dlya-yurfirmy/
+    ├── yuristam/
+    ├── o-kompanii/
+    ├── eksperty/
+    ├── partners/
+    ├── faq/
+    ├── ceny/
+    ├── kontakty/
+    ├── oferta/
+    ├── politika/
+    ├── spasibo/
+    ├── diplomy/
+    ├── keysy/
+    └── ...
 ```
 
 ---
@@ -138,45 +163,47 @@ expmy/
 
 ### АвтоЭксперт (основной бренд)
 
-| Страница | URL | Путь | Описание |
-|----------|-----|------|----------|
-| **Главная** | `/` | `index.html` | Объединённая главная с услугами и рецензированием |
-| **О компании** | `/about/` | `pages/about/index.html` | История, миссия, ценности |
-| **Эксперты** | `/about/experts.html` | `pages/about/experts.html` | Команда сертифицированных экспертов |
-| **Услуги** | `/services/` | `pages/services/index.html` | Список всех экспертиз |
-| **Автотехническая** | `/services/avtotexnicheskaya-ekspertiza/` | `pages/services/avtotexnicheskaya-ekspertiza/index.html` | Экспертиза ДТП, скорость, виновник |
-| **Автотовароведческая** | `/services/avto-tovarisvedcheskaya-ekspertiza/` | `pages/services/avto-tovarisvedcheskaya-ekspertiza/index.html` | Оценка ущерба, УТС |
-| **Узлы и агрегаты** | `/services/ekspertiza-uzlov-i-agregatov/` | `pages/services/ekspertiza-uzlov-i-agregatov/index.html` | Качество запчастей |
-| **Кейсы** | `/cases/` | `pages/cases/index.html` | Примеры выигранных дел |
-| **Цены** | `/prices/` | `pages/prices/index.html` | Прайс-лист на экспертизы |
-| **FAQ** | `/faq/` | `pages/faq/index.html` | Частые вопросы и ответы |
-| **Контакты** | `/contacts/` | `pages/contacts/index.html` | Телефон, email, адрес |
-| **Конфиденциальность** | `/privacy.html` | `privacy.html` | Политика обработки данных |
-| **Страница ошибки** | `/404.html` | `404.html` | Когда страница не найдена |
+| Страница | URL | Описание |
+|----------|-----|----------|
+| **Главная** | `/` | Витрина услуг, эксперты, FAQ, контакты |
+| **Автотехническая** | `/avtotehnicheskaya/` | ДТП, обстоятельства, следы, техсостояние |
+| ├── Дорога | `/avtotehnicheskaya/doroga/` | |
+| ├── Обстоятельства ДТП | `/avtotehnicheskaya/obstoyatelstva-dtp/` | |
+| ├── Следы | `/avtotehnicheskaya/sledy/` | |
+| └── Техсостояние | `/avtotehnicheskaya/tekhnicheskoe-sostoyanie/` | |
+| **Автотовароведческая** | `/avtotovarovedcheskaya/` | ОСАГО, вне рамки |
+| ├── ОСАГО | `/avtotovarovedcheskaya/osago/` | |
+| └── Вне рамки | `/avtotovarovedcheskaya/vne-ramki/` | |
+| **Узлы и агрегаты** | `/uzly-i-agregaty/` | ДВС, АКПП, кузов, тормозная |
+| **Товароведческая B2B** | `/tovarovedcheskaya-b2b/` | Экспертиза для бизнеса |
+| **О компании** | `/o-kompanii/` | История, миссия |
+| **Эксперты** | `/eksperty/` | Команда |
+| **Партнёры** | `/partners/` | Партнёрство |
+| **Кейсы** | `/keysy/` | Примеры дел |
+| **Дипломы** | `/diplomy/` | Сертификаты |
+| **FAQ** | `/faq/` | Частые вопросы |
+| **Цены** | `/ceny/` | Прайс-лист |
+| **Контакты** | `/kontakty/` | Телефон, email, адрес |
+| **Спасибо** | `/spasibo/` | Подтверждение формы |
 
-### Рецензент.рус (подраздел "Рецензирование")
+### Рецензент.рус (подраздел «Рецензирование»)
 
-| Страница | URL | Путь | Описание |
-|----------|-----|------|----------|
-| **Какие рецензируем** | `/review/` | `pages/review/index.html` | Обзор направлений рецензирования |
-| **Автотехническая** | `/review/autotech/` | `pages/review/autotech/index.html` | Рецензия на автотехническую экспертизу |
-| **Автотовароведческая** | `/review/autotrade/` | `pages/review/autotrade/index.html` | Рецензия на товароведческую экспертизу |
-| **Товароведческая** | `/review/commodity/` | `pages/review/commodity/index.html` | Рецензия на потребительскую экспертизу |
-| **ДТП** | `/review/dtp/` | `pages/review/dtp/index.html` | Рецензия по обстоятельствам ДТП |
-| **Обстоятельства ДТП** | `/review/dtp-conditions/` | `pages/review/dtp-conditions/index.html` | Скорость, тормозной путь |
-| **Техническое состояние** | `/review/technical-condition/` | `pages/review/technical-condition/index.html` | Неисправности, износ |
-| **Трасологическая** | `/review/trace-diagnostics/` | `pages/review/trace-diagnostics/index.html` | Следы, механизмы воздействий |
-| **Узлы** | `/review/units/` | `pages/review/units/index.html` | Рецензия по узлам и агрегатам |
-| **Кейсы** | `/review/cases/` | `pages/review/cases/index.html` | Примеры рецензий |
-| **Кейс детально** | `/review/cases/detail.html` | `pages/review/cases/detail.html` | Детальный разбор кейса |
+| Страница | URL | Описание |
+|----------|-----|----------|
+| **Судебная** | `/sudebnaya/` | Судебная рецензия |
+| **Внесудебная** | `/vnesudebnaya/` | Внесудебная рецензия |
+| **Рецензия** | `/recenziya/` | Общая рецензия |
+| **Рецензии для юристов** | `/recenzii-dlya-yuristov/` | |
+| **Досудебные для юрфирм** | `/dosudebnye-dlya-yurfirmy/` | |
+| **Юристам** | `/yuristam/` | |
 
 ### Юридические страницы
 
-| Страница | URL | Путь | Описание |
-|----------|-----|------|----------|
-| **Оферта** | `/offer/` | `pages/offer/index.html` | Договор-оферта на услуги |
-| **Партнёрство** | `/partners/` | `pages/partners/index.html` | Сотрудничество с юрфирмами |
-| **Спасибо** | `/thank-you/` | `pages/thank-you/index.html` | Подтверждение отправки формы |
+| Страница | URL | Описание |
+|----------|-----|----------|
+| **Оферта** | `/oferta/` | Договор-оферта |
+| **Конфиденциальность** | `/privacy.html` | Политика обработки данных |
+| **Страница ошибки** | `/404.html` | Страница не найдена |
 
 ---
 
@@ -192,38 +219,36 @@ main.css
 │   ├── layout.css        → Container, section, grid
 │   └── responsive.css    → Breakpoints (1024px, 768px, 480px)
 │
-├── COMPONENTS (АвтоЭксперт)
+├── COMPONENTS (UI-компоненты)
 │   ├── header.css        → Навигация, логотип, бургер
+│   ├── footer.css        → Подвал
 │   ├── hero.css          → Главный баннер
-│   ├── sections.css      → Общие секции
+│   ├── sections.css      → Общие секц��и
 │   ├── buttons.css       → Кнопки
 │   ├── cards.css         → Карточки
 │   ├── forms.css         → Формы
 │   ├── tables.css        → Таблицы
 │   ├── steps.css         → Шаги процесса
 │   ├── calculator.css    → Калькулятор
-│   ├── calculator-compact.css → Компактный калькулятор
 │   ├── sticky-cta.css    → Липкая кнопка
-│   ├── footer.css        → Подвал
 │   ├── reviews.css       → Отзывы
 │   ├── guarantees.css    → Гарантии
 │   ├── faq.css           → FAQ аккордеон
 │   ├── contacts.css      → Контакты
 │   ├── tabs.css          → Табы
 │   ├── cta-about.css     → CTA для about
-│   └── pricing.css       → Цены
-│
-├── COMPONENTS (Рецензент.рус)
+│   ├── pricing.css       → Цены
 │   ├── animations.css    → Анимации
 │   ├── services-cards.css → Карточки услуг
 │   ├── case-card.css     → Карточки кейсов
-│   ├── hero-extended.css → Расширенный hero
-│   └── review.css        → Стили рецензирования
+│   └── hero-extended.css → Расширенный hero
 │
-└── PAGES
-    ├── utilities.css     → Утилиты
-    ├── about.css         → О компании
-    └── index.css         → Главная
+├── PAGES
+│   ├── about.css         → О компании
+│   └── index.css         → Главная
+│
+└── UTILITIES
+    └── utilities.css     → Утилитарные классы
 ```
 
 ### Breakpoints (адаптивные точки)
@@ -239,57 +264,81 @@ main.css
 
 ## ⚙️ JavaScript-модули
 
+### Основные модули (подключаются в index.html)
+
 | Файл | Назначение | Подключается на |
 |------|-----------|-----------------|
 | `utils.js` | Утилиты (debounce, throttle) | Все страницы |
-| `burger.js` | Бургер-меню (открытие/закрытие) | Все страницы |
+| `burger.js` | Бургер-меню | Все страницы |
 | `calculator.js` | Калькулятор стоимости | Главная, услуги |
-| `components-loader.js` | Динамическая загрузка header/footer | Страницы с `#header-root`, `#footer-root` |
-| `faq.js` | FAQ аккордеон | FAQ, услуги, review |
-| `forms.js` | Валидация и отправка форм | Все страницы с формами |
+| `components-loader.js` | Динамическая загрузка header/footer | Все страницы с `#header-container`, `#footer-container` |
+| `faq.js` | FAQ аккордеон | FAQ, услуги |
 | `smooth-scroll.js` | Плавная прокрутка к якорям | Все страницы |
 | `tabs.js` | Переключение табов | Цены, услуги |
+| `scroll-animations.js` | Анимации при скролле (reveal-blur, velocity-blur) | Все страницы |
+| `motion-injector.js` | GSAP-анимации (motion-дизайн 2026) | Все страницы |
+
+### Motion-модули (GSAP-анимации)
+
+| Файл | Назначение |
+|------|-----------|
+| `motion.js` | Базовые motion-анимации |
+| `3d-cards.js` | 3D-карточки (`data-3d-card`) |
+| `marquee.js` | Бегущая строка |
+| `clip-reveals.js` | Clip-reveal анимации |
+| `page-transitions.js` | Переходы между страницами |
+| `scroll-velocity.js` | Scroll velocity эффекты |
+| `lenis-scroll.js` | Smooth scroll (Lenis) |
+| `webgl-gradient.js` | WebGL градиенты |
+| `custom-cursor.js` | Кастомный курсор |
+| `animated-icons.js` | Анимированные иконки |
+| `diplomas.js` | Анимация дипломов |
+| `review-motion.js` | Motion для review-секций |
+| `card-glare.js` | Glare-эффект карточек |
+| `form-micro-interactions.js` | Микро-взаимодействия форм |
+| `section-spotlight.js` | Spotlight секций |
+| `section-transitions.js` | Переходы секций |
+| `header.js` | Логика header |
+| `gsap-loader.js` | Загрузчик GSAP |
+| `components.js` | Общие компоненты |
 
 ---
 
-## 🔄 Навигация между страницами
+## 🔄 Навигация
 
-### Главная навигация (header)
+### Header навигация
 ```
-index.html → pages/services/ (Услуги)
-           → pages/review/ (Рецензии)
-           → pages/about/ (О компании)
-           → pages/about/experts.html (Эксперты)
-           → pages/cases/ (Кейсы)
-           → pages/prices/ (Цены)
-           → pages/faq/ (FAQ)
-           → pages/contacts/ (Контакты)
+Главная → index.html
+Услуги → avtotehnicheskaya/, avtotovarovedcheskaya/, uzly-i-agregaty/, tovarovedcheskaya-b2b/
+Рецензирование → sudebnaya/, vnesudebnaya/, recenziya/, recenzii-dlya-yuristov/
+О компании → o-kompanii/, eksperty/, partners/
+Кейсы → keysy/, diplomy/
+FAQ → faq/
+Цены → ceny/
+Контакты → kontakty/
 ```
 
 ### Пути к ресурсам
 - **Корень:** `assets/css/main.css`, `assets/js/main.js`
-- **pages/:** `../assets/css/main.css`, `../assets/js/main.js`
-- **pages/review/:** `../assets/css/main.css`, `../assets/js/main.js`
+- **Подстраницы:** `../assets/css/main.css`, `../assets/js/main.js`
 
 ---
 
 ## 📱 Мобильная адаптация
 
-### Проверенные breakpoints:
-
+### Breakpoints
 | Элемент | 1024px | 768px | 480px |
 |---------|--------|-------|-------|
-| **Hero-заголовок** | 2rem | 1.75rem | 1.5rem |
-| **Заголовки секций** | 1.75rem | 1.5rem | 1.375rem |
-| **Сетка услуг** | 2 колонки | 1 колонка | 1 колонка |
-| **Сетка шагов** | 3 колонки | 2 колонки | 1 колонка |
-| **Сетка статистики** | 2 колонки | 2 колонки | 1 колонка |
-| **Кнопки** | auto | 100% width | 100% width |
-| **Бургер-меню** | скрыто | показано | показано |
-| **Формы** | grid | 1 колонка | 1 колонка |
-| **Карточки** | 3 колонки | 1 колонка | 1 колонка |
+| Hero-заголовок | 2rem | 1.75rem | 1.5rem |
+| Заголовки секций | 1.75rem | 1.5rem | 1.375rem |
+| Сетка услуг | 2 колонки | 1 колонка | 1 колонка |
+| Сетка шагов | 3 колонки | 2 колонки | 1 колонка |
+| Карточки | 3 колонки | 1 колонка | 1 колонка |
+| Кнопки | auto | 100% width | 100% width |
+| Бургер-меню | скрыто | показано | показано |
+| Формы | grid | 1 колонка | 1 колонка |
 
-### Проверенные компоненты:
+### Проверенные компоненты
 - ✅ Header (бургер-меню на мобильных)
 - ✅ Hero-секция (адаптивные шрифты)
 - ✅ Карточки услуг (1 колонка на мобильных)
@@ -299,54 +348,12 @@ index.html → pages/services/ (Услуги)
 - ✅ Таблицы (горизонтальный скролл)
 - ✅ Footer (одна колонка)
 
-### Review.css мобильная адаптация:
-- ✅ `.review-hero__stats` — `flex-wrap: wrap` на мобильных
-- ✅ `.review-cards__grid` — 3 колонки → 1 колонка (768px)
-- ✅ `.review-quiz__options` — 3 колонки → 1 колонка (768px)
-- ✅ `.review-quiz__phone-input-wrap` — горизонтальная → вертикальная (768px)
-- ✅ `.review-partnership__grid` — 3 колонки → 1 колонка (768px)
-- ✅ `.review-reviews__grid` — 3 колонки → 1 колонка (768px)
-- ✅ `.review-cta__buttons` — горизонтальные → вертикальные (768px)
-
-### Breakpoints в review.css:
-- `@media (max-width: 768px)` — основные мобильные стили
-- `@media (max-width: 480px)` — маленькие мобильные
-
 ---
 
-## ✅ ИТОГОВАЯ ПРОВЕРКА МОБИЛЬНОЙ АДАПТАЦИИ
+## ✅ Готовность к миграции
 
-### Что проверено:
-
-| Компонент | 1024px | 768px | 480px | Статус |
-|-----------|--------|-------|-------|--------|
-| **Header** | Навигация сжата | Бургер-меню | Бургер-меню | ✅ |
-| **Hero** | 2rem | 1.75rem | 1.5rem | ✅ |
-| **Заголовки** | 1.75rem | 1.5rem | 1.375rem | ✅ |
-| **Сетка услуг** | 3 колонки | 2 колонки | 1 колонка | ✅ |
-| **Сетка шагов** | 5 колонок | 3 колонки | 2 колонки → 1 колонка | ✅ |
-| **Карточки** | 3 колонки | 2 колонки | 1 колонка | ✅ |
-| **Статистика** | 4 колонки | 2 колонки | 1 колонка | ✅ |
-| **Кнопки** | auto | 100% width | 100% width | ✅ |
-| **Формы** | Grid | 1 колонка | 1 колонка | ✅ |
-| **Табы** | Горизонтальные | Wrap | Wrap | ✅ |
-| **FAQ** | Аккордеон | Аккордеон | Аккордеон | ✅ |
-| **Калькулятор** | Полная | Полная | Полная | ✅ |
-| **Review-сетка** | 3 колонки | 1 колонка | 1 колонка | ✅ |
-| **Review-формы** | Grid | 1 колонка | 1 колонка | ✅ |
-| **Footer** | 4 колонки | 1 колонка | 1 колонка | ✅ |
-
-### CSS-файлы адаптации:
-- `assets/css/base/responsive.css` — основные breakpoints
-- `assets/css/review.css` — мобильные стили для Рецензент.рус
-- `assets/css/components/hero.css` — адаптивные hero-секции
-- `assets/css/components/buttons.css` — мобильные кнопки (btn--full)
-
-### Итого:
-- **Всего страниц:** 27
-- **Адаптировано:** 27/27 ✅
-- **Breakpoints:** 1024px, 768px, 480px
-- **Мобильное меню:** Бургер (768px+)
-- **Адаптивные сетки:** Grid → 1 колонка
-- **Адаптивные шрифты:** Да
-- **Touch-friendly:** Да (кнопки ≥44px)
+Проект готов к переносу в CMS 1С-Битрикс:
+- Плоская структура страниц для инфоблоков `bitrix:news`
+- Модульная CSS/JS архитектура
+- Компоненты header/footer вынесены в отдельные HTML-файлы
+- Контент извлечён в `content-extraction/pages/*.md`
