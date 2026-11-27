@@ -148,12 +148,13 @@
   background: #ffffff;
   border-radius: 16px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
-  padding: 24px;
+  padding: 0;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
   z-index: 100;
   pointer-events: none;
+  overflow: hidden;
 }
 
 /* Invisible bridge between nav link and mega menu */
@@ -190,108 +191,110 @@
   pointer-events: auto;
 }
 
-/* Mega Grid */
+/* Mega Grid — two columns: sidebar + content */
 .header__mega-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  min-width: 900px;
-}
-
-.header__mega-grid--3col {
-  grid-template-columns: repeat(3, 1fr);
-  min-width: 750px;
-}
-
-/* Mega Card */
-.header__mega-card {
-  padding: 16px;
-  border-radius: 12px;
-  transition: background 0.3s;
-}
-
-.header__mega-card:hover {
-  background: var(--gray-100, #f7fafc);
-}
-
-.header__mega-card__icon {
-  width: 40px;
-  height: 40px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--accent-bg, rgba(230, 126, 34, 0.1));
-  border-radius: 10px;
-  margin-bottom: 12px;
+  min-width: 700px;
+}
+
+/* Left sidebar: categories list */
+.header__mega-sidebar {
+  width: 240px;
+  background: var(--gray-100, #f7fafc);
+  padding: 20px 0;
+  border-right: 1px solid var(--border, #e0e4e8);
+  flex-shrink: 0;
+}
+
+.header__mega-sidebar__item {
+  padding: 14px 24px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-light, #666666);
+  cursor: pointer;
+  transition: all 0.2s;
+  border-left: 3px solid transparent;
+}
+
+.header__mega-sidebar__item:hover {
+  background: rgba(230, 126, 34, 0.05);
   color: var(--accent, #e67e22);
 }
 
-.header__mega-card__icon--danger {
-  background: rgba(229, 62, 62, 0.1);
-  color: #e53e3e;
-}
-
-.header__mega-card__icon--warning {
+.header__mega-sidebar__item.is-active {
   background: rgba(230, 126, 34, 0.1);
-  color: #e67e22;
+  color: var(--accent, #e67e22);
+  border-left-color: var(--accent, #e67e22);
+  font-weight: 600;
 }
 
-.header__mega-card__icon--info {
-  background: rgba(56, 161, 105, 0.1);
-  color: #38a169;
+/* Right content: panels */
+.header__mega-content {
+  flex: 1;
+  padding: 28px 32px;
+  min-height: 240px;
 }
 
-.header__mega-card__icon svg {
-  width: 24px;
-  height: 24px;
+.header__mega-content__panel {
+  display: none;
+  animation: fadeIn 0.2s ease;
 }
 
-.header__mega-card__title {
-  font-size: 1rem;
+.header__mega-content__panel.is-active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header__mega-content__title {
+  font-size: 1.125rem;
   font-weight: 600;
   color: var(--text, #333333);
   margin: 0 0 8px 0;
 }
 
-.header__mega-card__desc {
-  font-size: 0.8125rem;
-  color: var(--text-light, #666666);
-  line-height: 1.5;
-  margin: 0 0 12px 0;
-}
-
-.header__mega-card__list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 12px 0;
-}
-
-.header__mega-card__list li {
-  margin-bottom: 4px;
-}
-
-.header__mega-card__list a {
+.header__mega-content__desc {
   font-size: 0.875rem;
   color: var(--text-light, #666666);
-  text-decoration: none;
-  transition: color 0.3s;
-  display: block;
-  padding: 2px 0;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
 }
 
-.header__mega-card__list a:hover {
+.header__mega-content__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+
+.header__mega-content__list li {
+  margin-bottom: 8px;
+}
+
+.header__mega-content__list a {
+  font-size: 0.9375rem;
+  color: var(--text-light, #666666);
+  text-decoration: none;
+  transition: color 0.2s;
+  display: block;
+  padding: 4px 0;
+}
+
+.header__mega-content__list a:hover {
   color: var(--accent, #e67e22);
 }
 
-.header__mega-card__link {
-  font-size: 0.8125rem;
+.header__mega-content__link {
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--accent, #e67e22);
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.2s;
 }
 
-.header__mega-card__link:hover {
+.header__mega-content__link:hover {
   color: var(--accent-hover, #cf6d15);
 }
 

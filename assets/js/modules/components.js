@@ -9,51 +9,11 @@
 
   function getBasePath() {
     var path = window.location.pathname;
-
-    // Pages directories
-    if (path.indexOf("/pages/services/") !== -1) return "../../../";
-    if (path.indexOf("/pages/") !== -1) return "../";
-
-    // Depth-aware directories (need different path for sub-pages)
-    if (path.indexOf("/avtotehnicheskaya/") !== -1) {
-      var depth = (path.match(/\//g) || []).length;
-      return depth >= 4 ? "../../" : "../";
-    }
-    if (path.indexOf("/avtotovarovedcheskaya/") !== -1) {
-      var depth = (path.match(/\//g) || []).length;
-      return depth >= 4 ? "../../" : "../";
-    }
-    if (path.indexOf("/tovarovedcheskaya-b2b/") !== -1) {
-      var depth = (path.match(/\//g) || []).length;
-      return depth >= 4 ? "../../" : "../";
-    }
-    if (path.indexOf("/situations/") !== -1) {
-      var depth = (path.match(/\//g) || []).length;
-      return depth >= 4 ? "../../" : "../";
-    }
-
-    // Single-level directories (always "../")
-    if (path.indexOf("/vnesudebnaya/") !== -1) return "../";
-    if (path.indexOf("/recenziya/") !== -1) return "../";
-    if (path.indexOf("/sudebnaya/") !== -1) return "../";
-    if (path.indexOf("/faq/") !== -1) return "../";
-    if (path.indexOf("/ceny/") !== -1) return "../";
-    if (path.indexOf("/diplomy/") !== -1) return "../";
-    if (path.indexOf("/dosudebnye-dlya-yurfirmy/") !== -1) return "../";
-    if (path.indexOf("/eksperty/") !== -1) return "../";
-    if (path.indexOf("/keysy/") !== -1) return "../";
-    if (path.indexOf("/kontakty/") !== -1) return "../";
-    if (path.indexOf("/o-kompanii/") !== -1) return "../";
-    if (path.indexOf("/oferta/") !== -1) return "../";
-    if (path.indexOf("/partners/") !== -1) return "../";
-    if (path.indexOf("/politika/") !== -1) return "../";
-    if (path.indexOf("/recenzii-dlya-yuristov/") !== -1) return "../";
-    if (path.indexOf("/spasibo/") !== -1) return "../";
-    if (path.indexOf("/uzly-i-agregaty/") !== -1) return "../";
-    if (path.indexOf("/yuristam/") !== -1) return "../";
-
-    // Root pages
-    return "";
+    if (path === "/" || path === "/index.html") return "";
+    var segments = path.split("/").filter(function(s) { return s.length > 0; });
+    var result = "";
+    for (var i = 0; i < segments.length; i++) { result += "../"; }
+    return result;
   }
 
   function loadComponent(filePath, containerId) {
@@ -215,6 +175,26 @@
         }
       });
     });
+
+    // Mega menu sidebar — hover to switch panels
+    var megaSidebar = header.querySelector(".header__mega-sidebar");
+    if (megaSidebar) {
+      var sidebarItems = megaSidebar.querySelectorAll(".header__mega-sidebar__item");
+      var panels = header.querySelectorAll(".header__mega-content__panel");
+
+      sidebarItems.forEach(function (item) {
+        item.addEventListener("mouseenter", function () {
+          var category = this.getAttribute("data-category");
+          // Remove is-active from all items and panels
+          sidebarItems.forEach(function (i) { i.classList.remove("is-active"); });
+          panels.forEach(function (p) { p.classList.remove("is-active"); });
+          // Add is-active to current
+          this.classList.add("is-active");
+          var panel = header.querySelector(".header__mega-content__panel[data-category=" + category + "]");
+          if (panel) panel.classList.add("is-active");
+        });
+      });
+    }
 
     // Close desktop dropdowns when clicking outside
     globalClickHandler = function (e) {

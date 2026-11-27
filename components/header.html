@@ -20,71 +20,61 @@
         </button>
         <div class="header__mega-menu" id="mega-expertizy" role="menu">
           <div class="header__mega-grid">
-            <!-- Card 1: Автотехническая -->
-            <div class="header__mega-card" role="menuitem">
-              <div class="header__mega-card__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                </svg>
-              </div>
-              <h3 class="header__mega-card__title">Автотехническая</h3>
-              <p class="header__mega-card__desc">Обстоятельства ДТП, скорость, тормозной путь, техническое состояние ТС</p>
-              <ul class="header__mega-card__list">
-                <li><a href="/avtotehnicheskaya/obstoyatelstva-dtp/">Обстоятельства ДТП</a></li>
-                <li><a href="/avtotehnicheskaya/tekhnicheskoe-sostoyanie/">Техническое состояние ТС</a></li>
-                <li><a href="/avtotehnicheskaya/sledy/">Следы на ТС и месте ДТП</a></li>
-                <li><a href="/avtotehnicheskaya/doroga/">Техническое состояние дороги</a></li>
-              </ul>
-              <a href="/avtotehnicheskaya/" class="header__mega-card__link">Все направления →</a>
+            <!-- Левая колонка: категории -->
+            <div class="header__mega-sidebar">
+              <div class="header__mega-sidebar__item is-active" data-category="avto-tech">Автотехническая</div>
+              <div class="header__mega-sidebar__item" data-category="avto-trade">Автотовароведческая</div>
+              <div class="header__mega-sidebar__item" data-category="parts">Узлы и агрегаты</div>
+              <div class="header__mega-sidebar__item" data-category="b2b">Товароведческая B2B</div>
             </div>
 
-            <!-- Card 2: Автотовароведческая -->
-            <div class="header__mega-card" role="menuitem">
-              <div class="header__mega-card__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-                </svg>
+            <!-- Правая колонка: подпункты -->
+            <div class="header__mega-content">
+              <!-- Автотехническая -->
+              <div class="header__mega-content__panel is-active" data-category="avto-tech">
+                <h3 class="header__mega-content__title">Автотехническая экспертиза</h3>
+                <p class="header__mega-content__desc">Обстоятельства ДТП, скорость, тормозной путь, техническое состояние ТС</p>
+                <ul class="header__mega-content__list">
+                  <li><a href="/avtotehnicheskaya/obstoyatelstva-dtp/">Обстоятельства ДТП</a></li>
+                  <li><a href="/avtotehnicheskaya/tekhnicheskoe-sostoyanie/">Техническое состояние ТС</a></li>
+                  <li><a href="/avtotehnicheskaya/sledy/">Следы на ТС и месте ДТП</a></li>
+                  <li><a href="/avtotehnicheskaya/doroga/">Техническое состояние дороги</a></li>
+                </ul>
+                <a href="/avtotehnicheskaya/" class="header__mega-content__link">Все направления →</a>
               </div>
-              <h3 class="header__mega-card__title">Автотовароведческая</h3>
-              <p class="header__mega-card__desc">Рыночная стоимость, ущерб, УТС, износ, идентификация ТС</p>
-              <ul class="header__mega-card__list">
-                <li><a href="/avtotovarovedcheskaya/osago/">В рамках ОСАГО</a></li>
-                <li><a href="/avtotovarovedcheskaya/vne-ramki/">Вне рамок ОСАГО</a></li>
-              </ul>
-              <a href="/avtotovarovedcheskaya/" class="header__mega-card__link">Все направления →</a>
-            </div>
 
-            <!-- Card 3: Узлы и агрегаты -->
-            <div class="header__mega-card" role="menuitem">
-              <div class="header__mega-card__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <circle cx="12" cy="12" r="3"/>
-                  <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
-                </svg>
+              <!-- Автотовароведческая -->
+              <div class="header__mega-content__panel" data-category="avto-trade">
+                <h3 class="header__mega-content__title">Автотовароведческая экспертиза</h3>
+                <p class="header__mega-content__desc">Рыночная стоимость, ущерб, УТС, износ, идентификация ТС</p>
+                <ul class="header__mega-content__list">
+                  <li><a href="/avtotovarovedcheskaya/osago/">В рамках ОСАГО</a></li>
+                  <li><a href="/avtotovarovedcheskaya/vne-ramki/">Вне рамок ОСАГО</a></li>
+                </ul>
+                <a href="/avtotovarovedcheskaya/" class="header__mega-content__link">Все направления →</a>
               </div>
-              <h3 class="header__mega-card__title">Узлы и агрегаты</h3>
-              <p class="header__mega-card__desc">Двигатель, КПП, подвеска, кузов, ЭБУ — диагностика качества</p>
-              <ul class="header__mega-card__list">
-                <li><a href="/uzly-i-agregaty/">Экспертиза узлов и агрегатов</a></li>
-              </ul>
-              <a href="/uzly-i-agregaty/" class="header__mega-card__link">Подробнее →</a>
-            </div>
 
-            <!-- Card 4: B2B -->
-            <div class="header__mega-card" role="menuitem">
-              <div class="header__mega-card__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                </svg>
+              <!-- Узлы и агрегаты -->
+              <div class="header__mega-content__panel" data-category="parts">
+                <h3 class="header__mega-content__title">Экспертиза узлов и агрегатов</h3>
+                <p class="header__mega-content__desc">Двигатель, КПП, подвеска, кузов, ЭБУ — диагностика качества</p>
+                <ul class="header__mega-content__list">
+                  <li><a href="/uzly-i-agregaty/">Экспертиза узлов и агрегатов</a></li>
+                </ul>
+                <a href="/uzly-i-agregaty/" class="header__mega-content__link">Подробнее →</a>
               </div>
-              <h3 class="header__mega-card__title">Товароведческая B2B</h3>
-              <p class="header__mega-card__desc">Для юрлиц: транспорт, стройтовары, оборудование</p>
-              <ul class="header__mega-card__list">
-                <li><a href="/tovarovedcheskaya-b2b/transport/">Транспортные средства</a></li>
-                <li><a href="/tovarovedcheskaya-b2b/construction/">Строительные товары</a></li>
-                <li><a href="/tovarovedcheskaya-b2b/equipment/">Машины и оборудование</a></li>
-              </ul>
-              <a href="/tovarovedcheskaya-b2b/" class="header__mega-card__link">Все категории →</a>
+
+              <!-- B2B -->
+              <div class="header__mega-content__panel" data-category="b2b">
+                <h3 class="header__mega-content__title">Товароведческая B2B</h3>
+                <p class="header__mega-content__desc">Для юрлиц: транспорт, стройтовары, оборудование</p>
+                <ul class="header__mega-content__list">
+                  <li><a href="/tovarovedcheskaya-b2b/transport/">Транспортные средства</a></li>
+                  <li><a href="/tovarovedcheskaya-b2b/construction/">Строительные товары</a></li>
+                  <li><a href="/tovarovedcheskaya-b2b/equipment/">Машины и оборудование</a></li>
+                </ul>
+                <a href="/tovarovedcheskaya-b2b/" class="header__mega-content__link">Все категории →</a>
+              </div>
             </div>
           </div>
         </div>
