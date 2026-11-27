@@ -37,6 +37,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
+  max-width: 1120px;
+  margin: 0 auto;
 }
 
 .cat-trust-item {
@@ -230,7 +232,7 @@
 
 .cat-hero-uses {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 24px;
   align-items: stretch;
 }
