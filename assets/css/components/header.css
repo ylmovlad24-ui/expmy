@@ -301,7 +301,7 @@
 /* ===== SIMPLE DROPDOWN ===== */
 .header__simple-menu {
   position: absolute;
-  top: calc(100% + 16px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(10px);
   background: #ffffff;
@@ -316,6 +316,18 @@
   pointer-events: none;
 }
 
+/* Invisible bridge between nav link and simple dropdown */
+.header__simple-menu::after {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 0;
+  right: 0;
+  height: 16px;
+  background: transparent;
+}
+
+/* Triangle pointer */
 .header__simple-menu::before {
   content: '';
   position: absolute;
