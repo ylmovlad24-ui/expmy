@@ -50,6 +50,8 @@
   background: var(--bg-light, #f8f9fa);
   border: 1px solid var(--border, #e0e4e8);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .cat-trust-item:hover {
@@ -100,7 +102,7 @@
 .cat-hero {
   min-height: calc(100vh - var(--header-height, 64px));
   min-height: calc(100dvh - var(--header-height, 64px));
-  padding: 140px 0 64px;
+  padding: 80px 0 64px;
   background: linear-gradient(135deg, var(--dark-bg, #2a5b9a) 0%, var(--dark-bg-alt, #1a4070) 100%);
   color: var(--white, #ffffff);
   position: relative;
@@ -150,27 +152,28 @@
   max-width: 1120px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 28px;
   width: 100%;
+  margin: 0 auto;
 }
 
 .cat-hero__text {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .cat-hero__title {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   font-weight: 700;
   line-height: 1.2;
   margin: 0;
-  color: var(--text, #333333);
+  color: var(--white, #ffffff);
 }
 
 /* Badge — без alert-стилистики */
 .cat-hero__badge {
-  font-size: 1.0625rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--accent, #e67e22);
   background: transparent;
@@ -209,8 +212,8 @@
 }
 
 .cat-hero__actions .btn {
-  font-size: 1.0625rem;
-  padding: 16px 36px;
+  font-size: 1rem;
+  padding: 14px 32px;
 }
 
 .cat-hero__link {
@@ -228,12 +231,12 @@
   text-decoration-color: var(--accent, #e67e22);
 }
 
-/* --- Hero Uses --- */
+/* --- Hero Uses (2-column grid) --- */
 
 .cat-hero-uses {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
   align-items: stretch;
 }
 
@@ -241,28 +244,13 @@
   background: var(--bg, #ffffff);
   border: 1px solid var(--border, #e0e4e8);
   border-radius: 14px;
-  padding: 28px 28px;
+  padding: 24px;
   box-shadow: var(--shadow-card, 0 1px 3px rgba(0,0,0,0.06));
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   color: #1a202c;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.cat-hero-use__title {
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin: 0;
-  color: #1a202c;
-  line-height: 1.4;
-}
-
-.cat-hero-use__desc {
-  font-size: 0.9375rem;
-  color: #4a5568;
-  line-height: 1.6;
-  margin: 0;
 }
 
 .cat-hero-use:hover {
@@ -271,9 +259,9 @@
 }
 
 .cat-hero-use__icon-wrap {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
   background: var(--accent-bg, rgba(230,126,34,0.05));
   display: flex;
   align-items: center;
@@ -282,10 +270,25 @@
 }
 
 .cat-hero-use__icon {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   line-height: 1;
   color: var(--accent, #e67e22);
+}
+
+.cat-hero-use__title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin: 0;
+  color: #1a202c;
+  line-height: 1.4;
+}
+
+.cat-hero-use__desc {
+  font-size: 0.875rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* --- Visual Divider --- */
@@ -312,7 +315,7 @@
 /* --- Section base (compact rhythm) --- */
 
 .cat-section {
-  padding: 72px 0;
+  padding: 64px 0;
 }
 
 .cat-section--alt {
@@ -320,40 +323,40 @@
 }
 
 .cat-section__title {
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   line-height: 1.25;
 }
 
 .cat-section__subtitle {
   text-align: center;
-  font-size: 1.0625rem;
+  font-size: 1rem;
   color: var(--text-light, #666666);
-  margin-bottom: 48px;
-  max-width: 700px;
+  margin-bottom: 40px;
+  max-width: 680px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
 }
 
-/* --- Directions --- */
+/* --- Directions (compact 2-column grid) --- */
 
 .cat-directions {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 20px;
 }
 
 .cat-direction {
   background: #ffffff;
   border: 1px solid #e0e4e8;
   border-radius: 14px;
-  padding: 32px 28px;
+  padding: 28px 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: #333333;
@@ -365,23 +368,23 @@
 }
 
 .cat-direction__icon {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   line-height: 1;
   color: #e67e22;
   flex-shrink: 0;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .cat-direction__icon svg {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   display: block;
   flex-shrink: 0;
 }
 
 .cat-direction__title {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 600;
   margin: 0;
   color: #1a202c;
@@ -389,7 +392,7 @@
 }
 
 .cat-direction__desc {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   color: #4a5568;
   line-height: 1.6;
   margin: 0;
@@ -426,12 +429,12 @@
   margin: 0;
 }
 
-/* --- Cases --- */
+/* --- Cases (compact 3-column grid) --- */
 
 .cat-cases {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  gap: 24px;
   align-items: stretch;
 }
 
@@ -439,11 +442,11 @@
   background: var(--bg, #ffffff);
   border: 1px solid var(--border, #e0e4e8);
   border-radius: 14px;
-  padding: 40px 36px;
+  padding: 32px 28px;
   box-shadow: var(--shadow-card, 0 1px 3px rgba(0,0,0,0.06));
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -453,7 +456,7 @@
 }
 
 .cat-case__title {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 600;
   margin: 0;
   color: var(--text, #333333);
@@ -462,28 +465,28 @@
 
 .cat-case__desc,
 .cat-case__text {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   color: var(--text-light, #666666);
   line-height: 1.6;
   margin: 0;
 }
 
 .cat-case__result {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--success, #059669);
   margin: 0;
-  padding-top: 20px;
+  padding-top: 16px;
   border-top: 2px solid var(--success, #059669);
   line-height: 1.5;
 }
 
-/* --- Guarantees --- */
+/* --- Guarantees (compact 2-column grid) --- */
 
 .guarantees-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
+  gap: 24px;
 }
 
 .guarantee-card {
@@ -491,7 +494,7 @@
   border: 1px solid var(--border, #e0e4e8);
   border-top: 3px solid var(--primary, #2a5b9a);
   border-radius: 14px;
-  padding: 36px 32px;
+  padding: 28px 24px;
   box-shadow: var(--shadow-card, 0 1px 3px rgba(0,0,0,0.06));
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -506,22 +509,22 @@
 }
 
 .guarantee-card__title {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   line-height: 1.4;
 }
 
 .guarantee-card__desc {
   color: var(--text-light, #666666);
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   line-height: 1.6;
 }
 
 .guarantee-card__link {
   display: inline-block;
   margin-top: 8px;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--primary, #2a5b9a);
   text-decoration: none;
@@ -533,14 +536,14 @@
   padding-left: 4px;
 }
 
-/* --- FAQ --- */
+/* --- FAQ (narrower, compact) --- */
 
 .cat-faq {
-  max-width: 960px;
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .cat-faq-item {
@@ -557,10 +560,10 @@
 }
 
 .cat-faq-item__summary {
-  padding: 24px 32px;
+  padding: 20px 24px;
   font-weight: 600;
   cursor: pointer;
-  font-size: 1.0625rem;
+  font-size: 1rem;
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -592,14 +595,14 @@
 }
 
 .cat-faq-item__answer {
-  padding: 0 32px 28px;
-  font-size: 0.9375rem;
+  padding: 0 24px 24px;
+  font-size: 0.875rem;
   color: var(--text-light, #666666);
   line-height: 1.7;
 }
 
 .cat-faq-item__answer p {
-  margin: 0 0 12px;
+  margin: 0 0 10px;
 }
 
 .cat-faq-item__answer p:last-child {
@@ -608,13 +611,13 @@
 
 /* Legal block inside FAQ */
 .cat-faq-item__legal {
-  margin-top: 12px;
-  padding-top: 12px;
+  margin-top: 10px;
+  padding-top: 10px;
   border-top: 1px solid var(--border, #e0e4e8);
 }
 
 .cat-faq-item__legal p {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   color: var(--text-light, #666666);
   line-height: 1.6;
 }
@@ -781,11 +784,11 @@
 
 @media (max-width: 1024px) {
   .cat-hero__title {
-    font-size: 2rem;
+    font-size: 1.875rem;
   }
 
   .cat-section__title {
-    font-size: 1.875rem;
+    font-size: 1.75rem;
   }
 
   .cat-directions {
@@ -828,7 +831,7 @@
   }
 
   .cat-hero__title {
-    font-size: 1.625rem;
+    font-size: 1.5rem;
   }
 
   .cat-hero__actions {
@@ -841,21 +844,21 @@
   }
 
   .cat-hero-use {
-    padding: 24px 20px;
+    padding: 20px 16px;
   }
 
   .cat-section {
-    padding: 56px 0;
+    padding: 48px 0;
   }
 
   .cat-section__title {
-    font-size: 1.625rem;
-    margin-bottom: 12px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
   }
 
   .cat-section__subtitle {
     font-size: 0.9375rem;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
   }
 
   .cat-directions {
@@ -863,15 +866,15 @@
   }
 
   .cat-direction {
-    padding: 28px 24px;
+    padding: 24px 20px;
   }
 
   .cat-cta-section {
-    padding: 56px 0;
+    padding: 48px 0;
   }
 
   .cat-cta__title {
-    font-size: 1.625rem;
+    font-size: 1.5rem;
   }
 
   .cat-cta__fields {
@@ -887,7 +890,7 @@
   }
 
   .cat-case {
-    padding: 28px 24px;
+    padding: 24px 20px;
   }
 
   .guarantees-grid {
@@ -895,41 +898,41 @@
   }
 
   .guarantee-card {
-    padding: 28px 24px;
+    padding: 24px 20px;
   }
 
   .cat-faq-item__summary {
-    padding: 20px 24px;
-    font-size: 1rem;
+    padding: 16px 20px;
+    font-size: 0.9375rem;
   }
 
   .cat-faq-item__answer {
-    padding: 0 24px 20px;
+    padding: 0 20px 16px;
   }
 }
 
 @media (max-width: 480px) {
   .cat-hero__title {
-    font-size: 1.375rem;
+    font-size: 1.25rem;
   }
 
   .cat-hero__badge {
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
   }
 
   .cat-section__title {
-    font-size: 1.375rem;
+    font-size: 1.25rem;
   }
 
   .cat-direction__title {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 
   .cat-case__title {
-    font-size: 1.0625rem;
+    font-size: 1rem;
   }
 
   .cat-hero-use__title {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 }

@@ -7,8 +7,8 @@
 (function () {
   "use strict";
 
+  var basePath = window.PathUtils.getBasePath();
   var path = window.location.pathname;
-  var basePath = "";
   var isSubpage =
     path.indexOf("/sudebnaya/") !== -1 ||
     path.indexOf("/vnesudebnaya/") !== -1 ||
@@ -18,29 +18,6 @@
     path.indexOf("/uzly-i-agregaty/") !== -1 ||
     path.indexOf("/tovarovedcheskaya-b2b/") !== -1 ||
     path.indexOf("/services/review/") !== -1;
-
-  if (
-    path.indexOf("/sudebnaya/") !== -1 ||
-    path.indexOf("/vnesudebnaya/") !== -1 ||
-    path.indexOf("/recenziya/") !== -1 ||
-    path.indexOf("/avtotehnicheskaya/") !== -1 ||
-    path.indexOf("/avtotovarovedcheskaya/") !== -1 ||
-    path.indexOf("/uzly-i-agregaty/") !== -1 ||
-    path.indexOf("/tovarovedcheskaya-b2b/") !== -1 ||
-    path.indexOf("/o-kompanii/") !== -1 ||
-    path.indexOf("/eksperty/") !== -1 ||
-    path.indexOf("/ceny/") !== -1 ||
-    path.indexOf("/faq/") !== -1 ||
-    path.indexOf("/kontakty/") !== -1 ||
-    path.indexOf("/keysy/") !== -1 ||
-    path.indexOf("/diplomy/") !== -1 ||
-    path.indexOf("/partners/") !== -1 ||
-    path.indexOf("/spasibo/") !== -1 ||
-    path.indexOf("/oferta/") !== -1 ||
-    path.indexOf("/politika/") !== -1
-  ) {
-    basePath = "../";
-  }
 
   // === 1. GSAP LOADER (загружается сразу, НЕ defer) ===
   // Это единственный источник GSAP для всей страницы

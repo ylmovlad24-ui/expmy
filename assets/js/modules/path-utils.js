@@ -13,10 +13,6 @@
     if (path === "/" || path === "/index.html") return "";
 
     // Count path segments after the leading slash
-    // "/ceny/" → 1 segment → need "../" (1 level up)
-    // "/avtotovarovedcheskaya/osago/" → 2 segments → need "../../" (2 levels up)
-    // "/a/b/c/" → 3 segments → need "../../../" (3 levels up)
-    // etc.
     var segments = path.split("/").filter(function (s) { return s.length > 0; });
     var depth = segments.length;
 
